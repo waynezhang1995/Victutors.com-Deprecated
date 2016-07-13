@@ -1,0 +1,39 @@
+﻿
+.inactiveLink {
+   pointer-events: none !important;
+   cursor: default !important;
+}
+
+.w3-tangerine {
+  font-family: 'Tangerine', serif;
+}
+
+.mySlides {
+	display:none
+}
+	
+.w3-left, .w3-right, .w3-tag {
+	cursor:pointer
+}
+
+.w3-tag {
+	height:15px;width:15px;padding:0;margin-top:6px
+}
+
+.w3-lobster{
+	font-family: "Lobster", serif;
+
+};
+
+.btn-social {
+    width: 100px;
+    position: relative;
+    opacity: 0.5;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-social:hover {
+    transform: scale(2.8, 2.8);
+    opacity: 1;
+}
