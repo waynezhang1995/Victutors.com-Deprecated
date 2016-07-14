@@ -32,8 +32,7 @@ html, body, h1, h2, h3, h4, h5 {
 	<ul
 		class="w3-navbar w3-left-align w3-dark-grey w3-center w3-top w3-xlarge">
 		<li class="w3-left inactiveLink" style="width: 16.6% !important">
-        <img src="./Images/logo.png" alt="Norway"
-						style="height: 50%;width: 100%"></li>
+        <img src="./Images/logo.png" class = "w3-circle" style="max-width:100%;max-height:100%"></li>
 		<li class="w3-left" style="width: 16.6% !important"><a id="Faculty"
 			style="color: white" href="#FacultyList"><i><b>辅导学科</b></i></a></li>
 		<li class="w3-left" style="width: 16.6% !important"><a id="Price"
@@ -130,9 +129,9 @@ html, body, h1, h2, h3, h4, h5 {
 					推荐家教</span>
 			</div>
 
-			<div id = "T01" class="w3-third w3-margin-bottom "></div>
-			<div id = "T02" class="w3-third w3-margin-bottom"></div>
-			<div id = "T03" class="w3-third w3-margin-bottom"></div>
+			<div  class="w3-third w3-margin-bottom T01"></div>
+			<div  class="w3-third w3-margin-bottom T02"></div>
+			<div  class="w3-third w3-margin-bottom T03"></div>
 		</div>
 
 		<!-- Contact -->

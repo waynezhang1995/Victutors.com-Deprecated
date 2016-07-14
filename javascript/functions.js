@@ -1,3 +1,5 @@
+var CSCTutorList = [];
+
 function SendEmail() {
 	// must have a cc field eventhough its empty!!
 	var link = "mailto:waynez@uvic.com" + "?cc=" + "&subject="
@@ -14,13 +16,22 @@ function gotoTop() {
 }
 
 function LoadTutorList(faculty) {
+	
 	var s = '';
 	s += '<div class="w3-modal-content w3-animate-top w3-card-8"> ';
 	s += '<header class="w3-container w3-teal"> ';
 	s += '<span onclick="document.getElementById(\'TutorList\').style.display=\'none\' " class="w3-closebtn">&times;</span> ';
 	s += '<h2 class="w3-center w3-lobster">' + faculty + '</h2>';
 	s += '</header>';
-	s += '<div class="w3-container" style="postion: absolute; length: 500px; height: 400px; margin-top: 30px"> </div>';
+	s += '<div class="w3-container" style="postion: absolute; length: 500px; height: 800px; margin-top: 30px">'; 
+	//add card here
+	
+	s += '<div class="w3-row-padding" style="margin: 0 -16px">';
+	s += GetTutorList(faculty);
+	s += '</div>';
+	
+	//end
+	s += '</div>';
 	s += '<footer class="w3-container w3-teal"> <p class="w3-center w3-lobster ">www.Victutor.com</p></footer>';
 	s += '</div>';
 
@@ -28,10 +39,13 @@ function LoadTutorList(faculty) {
 	document.getElementById('TutorList').style.display = 'block';
 }
 
+
+
 //document ready start from here
 $(document)
 		.ready(
 				function() {
+					SetUpTutorList();
 					LoadFaculty();
 					PriceList();
 					Recommend();
@@ -56,19 +70,19 @@ function LoadFaculty(faculty) {
 	var facultyList = [ {
 		name : "CSC",
 		fullname : "\'Computer Science\'",
-		imgsrc : "\"./Images/uvic.png\""
+		imgsrc : "\"./Images/CSC_Logo.jpg\""
 	}, {
 		name : "MATH",
 		fullname : "\'Mathematic\'",
-		imgsrc : "\"./Images/uvic.png\""
+		imgsrc : "\"./Images/MATH_Logo.png\""
 	}, {
 		name : "ECON",
 		fullname : "\'Economic\'",
-		imgsrc : "\"./Images/uvic.png\""
+		imgsrc : "\"./Images/ECON_Logo.jpg\""
 	}, {
 		name : "STATS",
 		fullname : "\'Statistic\'",
-		imgsrc : "\"./Images/uvic.png\""
+		imgsrc : "\"./Images/MATH_Logo.png\""
 	} ];
 
 	//header part
@@ -76,7 +90,7 @@ function LoadFaculty(faculty) {
 		var s = '<div class="w3-quarter ">';
 		s += '<img src='
 				+ facultyList[i].imgsrc
-				+ ' alt="Boss" style="width: 45%" class="w3-circle w3-hover-opacity">';
+				+ 'style="width: 45%" class="w3-circle w3-hover-opacity">';
 		s += '<h3>' + facultyList[i].name + '</h3>';
 		s += '<button class="w3-btn w3-green w3-padding-large" onclick="LoadTutorList('
 				+ facultyList[i].fullname
@@ -143,8 +157,51 @@ function LoadFaculty(faculty) {
 					'<button class="w3-btn">COMING SOON!</button>'+
 					'</p>'+
 					'</div>';
-			$('#' + id).html(s);
+			$('.' + id).html(s);
 			}
+	}
+	
+	function GetTutorList(faculty){
+		var s = '';
+		switch (faculty) {
+		case 'Computer Science':
+			for(i = 0; i <CSCTutorList.length;i++){
+				var item = CSCTutorList[i];
+				s = GetTutorDetail(s, item);
+			}
+			return s;
+			break;
+		case 'Economic':
+			break;
+		default:
+			break;
+		}
+	}
+	
+	function GetTutorDetail(s,item){
+		s +='<div class="w3-quarter w3-margin-bottom T01">';
+		s += '<div class="w3-card-4" >';
+		s += '<img src="' +item.Image +'"' +
+		'style="width: 100%">' +
+		'<div class="w3-container">' +
+		'<h3>' + item.Name + '</h3>' +
+		'<p class="w3-opacity">'+item.WeChat+'</p>' +
+		'<p>' + item.Phone +'</p>' +
+		'<p>' + item.Email +'</p>'+
+		'</div></div></div>';
+		return s;
+	}
+	
+	function SetUpTutorList(){
+		 CSCTutorList = [ 
+		                  CreateNewTutorEntry("test1", "123", "email1", "wechat1","./Images/img_avatar1.png"),
+		                  CreateNewTutorEntry("test2", "456", "email2", "wechat2","./Images/img_avatar3.png"),
+		                  CreateNewTutorEntry("test3", "789", "email3", "wechat3","./Images/img_avatar6.png"),
+		 ];	
+	} 
+	
+	function CreateNewTutorEntry(_name, _phone, _email,_weChat,_imgsrc){
+		return {Name:_name, Phone:_phone, Email:_email, WeChat:_weChat,Image:_imgsrc};
 	}
 	
 	
