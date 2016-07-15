@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 
 <html lang="zh-CN">
@@ -27,12 +28,12 @@ html, body, h1, h2, h3, h4, h5 {
 }
 </style>
 </head>
-<body>
+<body onresize="ReSize()">
 	<!-- Navbar -->
 	<ul
-		class="w3-navbar w3-left-align w3-dark-grey w3-center w3-top w3-xlarge">
+		class="w3-navbar w3-left-align w3-dark-grey w3-center w3-top w3-xlarge" id = "TopNavBar">
 		<li class="w3-left inactiveLink" style="width: 16.6% !important">
-        <img src="./Images/logo.png" class = "w3-circle" style="max-width:100%;max-height:100%"></li>
+        <img src="./Images/logo.png" style="max-width:100%;max-height:100%;height:50px"></li>
 		<li class="w3-left" style="width: 16.6% !important"><a id="Faculty"
 			style="color: white" href="#FacultyList"><i><b>辅导学科</b></i></a></li>
 		<li class="w3-left" style="width: 16.6% !important"><a id="Price"
@@ -44,11 +45,11 @@ html, body, h1, h2, h3, h4, h5 {
 			onclick="document.getElementById('aboutusModal').style.display='block'"><i><b>加入我们</b></i></a></li>
 		<li class="w3-left" style="width: 16.6% !important"><a id="JoinUs"
 			style="color: white" href="#Contact"><i><b>联系方式</b></i></a></li>
-
 	</ul>
 
 	<!-- header -->
 	<header class="container-fluid" style="margin-top: 100px">
+
 		<h1 class="w3-center w3-lobster w3-xxxlarge">
 			<span data-toggle="title" title="alpha">Victutor.com</span>
 		</h1>
@@ -56,7 +57,7 @@ html, body, h1, h2, h3, h4, h5 {
 
 	<!-- Content -->
 	<div class="w3-content w3-container"
-		style="max-width: 900px; margin-top: 70px; margin-bottom: 70px">
+		style="max-width: 1000px; margin-top: 70px; margin-bottom: 70px">
 		<!-- Slideshow -->
 		<div class="w3-display-container mySlides"
 			style="margin-top: 10px; display: none;">
