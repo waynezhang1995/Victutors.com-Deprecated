@@ -75,19 +75,19 @@ function LoadFaculty(faculty) {
     var facultyList = [{
         name: "CSC",
         fullname: "\'Computer Science\'",
-        imgsrc: "\"./Images/CSC_Logo.jpg\""
+        imgsrc: "\"./Images/CSC_Logo.png\""
     }, {
         name: "MATH",
         fullname: "\'Mathematic\'",
-        imgsrc: "\"./Images/CSC_Logo.jpg\""
+        imgsrc: "\"./Images/MATH_Logo.png\""
     }, {
         name: "ECON",
         fullname: "\'Economic\'",
-        imgsrc: "\"./Images/CSC_Logo.jpg\""
+        imgsrc: "\"./Images/ECON_Logo.png\""
     }, {
         name: "STATS",
         fullname: "\'Statistic\'",
-        imgsrc: "\"./Images/CSC_Logo.jpg\""
+        imgsrc: "\"./Images/STAT_Logo.png\""
     }];
 
     //header part
