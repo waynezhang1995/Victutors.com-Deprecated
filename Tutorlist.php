@@ -1,8 +1,7 @@
 
-
 <!DOCTYPE html>
 
-<html id = "mainPage" lang="zh-CN" xmlns:wb="http://open.weibo.com/wb">
+<html id = "mainPage" lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type"
@@ -15,7 +14,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <link rel="stylesheet" href="./CSS/custom.css">
-<link type="text/css" rel="stylesheet" href="./CSS/index.css" />
 <link href="./Images/favicon.ico" rel="icon" type="image/x-icon" />
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
@@ -25,24 +23,9 @@
 <script src="./lib/Javascript/jquery.min.js"></script>
 <script type="text/javascript" src="./lib/Javascript/ajaxupload.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="./javascript/victutor.functions.js"></script>
+<script type="text/javascript" src="./javascript/victutor.Tutorlist.js"></script>
 <script type="text/javascript" src="./javascript/victutor.list.js"></script>
-<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" src="./javascript/bootstrap-select.js"></script>
-<script type="text/javascript" src="./lib/Javascript/jquery.roundabout.js"></script>
-
-<!-- Google tracking -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-81667903-1', 'auto');
-  ga('send', 'pageview');
-</script>
-
-
 
 <style>
 html, body, h1, h2, h3, h4, h5 {
@@ -50,96 +33,65 @@ html, body, h1, h2, h3, h4, h5 {
 }
 </style>
 </head>
-<body style="background-color:skyblue">
-	<nav id = "TopNavBar" class="w3-xlarge navbar-inverse navbar navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-	<span><img style = "margin-top:7px;margin-right:6px" class = "w3-left" src = "./Images/Victutor_Icon_White.png" alt = "Victutor_Icon" width = "10%"></span>
-      <a class="w3-xlarge navbar-brand" href="index.php"><font size = "6" color="white">VICTUTOR.com</font></a>
-    </div>
-    <ul class="w3-right nav navbar-nav ">
-      <li><a class = "w3-hover-red" onclick="document.getElementById('aboutusModal').style.display='block'"><font color="white">
-	  <i><b>加入我们&nbsp;&nbsp;<i class="fa fa-users" aria-hidden="true"></i></b></i></font></a></li> 
-	  <li><a class = "w3-hover-red" onclick="document.getElementById('ContactUsModal').style.display='block'"><font color="white">
-	  <i><b>联系我们&nbsp;&nbsp;<i class="fa fa-phone" aria-hidden="true"></i></b></i></font></a></li>
-    </ul>
-  </div>
-</nav>
+
+	<div class = "w3-container">
+		<nav id = "TopNavBar" class="w3-xlarge navbar-inverse navbar navbar-fixed-top w3-white">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<a href = "index.php"><img id = "Victutor_icon" style = "float:left;margin-top:9px;margin-right:6px" class = "w3-left" src = "./Images/Victutor_icon.png" alt = "Victutor_Icon" width = "10%">
+			<a class="w3-xlarge navbar-brand" href="index.php"><font color="black">VICTUTOR.com</font></a>
+			</div>
+			<ul class="w3-right nav navbar-nav " style = "right:0px;position:absolute">
+			<li id = "NavSearchPanel" style = "margin-right:10px;margin-top:8px">
+				<select id = "Fselecter" class="selectpicker show-tick show-menu-arrow" data-width="300px" title="选择专业"
+						data-live-search="true" ></select>
+						<button class="w3-teal w3-large w3-btn w3-hover-red" style = "margin-left:20px"
+						onclick = "victutor.Tutorlist.GetTutorByFaculty()">搜索家教&nbsp;
+						<i class="fa fa-search" aria-hidden="true"></i></button>
+			</li>
+			<li><a class = "w3-hover-red" onclick="document.getElementById('aboutusModal').style.display='block'"><font color="black">
+			<i><b>加入我们&nbsp;&nbsp;<i class="fa fa-users" aria-hidden="true"></i></b></i></font></a></li> 
+			<li><a class = "w3-hover-red" onclick="document.getElementById('ContactUsModal').style.display='block'"><font color="black">
+			<i><b>联系我们&nbsp;&nbsp;<i class="fa fa-phone" aria-hidden="true"></i></b></i></font></a></li>
+			</ul>
+		</div>
+		</nav>
+	</div>
 	<!-- Contact staff button -->
 	<div id = "serviceButton" class="w3-theme-border w3-animate-left"
 		style="position: fixed; left:0px ;top:450px; z-index: 999;display:none">
-			<button onmouseover = "victutor.functions.ShowHideServerPanel(1)"
-				class="w3-center w3-border w3-hover-grey w3-light-grey w3-btn w3-large"><b>联<br>系<br>客<br>服</b>
+			<button onmouseover = "victutor.Tutorlist.ShowHideServerPanel(1)"
+				class="w3-center w3-border w3-hover-grey w3-dark-grey w3-btn w3-large"><b>联<br>系<br>客<br>服</b>
 			</button>
 	</div>
 	
 	<!-- Contact staff slidng panel -->
-	<nav id = "services" class="w3-sidenav Server-Panel w3-light-grey">
-		<a onclick="victutor.functions.ShowHideServerPanel(0)" class="w3-right w3-closenav ">Close &times;</a>
-		<p class = "w3-left w3-large" style = "margin:0"><b>寻找太麻烦？</b></p>
+	<nav id = "services" class="w3-sidenav Server-PanelTutorList w3-grey" style = "bottom:100px !important">
+		<a onclick="victutor.Tutorlist.ShowHideServerPanel(0)" class="w3-right w3-closenav w3-text-white">Close &times;</a>
+		<p class = "w3-left w3-large w3-text-white" style = "margin:0"><b>寻找太麻烦？</b></p>
 		<img class = "w3-left" style="width: 80px;height: 80px;" src="./Images/img_avatar3.png" style="width: 50%">
 		<a onclick="document.getElementById('ContactUsModal').style.display='block'" 
-		class = "w3-right" style = "padding-right:10px;padding-top:10px">点击联系我们<br>我们来帮您!<br>请联系客服</a>
+		class = "w3-right w3-text-white" style = "padding-right:10px;padding-top:10px">点击联系我们<br>我们来帮您!<br>请联系客服</a>
 	</nav>
-    
-	<div id="highsky">
-        <div id="midground" class="wall"></div>
-		<div class="w3-container wall" style="margin-left:-16px; margin-right:-16px">
-			<div id = "searchToolPanel" class="w3-center">
-				<h2 id = "bgtext" class = "w3-xxxlarge"> 维多利亚家教网
-				<span><img src = "./Images/Victutor_Icon_White.png" alt = "Victutor_Icon" width = "10%"></span>
-				</h2>
-				<!--<button class="bgbutton w3-hover-red w3-teal w3-btn"><b class = "w3-large">查找家教</b></button>-->
-				<div style = "margin-top:30px">
-				    <select id = "Fselecter" class="selectpicker show-tick show-menu-arrow" data-width="400px" title="选择专业"
-				    data-live-search="true" ></select>
-				    <button class="w3-teal w3-xlarge w3-btn w3-hover-red" style = "margin-left:20px"
-				    onclick = "victutor.functions.GetTutorByFaculty()">搜索家教&nbsp;
-				    <i class="fa fa-search" aria-hidden="true"></i>
-				    </button>
-				</div>
-			</div>
-
-            <div id = "downward" class="w3-center w3-bottom" data-toggle="gonext" title="See Our Recommands">
-                <button class = "Faculty glyphicon glyphicon-cloud w3-hover-text-teal w3-xxxlarge" 
-                    href="#TeamList" style="border: none; background: none;outline: none; width:10%; color:#009688">
-                </button>
-            </div>
-		</div>
-    </div>
+	
+<body class = "w3-light-grey" onresize="victutor.Tutorlist.ReSize()">
 	<!-- Content -->
-    <div id="landing-content" style="margin-left:-16px; margin-right:-16px">
-	    <div>
-		    <!-- Grid -->
-		    <div id="TeamList" class="w3-row-padding" style="margin: 0 -16px">
-			    <div class="w3-center w3-padding-64">
-				    <h2 style="color:#ffffff">推荐家教</h2>
-                    <div id="gla">
-	                    <div id="gla_box">
-                        <span class="prev fa fa-5x fa-chevron-left w3-left" style="margin-left:-220px; margin-top:200px; color:white"></span>
-			            <span class="next fa fa-5x fa-chevron-right w3-right" style="margin-right:-220px;margin-top:200px;color:white"></span>
-    	                    <ul id="img-slider">
-        	                        <li><div class="T00 w3-border"></div></li>
-        	                        <li><div class="T01 w3-border"></div></li>
-        	                        <li><div class="T02 w3-border"></div></li>
-        	                        <li><div class="T03 w3-border"></div></li>
-        	                        <li><div class="T04 w3-border"></div></li>
-                                </ul>
-                            </div>
-                        </div>
-			    </div>
-		    </div>
+    <div id = "mainContent" class="w3-content w3-container" style="max-width: 1000px; margin-top: 70px; margin-bottom: 100px">
+		<p class = "w3-text-black w3-xlarge" id = "title" style = "margin-top:20px;margin-bottom:50px"></p>
+		<div id = "TutorListAll">
 		</div>
 	</div>
+
 	<!-- Fixed Button -->
 	<div class="w3-theme-border" id = "GoToTopButton"
 		style="display:none;position: fixed; padding: 5px; bottom: 60px; right: 35px; height: 50px; z-index: 999">
 		<button class="w3-hover-text-teal w3-xxxlarge w3-animate-right glyphicon glyphicon-chevron-up"
 			data-toggle="gotop" title="Go to Top"
-			style="padding: 0; border: none; background: none; outline: none;color:white"
-			onclick="victutor.functions.gotoTop()">
+			style="padding: 0; border: none; background: none; outline: none;color:black"
+			onclick="victutor.Tutorlist.gotoTop()">
 	</div>
 	
+
 	<!-- Footer -->
 	<footer id = "test" class="w3-container w3-padding-10 w3-blue-grey w3-center" style = "z-index:-1">
 		<h4 id = "CurrentTime"></h4>
@@ -154,13 +106,10 @@ html, body, h1, h2, h3, h4, h5 {
 		</span>
 		</p>
 		<p>© Vcitutor.com beta 1.00.00 - 2016 VICTUTOR ALL RIGHTS RESERVED</p>
-		<p>
-<div align="center"><a href="http://www.simplehitcounter.com" target="_blank"><img src="http://simplehitcounter.com/hit.php?uid=2164152&f=16777215&b=0" border="0" height="18" width="83" alt="web counter"></a><br><a href="http://www.simplehitcounter.com" target="_blank" style="text-decoration:none;"></a></div>
-		</p>
 	</footer>
 
 	<!-- 1. Aboutus modal -->
-	<div id="aboutusModal" class="w3-modal" style = "z-index:999">
+<div id="aboutusModal" class="w3-modal" style = "z-index:999">
 		<div class="w3-modal-content w3-animate-top w3-card-8">
 			<header class="w3-container w3-teal">
 				<span
@@ -216,7 +165,10 @@ html, body, h1, h2, h3, h4, h5 {
 								<label>上传状态和结果：</label><input style = "border-style:none;" type="text" readonly="readonly" value="" id="state" />
 						</div>
 					</div>
+					
                 </div>
+
+                   
 
 				<div class = "w3-center" style = "margin-bottom:10px">
 					<button type="submit" class="w3-large w3-teal w3-btn w3-padding-10">Submit</button>
@@ -268,20 +220,6 @@ html, body, h1, h2, h3, h4, h5 {
 			</div>
 		</div>
 
-		
-
-	<!-- 2. CSC List modal -->
-		<div id="TutorList" class="w3-modal" style = "padding-top:55px">
-			<div id="ListOfTutor" style = "z-index:999"></div>
-		</div>
-
-    <!-- 3. Tutor Detail modal -->
-        <div id = "RecommendTutorDetail" class = "w3-modal" style = "z-index:999">
-            <div id = "TutorDetailRecommend">
-            </div>
-        </div>
-
-	
 		<div id="searchAlert" class="w3-modal">
 			<div class="w3-modal-content w3-animate-top w3-card-8" style = "width:30%">
 				<header class="w3-container w3-red">
@@ -291,5 +229,8 @@ html, body, h1, h2, h3, h4, h5 {
 				</header>
 			</div>
 		</div>
+
+		
+
 </body>
 </html>

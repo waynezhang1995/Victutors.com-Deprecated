@@ -30,8 +30,7 @@
 <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" src="./javascript/bootstrap-select.js"></script>
 <script type="text/javascript" src="./lib/Javascript/jquery.roundabout.js"></script>
-
-<!-- Google tracking -->
+<!-- Google tracking 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -41,7 +40,7 @@
   ga('create', 'UA-81667903-1', 'auto');
   ga('send', 'pageview');
 </script>
-
+-->
 
 
 <style>
@@ -154,9 +153,6 @@ html, body, h1, h2, h3, h4, h5 {
 		</span>
 		</p>
 		<p>© Vcitutor.com beta 1.00.00 - 2016 VICTUTOR ALL RIGHTS RESERVED</p>
-		<p>
-<div align="center"><a href="http://www.simplehitcounter.com" target="_blank"><img src="http://simplehitcounter.com/hit.php?uid=2164152&f=16777215&b=0" border="0" height="18" width="83" alt="web counter"></a><br><a href="http://www.simplehitcounter.com" target="_blank" style="text-decoration:none;"></a></div>
-		</p>
 	</footer>
 
 	<!-- 1. Aboutus modal -->
@@ -293,3 +289,8 @@ html, body, h1, h2, h3, h4, h5 {
 		</div>
 </body>
 </html>
+
+
+
+
+
