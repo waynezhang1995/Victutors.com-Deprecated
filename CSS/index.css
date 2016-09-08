@@ -1,0 +1,56 @@
+﻿/*首页图片滚动*/
+#gla{
+	overflow:hidden;
+	margin:auto;
+	position:relative;
+	height:520px;
+}
+#gla_box{
+	width:500px;
+	height:480px;
+	margin:auto;
+}
+.gla_inbox{
+	overflow:hidden;
+	position:relative;
+}
+.roundabout-holder {
+	height: 400px;
+	width: 500px;
+}
+.roundabout-moveable-item {
+	display:block;
+	height: 300px;
+	width: 400px;;
+	cursor: pointer;
+}
+.roundabout-in-focus {
+	cursor: auto;
+}
+
+#downward {
+  position: absolute;
+  animation: jump 3s infinite forwards;
+}
+
+@keyframes jump {
+	0%, 100% {
+        bottom: 0;
+    }
+    25% {
+        bottom: 25px;
+    }
+    50% {
+        bottom: 0;
+    }
+    75% {
+        bottom: 25px;
+    }
+/*
+  0%, 
+  100% { top: 0%;     transform: scaleX(1.1) scaleY(0.9); animation-timing-function: ease-in }
+  40%  { top: 80%; transform: scaleX(1)  scaleY(1)}
+  55%  { top: 90%; transform: scaleX(1.8) scaleY(0.2); animation-timing-function: ease-in-out  }
+  65%  { top: 30%; transform: scaleX(.6)  scaleY(1.4); animation-timing-function: ease-out }
+  80%  {             transform: scaleX(1)   scaleY(1) }*/
+}

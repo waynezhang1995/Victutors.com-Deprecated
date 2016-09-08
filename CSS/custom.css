@@ -1,4 +1,63 @@
 ﻿
+.navbar {
+   background-color: transparent;
+   border-color: transparent;
+   -webkit-transition: all 0.8s ease-out;
+   -moz-transition: all 0.8s ease-out;
+   -o-transition: all 0.8s ease-out;
+   -ms-transition: all 0.8s ease-out;
+   transition: all 0.8s ease-out;
+}
+
+  
+#bgtext{
+    z-index:100; 
+    color:white;
+    font-weight:bold;
+    margin-top: 180px
+}
+
+.bgbutton{
+    margin-top: 50px;
+    width:100px;
+    height: 52px
+}
+
+
+.w3-animate-left{
+    position: relative;
+    -webkit-animation:animateleft 1.0s !important;
+    animation:animateleft 1.0s !important
+}
+
+.Server-Panel{
+    position: relative;
+    -webkit-animation:animateleft 2.4s;
+    animation:animateleft 2.4s;
+    width:200px;
+    height:110px;
+    bottom:50px;
+}
+
+.Server-PanelTutorList{
+    position: relative;
+    -webkit-animation:animateleft 2.4s;
+    animation:animateleft 2.4s;
+    width:200px;
+    height:110px;
+    bottom:50px;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.popover{
+    width:110px;
+    text-align: center !important;
+    opacity:0;
+    -webkit-transition: opacity 1.05s linear;
+    -o-transition: opacity 1.05s linear;
+    transition: opacity 1.05s linear;
+}
+
 .inactiveLink {
    pointer-events: none !important;
    cursor: default !important;
@@ -37,3 +96,66 @@
     transform: scale(2.8, 2.8);
     opacity: 1;
 }
+
+#landing-content {
+	overflow: hidden;
+	background-image: url(../Images/island.png);
+	background-size: cover;
+	height:666px;
+	background-repeat: no-repeat;
+}
+
+.w3-card-12{
+    margin-bottom: 30px;
+    height: 200px;
+    border-width:3px;	
+    border-style:outset;
+}
+
+        * { margin: 0; padding: 0; border: 0; } 
+	        html,body{
+	        	margin: 0;
+	        }
+	        @-webkit-keyframes STAR-MOVE {
+				from {
+					background-position:0% 0%
+				}
+				to { 
+					background-position: 600% 0%
+				}
+			}
+			 @keyframes STAR-MOVE {
+				from {
+					background-position: 0% 0%
+				}
+				to { 
+					background-position: 600% 0%
+				}
+			}
+			.wall{
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+			}
+			div#background{
+				background: skyblue;
+				background-size: cover;
+                z-index: -1 !important;
+			}
+			div#midground{
+				background:url('../Images/midground.png');
+				background-repeat: no-repeat;
+				-webkit-animation: STAR-MOVE  100s linear infinite;
+
+			}
+			div#foreground{
+				background:url('../Images/foreground.png')repeat 35% 0%;
+				z-index: 0 !important;
+				-webkit-animation: STAR-MOVE  50s linear infinite;
+				-moz-animation: STAR-MOVE  50s linear infinite;
+				-ms-animation: STAR-MOVE  50s linear infinite;
+				animation: STAR-MOVE  50s linear infinite;
+			}
+        
