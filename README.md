@@ -1,4 +1,4 @@
-# www.victutor.com
+# www.victutors.com
 
 Author:Yuwei(Wayne) Zhang, Zihan Ye
 
