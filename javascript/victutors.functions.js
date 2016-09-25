@@ -1,10 +1,12 @@
-victutor.createNS("victutor.functions")
+victutors.createNS("victutors.functions")
 
-victutor.functions.length;
-victutor.functions.selectedValue;
+victutors.functions.length;
+victutors.functions.selectedValue;
 
-victutor.functions.PeopleList = [];
-victutor.functions.middle = 0;
+victutors.functions.PeopleList = [];
+victutors.functions.middle = 0;
+victutors.functions.questionNo = 0;
+victutors.functions.showAnswer = 0;
 
 $(function () {
     // 创建一个上传参数
@@ -39,7 +41,7 @@ $(function () {
                 $("#state").val("上传完成！");
                 console.log(response);
                 $('#ImgUpLoad').attr("src", response + file);
-
+                $('#ImgUpLoad').css({'width': '200px','height':'170px','margin-left': '50px','margin-bottom': '30px'});
             }
         }
 
@@ -75,14 +77,46 @@ $(function () {
     }
 });
 
-victutor.functions.gotoTop = function () {
+victutors.functions.answer = function (question) {
+    var str = question;
+    str = str.substring(2);
+    var no1 = Number(str);
+    var no2 = victutors.functions.questionNo;
+    if (no1 != no2) {
+        if (no2 != 0) {
+            $('#ta' + no2).hide();
+            $('#tq' + no2).html("<i class='fa fa-plus' aria-hidden='true'></i>");
+        }
+        $('#ta' + no1).show();
+        $('#tq' + no1).html("<i class='fa fa-minus' aria-hidden='true'></i>");
+        victutors.functions.questionNo = no1;
+        victutors.functions.showAnswer = 1;
+        /*
+        for (i = 1; i <= 3; i++) {
+            $('#ta' + str).hide();
+            $('#tq' + str).html("<i class='fa fa-plus' aria-hidden='true'></i>");
+        }*/
+    } else {
+        if (victutors.functions.showAnswer == 0) {
+            $('#ta' + str).show();
+            victutors.functions.showAnswer = 1;
+            $('#tq' + str).html("<i class='fa fa-minus' aria-hidden='true'></i>");
+        } else {
+            $('#ta' + str).hide();
+            victutors.functions.showAnswer = 0;
+            $('#tq' + str).html("<i class='fa fa-plus' aria-hidden='true'></i>");
+        }
+    }
+}
+
+victutors.functions.gotoTop = function () {
     $("html, body").animate({
         scrollTop: 0
     }, "slow");
     return false;
 }
 
-victutor.functions.LoadRecommendTutorDetail = function (index) {
+victutors.functions.LoadRecommendTutorDetail = function (index) {
     var s = '';
     s += '<div class="w3-modal-content w3-animate-top w3-card-8"> ';
     s += '<header class="w3-container w3-teal"> ';
@@ -113,14 +147,14 @@ victutor.functions.LoadRecommendTutorDetail = function (index) {
         '</div>' +
         '</div>';
     s += '</div>';
-    s += '<footer class="w3-container w3-teal"> <p class="w3-center w3-lobster ">www.Victutor.com</p></footer>';
+    s += '<footer class="w3-container w3-teal"> <p class="w3-center w3-lobster ">www.victutors.com</p></footer>';
     s += '</div>';
 
     $('#TutorDetailRecommend').html(s);
     document.getElementById('RecommendTutorDetail').style.display = 'block';
 }
 
-victutor.functions.ShowList = function (pmn) {
+victutors.functions.ShowList = function (pmn) {
     for (n = 0; n < 5; n++) {
         var i = pmn[n];
         var s = '';
@@ -131,7 +165,7 @@ victutor.functions.ShowList = function (pmn) {
             '<h3>' + PeopleList[i].name + '</h3>' +
             '<p >辅导科目: ' + PeopleList[i].subject + '</p>' +
             '<p>' +
-            '<button class="w3-btn w3-green" onclick = "victutor.functions.LoadRecommendTutorDetail('
+            '<button class="w3-btn w3-green" onclick = "victutors.functions.LoadRecommendTutorDetail('
             + i
             + ')">详细信息</button>' +
             '</p>' +
@@ -140,22 +174,22 @@ victutor.functions.ShowList = function (pmn) {
     }
 }
 
-victutor.functions.list = function (change) {
+victutors.functions.list = function (change) {
     var l = PeopleList.length;        //list length
-    var m = victutor.functions.middle;//middle
+    var m = victutors.functions.middle;//middle
 
-    victutor.functions.middle = (m + change + l) % l;
-    m = victutor.functions.middle;
+    victutors.functions.middle = (m + change + l) % l;
+    m = victutors.functions.middle;
     var prevprev = (m - 2 + l) % l;
     var prev = (m - 1 + l) % l;
     var next = (m + 1 + l) % l;
     var nextnext = (m + 2 + l) % l;
     var pmn = [prevprev, prev, m, next, nextnext];
 
-    victutor.functions.ShowList(pmn);
+    victutors.functions.ShowList(pmn);
 }
 
-victutor.functions.Recommend = function () {
+victutors.functions.Recommend = function () {
     PeopleList = [{
         name: "Wayne Zhang",
         phone: "778 922 5080",
@@ -168,8 +202,8 @@ victutor.functions.Recommend = function () {
             name: "Ace Ye",
             imgsrc: "./Images/img_avatar6.png",
             phone: "778 222 2929",
-            qrcode: "./Images/WeChat4.png",
-            email: "",
+            qrcode: "./Images/WeChat3.png",
+            email: "zaeye1028@gmail.com",
             WeChat: "yezihan1028",
             subject: "CSC"
 
@@ -177,7 +211,7 @@ victutor.functions.Recommend = function () {
             name: "Wayne Lu",
             imgsrc: "./Images/img_avatar1.png",
             phone: "250 507 2503",
-            qrcode: "./Images/WeChat.png",
+            qrcode: "./Images/Math/waynelu.jpg",
             email: "funfunlu@fhotmail.com",
             WeChat: "mogua001",
             subject: "MATH,STATS"
@@ -185,24 +219,24 @@ victutor.functions.Recommend = function () {
             name: "Simon Zhu",
             imgsrc: "./Images/img_avatar3.png",
             phone: "778 557 7965",
-            qrcode: "./Images/SimonZhu.jpg",
+            qrcode: "./Images/Math/SimonZhu.JPG",
             email: "zhus@uvic.ca",
             WeChat: "shuqiangzhu3",
             subject: "MATH"
         }, {
-            name: "Ichigo Kurosaki",
-            phone: "778 555 5555",
+            name: "沈升益",
+            phone: "250 882 6939",
             imgsrc: "./Images/img_avatar6.png",
-            qrcode: "./Images/WeChat2.png",
-            email: "",
-            WeChat: "",
-            subject: ""
+            qrcode: "../Images/Math/shengshengyi.PNG",
+            email: "g.spiritblue@gmail.com",
+            WeChat: "541520752",
+            subject: "MATH"
         },];
-    victutor.functions.list(Math.floor(PeopleList.length / 2));
+    victutors.functions.list(Math.floor(PeopleList.length / 2));
 
 }
 
-victutor.functions.GetTutorDetail = function (s, item) {
+victutors.functions.GetTutorDetail = function (s, item) {
     s += '<div class=" w3-half w3-margin-bottom T01">';
     s += '<div class="w3-container w3-card-4" >';
 
@@ -214,13 +248,13 @@ victutor.functions.GetTutorDetail = function (s, item) {
         '</div>';
 
     s += '<div class="w3-container w3-third w3-right">' +
-        '<img src="' + item.Barcode + '"' + 'class="btn-social" style="margin-top:4px; width: 100%">' +
+        '<img src="' + item.Barcode + '"' + '" style="margin-top:4px; width: 100%">' +
         '</div>';
     s += '</div></div>';
     return s;
 }
 
-victutor.functions.ReSize = function () {
+victutors.functions.ReSize = function () {
     var w = window.outerWidth;
     if ($('#TopNavBar').height() > 50) {
         $('#TopNavBar').hide();
@@ -229,7 +263,7 @@ victutor.functions.ReSize = function () {
     }
 }
 
-victutor.functions.ShowHideServerPanel = function (flag) {
+victutors.functions.ShowHideServerPanel = function (flag) {
     if (flag == 0) {
         $('#services').hide();
         $('#serviceButton').delay(1000).show();
@@ -240,18 +274,18 @@ victutor.functions.ShowHideServerPanel = function (flag) {
 }
 
 //user search for faculty 
-victutor.functions.GetTutorByFaculty = function () {
-    if (typeof victutor.functions.selectedValue === 'undefined') {
+victutors.functions.GetTutorByFaculty = function () {
+    if (typeof victutors.functions.selectedValue === 'undefined') {
         $('#searchAlert').show();
         return;
     }
-    sessionStorage.setItem('faculty', victutor.functions.selectedValue); //set session storage (faculty that user search for)
+    sessionStorage.setItem('faculty', victutors.functions.selectedValue); //set session storage (faculty that user search for)
     window.open('Tutorlist.php', '_self');
 }
 
-victutor.functions.SetUpSelectPicker = function () {
-    for (i = 0; i < victutor.list.FacultyList.length; i++) {
-        $('#Fselecter').append('<option>' + victutor.list.FacultyList[i] + '</option>');
+victutors.functions.SetUpSelectPicker = function () {
+    for (i = 0; i < victutors.list.FacultyList.length; i++) {
+        $('#Fselecter').append('<option class = "w3-large">' + victutors.list.FacultyList[i] + '</option>');
     }
 }
 
@@ -266,14 +300,16 @@ $(document).ready(function () {
     
     //set search and title 
     $('#searchToolPanel').css({ 'margin-top': window.innerHeight / 2 - 100 });
-    victutor.functions.length = window.outerWidth;
-    victutor.functions.Recommend();
+    var h = $('#gla').height()/2;
+    $('#TeamList').css({ 'margin-top': window.innerHeight / 2 - h });
+    victutors.functions.length = window.outerWidth;
+    victutors.functions.Recommend();
     // go to top tooltip
     $('[data-toggle="gotop"], [data-toggle="title"], [data-toggle="showlist"], [data-toggle="gonext"]').tooltip({
         trigger: 'hover'
     });
     //setup select picker
-    victutor.functions.SetUpSelectPicker();
+    victutors.functions.SetUpSelectPicker();
     //footer current time
     document.getElementById("CurrentTime").innerHTML = Date();
     /**
@@ -318,7 +354,7 @@ $(document).ready(function () {
     $('#Fselecter').change(function () {
         var selectedText = $(this).find("option:selected").text();
         var faculty = selectedText.split(" ");
-        victutor.functions.selectedValue = faculty[0];
+        victutors.functions.selectedValue = faculty[0];
     });
 });
 

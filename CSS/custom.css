@@ -23,7 +23,6 @@
     height: 52px
 }
 
-
 .w3-animate-left{
     position: relative;
     -webkit-animation:animateleft 1.0s !important;
@@ -36,7 +35,7 @@
     animation:animateleft 2.4s;
     width:200px;
     height:110px;
-    bottom:50px;
+    bottom:100px;
 }
 
 .Server-PanelTutorList{
@@ -116,22 +115,14 @@
 	        html,body{
 	        	margin: 0;
 	        }
-	        @-webkit-keyframes STAR-MOVE {
-				from {
-					background-position:0% 0%
-				}
-				to { 
-					background-position: 600% 0%
-				}
-			}
-			 @keyframes STAR-MOVE {
-				from {
-					background-position: 0% 0%
-				}
-				to { 
-					background-position: 600% 0%
-				}
-			}
+	       @keyframes STAR-MOVE {
+                0% {
+                    background-position: 0% 0%;
+                }
+                100%{
+                    background-position: 1200% 0%;
+                }
+            }
 			.wall{
 				position: absolute;
 				top: 0;
@@ -146,8 +137,8 @@
 			}
 			div#midground{
 				background:url('../Images/midground.png');
-				background-repeat: no-repeat;
-				-webkit-animation: STAR-MOVE  100s linear infinite;
+				background-repeat: repeat-x;
+				animation: STAR-MOVE  80s linear infinite;
 
 			}
 			div#foreground{

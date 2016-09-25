@@ -9,7 +9,7 @@
 	content="text/html; charset=windows-1252">
 <!-- Enable Mobile Version !!!     <meta name="viewport" content="width=device-width, initial-scale=1">      -->
 
-<title>Victutor - 维多利亚家教网 !</title>
+<title>victutors - 维多利亚家教网 !</title>
 <link rel="stylesheet" href="./lib/CSS/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
@@ -21,12 +21,12 @@
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
-<script type="text/javascript" src="./javascript/victutor.js"></script>
+<script type="text/javascript" src="./javascript/victutors.js"></script>
 <script src="./lib/Javascript/jquery.min.js"></script>
 <script type="text/javascript" src="./lib/Javascript/ajaxupload.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="./javascript/victutor.functions.js"></script>
-<script type="text/javascript" src="./javascript/victutor.list.js"></script>
+<script type="text/javascript" src="./javascript/victutors.functions.js"></script>
+<script type="text/javascript" src="./javascript/victutors.list.js"></script>
 <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" src="./javascript/bootstrap-select.js"></script>
 <script type="text/javascript" src="./lib/Javascript/jquery.roundabout.js"></script>
@@ -50,32 +50,34 @@ html, body, h1, h2, h3, h4, h5 {
 }
 </style>
 </head>
-<body style="background-color:skyblue">
+<body style="background-color:#8DB7DE">
 	<nav id = "TopNavBar" class="w3-xlarge navbar-inverse navbar navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-	<span><img style = "margin-top:7px;margin-right:6px" class = "w3-left" src = "./Images/Victutor_Icon_White.png" alt = "Victutor_Icon" width = "10%"></span>
-      <a class="w3-xlarge navbar-brand" href="index.php"><font size = "6" color="white">VICTUTOR.com</font></a>
+	<span><img style = "margin-top:7px;margin-right:6px" class = "w3-left" src = "./Images/victutors_Icon_White.png" alt = "victutors_Icon" width = "10%"></span>
+      <a class="w3-xlarge navbar-brand" href="index.php"><font size = "6" color="white">victutors.com</font></a>
     </div>
     <ul class="w3-right nav navbar-nav ">
       <li><a class = "w3-hover-red" onclick="document.getElementById('aboutusModal').style.display='block'"><font color="white">
-	  <i><b>加入我们&nbsp;&nbsp;<i class="fa fa-users" aria-hidden="true"></i></b></i></font></a></li> 
+	  <i><b>家教入驻&nbsp;&nbsp;<i class="fa fa-users" aria-hidden="true"></i></b></i></font></a></li> 
 	  <li><a class = "w3-hover-red" onclick="document.getElementById('ContactUsModal').style.display='block'"><font color="white">
 	  <i><b>联系我们&nbsp;&nbsp;<i class="fa fa-phone" aria-hidden="true"></i></b></i></font></a></li>
+      <li><a class = "w3-hover-red" onclick="document.getElementById('FAQModal').style.display='block'"><font color="white">
+	  <i><b>FAQ&nbsp;&nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></b></i></font></a></li>
     </ul>
   </div>
 </nav>
 	<!-- Contact staff button -->
 	<div id = "serviceButton" class="w3-theme-border w3-animate-left"
-		style="position: fixed; left:0px ;top:450px; z-index: 999;display:none">
-			<button onmouseover = "victutor.functions.ShowHideServerPanel(1)"
+		style="position: fixed; left:0px ;bottom:100px; z-index: 999;display:none">
+			<button onmouseover = "victutors.functions.ShowHideServerPanel(1)"
 				class="w3-center w3-border w3-hover-grey w3-light-grey w3-btn w3-large"><b>联<br>系<br>客<br>服</b>
 			</button>
 	</div>
 	
 	<!-- Contact staff slidng panel -->
 	<nav id = "services" class="w3-sidenav Server-Panel w3-light-grey">
-		<a onclick="victutor.functions.ShowHideServerPanel(0)" class="w3-right w3-closenav ">Close &times;</a>
+		<a onclick="victutors.functions.ShowHideServerPanel(0)" class="w3-right w3-closenav ">Close &times;</a>
 		<p class = "w3-left w3-large" style = "margin:0"><b>寻找太麻烦？</b></p>
 		<img class = "w3-left" style="width: 80px;height: 80px;" src="./Images/img_avatar3.png" style="width: 50%">
 		<a onclick="document.getElementById('ContactUsModal').style.display='block'" 
@@ -87,14 +89,14 @@ html, body, h1, h2, h3, h4, h5 {
 		<div class="w3-container wall" style="margin-left:-16px; margin-right:-16px">
 			<div id = "searchToolPanel" class="w3-center">
 				<h2 id = "bgtext" class = "w3-xxxlarge"> 维多利亚家教网
-				<span><img src = "./Images/Victutor_Icon_White.png" alt = "Victutor_Icon" width = "10%"></span>
+				<span><img src = "./Images/victutors_Icon_White.png" alt = "victutors_Icon" width = "10%"></span>
 				</h2>
 				<!--<button class="bgbutton w3-hover-red w3-teal w3-btn"><b class = "w3-large">查找家教</b></button>-->
 				<div style = "margin-top:30px">
 				    <select id = "Fselecter" class="selectpicker show-tick show-menu-arrow" data-width="400px" title="选择专业"
 				    data-live-search="true" ></select>
 				    <button class="w3-teal w3-xlarge w3-btn w3-hover-red" style = "margin-left:20px"
-				    onclick = "victutor.functions.GetTutorByFaculty()">搜索家教&nbsp;
+				    onclick = "victutors.functions.GetTutorByFaculty()">搜索家教&nbsp;
 				    <i class="fa fa-search" aria-hidden="true"></i>
 				    </button>
 				</div>
@@ -137,7 +139,7 @@ html, body, h1, h2, h3, h4, h5 {
 		<button class="w3-hover-text-teal w3-xxxlarge w3-animate-right glyphicon glyphicon-chevron-up"
 			data-toggle="gotop" title="Go to Top"
 			style="padding: 0; border: none; background: none; outline: none;color:white"
-			onclick="victutor.functions.gotoTop()">
+			onclick="victutors.functions.gotoTop()">
 	</div>
 	
 	<!-- Footer -->
@@ -153,7 +155,7 @@ html, body, h1, h2, h3, h4, h5 {
 		<span><a class = "w3-text-white" href="http://www.victoriabbs.com" _fcksavedurl="http://www.victoriabbs.com" target="_blank"> <img src="http://www.victoriabbs.com/images/victoriabbslink.gif" _fcksavedurl="http://www.victoriabbs.com/images/victoriabbslink.gif" border="0" alt="VictoriaBBS.com - 维多利亚中文门户网站"></a>
 		</span>
 		</p>
-		<p>© Vcitutor.com beta 1.00.00 - 2016 VICTUTOR ALL RIGHTS RESERVED</p>
+		<p>© Victutors.com beta 1.00.00 - 2016 VICTUTORS ALL RIGHTS RESERVED</p>
 		<p>
 <div align="center"><a href="http://www.simplehitcounter.com" target="_blank"><img src="http://simplehitcounter.com/hit.php?uid=2164152&f=16777215&b=0" border="0" height="18" width="83" alt="web counter"></a><br><a href="http://www.simplehitcounter.com" target="_blank" style="text-decoration:none;"></a></div>
 		</p>
@@ -166,11 +168,11 @@ html, body, h1, h2, h3, h4, h5 {
 				<span
 					onclick="document.getElementById('aboutusModal').style.display='none'"
 					class="w3-closebtn">&times;</span>
-				<h2 class="w3-center w3-lobster">加入我们的团队</h2>
+				<h2 class="w3-center w3-lobster">家教入驻</h2>
 			</header>
 			<div class="w3-container"
 				style="postion: absolute; margin-top: <30px></30px>">
-				<form action="uploadtxt.php" method="post">
+				<form action="uploadtxt.php" method="post" id = "textuploadform">
 				<div class = "w3-row-padding" style = "height:380px">
 					<div class = "w3-half">
 						<div class="w3-group w3-half">
@@ -193,17 +195,24 @@ html, body, h1, h2, h3, h4, h5 {
 								class="w3-round w3-input w3-border w3-hover-border-black"
 								style="width: 80%;" type="text" name="subject" />
 						</div>
-                        <div class="w3-group w3-half">
+                        <div class="w3-group">
 							<label>邮箱:</label> <input
 								class="w3-round w3-input w3-border w3-hover-border-black"
-								style="width: 180%;" type="text" name="email" />
+								style="width: 90%;" type="text" name="email" />
 						</div>
+						<div class="w3-group">
+							<label style = "display:block;float:left"for = "introduction">自我介绍(辅导科目,授课时间,授课价格等等):</label> <textarea 
+								class="w3-round w3-input w3-border w3-hover-border-black"
+								style="vertical-align: top;width: 90%;" rows = "4" cols="70" name="introduction" >
+								</textarea>
+						</div>
+
 					</div>
 					<div class = "w3-half">
 						
 						<div class="w3-group">
 								<img id = "ImgUpLoad" class = "w3-center" src="./Images/Imgupload.png" alt="WeChat"
-								style="width: 170px;margin-left: 50px;margin-bottom: 30px;">
+								style="width: 200px;height:170px;margin-left: 50px;margin-bottom: 30px;">
 								<label style = "margin-left: 25px;display:block">
 								<i id = "imgSpinner" class="fa fa-spinner fa-spin" style="font-size:24px;display: none"></i>
 								请上传微信二维码：<input class = "w3-teal w3-btn"
@@ -218,14 +227,14 @@ html, body, h1, h2, h3, h4, h5 {
 					</div>
                 </div>
 
-				<div class = "w3-center" style = "margin-bottom:10px">
+				<div style = "margin-left:50%;margin-bottom:10px">
 					<button type="submit" class="w3-large w3-teal w3-btn w3-padding-10">Submit</button>
 				</div>
 				</form>
 				
 			</div>
 			<footer class="w3-container w3-teal">
-				<p class="w3-center w3-lobster ">www.Victutor.com</p>
+				<p class="w3-center w3-lobster ">www.victutors.com</p>
 			</footer>
 		</div>
 	</div>
@@ -250,24 +259,105 @@ html, body, h1, h2, h3, h4, h5 {
 								<span class="glyphicon glyphicon-phone"></span> 电话：778 922 5080
 							</p>
 							<p style="margin-bottom: 25px">
-								<span class="glyphicon glyphicon-envelope"></span> 邮箱：waynez@uvic.ca
+								<span class="glyphicon glyphicon-envelope"></span> 邮箱：info@victutors.com
 							</p>
 							<p style="margin-bottom: 25px">
 								<span class="glyphicon glyphicon-user"></span> 微信：wayne-zhangyuwei
 							</p>
 						</div>
 						<div class="col-sm-3 slideanim" style="left: 200px">
-							<img src="./Images/Wechat.png" class="btn-social" alt="WeChat"
+							<img src="./Images/WeChat.png" alt="WeChat"
 								style="width: 90%">
 						</div>
 					</div>
 				</div>
 				<footer class="w3-container w3-teal">
-				<p class="w3-center w3-lobster ">www.Victutor.com</p>
+				<p class="w3-center w3-lobster ">www.victutors.com</p>
 			</footer>
 			</div>
 		</div>
-
+    <!--FAQ modal-->
+    <div id="FAQModal" class="w3-modal" style = "z-index:998">
+		<div class="w3-modal-content w3-animate-top w3-card-8">
+			<header class="w3-container w3-teal">
+				<span
+					onclick="document.getElementById('FAQModal').style.display='none'"
+					class="w3-closebtn">&times;</span>
+				<h2 class="w3-center w3-lobster">常见问题解答</h2>
+			</header>
+			<div class="w3-container"
+				style="postion: absolute; margin-top: <30px></30px>">
+				<div class = "w3-row-padding" style = "height:500px">
+					<div class = "w3-half">
+                        <h3 class="w3-center">For Students</h3>
+                        <div></div>
+					</div>
+					<div class = "w3-half">
+                        <h3 class="w3-center">For Tutors</h3>
+                        <div class = "w3-large" style = "margin-top:30px">
+                            <div style = "margin-bottom:20px">
+                                <div class = "w3-text-teal">
+                                    <span id = "tq1"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                    <button style = "background-color:white" onclick="victutors.functions.answer('ta1')">我在这里发布信息收费吗</button>
+                                </div>
+                                <span id = "ta1" style="display:none">
+                                <p style = "margin-top: 5px">我们为家教提供一个完全免费的平台。所以家教在这里发布信息至始至终都不用支付任何费用。</p>
+                                </span>
+                            </div>
+                            <div style = "margin-bottom:20px">
+                                <div class = "w3-text-teal">
+                                <span id = "tq2"><i  class="fa fa-plus" aria-hidden="true"></i></span>
+                                <button style = "background-color:white" onclick="victutors.functions.answer('ta2')">在家教名单里家教的位置是如何排列的</button>
+                                </div>
+                                <span id = "ta2" style="display:none">
+                                <p style = "margin-top: 5px">在列表里家教的排列顺序是完全随机的。每次登录或刷新界面家教的排列顺序都会改变。我们保证每一位家教都有公平的机会被学生联系。</p>
+                                </span>
+                            </div>
+                            <div style = "margin-bottom:20px">
+                                <div class = "w3-text-teal">
+                                <span id = "tq3"><i  class="fa fa-plus" aria-hidden="true"></i></span>
+                                <button style = "background-color:white" onclick="victutors.functions.answer('ta3')">我想发布家教信息</button>
+                                </div>
+                                <span id = "ta3" style="display:none">
+                                <p style = "margin-top: 5px">我们欢迎个人以及团队入驻Victutors.com。您只需要点击右上角的‘家教入驻’并填写相关资料，我们将在24小时内审核发布您的信息！</p>
+                                </span>
+                            </div>
+							<div style = "margin-bottom:20px">
+                                <div class = "w3-text-teal">
+                                <span id = "tq4"><i  class="fa fa-plus" aria-hidden="true"></i></span>
+                                <button style = "background-color:white" onclick="victutors.functions.answer('ta4')">学生如何联系家教</button>
+                                </div>
+                                <span id = "ta4" style="display:none">
+                                <p style = "margin-top: 5px">学生可以通过以下方式联系家教：电话，微信，邮箱。我们建议您填写尽可能多的信息方便学生联系。</p>
+                                </span>
+                            </div>
+							<div style = "margin-bottom:20px">
+                                <div class = "w3-text-teal">
+                                <span id = "tq5"><i  class="fa fa-plus" aria-hidden="true"></i></span>
+                                <button style = "background-color:white" onclick="victutors.functions.answer('ta5')">如何保证信息隐私</button>
+                                </div>
+                                <span id = "ta5" style="display:none">
+                                <p style = "margin-top: 5px">您输入的信息都是基于完全自愿的原则。我们不会向外发布提供任何您的信息。详情您参考<a href="#"><b class="w3-text-teal">免责声明</b></a></p>
+                                </span>
+                            </div>
+							<div style = "margin-bottom:20px">
+                                <div class = "w3-text-teal">
+                                <span id = "tq6"><i  class="fa fa-plus" aria-hidden="true"></i></span>
+                                <button style = "background-color:white" onclick="victutors.functions.answer('ta6')">我的家教团队想集体入驻</button>
+                                </div>
+                                <span id = "ta6" style="display:none">
+                                <p style = "margin-top: 5px">我们欢迎任何的家教团队。当然团队发布任何信息都是完全免费的。我们会依据您的团队打造一个独特的团队窗口。详情请<a style="cursor:pointer" onclick="document.getElementById('ContactUsModal').style.display='block'"><b class="w3-text-teal">联系我们</b></a></p>
+                                </span>
+                            </div>
+                        </div>
+					</div>
+                </div>
+			</div>
+			<footer class="w3-container w3-teal">
+				<p class="w3-center w3-lobster ">www.victutors.com</p>
+			</footer>
+		</div>
+	</div>
 		
 
 	<!-- 2. CSC List modal -->

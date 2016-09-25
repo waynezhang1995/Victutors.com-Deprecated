@@ -16,7 +16,9 @@
     fwrite($myfile, $txt);
     $txt = "wechat: ".$_POST["wechat"]."\r\n";
     fwrite($myfile, $txt);
-    $txt = "subject: ".$_POST["subject"];
+    $txt = "subject: ".$_POST["subject"]."\r\n";
+    fwrite($myfile, $txt);
+    $txt = "introduction: ".$_POST["introduction"];
     fwrite($myfile, $txt);
     fclose($myfile);
     setcookie('mycookie');

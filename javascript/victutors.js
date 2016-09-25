@@ -1,21 +1,21 @@
 //ref: https://www.kenneth-truyers.net/2013/04/27/javascript-namespaces-and-modules/
 
 /*
- * This js generates new namespace for victutor.com
+ * This js generates new namespace for victutors.com
  * Everytime we have a new js file, we should generate
  * its own namespace
  */
 
 // create the root namespace and making sure we're not overwriting it
-var victutor = victutor || {};
+var victutors = victutors || {};
 
-victutor.createNS = function (namespace) {
+victutors.createNS = function (namespace) {
     var nsparts = namespace.split(".");
-    var parent = victutor;
+    var parent = victutors;
  
     // we want to be able to include or exclude the root namespace 
     // So we strip it if it's in the namespace
-    if (nsparts[0] === "victutor") {
+    if (nsparts[0] === "victutors") {
         nsparts = nsparts.slice(1);
     }
  
