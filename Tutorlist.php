@@ -74,7 +74,7 @@ html, body, h1, h2, h3, h4, h5 {
 		class = "w3-right w3-text-white" style = "padding-right:10px;padding-top:10px">点击联系我们<br>我们来帮您!<br>请联系客服</a>
 	</nav>
 	
-<body class = "w3-light-grey" onresize="victutors.Tutorlist.ReSize()">
+<body style = "zoom:90%" class = "w3-light-grey" onresize="victutors.Tutorlist.ReSize()">
 	<!-- Content -->
     <div id = "mainContent" class="w3-content w3-container" style="max-width: 1080px; margin-top: 70px; margin-bottom: 100px">
 		<p class = "w3-text-black w3-xlarge" id = "title" style = "margin-top:20px;margin-bottom:30px"></p>
