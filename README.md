@@ -1,5 +1,11 @@
 # www.victutors.com
+Beta 2.0
 
-Author:Yuwei(Wayne) Zhang, Zihan Ye
+Author:
+  Yuwei(Wayne) Zhang
+  
+  Zihan Ye
 
-Beta 1.0
+
+
+# ©Victutors ALL RIGHTS RESERVED
