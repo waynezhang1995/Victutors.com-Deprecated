@@ -2,7 +2,7 @@
 
 Build and Operated by:
  
-    Yuwei(Wayne) Zhang
+    Yuwei (Wayne) Zhang
   
     Zihan Ye
 
