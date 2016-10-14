@@ -1,5 +1,4 @@
-# www.victutors.com
-Beta 2.0
+# www.victutors.com Beta 2.0
 
 Author:
   Yuwei(Wayne) Zhang
