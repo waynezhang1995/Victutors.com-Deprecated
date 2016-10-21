@@ -1,5 +1,9 @@
-# www.victutors.com
+# www.victutors.com 
 
-Author:Yuwei(Wayne) Zhang, Zihan Ye
+Build and Operated by:
+ 
+    Yuwei (Wayne) Zhang
+  
+    Zihan Ye
 
-Beta 1.0
+# ©Victutors ALL RIGHTS RESERVED
