@@ -50,7 +50,7 @@ html, body, h1, h2, h3, h4, h5 {
 }
 </style>
 </head>
-<body style="background-color:#8DB7DE">
+<body style="zoom:90%;background-color:#8DB7DE">
 	<nav id = "TopNavBar" class="w3-xlarge navbar-inverse navbar navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -207,10 +207,8 @@ html, body, h1, h2, h3, h4, h5 {
 								style="width: 90%;" type="text" name="email" />
 						</div>
 						<div class="w3-group">
-							<label style = "display:block;float:left"for = "introduction">自我介绍(辅导科目,授课时间,授课价格等等):</label> <textarea 
-								class="w3-round w3-input w3-border w3-hover-border-black"
-								style="vertical-align: top;width: 90%;" rows = "4" cols="70" name="introduction" >
-								</textarea>
+							<label style = "display:block;float:left"for = "introduction">自我介绍(辅导科目,授课时间,授课价格等等):</label>
+							<textarea class="w3-round w3-input w3-border w3-hover-border-black" style="vertical-align: top;width: 90%;" rows = "4" cols="70" name="introduction" ></textarea>
 						</div>
 
 					</div>
@@ -429,10 +427,8 @@ html, body, h1, h2, h3, h4, h5 {
 								style="width: 100%;" type="text" name="subject_help" />
 						</div>
 						<div class="w3-center w3-group">
-							<label class = "w3-large" style = "display:block;float:left"for = "introduction_help">您宝贵的意见:</label> <textarea 
-								id = "feedback_text" class="w3-round w3-input w3-border w3-hover-border-black"
-								style="vertical-align: left;width: 100%;" rows = "4" cols="70" name="introduction_help" >
-								</textarea>
+							<label class = "w3-large" style = "display:block;float:left"for = "introduction_help">您宝贵的意见:</label>
+							<textarea id = "feedback_text" class="w3-round w3-input w3-border w3-hover-border-black" style="vertical-align: left;width: 100%;" rows = "4" cols="70" name="introduction_help" ></textarea>
 						</div>
 				<div class = "w3-center" style = "margin-bottom:10px">
 					<button onclick = "victutors.functions.sendFeedBack()" type="submit" class="w3-large w3-teal w3-btn w3-padding-10">Submit</button>
