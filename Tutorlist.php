@@ -53,6 +53,10 @@ html, body, h1, h2, h3, h4, h5 {
 			<i><b>家教入驻&nbsp;&nbsp;<i class="fa fa-users" aria-hidden="true"></i></b></i></font></a></li> 
 			<li><a class = "w3-hover-red" onclick="document.getElementById('ContactUsModal').style.display='block'"><font color="black">
 			<i><b>联系我们&nbsp;&nbsp;<i class="fa fa-phone" aria-hidden="true"></i></b></i></font></a></li>
+			<li><a class = "w3-hover-red" onclick="document.getElementById('FeedbackModal').style.display='block'"><font color="black">
+			<i><b>问题反馈&nbsp;&nbsp;<i class="fa fa-phone" aria-hidden="true"></i></b></i></font></a></li>
+			<li><a class = "w3-hover-red" onclick="document.getElementById('FAQModal').style.display='block'"><font color="black">
+			<i><b>FAQ&nbsp;&nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></b></i></font></a></li>
 			</ul>
 		</div>
 		</nav>
@@ -188,6 +192,168 @@ html, body, h1, h2, h3, h4, h5 {
 		</div>
 	</div>
 
+	<div id="FAQModal" class="w3-modal" style = "z-index:998">
+		<div class="w3-modal-content w3-animate-top w3-card-8">
+			<header class="w3-container w3-teal">
+				<span
+					onclick="document.getElementById('FAQModal').style.display='none'"
+					class="w3-closebtn">&times;</span>
+				<h2 class="w3-center w3-lobster">常见问题解答</h2>
+			</header>
+			<div class="w3-container"
+				style="postion: absolute; margin-top: <30px></30px>">
+				<div class = "w3-row-padding" style = "height:500px">
+					<div class = "w3-half">
+                        <h3 class="w3-center">For Students</h3>
+                        <div class = "w3-large" style = "margin-top:30px">
+							<div style = "margin-bottom:20px">
+                                <div class = "w3-text-teal">
+                                    <span id = "sq21"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                    <button style = "background-color:white" onclick="victutors.Tutorlist.sAnswer('ta21')">如何使用Victutors</button>
+                                </div>
+                                <span id = "sa21" style="display:none">
+                                <p style = "margin-top: 5px">我们提倡尽可能的简化搜索步骤，您只需要在搜索栏中选择专业并点击搜索。</p>
+                                </span>
+                            </div>
+							<div style = "margin-bottom:20px">
+                                <div class = "w3-text-teal">
+                                    <span id = "sq22"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                    <button style = "background-color:white" onclick="victutors.Tutorlist.sAnswer('ta22')">我要如何联系家教</button>
+                                </div>
+                                <span id = "sa22" style="display:none">
+                                <p style = "margin-top: 5px">在您选择好合适的家教后，您可以通过家教名片中的电话，微信，邮箱以及扫描微信二维码等上述方式联系家教。</p>
+                                </span>
+                            </div>
+							<div style = "margin-bottom:20px">
+                                <div class = "w3-text-teal">
+                                    <span id = "sq23"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                    <button style = "background-color:white" onclick="victutors.Tutorlist.sAnswer('ta23')">Victutors上家教值得信赖吗</button>
+                                </div>
+                                <span id = "sa23" style="display:none">
+                                <p style = "margin-top: 5px">Victutors上的家教都是通过验证审核的，他们提供最好的服务</p>
+                                </span>
+                            </div>
+							<div style = "margin-bottom:20px">
+                                <div class = "w3-text-teal">
+                                    <span id = "sq24"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                    <button style = "background-color:white" onclick="victutors.Tutorlist.sAnswer('ta24')">我需要交任何的费用吗</button>
+                                </div>
+                                <span id = "sa24" style="display:none">
+                                <p style = "margin-top: 5px">我们是完全免费的一个服务性平台，无论对于家教还是用户我们至始至终不会收取任何费用</p>
+                                </span>
+                            </div>
+							<div style = "margin-bottom:20px">
+                                <div class = "w3-text-teal">
+                                    <span id = "sq25"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                    <button style = "background-color:white" onclick="victutors.Tutorlist.sAnswer('ta25')">搜索栏中没有我想找学科</button>
+                                </div>
+                                <span id = "sa25" style="display:none">
+                                <p style = "margin-top: 5px">您可以通过<a style="cursor:pointer" onclick="document.getElementById('ContactUsModal').style.display='block'"><b class="w3-text-teal">联系我们</b></a>，我们来帮您寻找</p>
+                                </span>
+                            </div>
+						</div>
+					</div>
+					<div class = "w3-half">
+                        <h3 class="w3-center">For Tutors</h3>
+                        <div class = "w3-large" style = "margin-top:30px">
+                            <div style = "margin-bottom:20px">
+                                <div class = "w3-text-teal">
+                                    <span id = "tq1"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                    <button style = "background-color:white" onclick="victutors.Tutorlist.tAnswer('ta1')">我在这里发布信息收费吗</button>
+                                </div>
+                                <span id = "ta1" style="display:none">
+                                <p style = "margin-top: 5px">我们为家教提供一个完全免费的平台。所以家教在这里发布信息至始至终都不用支付任何费用。</p>
+                                </span>
+                            </div>
+                            <div style = "margin-bottom:20px">
+                                <div class = "w3-text-teal">
+                                <span id = "tq2"><i  class="fa fa-plus" aria-hidden="true"></i></span>
+                                <button style = "background-color:white" onclick="victutors.Tutorlist.tAnswer('ta2')">在家教名单里家教的位置是如何排列的</button>
+                                </div>
+                                <span id = "ta2" style="display:none">
+                                <p style = "margin-top: 5px">在列表里家教的排列顺序是完全随机的。每次登录或刷新界面家教的排列顺序都会改变。我们保证每一位家教都有公平的机会被学生联系。</p>
+                                </span>
+                            </div>
+                            <div style = "margin-bottom:20px">
+                                <div class = "w3-text-teal">
+                                <span id = "tq3"><i  class="fa fa-plus" aria-hidden="true"></i></span>
+                                <button style = "background-color:white" onclick="victutors.Tutorlist.tAnswer('ta3')">我想发布家教信息</button>
+                                </div>
+                                <span id = "ta3" style="display:none">
+                                <p style = "margin-top: 5px">我们欢迎个人以及团队入驻Victutors.com。您只需要点击右上角的‘家教入驻’并填写相关资料，我们将在24小时内审核发布您的信息！</p>
+                                </span>
+                            </div>
+							<div style = "margin-bottom:20px">
+                                <div class = "w3-text-teal">
+                                <span id = "tq4"><i  class="fa fa-plus" aria-hidden="true"></i></span>
+                                <button style = "background-color:white" onclick="victutors.Tutorlist.tAnswer('ta4')">学生如何联系家教</button>
+                                </div>
+                                <span id = "ta4" style="display:none">
+                                <p style = "margin-top: 5px">学生可以通过以下方式联系家教：电话，微信，邮箱。我们建议您填写尽可能多的信息方便学生联系。</p>
+                                </span>
+                            </div>
+							<div style = "margin-bottom:20px">
+                                <div class = "w3-text-teal">
+                                <span id = "tq5"><i  class="fa fa-plus" aria-hidden="true"></i></span>
+                                <button style = "background-color:white" onclick="victutors.Tutorlist.tAnswer('ta5')">如何保证信息隐私</button>
+                                </div>
+                                <span id = "ta5" style="display:none">
+                                <p style = "margin-top: 5px">您输入的信息都是基于完全自愿的原则。我们不会向外发布提供任何您的信息。详情您参考<a href="#"><b class="w3-text-teal">免责声明</b></a></p>
+                                </span>
+                            </div>
+							<div style = "margin-bottom:20px">
+                                <div class = "w3-text-teal">
+                                <span id = "tq6"><i  class="fa fa-plus" aria-hidden="true"></i></span>
+                                <button style = "background-color:white" onclick="victutors.Tutorlist.tAnswer('ta6')">我的家教团队想集体入驻</button>
+                                </div>
+                                <span id = "ta6" style="display:none">
+                                <p style = "margin-top: 5px">我们欢迎任何的家教团队。当然团队发布任何信息都是完全免费的。我们会依据您的团队打造一个独特的团队窗口。详情请<a style="cursor:pointer" onclick="document.getElementById('ContactUsModal').style.display='block'"><b class="w3-text-teal">联系我们</b></a></p>
+                                </span>
+                            </div>
+                        </div>
+					</div>
+                </div>
+			</div>
+			<footer class="w3-container w3-teal">
+				<p class="w3-center w3-lobster ">www.victutors.com</p>
+			</footer>
+		</div>
+	</div>
+
+	<!--feedback --> 
+	<div id="FeedbackModal" class="w3-modal" style = "z-index:999">
+		<div class="w3-modal-content w3-animate-top w3-card-8">
+			<header class="w3-container w3-teal">
+				<span
+					onclick="document.getElementById('FeedbackModal').style.display='none'"
+					class="w3-closebtn">&times;</span>
+				<h2 class="w3-center w3-lobster">意见反馈</h2>
+			</header>
+			<div class="w3-container"
+				style="postion: absolute;">
+				<div class = "w3-row-padding" style = "height:380px">
+						<div class="w3-group">
+							<label class = "w3-large">您想搜索的学科?</label> <input id = "feedback_subject"
+								class="w3-round w3-input w3-border w3-hover-border-black"
+								style="width: 100%;" type="text" name="subject_help" />
+						</div>
+						<div class="w3-center w3-group">
+							<label class = "w3-large" style = "display:block;float:left"for = "introduction_help">您宝贵的意见:</label> <textarea 
+								id = "feedback_text" class="w3-round w3-input w3-border w3-hover-border-black"
+								style="vertical-align: left;width: 100%;" rows = "4" cols="70" name="introduction_help" >
+								</textarea>
+						</div>
+				<div class = "w3-center" style = "margin-bottom:10px">
+					<button onclick = "victutors.Tutorlist.sendFeedBack()" type="submit" class="w3-large w3-teal w3-btn w3-padding-10">Submit</button>
+				</div>
+				</div>
+			</div>
+			<footer class="w3-container w3-teal">
+				<p class="w3-center w3-lobster ">www.victutors.com</p>
+			</footer>
+		</div>
+	</div>
+
 	<!-- Contact -->
 		<div id="ContactUsModal" class="w3-modal" style = "z-index:999">
 			<div class="w3-modal-content w3-animate-top w3-card-8">
@@ -232,6 +398,16 @@ html, body, h1, h2, h3, h4, h5 {
 				<span onclick="document.getElementById('searchAlert').style.display='none'"
 				class="w3-closebtn">&times;</span>
 				<h2 class = "w3-red">错误！<br/>搜索科目不能为空，请重新输入</h2>
+				</header>
+			</div>
+		</div>
+
+		<div id="feedbackAlert" class="w3-modal">
+			<div class="w3-modal-content w3-animate-top w3-card-8" style = "width:30%">
+				<header class="w3-container w3-red">
+				<span onclick="document.getElementById('feedbackAlert').style.display='none'"
+				class="w3-closebtn">&times;</span>
+				<h2 class = "w3-red">谢谢您的反馈😊<br/>感谢您长期以来的支持！</h2>
 				</header>
 			</div>
 		</div>
