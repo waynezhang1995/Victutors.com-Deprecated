@@ -54,7 +54,7 @@ html, body, h1, h2, h3, h4, h5 {
 			<li><a class = "w3-hover-red" onclick="document.getElementById('ContactUsModal').style.display='block'"><font color="black">
 			<i><b>联系我们&nbsp;&nbsp;<i class="fa fa-phone" aria-hidden="true"></i></b></i></font></a></li>
 			<li><a class = "w3-hover-red" onclick="document.getElementById('FeedbackModal').style.display='block'"><font color="black">
-			<i><b>问题反馈&nbsp;&nbsp;<i class="fa fa-phone" aria-hidden="true"></i></b></i></font></a></li>
+			<i><b>问题反馈&nbsp;&nbsp;<i class="fa fa-comment-o" aria-hidden="true"></i></b></i></font></a></li>
 			<li><a class = "w3-hover-red" onclick="document.getElementById('FAQModal').style.display='block'"><font color="black">
 			<i><b>FAQ&nbsp;&nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></b></i></font></a></li>
 			</ul>
@@ -78,10 +78,10 @@ html, body, h1, h2, h3, h4, h5 {
 		class = "w3-right w3-text-white" style = "padding-right:10px;padding-top:10px">点击联系我们<br>我们来帮您!<br>请联系客服</a>
 	</nav>
 	
-<body style = "zoom:90%" class = "w3-light-grey" onresize="victutors.Tutorlist.ReSize()">
+<body id = "mainbody" style = "zoom:90%" class = "w3-light-grey" onresize="victutors.Tutorlist.ReSize()">
 	<!-- Content -->
     <div id = "mainContent" class="w3-content w3-container" style="max-width: 1080px; margin-top: 70px; margin-bottom: 100px">
-		<p class = "w3-text-black w3-xlarge" id = "title" style = "margin-top:20px;margin-bottom:30px"></p>
+		<p class = "w3-text-white w3-xlarge" id = "title" style = "margin-top:20px;margin-bottom:30px"></p>
         <div id = "searchTags">
 		</div>
 		<div id = "TutorListAll" style = "margin-top:0px;margin-bottom:50px">
@@ -91,7 +91,7 @@ html, body, h1, h2, h3, h4, h5 {
 	<!-- Fixed Button -->
 	<div class="w3-theme-border" id = "GoToTopButton"
 		style="display:none;position: fixed; padding: 5px; bottom: 60px; right: 35px; height: 50px; z-index: 999">
-		<button class="w3-hover-text-teal w3-xxxlarge w3-animate-right glyphicon glyphicon-chevron-up"
+		<button class="w3-text-white w3-hover-text-teal w3-xxxlarge w3-animate-right glyphicon glyphicon-chevron-up"
 			data-toggle="gotop" title="Go to Top"
 			style="padding: 0; border: none; background: none; outline: none;color:black"
 			onclick="victutors.Tutorlist.gotoTop()">
@@ -154,10 +154,8 @@ html, body, h1, h2, h3, h4, h5 {
 								style="width: 90%;" type="text" name="email" />
 						</div>
 						<div class="w3-group">
-							<label style = "display:block;float:left"for = "introduction">自我介绍(辅导科目,授课时间,授课价格等等):</label> <textarea 
-								class="w3-round w3-input w3-border w3-hover-border-black"
-								style="vertical-align: top;width: 90%;" rows = "4" cols="70" name="introduction" >
-								</textarea>
+							<label style = "display:block;float:left"for = "introduction">自我介绍(辅导科目,授课时间,授课价格等等):</label>
+							<textarea class="w3-round w3-input w3-border w3-hover-border-black" style="vertical-align: top;width: 90%;" rows = "4" cols="70" name="introduction" ></textarea>
 						</div>
 
 					</div>
@@ -338,10 +336,8 @@ html, body, h1, h2, h3, h4, h5 {
 								style="width: 100%;" type="text" name="subject_help" />
 						</div>
 						<div class="w3-center w3-group">
-							<label class = "w3-large" style = "display:block;float:left"for = "introduction_help">您宝贵的意见:</label> <textarea 
-								id = "feedback_text" class="w3-round w3-input w3-border w3-hover-border-black"
-								style="vertical-align: left;width: 100%;" rows = "4" cols="70" name="introduction_help" >
-								</textarea>
+							<label class = "w3-large" style = "display:block;float:left"for = "introduction_help">您宝贵的意见:</label>
+							<textarea id = "feedback_text" class="w3-round w3-input w3-border w3-hover-border-black" style="vertical-align: left;width: 100%;" rows = "4" cols="70" name="introduction_help" ></textarea>
 						</div>
 				<div class = "w3-center" style = "margin-bottom:10px">
 					<button onclick = "victutors.Tutorlist.sendFeedBack()" type="submit" class="w3-large w3-teal w3-btn w3-padding-10">Submit</button>

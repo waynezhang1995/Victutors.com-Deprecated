@@ -22,6 +22,12 @@
     fwrite($myfile, $txt);
     fclose($myfile);
     setcookie('mycookie');
+
+    //send email to info@victutors.com
+    $message = $_POST["name"] . "\r\n" . $_POST["subject"] . "\r\n" . $_POST["introduction"] . "\r\n" . $path . "\r\n";
+    $message = wordwrap($message, 70, "\r\n");
+    mail('info@victutors.com', 'New tutor just registered', $message);
+
     echo "
          <html lang='zh-CN'>
          <meta charset='UTF-8'>
