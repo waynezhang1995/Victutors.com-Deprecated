@@ -7,7 +7,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type"
 	content="text/html; charset=windows-1252">
-<!-- Enable Mobile Version !!!     <meta name="viewport" content="width=device-width, initial-scale=1">      -->
+<!-- Enable Mobile Version !!!  -->
+<meta name="viewport" content="width=device-width, initial-scale=1">      
 
 <title>victutors - 维多利亚家教网 !</title>
 <link rel="stylesheet" href="./lib/CSS/w3.css">
@@ -103,15 +104,18 @@ html, body, h1, h2, h3, h4, h5 {
 				    </button>
 				</div>
 			</div>
+			
             <div id="down">
-                <div id = "downbg" class="w3-center w3-bottom">
-                    <p class="w3-center w3-xxlarge">推荐&nbsp&nbsp&nbsp&nbsp&nbsp家教</p>
-                </div>
-                <div id = "downArrow" class="w3-center w3-bottom" data-toggle="gonext" title="See Our Recommands">
-                    <button class = "Faculty fa fa-chevron-down w3-hover-text-teal w3-xxxlarge" 
-                            href="#TeamList" style="border: none; background: none;outline: none;color:#009688">
-                    </button>
-                </div>
+				<a href="#TeamList" id = "gotorecommend">
+					<div id = "downbg" class="w3-center w3-bottom">
+						<p class="w3-text-white w3-center w3-xxlarge">推荐&nbsp&nbsp&nbsp&nbsp&nbsp家教</p>
+					</div>
+					<div style = "z-index:-1" id = "downArrow" class="w3-center w3-bottom" data-toggle="gonext">
+						<button class = "fa fa-chevron-down w3-hover-text-teal w3-xxxlarge" 
+								style="border: none; background: none;outline: none;color:#009688">
+						</button>
+					</div>
+				</a>
             </div>
 		</div>
     </div>
