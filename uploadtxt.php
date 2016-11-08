@@ -8,47 +8,20 @@
     }
     $path = './' . $path. 'info.txt';
     $myfile = fopen($path, "w") or die("Unable to open file!");
-    $txt = "name: ".$_POST["name"]."\r\n";
-    fwrite($myfile, $txt);
-    $txt = "phone: ".$_POST["phone"]."\r\n";
-    fwrite($myfile, $txt);
-    $txt = "email: ".$_POST["email"]."\r\n";
-    fwrite($myfile, $txt);
-    $txt = "wechat: ".$_POST["wechat"]."\r\n";
-    fwrite($myfile, $txt);
-    $txt = "subject: ".$_POST["subject"]."\r\n";
-    fwrite($myfile, $txt);
-    $txt = "introduction: ".$_POST["introduction"];
+    $Info = json_decode($_POST["info"]);
+
+    $txt = "name: ".$Info->name."\r\n".
+            "phone: ".$Info->phone."\r\n".
+            "wechat: ".$Info->wechat."\r\n".
+            "subject: ".$Info->subject."\r\n".
+            "email: ".$Info->email."\r\n";
     fwrite($myfile, $txt);
     fclose($myfile);
     setcookie('mycookie');
 
     //send email to info@victutors.com
-    $message = $_POST["name"] . "\r\n" . $_POST["subject"] . "\r\n" . $_POST["introduction"] . "\r\n" . $path . "\r\n";
-    $message = wordwrap($message, 70, "\r\n");
+    $message = wordwrap($txt, 70, "\r\n");
     mail('info@victutors.com', 'New tutor just registered', $message);
 
-    echo "
-         <html lang='zh-CN'>
-         <meta charset='UTF-8'>
-            <div style = 'text-align:center'><font size='6' color='red'>
-            <p >上传成功! 谢谢您的支持，我们将在24小时内更新您的信息</p>
-
-            <p>您将在 <span id='counter'> 3</span> 秒后返回主页.</p>
-            <script type='text/javascript'>
-            function countdown() {
-                var i = document.getElementById('counter');
-                if (parseInt(i.innerHTML)<=1) {
-                    location.href = 'index.php';
-                }
-                i.innerHTML = parseInt(i.innerHTML)-1;
-            }
-            setInterval(function(){ countdown(); },900);
-            </script>
-            </div>
-        </html>
-
-        "
-    //header('Location: index.php');
-    //exit();
+    echo "OK"
 ?>

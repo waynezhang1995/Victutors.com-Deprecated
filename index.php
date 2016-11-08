@@ -2,13 +2,12 @@
 
 <!DOCTYPE html>
 
-<html id = "mainPage" lang="zh-CN" xmlns:wb="http://open.weibo.com/wb">
+<html id = "mainPage" lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type"
 	content="text/html; charset=windows-1252">
-<!-- Enable Mobile Version !!!  -->
-<meta name="viewport" content="width=device-width, initial-scale=1">      
+<!-- Enable Mobile Version !!!     <meta name="viewport" content="width=device-width, initial-scale=1">      -->
 
 <title>victutors - 维多利亚家教网 !</title>
 <link rel="stylesheet" href="./lib/CSS/w3.css">
@@ -28,7 +27,6 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="./javascript/victutors.functions.js"></script>
 <script type="text/javascript" src="./javascript/victutors.list.js"></script>
-<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" src="./javascript/bootstrap-select.js"></script>
 <script type="text/javascript" src="./lib/Javascript/jquery.roundabout.js"></script>
 
@@ -51,7 +49,7 @@ html, body, h1, h2, h3, h4, h5 {
 }
 </style>
 </head>
-<body style="zoom:90%;background-color:#8DB7DE">
+<body>
 	<nav id = "TopNavBar" class="w3-xlarge navbar-inverse navbar navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -72,13 +70,14 @@ html, body, h1, h2, h3, h4, h5 {
 </nav>
 	<!-- Contact staff button -->
 	<div id = "serviceButton" class="w3-theme-border w3-animate-left"
-		style="position: fixed; left:0px ;bottom:100px; z-index: 999;display:none">
-			<button onmouseover = "victutors.functions.ShowHideServerPanel(1)"
+		style="position: fixed; left:0px ;bottom:80px; z-index: 999">
+			<!--<button onmouseover = "victutors.functions.ShowHideServerPanel(1)"-->
+			<button onclick = "document.getElementById('ContactUsModal').style.display='block'"
 				class="w3-center w3-border w3-hover-grey w3-light-grey w3-btn w3-large"><b>联<br>系<br>客<br>服</b>
 			</button>
 	</div>
 	
-	<!-- Contact staff slidng panel -->
+	<!-- Contact staff slidng panel 
 	<nav id = "services" class="w3-sidenav Server-Panel w3-light-grey">
 		<a onclick="victutors.functions.ShowHideServerPanel(0)" class="w3-right w3-closenav ">Close &times;</a>
 		<p class = "w3-left w3-large" style = "margin:0"><b>找不到学科？</b></p>
@@ -86,12 +85,22 @@ html, body, h1, h2, h3, h4, h5 {
 		<a onclick="document.getElementById('FeedbackModal').style.display='block'" 
 		class = "w3-right" style = "padding-right:10px;padding-top:10px">点击联系我们<br>我们来帮您!<br>请联系客服</a>
 	</nav>
+	-->
     
-	<div id="highsky">
-        <div id="midground" class="wall"></div>
+	<div id="mainBody">
+		<div id = "bgvideo">
+		<!--
+        <video id ="van" autoplay muted loop style="position:absolute;z-index:-9999">
+            <script>
+                $(function () {$('#van').css('width', '100%');$('#van').css('min-width', screen.width);});
+            </script>
+            <source src = "./Images/van720.mp4">
+        </video>
+		-->
+		</div>
 		<div class="w3-container wall" style="margin-left:-16px; margin-right:-16px">
 			<div id = "searchToolPanel" class="w3-center">
-				<h2 id = "bgtext" class = "w3-xxxlarge"> 维多利亚家教网
+				<h2 id = "bgtext" style="padding-top: 25px" class = "w3-xxxlarge"> 维多利亚家教网
 				<span><img src = "./Images/victutors_Icon_White.png" alt = "victutors_Icon" width = "10%"></span>
 				</h2>
 				<!--<button class="bgbutton w3-hover-red w3-teal w3-btn"><b class = "w3-large">查找家教</b></button>-->
@@ -104,25 +113,29 @@ html, body, h1, h2, h3, h4, h5 {
 				    </button>
 				</div>
 			</div>
+
+			<!-- scroll to recommended tutor
+            <div id="footerpanel" class="w3-center w3-bottom">
 			
-            <div id="down">
 				<a href="#TeamList" id = "gotorecommend">
 					<div id = "downbg" class="w3-center w3-bottom">
 						<p class="w3-text-white w3-center w3-xxlarge">推荐&nbsp&nbsp&nbsp&nbsp&nbsp家教</p>
 					</div>
+					
 					<div style = "z-index:-1" id = "downArrow" class="w3-center w3-bottom" data-toggle="gonext">
 						<button class = "fa fa-chevron-down w3-hover-text-teal w3-xxxlarge" 
 								style="border: none; background: none;outline: none;color:#009688">
 						</button>
 					</div>
 				</a>
+				
             </div>
+			-->
 		</div>
     </div>
-	<!-- Content -->
+	<!-- recommended tutor 
     <div id="landing-content" style="margin-left:-16px; margin-right:-16px">
 	    <div>
-		    <!-- Grid -->
 		    <div id="TeamList" class="w3-row-padding" style="margin: 0 -16px">
 			    <div class="w3-center w3-padding-64">
 				    <h2 style="color:#ffffff">推荐家教</h2>
@@ -143,7 +156,8 @@ html, body, h1, h2, h3, h4, h5 {
 		    </div>
 		</div>
 	</div>
-	<!-- Fixed Button -->
+	-->
+	<!-- GotoTop Button 
 	<div class="w3-theme-border" id = "GoToTopButton"
 		style="display:none;position: fixed; padding: 5px; bottom: 60px; right: 35px; height: 50px; z-index: 999">
 		<button class="w3-hover-text-teal w3-xxxlarge w3-animate-right glyphicon glyphicon-chevron-up"
@@ -151,24 +165,24 @@ html, body, h1, h2, h3, h4, h5 {
 			style="padding: 0; border: none; background: none; outline: none;color:white"
 			onclick="victutors.functions.gotoTop()">
 	</div>
-	
+	-->
 	<!-- Footer -->
-	<footer id = "test" class="w3-container w3-padding-10 w3-blue-grey w3-center" style = "z-index:-1">
-		<h4 id = "CurrentTime"></h4>
-		<!--<wb:share-button count="n" type="button" size="big" ></wb:share-button>-->
-		<p>
-		<span><a href = "#" ><b class = "w3-text-white">免责声明</b></a></span>
-		<span> ｜ <a href = "#" ><b class = "w3-text-white">广告服务</b></a></span>
+	<footer id="footerpanel" class="w3-container w3-bottom w3-padding-10">
+		<!--<h4 id = "CurrentTime"></h4>-->
+		<p class = "w3-center">
+			<span class = "w3-left w3-text-white">© Victutors.com - 2016 VICTUTORS ALL RIGHTS RESERVED</span>
+			<span class = "w3-right"><a href="http://www.simplehitcounter.com" target="_blank"><img src="http://simplehitcounter.com/hit.php?uid=2164152&f=16777215&b=0" border="0" height="18" width="83" alt="web counter"></a><br><a href="http://www.simplehitcounter.com" target="_blank" style="text-decoration:none;"></a>
+			</span>
+			<span style = "margin-right:30px" class = "w3-right"><b class = "w3-text-white"> ｜ </b><a href = "#" ><b class = "w3-text-white">广告服务</b></a></span>
+			<span class = "w3-right"><a href = "#" ><b class = "w3-text-white">免责声明</b></a></span>
 		</p>
+		<!--
 		<p>友情链接: 
 		<span><a class = "w3-text-white" href="http://www.victoriabbs.com" _fcksavedurl="http://www.victoriabbs.com" title="维多利亚华人论坛 - 维多利亚中文门户网站" target="_blank">维多利亚华人论坛 &nbsp</a></span>
 		<span><a class = "w3-text-white" href="http://www.victoriabbs.com" _fcksavedurl="http://www.victoriabbs.com" target="_blank"> <img src="http://www.victoriabbs.com/images/victoriabbslink.gif" _fcksavedurl="http://www.victoriabbs.com/images/victoriabbslink.gif" border="0" alt="VictoriaBBS.com - 维多利亚中文门户网站"></a>
 		</span>
 		</p>
-		<p>© Victutors.com beta 1.00.00 - 2016 VICTUTORS ALL RIGHTS RESERVED</p>
-		<p>
-<div align="center"><a href="http://www.simplehitcounter.com" target="_blank"><img src="http://simplehitcounter.com/hit.php?uid=2164152&f=16777215&b=0" border="0" height="18" width="83" alt="web counter"></a><br><a href="http://www.simplehitcounter.com" target="_blank" style="text-decoration:none;"></a></div>
-		</p>
+		-->
 	</footer>
 
 	<!-- 1. Aboutus modal -->
@@ -182,33 +196,33 @@ html, body, h1, h2, h3, h4, h5 {
 			</header>
 			<div class="w3-container"
 				style="postion: absolute; margin-top: <30px></30px>">
-				<form action="uploadtxt.php" method="post" id = "textuploadform">
+				<div>
 				<div class = "w3-row-padding" style = "height:380px">
 					<div class = "w3-half">
 						<div class="w3-group w3-half">
 							<label>姓名:</label> <input
 								class="w3-round w3-input w3-border w3-hover-border-black"
-								style="width: 80%;" type="text" name="name" />
+								style="width: 80%;" type="text" name="name" id="uname"/>
 						</div>
 						<div class="w3-group w3-half">
 							<label>电话:</label> <input
 								class="w3-round w3-input w3-border w3-hover-border-black"
-								style="width: 80%;" type="text" name="phone" />
+								style="width: 80%;" type="text" name="phone" id="uphone"/>
 						</div>
 						<div class="w3-group w3-half">
 							<label>微信:</label> <input
 								class="w3-round w3-input w3-border w3-hover-border-black"
-								style="width: 80%;" type="text" name="wechat" />
+								style="width: 80%;" type="text" name="wechat" id="uwechat" />
 						</div>
 						<div class="w3-group w3-half">
 							<label>学科:</label> <input
 								class="w3-round w3-input w3-border w3-hover-border-black"
-								style="width: 80%;" type="text" name="subject" />
+								style="width: 80%;" type="text" name="subject" id="usubject"/>
 						</div>
                         <div class="w3-group">
 							<label>邮箱:</label> <input
 								class="w3-round w3-input w3-border w3-hover-border-black"
-								style="width: 90%;" type="text" name="email" />
+								style="width: 90%;" type="text" name="email" id ="uemail"/>
 						</div>
 						<div class="w3-group">
 							<label style = "display:block;float:left"for = "introduction">自我介绍(辅导科目,授课时间,授课价格等等):</label>
@@ -236,9 +250,9 @@ html, body, h1, h2, h3, h4, h5 {
                 </div>
 
 				<div style = "margin-left:50%;margin-bottom:10px">
-					<button type="submit" class="w3-large w3-teal w3-btn w3-padding-10">Submit</button>
+					<button type="submit" onclick = "victutors.functions.sendTutorInfo()" class="w3-large w3-teal w3-btn w3-padding-10">Submit</button>
 				</div>
-				</form>
+				</div>
 				
 			</div>
 			<footer class="w3-container w3-teal">
@@ -474,6 +488,16 @@ html, body, h1, h2, h3, h4, h5 {
 				<span onclick="document.getElementById('feedbackAlert').style.display='none'"
 				class="w3-closebtn">&times;</span>
 				<h2 class = "w3-red">谢谢您的反馈😊<br/>感谢您长期以来的支持！</h2>
+				</header>
+			</div>
+		</div>
+
+        <div id="newTutorAlert" class="w3-modal">
+			<div class="w3-modal-content w3-animate-top w3-card-8" style = "width:30%">
+				<header class="w3-container w3-red">
+				<span onclick="document.getElementById('newTutorAlert').style.display='none'"
+				class="w3-closebtn">&times;</span>
+				<h2 class = "w3-red">谢谢您的加入😊<br/>您的支持是我们前进的动力！</h2>
 				</header>
 			</div>
 		</div>

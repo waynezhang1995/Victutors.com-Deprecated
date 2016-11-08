@@ -73,7 +73,7 @@ html, body, h1, h2, h3, h4, h5 {
 	<nav id = "services" class="w3-sidenav Server-PanelTutorList w3-grey" style = "bottom:100px !important">
 		<a onclick="victutors.Tutorlist.ShowHideServerPanel(0)" class="w3-right w3-closenav w3-text-white">Close &times;</a>
 		<p class = "w3-left w3-large w3-text-white" style = "margin:0"><b>寻找太麻烦？</b></p>
-		<img class = "w3-left" style="width: 80px;height: 80px;" src="./Images/img_avatar3.png" style="width: 50%">
+		<img class = "w3-left" style="width: 80px;height: 80px;" src="./Images/WeChat.png" style="width: 50%">
 		<a onclick="document.getElementById('ContactUsModal').style.display='block'" 
 		class = "w3-right w3-text-white" style = "padding-right:10px;padding-top:10px">点击联系我们<br>我们来帮您!<br>请联系客服</a>
 	</nav>
@@ -99,19 +99,21 @@ html, body, h1, h2, h3, h4, h5 {
 	
 
 	<!-- Footer -->
-	<footer id = "test" class="w3-container w3-padding-10 w3-blue-grey w3-center" style = "z-index:-1">
-		<h4 id = "CurrentTime"></h4>
+	<footer id = "test" style = "background-color: rgba(0,0,0,0.9)" class="w3-container w3-padding-10 w3-center" style = "z-index:-1">
+		<!--<h4 id = "CurrentTime"></h4>-->
 		<!--<wb:share-button count="n" type="button" size="big" ></wb:share-button>-->
-		<p>
+		<p style = "margin-top:10px">
 		<span><a href = "#" ><b class = "w3-text-white">免责声明</b></a></span>
-		<span> ｜ <a href = "#" ><b class = "w3-text-white">广告服务</b></a></span>
+		<span><b class = "w3-text-white"> ｜ </b><a href = "#" ><b class = "w3-text-white">广告服务</b></a></span>
 		</p>
+		<!--
 		<p>友情链接: 
 		<span><a class = "w3-text-white" href="http://www.victoriabbs.com" _fcksavedurl="http://www.victoriabbs.com" title="维多利亚华人论坛 - 维多利亚中文门户网站" target="_blank">维多利亚华人论坛 &nbsp</a></span>
 		<span><a class = "w3-text-white" href="http://www.victoriabbs.com" _fcksavedurl="http://www.victoriabbs.com" target="_blank"> <img src="http://www.victoriabbs.com/images/victoriabbslink.gif" _fcksavedurl="http://www.victoriabbs.com/images/victoriabbslink.gif" border="0" alt="VictoriaBBS.com - 维多利亚中文门户网站"></a>
 		</span>
 		</p>
-		<p>© Vcitutor.com beta 1.00.00 - 2016 victutors ALL RIGHTS RESERVED</p>
+		-->
+		<p class = "w3-text-white">© Vcitutor.com beta 1.00.00 - 2016 victutors ALL RIGHTS RESERVED</p>
 	</footer>
 
 	<!-- 1. Aboutus modal -->
@@ -125,33 +127,33 @@ html, body, h1, h2, h3, h4, h5 {
 			</header>
 			<div class="w3-container"
 				style="postion: absolute; margin-top: <30px></30px>">
-				<form action="uploadtxt.php" method="post" id = "textuploadform">
+				<div>
 				<div class = "w3-row-padding" style = "height:380px">
 					<div class = "w3-half">
 						<div class="w3-group w3-half">
 							<label>姓名:</label> <input
 								class="w3-round w3-input w3-border w3-hover-border-black"
-								style="width: 80%;" type="text" name="name" />
+								style="width: 80%;" type="text" name="name" id="uname"/>
 						</div>
 						<div class="w3-group w3-half">
 							<label>电话:</label> <input
 								class="w3-round w3-input w3-border w3-hover-border-black"
-								style="width: 80%;" type="text" name="phone" />
+								style="width: 80%;" type="text" name="phone" id="uphone"/>
 						</div>
 						<div class="w3-group w3-half">
 							<label>微信:</label> <input
 								class="w3-round w3-input w3-border w3-hover-border-black"
-								style="width: 80%;" type="text" name="wechat" />
+								style="width: 80%;" type="text" name="wechat" id="uwechat" />
 						</div>
 						<div class="w3-group w3-half">
 							<label>学科:</label> <input
 								class="w3-round w3-input w3-border w3-hover-border-black"
-								style="width: 80%;" type="text" name="subject" />
+								style="width: 80%;" type="text" name="subject" id="usubject"/>
 						</div>
                         <div class="w3-group">
 							<label>邮箱:</label> <input
 								class="w3-round w3-input w3-border w3-hover-border-black"
-								style="width: 90%;" type="text" name="email" />
+								style="width: 90%;" type="text" name="email" id ="uemail"/>
 						</div>
 						<div class="w3-group">
 							<label style = "display:block;float:left"for = "introduction">自我介绍(辅导科目,授课时间,授课价格等等):</label>
@@ -179,9 +181,9 @@ html, body, h1, h2, h3, h4, h5 {
                 </div>
 
 				<div style = "margin-left:50%;margin-bottom:10px">
-					<button type="submit" class="w3-large w3-teal w3-btn w3-padding-10">Submit</button>
+					<button type="submit" onclick = "victutors.Tutorlist.sendTutorInfo()" class="w3-large w3-teal w3-btn w3-padding-10">Submit</button>
 				</div>
-				</form>
+				</div>
 				
 			</div>
 			<footer class="w3-container w3-teal">
@@ -407,7 +409,15 @@ html, body, h1, h2, h3, h4, h5 {
 				</header>
 			</div>
 		</div>
-
+        <div id="newTutorAlert" class="w3-modal">
+			<div class="w3-modal-content w3-animate-top w3-card-8" style = "width:30%">
+				<header class="w3-container w3-red">
+				<span onclick="document.getElementById('newTutorAlert').style.display='none'"
+				class="w3-closebtn">&times;</span>
+				<h2 class = "w3-red">谢谢您的加入😊<br/>您的支持是我们前进的动力！</h2>
+				</header>
+			</div>
+		</div>
 		
 
 </body>
