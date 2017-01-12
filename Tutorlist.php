@@ -50,13 +50,13 @@ html, body, h1, h2, h3, h4, h5 {
 						<i class="fa fa-search" aria-hidden="true"></i></button>
 			</li>
 			<li><a class = "w3-hover-red" onclick="document.getElementById('aboutusModal').style.display='block'"><font color="black">
-			<i><b>家教入驻&nbsp;&nbsp;<i class="fa fa-users" aria-hidden="true"></i></b></i></font></a></li> 
+			<i><b>成为家教&nbsp;&nbsp;<i class="fa fa-users" aria-hidden="true"></i></b></i></font></a></li> 
 			<li><a class = "w3-hover-red" onclick="document.getElementById('ContactUsModal').style.display='block'"><font color="black">
 			<i><b>联系我们&nbsp;&nbsp;<i class="fa fa-phone" aria-hidden="true"></i></b></i></font></a></li>
 			<li><a class = "w3-hover-red" onclick="document.getElementById('FeedbackModal').style.display='block'"><font color="black">
 			<i><b>问题反馈&nbsp;&nbsp;<i class="fa fa-comment-o" aria-hidden="true"></i></b></i></font></a></li>
 			<li><a class = "w3-hover-red" onclick="document.getElementById('FAQModal').style.display='block'"><font color="black">
-			<i><b>FAQ&nbsp;&nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></b></i></font></a></li>
+			<i><b>疑难解答&nbsp;&nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></b></i></font></a></li>
 			</ul>
 		</div>
 		</nav>
@@ -70,7 +70,7 @@ html, body, h1, h2, h3, h4, h5 {
 	</div>
 	
 	<!-- Contact staff slidng panel -->
-	<nav id = "services" class="w3-sidenav Server-PanelTutorList w3-grey" style = "bottom:100px !important">
+	<nav id = "services" class="w3-sidenav Server-PanelTutorList w3-dark-grey" style = "bottom:100px !important">
 		<a onclick="victutors.Tutorlist.ShowHideServerPanel(0)" class="w3-right w3-closenav w3-text-white">Close &times;</a>
 		<p class = "w3-left w3-large w3-text-white" style = "margin:0"><b>寻找太麻烦？</b></p>
 		<img class = "w3-left" style="width: 80px;height: 80px;" src="./Images/WeChat.png" style="width: 50%">
@@ -78,10 +78,10 @@ html, body, h1, h2, h3, h4, h5 {
 		class = "w3-right w3-text-white" style = "padding-right:10px;padding-top:10px">点击联系我们<br>我们来帮您!<br>请联系客服</a>
 	</nav>
 	
-<body id = "mainbody" style = "zoom:90%" class = "w3-light-grey" onresize="victutors.Tutorlist.ReSize()">
+<body id = "mainbody" style = "zoom:90%" onresize="victutors.Tutorlist.ReSize()">
 	<!-- Content -->
     <div id = "mainContent" class="w3-content w3-container" style="max-width: 1080px; margin-top: 70px; margin-bottom: 100px">
-		<p class = "w3-text-white w3-xlarge" id = "title" style = "margin-top:20px;margin-bottom:30px"></p>
+		<p class = "w3-text-black w3-xlarge" id = "title" style = "margin-top:20px;margin-bottom:30px"></p>
         <div id = "searchTags">
 		</div>
 		<div id = "TutorListAll" style = "margin-top:0px;margin-bottom:50px">
@@ -99,21 +99,12 @@ html, body, h1, h2, h3, h4, h5 {
 	
 
 	<!-- Footer -->
-	<footer id = "test" style = "background-color: rgba(0,0,0,0.9)" class="w3-container w3-padding-10 w3-center" style = "z-index:-1">
-		<!--<h4 id = "CurrentTime"></h4>-->
-		<!--<wb:share-button count="n" type="button" size="big" ></wb:share-button>-->
+	<footer id = "footerpanel" class="w3-container w3-padding-10 w3-center" style = "z-index:-1">
 		<p style = "margin-top:10px">
 		<span><a href = "#" ><b class = "w3-text-white">免责声明</b></a></span>
 		<span><b class = "w3-text-white"> ｜ </b><a href = "#" ><b class = "w3-text-white">广告服务</b></a></span>
 		</p>
-		<!--
-		<p>友情链接: 
-		<span><a class = "w3-text-white" href="http://www.victoriabbs.com" _fcksavedurl="http://www.victoriabbs.com" title="维多利亚华人论坛 - 维多利亚中文门户网站" target="_blank">维多利亚华人论坛 &nbsp</a></span>
-		<span><a class = "w3-text-white" href="http://www.victoriabbs.com" _fcksavedurl="http://www.victoriabbs.com" target="_blank"> <img src="http://www.victoriabbs.com/images/victoriabbslink.gif" _fcksavedurl="http://www.victoriabbs.com/images/victoriabbslink.gif" border="0" alt="VictoriaBBS.com - 维多利亚中文门户网站"></a>
-		</span>
-		</p>
-		-->
-		<p class = "w3-text-white">© Vcitutor.com beta 1.00.00 - 2016 victutors ALL RIGHTS RESERVED</p>
+		<p class = "w3-text-white">© Victutor.com - VICTUTORS ALL RIGHTS RESERVED</p>
 	</footer>
 
 	<!-- 1. Aboutus modal -->
@@ -123,7 +114,7 @@ html, body, h1, h2, h3, h4, h5 {
 				<span
 					onclick="document.getElementById('aboutusModal').style.display='none'"
 					class="w3-closebtn">&times;</span>
-				<h2 class="w3-center w3-lobster">家教入驻</h2>
+				<h2 class="w3-center w3-lobster">成为家教</h2>
 			</header>
 			<div class="w3-container"
 				style="postion: absolute; margin-top: <30px></30px>">

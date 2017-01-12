@@ -2,14 +2,44 @@
 
 <!DOCTYPE html>
 
+<!--
+
+The MIT License (MIT)
+
+Copyright (c) 2016 - Wayne Zhang, Zihan Ye.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+-->
+
 <html id = "mainPage" lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Type"
-	content="text/html; charset=windows-1252">
-<!-- Enable Mobile Version !!!     <meta name="viewport" content="width=device-width, initial-scale=1">      -->
+<meta http-equiv="Content-Type"content="text/html; charset=windows-1252">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Victutors.com - 维多利亚家教网">
+<meta name="author" content="Wayne Zhang, Zihan Ye">
+<meta name="keywords" content="Victutors,Victoria Tutor,Tutor,Uvic,University of Victoria,Camosun College,家教,维多利亚,补习,维多利亚家教网" />
 
 <title>victutors - 维多利亚家教网 !</title>
+
 <link rel="stylesheet" href="./lib/CSS/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
@@ -18,9 +48,9 @@
 <link type="text/css" rel="stylesheet" href="./CSS/index.css" />
 <link href="./Images/favicon.ico" rel="icon" type="image/x-icon" />
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-
-<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+<!-- Latest compiled and minified CSS -->
+
 <script type="text/javascript" src="./javascript/victutors.js"></script>
 <script src="./lib/Javascript/jquery.min.js"></script>
 <script type="text/javascript" src="./lib/Javascript/ajaxupload.js"></script>
@@ -58,13 +88,13 @@ html, body, h1, h2, h3, h4, h5 {
     </div>
     <ul class="w3-right nav navbar-nav ">
       <li><a class = "w3-hover-red" onclick="document.getElementById('aboutusModal').style.display='block'"><font color="white">
-	  <i><b>家教入驻&nbsp;&nbsp;<i class="fa fa-users" aria-hidden="true"></i></b></i></font></a></li> 
+	  <i><b>成为家教&nbsp;&nbsp;<i class="fa fa-users" aria-hidden="true"></i></b></i></font></a></li> 
 	  <li><a class = "w3-hover-red" onclick="document.getElementById('ContactUsModal').style.display='block'"><font color="white">
 	  <i><b>联系我们&nbsp;&nbsp;<i class="fa fa-phone" aria-hidden="true"></i></b></i></font></a></li>
 	  <li><a class = "w3-hover-red" onclick="document.getElementById('FeedbackModal').style.display='block'"><font color="white">
 	  <i><b>问题反馈&nbsp;&nbsp;<i class="fa fa-comments-o" aria-hidden="true"></i></b></i></font></a></li>
       <li><a class = "w3-hover-red" onclick="document.getElementById('FAQModal').style.display='block'"><font color="white">
-	  <i><b>FAQ&nbsp;&nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></b></i></font></a></li>
+	  <i><b>疑难解答&nbsp;&nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></b></i></font></a></li>
     </ul>
   </div>
 </nav>
@@ -76,27 +106,9 @@ html, body, h1, h2, h3, h4, h5 {
 				class="w3-center w3-border w3-hover-grey w3-light-grey w3-btn w3-large"><b>联<br>系<br>客<br>服</b>
 			</button>
 	</div>
-	
-	<!-- Contact staff slidng panel 
-	<nav id = "services" class="w3-sidenav Server-Panel w3-light-grey">
-		<a onclick="victutors.functions.ShowHideServerPanel(0)" class="w3-right w3-closenav ">Close &times;</a>
-		<p class = "w3-left w3-large" style = "margin:0"><b>找不到学科？</b></p>
-		<img class = "w3-left" style="width: 80px;height: 80px;" src="./Images/img_avatar3.png" style="width: 50%">
-		<a onclick="document.getElementById('FeedbackModal').style.display='block'" 
-		class = "w3-right" style = "padding-right:10px;padding-top:10px">点击联系我们<br>我们来帮您!<br>请联系客服</a>
-	</nav>
-	-->
     
 	<div id="mainBody">
 		<div id = "bgvideo">
-		<!--
-        <video id ="van" autoplay muted loop style="position:absolute;z-index:-9999">
-            <script>
-                $(function () {$('#van').css('width', '100%');$('#van').css('min-width', screen.width);});
-            </script>
-            <source src = "./Images/van720.mp4">
-        </video>
-		-->
 		</div>
 		<div class="w3-container wall" style="margin-left:-16px; margin-right:-16px">
 			<div id = "searchToolPanel" class="w3-center">
@@ -113,76 +125,22 @@ html, body, h1, h2, h3, h4, h5 {
 				    </button>
 				</div>
 			</div>
-
-			<!-- scroll to recommended tutor
-            <div id="footerpanel" class="w3-center w3-bottom">
-			
-				<a href="#TeamList" id = "gotorecommend">
-					<div id = "downbg" class="w3-center w3-bottom">
-						<p class="w3-text-white w3-center w3-xxlarge">推荐&nbsp&nbsp&nbsp&nbsp&nbsp家教</p>
-					</div>
-					
-					<div style = "z-index:-1" id = "downArrow" class="w3-center w3-bottom" data-toggle="gonext">
-						<button class = "fa fa-chevron-down w3-hover-text-teal w3-xxxlarge" 
-								style="border: none; background: none;outline: none;color:#009688">
-						</button>
-					</div>
-				</a>
-				
-            </div>
-			-->
 		</div>
     </div>
-	<!-- recommended tutor 
-    <div id="landing-content" style="margin-left:-16px; margin-right:-16px">
-	    <div>
-		    <div id="TeamList" class="w3-row-padding" style="margin: 0 -16px">
-			    <div class="w3-center w3-padding-64">
-				    <h2 style="color:#ffffff">推荐家教</h2>
-                    <div id="gla">
-	                    <div id="gla_box">
-                        <span class="prev fa fa-5x fa-chevron-left w3-left" style="margin-left:-220px; margin-top:200px; color:white"></span>
-			            <span class="next fa fa-5x fa-chevron-right w3-right" style="margin-right:-220px;margin-top:200px;color:white"></span>
-    	                    <ul id="img-slider">
-        	                        <li><div class="T00 w3-border"></div></li>
-        	                        <li><div class="T01 w3-border"></div></li>
-        	                        <li><div class="T02 w3-border"></div></li>
-        	                        <li><div class="T03 w3-border"></div></li>
-        	                        <li><div class="T04 w3-border"></div></li>
-                                </ul>
-                            </div>
-                        </div>
-			    </div>
-		    </div>
-		</div>
-	</div>
-	-->
-	<!-- GotoTop Button 
-	<div class="w3-theme-border" id = "GoToTopButton"
-		style="display:none;position: fixed; padding: 5px; bottom: 60px; right: 35px; height: 50px; z-index: 999">
-		<button class="w3-hover-text-teal w3-xxxlarge w3-animate-right glyphicon glyphicon-chevron-up"
-			data-toggle="gotop" title="Go to Top"
-			style="padding: 0; border: none; background: none; outline: none;color:white"
-			onclick="victutors.functions.gotoTop()">
-	</div>
-	-->
+	
 	<!-- Footer -->
 	<footer id="footerpanel" class="w3-container w3-bottom w3-padding-10">
 		<!--<h4 id = "CurrentTime"></h4>-->
 		<p class = "w3-center">
-			<span class = "w3-left w3-text-white">© Victutors.com - 2016 VICTUTORS ALL RIGHTS RESERVED</span>
-			<span class = "w3-right"><a href="http://www.simplehitcounter.com" target="_blank"><img src="http://simplehitcounter.com/hit.php?uid=2164152&f=16777215&b=0" border="0" height="18" width="83" alt="web counter"></a><br><a href="http://www.simplehitcounter.com" target="_blank" style="text-decoration:none;"></a>
+			<span class = "w3-left w3-text-white">© Victutors.com - VICTUTORS ALL RIGHTS RESERVED</span>
+			<span class = "w3-right"><a href="http://www.simplehitcounter.com" target="_blank"><img src="http://simplehitcounter.com/hit.php?uid=2164152&f=16777215&b=0" style="
+    margin-bottom: 0px;
+    padding-bottom: 2px;
+" border="0" height="18" width="83" alt="web counter"></a><br><a href="http://www.simplehitcounter.com" target="_blank" style="text-decoration:none;"></a>
 			</span>
 			<span style = "margin-right:30px" class = "w3-right"><b class = "w3-text-white"> ｜ </b><a href = "#" ><b class = "w3-text-white">广告服务</b></a></span>
 			<span class = "w3-right"><a href = "#" ><b class = "w3-text-white">免责声明</b></a></span>
 		</p>
-		<!--
-		<p>友情链接: 
-		<span><a class = "w3-text-white" href="http://www.victoriabbs.com" _fcksavedurl="http://www.victoriabbs.com" title="维多利亚华人论坛 - 维多利亚中文门户网站" target="_blank">维多利亚华人论坛 &nbsp</a></span>
-		<span><a class = "w3-text-white" href="http://www.victoriabbs.com" _fcksavedurl="http://www.victoriabbs.com" target="_blank"> <img src="http://www.victoriabbs.com/images/victoriabbslink.gif" _fcksavedurl="http://www.victoriabbs.com/images/victoriabbslink.gif" border="0" alt="VictoriaBBS.com - 维多利亚中文门户网站"></a>
-		</span>
-		</p>
-		-->
 	</footer>
 
 	<!-- 1. Aboutus modal -->
@@ -192,7 +150,7 @@ html, body, h1, h2, h3, h4, h5 {
 				<span
 					onclick="document.getElementById('aboutusModal').style.display='none'"
 					class="w3-closebtn">&times;</span>
-				<h2 class="w3-center w3-lobster">家教入驻</h2>
+				<h2 class="w3-center w3-lobster">成为家教</h2>
 			</header>
 			<div class="w3-container"
 				style="postion: absolute; margin-top: <30px></30px>">
