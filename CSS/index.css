@@ -28,8 +28,19 @@
 	cursor: auto;
 }
 
-#downward {
-  position: absolute;
+#searchToolPanel{
+  background-color: rgba(0,0,0,0.7);
+  height: 250px;
+}
+
+#footerpanel{
+  background-color: rgba(0,0,0,0.7);
+}
+
+#mainPage{
+  overflow: hidden;
+}
+#downArrow{
   animation: jump 3s infinite forwards;
 }
 

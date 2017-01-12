@@ -4,7 +4,7 @@ victutors.Tutorlist.selectedValue; //selectpicker value
 victutors.Tutorlist.SelectedFaculty; //faculty user searching for
 victutors.Tutorlist.SelectedTutorList;
 victutors.Tutorlist.PageTitle;
-
+victutors.Tutorlist.InitialFooterPosition;
 $(function () {
     // 创建一个上传参数
     var uploadOption =
@@ -173,6 +173,25 @@ victutors.Tutorlist.GetTutorList = function (faculty) {
             victutors.Tutorlist.SetUpTags(tags);
             $('#TutorListAll').html(s);
             break;
+        case 'ENGR':
+            var ENGRTutors = [];
+            var TutorCount = victutors.list.ENGRlist.length;
+            for (i = 0; i < victutors.list.ENGRlist.length; i++) {
+                var index = victutors.Tutorlist.GetRandom(TutorCount, ENGRTutors);
+                var item = victutors.list.ENGRlist[index];
+                //get tags
+                var itemtags = item.Subject.split(",");
+                for (j = 0; j < itemtags.length; j++) {
+                    if (tags.indexOf(itemtags[j]) == -1) {
+                        tags.push(itemtags[j]);
+                    }
+                }
+                s = victutors.Tutorlist.GetTutorDetail(index, s, item);
+            }
+            currentlist = victutors.list.ENGRlist;
+            victutors.Tutorlist.SetUpTags(tags);
+            $('#TutorListAll').html(s);
+            break;
         default:
             break;
     }
@@ -181,8 +200,8 @@ victutors.Tutorlist.GetTutorList = function (faculty) {
 victutors.Tutorlist.SetUpTags = function (tags) {
     var buttonlist = ["btn-primary", "btn-success", "btn-info", "btn-warning", "btn-danger", "btn-link"];
     var s = "";
-    s += "<div class = \"w3-text-black w3-large\">";
-    s += "<p class = \"w3-xlarge\">分类选择:  ";
+    s += "<div class = \"w3-text-white w3-large\">";
+    s += "<p class = \"w3-text-black w3-xlarge\">分类选择:  ";
     s += "<button style = \"margin-right:10px\" type=\"button\" id = \"tag0\" class = \"w3-large btn btn-default\" onclick = \"victutors.Tutorlist.ShowListByTags('all')\">完整名单</button>";
     for (i = 0; i < tags.length; i++) {
         s += "<button style = \"margin-right:10px\" type=\"button\" id = \"tag" + i + "\" class = \"w3-large btn " + buttonlist[i] + "\" onclick = \"victutors.Tutorlist.ShowListByTags('" + tags[i] + "')\">" + tags[i] + "</button>";
@@ -192,6 +211,107 @@ victutors.Tutorlist.SetUpTags = function (tags) {
     $("#searchTags").html(s);
 }
 
+victutors.Tutorlist.tAnswer = function (question) {
+    var str = question;
+    str = str.substring(2);
+    var no1 = Number(str);
+    var no2 = victutors.Tutorlist.tQuestionNo;
+    if (no1 != no2) {
+        if (no2 != 0) {
+            $('#ta' + no2).hide();
+            $('#tq' + no2).html("<i class='fa fa-plus' aria-hidden='true'></i>");
+        }
+        $('#ta' + no1).show();
+        $('#tq' + no1).html("<i class='fa fa-minus' aria-hidden='true'></i>");
+        victutors.Tutorlist.tQuestionNo = no1;
+        victutors.Tutorlist.tShowAnswer = 1;
+        /*
+        for (i = 1; i <= 3; i++) {
+            $('#ta' + str).hide();
+            $('#tq' + str).html("<i class='fa fa-plus' aria-hidden='true'></i>");
+        }*/
+    } else {
+        if (victutors.Tutorlist.tShowAnswer == 0) {
+            $('#ta' + str).show();
+            victutors.Tutorlist.tShowAnswer = 1;
+            $('#tq' + str).html("<i class='fa fa-minus' aria-hidden='true'></i>");
+        } else {
+            $('#ta' + str).hide();
+            victutors.Tutorlist.tShowAnswer = 0;
+            $('#tq' + str).html("<i class='fa fa-plus' aria-hidden='true'></i>");
+        }
+    }
+}
+
+victutors.Tutorlist.sendFeedBack = function () {
+    var subject = $('#feedback_subject').val();
+    var text = $('#feedback_text').val();
+    var emailcontent = { 'subject': subject, 'text': text };
+    $.ajax({
+        url: "feedback.php",
+        type: 'POST',
+        data: { "email": JSON.stringify(emailcontent) },
+        success: function (response) {
+            //response = response.replace(/\r?\n|\r/g, "");
+            //alert(response);
+            $('#FeedbackModal').hide();
+            $('#feedbackAlert').show();
+        }
+    });
+}
+
+victutors.Tutorlist.sendTutorInfo = function () {
+    var name = $('#uname').val();
+    var phone = $('#uphone').val();
+    var wechat = $('#uwechat').val();
+    var subject = $('#usubject').val();
+    var email = $('#uemail').val();
+    var emailcontent = { 'name': name, 'phone': phone, 'wechat': wechat, 'subject': subject, 'email': email };
+    $.ajax({
+        url: "uploadtxt.php",
+        type: 'POST',
+        data: { "email": JSON.stringify(emailcontent) },
+        success: function (response) {
+            //response = response.replace(/\r?\n|\r/g, "");
+            //alert(response);
+            $('#aboutusModal').hide();
+            $('#newTutorAlert').show();
+        }
+    });
+}
+
+victutors.Tutorlist.sAnswer = function (question) {
+    var str = question;
+    str = str.substring(2);
+    var no1 = Number(str);
+    var no2 = victutors.Tutorlist.sQuestionNo;
+    if (no1 != no2) {
+        if (no2 != 0) {
+            $('#sa' + no2).hide();
+            $('#sq' + no2).html("<i class='fa fa-plus' aria-hidden='true'></i>");
+        }
+        $('#sa' + no1).show();
+        $('#sq' + no1).html("<i class='fa fa-minus' aria-hidden='true'></i>");
+        victutors.Tutorlist.sQuestionNo = no1;
+        victutors.Tutorlist.sShowAnswer = 1;
+        /*
+        for (i = 1; i <= 3; i++) {
+            $('#ta' + str).hide();
+            $('#tq' + str).html("<i class='fa fa-plus' aria-hidden='true'></i>");
+        }*/
+    } else {
+        if (victutors.Tutorlist.sShowAnswer == 0) {
+            $('#sa' + str).show();
+            victutors.Tutorlist.sShowAnswer = 1;
+            $('#sq' + str).html("<i class='fa fa-minus' aria-hidden='true'></i>");
+        } else {
+            $('#sa' + str).hide();
+            victutors.Tutorlist.sShowAnswer = 0;
+            $('#sq' + str).html("<i class='fa fa-plus' aria-hidden='true'></i>");
+        }
+    }
+}
+
 victutors.Tutorlist.ShowListByTags = function (tag) {
     var s = "";
     var Tutors = [];
@@ -199,17 +319,25 @@ victutors.Tutorlist.ShowListByTags = function (tag) {
     for (i = 0; i < currentlist.length; i++) {
         var index = victutors.Tutorlist.GetRandom(TutorCount, Tutors);
         var item = currentlist[index];
-        var itemtags = item.Subject.split(","); 
-        if(itemtags.indexOf(tag) != -1 || tag == 'all'){
+        var itemtags = item.Subject.split(",");
+        if (itemtags.indexOf(tag) != -1 || tag == 'all') {
             s = victutors.Tutorlist.GetTutorDetail(index, s, item);
         }
     }
-    if(tag != 'all'){
-        $('#title').html(victutors.Tutorlist.PageTitle + " - " +tag);
-    }else{
+    if (tag != 'all') {
+        $('#title').html(victutors.Tutorlist.PageTitle + " - " + tag);
+    } else {
         $('#title').html(victutors.Tutorlist.PageTitle);
     }
+
     $('#TutorListAll').html(s);
+    //  var bottom = window.innerHeight - $('#test').position().top;
+    // if(bottom > 0){
+    //     $('#mainContent').css({'height':$('#mainContent').height() + bottom});
+    // } 
+    //if(tag == 'all'){
+    $('#mainContent').css({ 'height': victutors.Tutorlist.InitialFooterPosition });
+    //}
 }
 
 victutors.Tutorlist.GetTutorDetail = function (i, s, item) {
@@ -255,8 +383,6 @@ victutors.Tutorlist.ReSize = function () {
     } else {
         $('#mainContent').css({ 'margin-top': 70 });
     }
-
-
 }
 
 victutors.Tutorlist.ShowHideServerPanel = function (flag) {
@@ -279,6 +405,14 @@ victutors.Tutorlist.GetTutorByFaculty = function () {
     window.open('Tutorlist.php', '_self');
 }
 
+
+$(function () {
+    $('#mainbody').mousemove(function (e) {
+        var amountMovedX = ((e.pageX - $("#mainbody").width() / 2) * -1 / 64);
+        $(this).css('background-position', amountMovedX + 'px ' + '0px');
+    });
+});
+
 victutors.Tutorlist.setPage = function () {
     var title = "";
     switch (victutors.Tutorlist.SelectedFaculty) {
@@ -292,11 +426,6 @@ victutors.Tutorlist.setPage = function () {
             $('#title').html(title);
             victutors.Tutorlist.PageTitle = title;
             break;
-        case 'ECON':
-            title = "Economics - 经济学家教名单";
-            $('#title').html(title);
-            victutors.Tutorlist.PageTitle = title;
-            break;
         case 'MUSC':
             title = "Music - 音乐家教名单";
             $('#title').html(title);
@@ -304,6 +433,11 @@ victutors.Tutorlist.setPage = function () {
             break;
         case 'ENGL':
             title = "English - 英文家教名单";
+            $('#title').html(title);
+            victutors.Tutorlist.PageTitle = title;
+            break;
+        case 'ENGR':
+            title = "Engineering - 工程学家教名单";
             $('#title').html(title);
             victutors.Tutorlist.PageTitle = title;
             break;
@@ -336,14 +470,14 @@ $(document).ready(function () {
     victutors.Tutorlist.SetUpSelectPicker();
 
     //set background image height
-    $('.wall').height($('#test').position().top);
-
+    //$('.wall').height($('#test').position().top);
+    victutors.Tutorlist.InitialFooterPosition = $('#mainContent').height();
     // go to top tooltip
     $('[data-toggle="gotop"], [data-toggle="title"], [data-toggle="showlist"], [data-toggle="gonext"]').tooltip({
         trigger: 'hover'
     });
     //footer current time
-    document.getElementById("CurrentTime").innerHTML = Date();
+    //document.getElementById("CurrentTime").innerHTML = Date();
 
     /**
      * Triggered when we scroll the page
@@ -366,6 +500,8 @@ $(document).ready(function () {
         var faculty = selectedText.split(" ");
         victutors.Tutorlist.selectedValue = faculty[0];
     });
+
+
 });
 
 

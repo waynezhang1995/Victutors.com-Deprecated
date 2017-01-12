@@ -9,12 +9,28 @@
    transition: all 0.8s ease-out;
 }
 
+#mainPage{ 
+  background: url(../Images/MainBG.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
   
 #bgtext{
     z-index:100; 
     color:white;
     font-weight:bold;
     margin-top: 180px
+}
+
+#mainbody{
+  background: #666;
+  background: linear-gradient(to bottom, #fff, #666 85%, #666);
+}
+
+#footerpanel{
+  background-color: rgba(0,0,0,0.6);
 }
 
 .bgbutton{
@@ -45,7 +61,6 @@
     width:200px;
     height:110px;
     bottom:50px;
-    box-shadow: 10px 10px 5px #888888;
 }
 
 .popover{
@@ -130,6 +145,7 @@
 				bottom: 0;
 				right: 0;
 			}
+			/*
 			div#background{
 				background: skyblue;
 				background-size: cover;
@@ -148,5 +164,5 @@
 				-moz-animation: STAR-MOVE  50s linear infinite;
 				-ms-animation: STAR-MOVE  50s linear infinite;
 				animation: STAR-MOVE  50s linear infinite;
-			}
+			}*/
         

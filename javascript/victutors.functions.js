@@ -5,8 +5,10 @@ victutors.functions.selectedValue;
 
 victutors.functions.PeopleList = [];
 victutors.functions.middle = 0;
-victutors.functions.questionNo = 0;
-victutors.functions.showAnswer = 0;
+victutors.functions.tQuestionNo = 0;
+victutors.functions.tShowAnswer = 0;
+victutors.functions.sQuestionNo = 0;
+victutors.functions.sShowAnswer = 0;
 
 $(function () {
     // 创建一个上传参数
@@ -22,10 +24,8 @@ $(function () {
             onChange: function (file, extension) {
                 if (new RegExp(/(jpg)|(jpeg)|(bmp)|(gif)|(png)/i).test(extension)) {
                     //file ok
-
                     $("#filepath").val(file);
                     $('#up').click();
-
                 } else {
                     alert("只限上传图片文件，请重新选择！");
                 }
@@ -77,11 +77,11 @@ $(function () {
     }
 });
 
-victutors.functions.answer = function (question) {
+victutors.functions.tAnswer = function (question) {
     var str = question;
     str = str.substring(2);
     var no1 = Number(str);
-    var no2 = victutors.functions.questionNo;
+    var no2 = victutors.functions.tQuestionNo;
     if (no1 != no2) {
         if (no2 != 0) {
             $('#ta' + no2).hide();
@@ -89,22 +89,54 @@ victutors.functions.answer = function (question) {
         }
         $('#ta' + no1).show();
         $('#tq' + no1).html("<i class='fa fa-minus' aria-hidden='true'></i>");
-        victutors.functions.questionNo = no1;
-        victutors.functions.showAnswer = 1;
+        victutors.functions.tQuestionNo = no1;
+        victutors.functions.tShowAnswer = 1;
         /*
         for (i = 1; i <= 3; i++) {
             $('#ta' + str).hide();
             $('#tq' + str).html("<i class='fa fa-plus' aria-hidden='true'></i>");
         }*/
     } else {
-        if (victutors.functions.showAnswer == 0) {
+        if (victutors.functions.tShowAnswer == 0) {
             $('#ta' + str).show();
-            victutors.functions.showAnswer = 1;
+            victutors.functions.tShowAnswer = 1;
             $('#tq' + str).html("<i class='fa fa-minus' aria-hidden='true'></i>");
         } else {
             $('#ta' + str).hide();
-            victutors.functions.showAnswer = 0;
+            victutors.functions.tShowAnswer = 0;
             $('#tq' + str).html("<i class='fa fa-plus' aria-hidden='true'></i>");
+        }
+    }
+}
+
+victutors.functions.sAnswer = function (question) {
+    var str = question;
+    str = str.substring(2);
+    var no1 = Number(str);
+    var no2 = victutors.functions.sQuestionNo;
+    if (no1 != no2) {
+        if (no2 != 0) {
+            $('#sa' + no2).hide();
+            $('#sq' + no2).html("<i class='fa fa-plus' aria-hidden='true'></i>");
+        }
+        $('#sa' + no1).show();
+        $('#sq' + no1).html("<i class='fa fa-minus' aria-hidden='true'></i>");
+        victutors.functions.sQuestionNo = no1;
+        victutors.functions.sShowAnswer = 1;
+        /*
+        for (i = 1; i <= 3; i++) {
+            $('#ta' + str).hide();
+            $('#tq' + str).html("<i class='fa fa-plus' aria-hidden='true'></i>");
+        }*/
+    } else {
+        if (victutors.functions.sShowAnswer == 0) {
+            $('#sa' + str).show();
+            victutors.functions.sShowAnswer = 1;
+            $('#sq' + str).html("<i class='fa fa-minus' aria-hidden='true'></i>");
+        } else {
+            $('#sa' + str).hide();
+            victutors.functions.sShowAnswer = 0;
+            $('#sq' + str).html("<i class='fa fa-plus' aria-hidden='true'></i>");
         }
     }
 }
@@ -189,53 +221,6 @@ victutors.functions.list = function (change) {
     victutors.functions.ShowList(pmn);
 }
 
-victutors.functions.Recommend = function () {
-    PeopleList = [{
-        name: "Wayne Zhang",
-        phone: "778 922 5080",
-        imgsrc: "./Images/img_avatar3.png",
-        qrcode: "./Images/WeChat.png",
-        email: "waynez@uvic.ca",
-        WeChat: "wayne-zhangyuwei",
-        subject: "CSC"
-    }, {
-            name: "Ace Ye",
-            imgsrc: "./Images/img_avatar6.png",
-            phone: "778 222 2929",
-            qrcode: "./Images/WeChat3.png",
-            email: "zaeye1028@gmail.com",
-            WeChat: "yezihan1028",
-            subject: "CSC"
-
-        }, {
-            name: "Wayne Lu",
-            imgsrc: "./Images/img_avatar1.png",
-            phone: "250 507 2503",
-            qrcode: "./Images/Math/waynelu.jpg",
-            email: "funfunlu@fhotmail.com",
-            WeChat: "mogua001",
-            subject: "MATH,STATS"
-        }, {
-            name: "Simon Zhu",
-            imgsrc: "./Images/img_avatar3.png",
-            phone: "778 557 7965",
-            qrcode: "./Images/Math/SimonZhu.JPG",
-            email: "zhus@uvic.ca",
-            WeChat: "shuqiangzhu3",
-            subject: "MATH"
-        }, {
-            name: "沈升益",
-            phone: "250 882 6939",
-            imgsrc: "./Images/img_avatar6.png",
-            qrcode: "../Images/Math/shengshengyi.PNG",
-            email: "g.spiritblue@gmail.com",
-            WeChat: "541520752",
-            subject: "MATH"
-        },];
-    victutors.functions.list(Math.floor(PeopleList.length / 2));
-
-}
-
 victutors.functions.GetTutorDetail = function (s, item) {
     s += '<div class=" w3-half w3-margin-bottom T01">';
     s += '<div class="w3-container w3-card-4" >';
@@ -263,14 +248,42 @@ victutors.functions.ReSize = function () {
     }
 }
 
-victutors.functions.ShowHideServerPanel = function (flag) {
-    if (flag == 0) {
-        $('#services').hide();
-        $('#serviceButton').delay(1000).show();
-    } else {
-        $('#serviceButton').hide();
-        $('#services').show();
+victutors.functions.sendFeedBack = function(){
+    var subject = $('#feedback_subject').val();
+    var text = $('#feedback_text').val();
+    var emailcontent = {'subject':subject,'text':text};
+    $.ajax({
+    url: "feedback.php",
+    type: 'POST',
+    data: {"email" : JSON.stringify(emailcontent)},
+    success: function(response)
+    {
+        //response = response.replace(/\r?\n|\r/g, "");
+        //alert(response);
+        $('#FeedbackModal').hide();
+        $('#feedbackAlert').show();
     }
+});
+}
+
+victutors.functions.sendTutorInfo = function () {
+    var name = $('#uname').val();
+    var phone = $('#uphone').val();
+    var wechat = $('#uwechat').val();
+    var subject = $('#usubject').val();
+    var email = $('#uemail').val();
+    var emailcontent = { 'name': name, 'phone': phone, 'wechat': wechat, 'subject': subject, 'email': email };
+    $.ajax({
+        url: "uploadtxt.php",
+        type: 'POST',
+        data: { "info": JSON.stringify(emailcontent) },
+        success: function (response) {
+            //response = response.replace(/\r?\n|\r/g, "");
+            //alert(response);
+            $('#aboutusModal').hide();
+            $('#newTutorAlert').show();
+        }
+    });
 }
 
 //user search for faculty 
@@ -294,43 +307,20 @@ victutors.functions.SetUpSelectPicker = function () {
 //document ready start from here
 $(document).ready(function () {
 
-    //set background height
-    $('#highsky').css({ 'height': window.innerHeight });
-    $('#landing-content').css({ 'height': window.innerHeight });
-    
     //set search and title 
-    $('#searchToolPanel').css({ 'margin-top': window.innerHeight / 2 - 100 });
-    var h = $('#gla').height()/2;
-    $('#TeamList').css({ 'margin-top': window.innerHeight / 2 - h });
-    victutors.functions.length = window.outerWidth;
-    victutors.functions.Recommend();
+    $('#searchToolPanel').css({ 'margin-top': window.innerHeight / 2 - 125 });
+     victutors.functions.length = window.outerWidth;
+
     // go to top tooltip
-    $('[data-toggle="gotop"], [data-toggle="title"], [data-toggle="showlist"], [data-toggle="gonext"]').tooltip({
+    $('[data-toggle="gotop"]').tooltip({
         trigger: 'hover'
     });
+    
     //setup select picker
     victutors.functions.SetUpSelectPicker();
     //footer current time
-    document.getElementById("CurrentTime").innerHTML = Date();
-    /**
-     * Triggered when we scroll the page
-     */
     $(window).scroll(function () {
 
-        //Background img height
-        if ($(window).scrollTop() > 660) {
-            //Navbar
-            $("#Faculty").fadeIn();
-            $("#downward").fadeOut();
-        } else {
-            //Navbar
-            $(".navbar").css({
-                "background-color": "transparent",
-                "border-color": "transparent"
-            });
-            $("#Faculty").fadeOut();
-            $("#downward").fadeIn();
-        }
         //gotoTop button
         if ($(window).scrollTop() > 300) {
             $('#GoToTopButton').show();
@@ -339,15 +329,6 @@ $(document).ready(function () {
         }
 
     })
-
-    // navibar scroll to a certain area
-    var $root = $('html, body');
-    $("#JoinUs, #Price, #Team, .Faculty").click(function () {
-        $root.animate({
-            scrollTop: $($.attr(this, 'href')).offset().top
-        }, 500);
-        return false;
-    });
 
     $('#Fselecter').selectpicker({ 'selectedText': '', style: 'btn-default btn-lg' });
     //faculty selecter
