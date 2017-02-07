@@ -41,7 +41,7 @@ $(function () {
                 $("#state").val("上传完成！");
                 console.log(response);
                 $('#ImgUpLoad').attr("src", response + file);
-                $('#ImgUpLoad').css({'width': '200px','height':'170px','margin-left': '50px','margin-bottom': '30px'});
+                $('#ImgUpLoad').css({ 'width': '200px', 'height': '170px', 'margin-left': '50px', 'margin-bottom': '30px' });
             }
         }
 
@@ -239,6 +239,15 @@ victutors.functions.GetTutorDetail = function (s, item) {
     return s;
 }
 
+victutors.functions.DBlogin = function () {
+    if ($('#databasePassword').val() === victutors.list.databasePassword) {
+        sessionStorage.setItem('database', true);
+        window.open('database.php', '_self');
+    } else {
+        $('#databaseErrorAlert').show();
+    }
+}
+
 victutors.functions.ReSize = function () {
     var w = window.outerWidth;
     if ($('#TopNavBar').height() > 50) {
@@ -248,22 +257,21 @@ victutors.functions.ReSize = function () {
     }
 }
 
-victutors.functions.sendFeedBack = function(){
+victutors.functions.sendFeedBack = function () {
     var subject = $('#feedback_subject').val();
     var text = $('#feedback_text').val();
-    var emailcontent = {'subject':subject,'text':text};
+    var emailcontent = { 'subject': subject, 'text': text };
     $.ajax({
-    url: "feedback.php",
-    type: 'POST',
-    data: {"email" : JSON.stringify(emailcontent)},
-    success: function(response)
-    {
-        //response = response.replace(/\r?\n|\r/g, "");
-        //alert(response);
-        $('#FeedbackModal').hide();
-        $('#feedbackAlert').show();
-    }
-});
+        url: "feedback.php",
+        type: 'POST',
+        data: { "email": JSON.stringify(emailcontent) },
+        success: function (response) {
+            //response = response.replace(/\r?\n|\r/g, "");
+            //alert(response);
+            $('#FeedbackModal').hide();
+            $('#feedbackAlert').show();
+        }
+    });
 }
 
 victutors.functions.sendTutorInfo = function () {
@@ -308,14 +316,14 @@ victutors.functions.SetUpSelectPicker = function () {
 $(document).ready(function () {
 
     //set search and title 
-    $('#searchToolPanel').css({ 'margin-top': window.innerHeight / 2 - 125 });
-     victutors.functions.length = window.outerWidth;
+    $('#searchToolPanel').css({ 'margin-top': (window.innerHeight / 2 - 125) + 20 });
+    victutors.functions.length = window.outerWidth;
 
     // go to top tooltip
     $('[data-toggle="gotop"]').tooltip({
         trigger: 'hover'
     });
-    
+
     //setup select picker
     victutors.functions.SetUpSelectPicker();
     //footer current time
@@ -337,6 +345,12 @@ $(document).ready(function () {
         var faculty = selectedText.split(" ");
         victutors.functions.selectedValue = faculty[0];
     });
+
+    // device detection
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        console.log("Mobile device detected");
+        $('#feedbackModal, #qandaModal').hide();
+    }
 });
 
 

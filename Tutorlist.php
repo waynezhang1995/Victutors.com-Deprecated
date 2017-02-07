@@ -53,9 +53,9 @@ html, body, h1, h2, h3, h4, h5 {
 			<i><b>成为家教&nbsp;&nbsp;<i class="fa fa-users" aria-hidden="true"></i></b></i></font></a></li> 
 			<li><a class = "w3-hover-red" onclick="document.getElementById('ContactUsModal').style.display='block'"><font color="black">
 			<i><b>联系我们&nbsp;&nbsp;<i class="fa fa-phone" aria-hidden="true"></i></b></i></font></a></li>
-			<li><a class = "w3-hover-red" onclick="document.getElementById('FeedbackModal').style.display='block'"><font color="black">
+			<li id="feedbackModal"><a class = "w3-hover-red" onclick="document.getElementById('FeedbackModal').style.display='block'"><font color="black">
 			<i><b>问题反馈&nbsp;&nbsp;<i class="fa fa-comment-o" aria-hidden="true"></i></b></i></font></a></li>
-			<li><a class = "w3-hover-red" onclick="document.getElementById('FAQModal').style.display='block'"><font color="black">
+			<li id="qandaModal"><a class = "w3-hover-red" onclick="document.getElementById('FAQModal').style.display='block'"><font color="black">
 			<i><b>疑难解答&nbsp;&nbsp;<i class="fa fa-question-circle" aria-hidden="true"></i></b></i></font></a></li>
 			</ul>
 		</div>

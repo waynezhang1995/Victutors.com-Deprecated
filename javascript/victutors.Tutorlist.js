@@ -501,7 +501,11 @@ $(document).ready(function () {
         victutors.Tutorlist.selectedValue = faculty[0];
     });
 
-
+    // device detection
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        console.log("Mobile device detected");
+        $('#feedbackModal, #qandaModal').hide();
+    }
 });
 
 

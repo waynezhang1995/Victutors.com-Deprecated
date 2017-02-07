@@ -65,3 +65,15 @@
   65%  { top: 30%; transform: scaleX(.6)  scaleY(1.4); animation-timing-function: ease-out }
   80%  {             transform: scaleX(1)   scaleY(1) }*/
 }
+
+#Home_Icon{
+    margin-top:8px;
+    margin-right:6px
+}
+
+#Home_Search_Panel{
+    margin-left:-16px; 
+    margin-right:-16px
+}
+
+

@@ -14,6 +14,8 @@ victutors.list.ENGLlist = [];
 victutors.list.MUSClist = [];
 victutors.list.ENGRlist = [];
 
+victutors.list.databasePassword = "victutorsCSC";
+
 victutors.list.SetUplist = function (faculty) {
     switch (faculty){
         case 'CSC':
