@@ -34,24 +34,24 @@ html, body, h1, h2, h3, h4, h5 {
 </style>
 </head>
 
-	<div class = "w3-container">
-		<nav id = "TopNavBar" class="w3-xlarge navbar-inverse navbar navbar-fixed-top w3-white">
+	<div class="w3-container">
+		<nav id="TopNavBar" class="w3-xlarge navbar-inverse navbar navbar-fixed-top w3-white">
 		<div class="container-fluid">
 			<div class="navbar-header">
-			<a href = "index.php"><img id = "victutors_icon" style = "float:left;margin-top:9px;margin-right:6px" class = "w3-left" src = "./Images/victutors_icon.png" alt = "victutors_Icon" width = "10%">
+			<a href="index.php"><img id="victutors_icon" style="float:left;margin-top:9px;margin-right:6px" class="w3-left" src = "./Images/victutors_icon.png" alt = "victutors_Icon" width = "10%">
 			<a class="w3-xlarge navbar-brand" href="index.php"><font color="black">victutors.com</font></a>
 			</div>
-			<ul class="w3-right nav navbar-nav " style = "right:0px;position:absolute">
-			<li id = "NavSearchPanel" style = "margin-right:10px;margin-top:8px">
-				<select id = "Fselecter" class="selectpicker show-tick show-menu-arrow" data-width="300px" title="选择专业"
+			<ul class="w3-right nav navbar-nav " style="right:0px;position:absolute">
+			<li id="NavSearchPanel" style="margin-right:10px;margin-top:8px">
+				<select id="Fselecter" class="selectpicker show-tick show-menu-arrow" data-width="300px" title="选择专业"
 						data-live-search="true" ></select>
 						<button class="w3-teal w3-large w3-btn w3-hover-red" style = "margin-left:20px"
 						onclick = "victutors.Tutorlist.GetTutorByFaculty()">搜索家教&nbsp;
 						<i class="fa fa-search" aria-hidden="true"></i></button>
 			</li>
-			<li><a class = "w3-hover-red" onclick="document.getElementById('aboutusModal').style.display='block'"><font color="black">
+			<li id="joinusModal"><a class = "w3-hover-red" onclick="document.getElementById('aboutusModal').style.display='block'"><font color="black">
 			<i><b>成为家教&nbsp;&nbsp;<i class="fa fa-users" aria-hidden="true"></i></b></i></font></a></li> 
-			<li><a class = "w3-hover-red" onclick="document.getElementById('ContactUsModal').style.display='block'"><font color="black">
+			<li id="contactModal"><a class = "w3-hover-red" onclick="document.getElementById('ContactUsModal').style.display='block'"><font color="black">
 			<i><b>联系我们&nbsp;&nbsp;<i class="fa fa-phone" aria-hidden="true"></i></b></i></font></a></li>
 			<li id="feedbackModal"><a class = "w3-hover-red" onclick="document.getElementById('FeedbackModal').style.display='block'"><font color="black">
 			<i><b>问题反馈&nbsp;&nbsp;<i class="fa fa-comment-o" aria-hidden="true"></i></b></i></font></a></li>
@@ -70,7 +70,7 @@ html, body, h1, h2, h3, h4, h5 {
 	</div>
 	
 	<!-- Contact staff slidng panel -->
-	<nav id = "services" class="w3-sidenav Server-PanelTutorList w3-dark-grey" style = "bottom:100px !important">
+	<nav id = "services" class="w3-sidenav Server-PanelTutorList w3-dark-grey" style="border:solid;border-width:thin;bottom:100px !important">
 		<a onclick="victutors.Tutorlist.ShowHideServerPanel(0)" class="w3-right w3-closenav w3-text-white">Close &times;</a>
 		<p class = "w3-left w3-large w3-text-white" style = "margin:0"><b>寻找太麻烦？</b></p>
 		<img class = "w3-left" style="width: 80px;height: 80px;" src="./Images/WeChat.png" style="width: 50%">
@@ -81,7 +81,7 @@ html, body, h1, h2, h3, h4, h5 {
 <body id = "mainbody" style = "zoom:90%" onresize="victutors.Tutorlist.ReSize()">
 	<!-- Content -->
     <div id = "mainContent" class="w3-content w3-container" style="max-width: 1080px; margin-top: 70px; margin-bottom: 100px">
-		<p class = "w3-text-black w3-xlarge" id = "title" style = "margin-top:20px;margin-bottom:30px"></p>
+		<p class = "w3-text-black w3-xlarge" id="title" style = "margin-top:20px;margin-bottom:20px"></p>
         <div id = "searchTags">
 		</div>
 		<div id = "TutorListAll" style = "margin-top:0px;margin-bottom:50px">
@@ -148,7 +148,7 @@ html, body, h1, h2, h3, h4, h5 {
 						</div>
 						<div class="w3-group">
 							<label style = "display:block;float:left"for = "introduction">自我介绍(辅导科目,授课时间,授课价格等等):</label>
-							<textarea class="w3-round w3-input w3-border w3-hover-border-black" style="vertical-align: top;width: 90%;" rows = "4" cols="70" name="introduction" ></textarea>
+							<textarea id="newTutorIntro" class="w3-round w3-input w3-border w3-hover-border-black" style="vertical-align: top;width: 90%;" rows = "4" cols="70" name="introduction" ></textarea>
 						</div>
 
 					</div>
@@ -352,26 +352,23 @@ html, body, h1, h2, h3, h4, h5 {
 						class="w3-closebtn">&times;</span>
 					<h2 class="w3-center w3-lobster">联系我们</h2>
 				</header>
-				<div id="contact" class="w3-large container-fluid bg-grey" style = "margin-bottom:100px;margin-top:100px">
+				<div id="contact" class="w3-large container-fluid bg-grey" style="margin-bottom:100px;margin-top:100px">
 					<div class="row">
-						<div class="col-sm-5" style="left: 150px">
-							<p style="margin-bottom: 25px">
+						<div class="w3-half">
+							<p style="padding-left:80px;margin-bottom: 25px">
 								<span class="glyphicon glyphicon-map-marker"></span> 地址：University of
 								Victoria
 							</p>
-							<p style="margin-bottom: 25px">
+							<p style="padding-left:80px;margin-bottom: 25px">
 								<span class="glyphicon glyphicon-phone"></span> 电话：778 922 5080
 							</p>
-							<p style="margin-bottom: 25px">
+							<p style="padding-left:80px;margin-bottom: 25px">
 								<span class="glyphicon glyphicon-envelope"></span> 邮箱：info@victutors.com
 							</p>
-							<p style="margin-bottom: 25px">
-								<span class="glyphicon glyphicon-user"></span> 微信：wayne-zhangyuwei
-							</p>
 						</div>
-						<div class="col-sm-3 slideanim" style="left: 200px">
+						<div class="w3-half w3-center">
 							<img src="./Images/WeChat.png" alt="WeChat"
-								style="width: 90%">
+								style="width: 35%">
 						</div>
 					</div>
 				</div>
@@ -400,16 +397,23 @@ html, body, h1, h2, h3, h4, h5 {
 				</header>
 			</div>
 		</div>
+		<div id="newTutorMoreInfoAlert" class="w3-modal">
+			<div class="w3-modal-content w3-animate-top w3-card-8" style = "width:30%">
+				<header class="w3-container w3-red">
+				<span onclick="document.getElementById('newTutorMoreInfoAlert').style.display='none'"
+				class="w3-closebtn">&times;</span>
+				<h2 class = "w3-red">请填写完整信息😓<br/>更多的信息有助于学生联系您!<br/>您的支持是我们前进的动力！</h2>
+				</header>
+			</div>
+		</div>
         <div id="newTutorAlert" class="w3-modal">
 			<div class="w3-modal-content w3-animate-top w3-card-8" style = "width:30%">
 				<header class="w3-container w3-red">
 				<span onclick="document.getElementById('newTutorAlert').style.display='none'"
 				class="w3-closebtn">&times;</span>
-				<h2 class = "w3-red">谢谢您的加入😊<br/>您的支持是我们前进的动力！</h2>
+				<h2 class = "w3-red">谢谢您的加入😊<br/>我们将在第一时间审核更新您的信息!<br/>您的支持是我们前进的动力！</h2>
 				</header>
 			</div>
 		</div>
-		
-
 </body>
 </html>

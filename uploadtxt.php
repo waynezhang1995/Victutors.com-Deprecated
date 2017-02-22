@@ -14,13 +14,14 @@
             "phone: ".$Info->phone."\r\n".
             "wechat: ".$Info->wechat."\r\n".
             "subject: ".$Info->subject."\r\n".
-            "email: ".$Info->email."\r\n";
+            "email: ".$Info->email."\r\n".
+            "content: ".$Info->content;
     fwrite($myfile, $txt);
     fclose($myfile);
     setcookie('mycookie');
 
     //send email to info@victutors.com
-    $message = wordwrap($txt, 70, "\r\n");
+    $message = wordwrap($txt, 200, "\r\n");
     mail('info@victutors.com', 'New tutor just registered', $message);
 
     echo "OK"
