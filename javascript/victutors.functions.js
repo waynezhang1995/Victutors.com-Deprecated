@@ -10,74 +10,7 @@ victutors.functions.tShowAnswer = 0;
 victutors.functions.sQuestionNo = 0;
 victutors.functions.sShowAnswer = 0;
 
-$(function () {
-    // 创建一个上传参数
-    var uploadOption =
-        {
-            // 提交目标
-            action: "uploadimage.php",
-            // 服务端接收的名称
-            name: "file",
-            // 自动提交
-            autoSubmit: false,
-            // 选择文件之后…
-            onChange: function (file, extension) {
-                if (new RegExp(/(jpg)|(jpeg)|(bmp)|(gif)|(png)/i).test(extension)) {
-                    //file ok
-                    $("#filepath").val(file);
-                    $('#up').click();
-                } else {
-                    alert("只限上传图片文件，请重新选择！");
-                }
-            },
-
-            onSubmit: function (file, extension) {
-                $("#state").val("正在上传" + file + "..");
-                $('#imgSpinner').show();
-            },
-            // 上传完成之后
-            onComplete: function (file, response) {
-                $('#imgSpinner').hide();
-                $("#state").val("上传完成！");
-                console.log(response);
-                $('#ImgUpLoad').attr("src", response + file);
-                $('#ImgUpLoad').css({ 'width': '200px', 'height': '170px', 'margin-left': '50px', 'margin-bottom': '30px' });
-            }
-        }
-
-    // 初始化图片上传框
-    var oAjaxUpload = new AjaxUpload('#selector', uploadOption);
-
-    // 给上传按钮增加上传动作
-    $("#up").click(function () {
-        oAjaxUpload.submit();
-    });
-});
-
-$(function () {
-    $('#landing-content').mousemove(function (e) {
-        var amountMovedX = ((e.pageX - $("#mainPage").width() / 2) * -1 / 64);
-        $(this).css('background-position', amountMovedX + 'px ' + '0px');
-    });
-});
-
-$(function () {
-    if ($('#gla')) {
-        $('#gla_box>ul').roundabout({
-            minOpacity: 1,
-            btnNext: ".next",
-            duration: 1000,
-            reflect: true,
-            btnPrev: '.prev',
-            autoplay: true,
-            autoplayDuration: 6000,
-            tilt: 0,
-            shape: 'figure8'
-        });
-    }
-});
-
-victutors.functions.tAnswer = function (question) {
+victutors.functions.tAnswer = function(question) {
     var str = question;
     str = str.substring(2);
     var no1 = Number(str);
@@ -91,11 +24,6 @@ victutors.functions.tAnswer = function (question) {
         $('#tq' + no1).html("<i class='fa fa-minus' aria-hidden='true'></i>");
         victutors.functions.tQuestionNo = no1;
         victutors.functions.tShowAnswer = 1;
-        /*
-        for (i = 1; i <= 3; i++) {
-            $('#ta' + str).hide();
-            $('#tq' + str).html("<i class='fa fa-plus' aria-hidden='true'></i>");
-        }*/
     } else {
         if (victutors.functions.tShowAnswer == 0) {
             $('#ta' + str).show();
@@ -109,7 +37,7 @@ victutors.functions.tAnswer = function (question) {
     }
 }
 
-victutors.functions.sAnswer = function (question) {
+victutors.functions.sAnswer = function(question) {
     var str = question;
     str = str.substring(2);
     var no1 = Number(str);
@@ -123,11 +51,6 @@ victutors.functions.sAnswer = function (question) {
         $('#sq' + no1).html("<i class='fa fa-minus' aria-hidden='true'></i>");
         victutors.functions.sQuestionNo = no1;
         victutors.functions.sShowAnswer = 1;
-        /*
-        for (i = 1; i <= 3; i++) {
-            $('#ta' + str).hide();
-            $('#tq' + str).html("<i class='fa fa-plus' aria-hidden='true'></i>");
-        }*/
     } else {
         if (victutors.functions.sShowAnswer == 0) {
             $('#sa' + str).show();
@@ -141,14 +64,7 @@ victutors.functions.sAnswer = function (question) {
     }
 }
 
-victutors.functions.gotoTop = function () {
-    $("html, body").animate({
-        scrollTop: 0
-    }, "slow");
-    return false;
-}
-
-victutors.functions.LoadRecommendTutorDetail = function (index) {
+victutors.functions.LoadRecommendTutorDetail = function(index) {
     var s = '';
     s += '<div class="w3-modal-content w3-animate-top w3-card-8"> ';
     s += '<header class="w3-container w3-teal"> ';
@@ -186,7 +102,7 @@ victutors.functions.LoadRecommendTutorDetail = function (index) {
     document.getElementById('RecommendTutorDetail').style.display = 'block';
 }
 
-victutors.functions.ShowList = function (pmn) {
+victutors.functions.ShowList = function(pmn) {
     for (n = 0; n < 5; n++) {
         var i = pmn[n];
         var s = '';
@@ -197,31 +113,16 @@ victutors.functions.ShowList = function (pmn) {
             '<h3>' + PeopleList[i].name + '</h3>' +
             '<p >辅导科目: ' + PeopleList[i].subject + '</p>' +
             '<p>' +
-            '<button class="w3-btn w3-green" onclick = "victutors.functions.LoadRecommendTutorDetail('
-            + i
-            + ')">详细信息</button>' +
+            '<button class="w3-btn w3-green" onclick = "victutors.functions.LoadRecommendTutorDetail(' +
+            i +
+            ')">详细信息</button>' +
             '</p>' +
             '</div>';
         $('.T0' + n).html(s);
     }
 }
 
-victutors.functions.list = function (change) {
-    var l = PeopleList.length;        //list length
-    var m = victutors.functions.middle;//middle
-
-    victutors.functions.middle = (m + change + l) % l;
-    m = victutors.functions.middle;
-    var prevprev = (m - 2 + l) % l;
-    var prev = (m - 1 + l) % l;
-    var next = (m + 1 + l) % l;
-    var nextnext = (m + 2 + l) % l;
-    var pmn = [prevprev, prev, m, next, nextnext];
-
-    victutors.functions.ShowList(pmn);
-}
-
-victutors.functions.GetTutorDetail = function (s, item) {
+victutors.functions.GetTutorDetail = function(s, item) {
     s += '<div class=" w3-half w3-margin-bottom T01">';
     s += '<div class="w3-container w3-card-4" >';
 
@@ -239,25 +140,11 @@ victutors.functions.GetTutorDetail = function (s, item) {
     return s;
 }
 
-victutors.functions.DBlogin = function () {
-    if ($('#databasePassword').val() === victutors.list.databasePassword) {
-        sessionStorage.setItem('database', true);
-        window.open('database.php', '_self');
-    } else {
-        $('#databaseErrorAlert').show();
-    }
+victutors.functions.DBlogin = function() {
+    window.open('database.php', '_self');
 }
 
-victutors.functions.ReSize = function () {
-    var w = window.outerWidth;
-    if ($('#TopNavBar').height() > 50) {
-        $('#TopNavBar').hide();
-    } else {
-        $('#TopNavBar').show();
-    }
-}
-
-victutors.functions.sendFeedBack = function () {
+victutors.functions.sendFeedBack = function() {
     var subject = $('#feedback_subject').val();
     var text = $('#feedback_text').val();
     var emailcontent = { 'subject': subject, 'text': text };
@@ -265,7 +152,7 @@ victutors.functions.sendFeedBack = function () {
         url: "feedback.php",
         type: 'POST',
         data: { "email": JSON.stringify(emailcontent) },
-        success: function (response) {
+        success: function(response) {
             //response = response.replace(/\r?\n|\r/g, "");
             //alert(response);
             $('#FeedbackModal').hide();
@@ -274,18 +161,26 @@ victutors.functions.sendFeedBack = function () {
     });
 }
 
-victutors.functions.sendTutorInfo = function () {
+victutors.functions.sendTutorInfo = function() {
+    if ($('#newTutorIntro').val() === '') {
+        $('#newTutorMoreInfoAlert').css({ 'z-index': 9999 });
+        $('#newTutorMoreInfoAlert').show();
+        return;
+    }
     var name = $('#uname').val();
     var phone = $('#uphone').val();
     var wechat = $('#uwechat').val();
     var subject = $('#usubject').val();
     var email = $('#uemail').val();
-    var emailcontent = { 'name': name, 'phone': phone, 'wechat': wechat, 'subject': subject, 'email': email };
+    var content = $('#newTutorIntro').val();
+    var emailcontent = { 'name': name, 'phone': phone, 'wechat': wechat, 'subject': subject, 'email': email, 'content': content };
     $.ajax({
         url: "uploadtxt.php",
         type: 'POST',
-        data: { "info": JSON.stringify(emailcontent) },
-        success: function (response) {
+        data: {
+            "info": JSON.stringify(emailcontent)
+        },
+        success: function(response) {
             //response = response.replace(/\r?\n|\r/g, "");
             //alert(response);
             $('#aboutusModal').hide();
@@ -295,7 +190,7 @@ victutors.functions.sendTutorInfo = function () {
 }
 
 //user search for faculty 
-victutors.functions.GetTutorByFaculty = function () {
+victutors.functions.GetTutorByFaculty = function() {
     if (typeof victutors.functions.selectedValue === 'undefined') {
         $('#searchAlert').show();
         return;
@@ -304,7 +199,7 @@ victutors.functions.GetTutorByFaculty = function () {
     window.open('Tutorlist.php', '_self');
 }
 
-victutors.functions.SetUpSelectPicker = function () {
+victutors.functions.SetUpSelectPicker = function() {
     for (i = 0; i < victutors.list.FacultyList.length; i++) {
         $('#Fselecter').append('<option class = "w3-large">' + victutors.list.FacultyList[i] + '</option>');
     }
@@ -313,7 +208,7 @@ victutors.functions.SetUpSelectPicker = function () {
 /****************************/
 
 //document ready start from here
-$(document).ready(function () {
+$(document).ready(function() {
 
     //set search and title 
     $('#searchToolPanel').css({ 'margin-top': (window.innerHeight / 2 - 125) + 20 });
@@ -327,7 +222,7 @@ $(document).ready(function () {
     //setup select picker
     victutors.functions.SetUpSelectPicker();
     //footer current time
-    $(window).scroll(function () {
+    $(window).scroll(function() {
 
         //gotoTop button
         if ($(window).scrollTop() > 300) {
@@ -339,22 +234,53 @@ $(document).ready(function () {
     })
 
     $('#Fselecter').selectpicker({ 'selectedText': '', style: 'btn-default btn-lg' });
+
     //faculty selecter
-    $('#Fselecter').change(function () {
+    $('#Fselecter').change(function() {
         var selectedText = $(this).find("option:selected").text();
         var faculty = selectedText.split(" ");
         victutors.functions.selectedValue = faculty[0];
     });
 
     // device detection
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         console.log("Mobile device detected");
-        $('#feedbackModal, #qandaModal').hide();
+        $('#adService, #Home_Icon, #searchPanelIcon, #feedbackModal, #qandaModal').hide();
+        $('#myTopnav').css({ 'position': '' });
+        $('#myTopnav').attr('data-toggle', 'collapse');
+        $('#myTopnav').attr('data-target', '#Navbar');
+        $('#serviceButton').empty();
+        $('#imageUpload').html('<p class="w3-text-red">请使用电脑端上传微信二维码或联系我们.对您照成的不便我们深感歉意</p>');
+        $('#tutorInfoUpload').css({ 'margin-left': '35%', 'margin-top': 50 });
     }
+
+    $('#fileInput').on('change', function() {
+        var file_data = $('#fileInput').prop('files')[0];
+        if (!new RegExp(/(jpg)|(jpeg)|(bmp)|(gif)|(png)/i).test(file_data.name.split('.')[1])) {
+            alert("只限上传图片文件，请重新选择！");
+            return;
+        }
+        $("#state").html("正在上传！如长时间没有结果,请用电脑端上传或联系我们！");
+        var form_data = new FormData();
+        form_data.append('file', file_data);
+        $.ajax({
+            url: 'uploadimage.php', // point to server-side PHP script 
+            dataType: 'text', // what to expect back from the PHP script, if anything
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data,
+            type: 'post',
+            success: function(response) {
+                $('#imgSpinner').hide();
+                $("#state").html("上传完成！");
+                console.log(response);
+                $('#ImgUpLoad').attr("src", response + file_data.name);
+                $('#ImgUpLoad').css({ 'width': '200px', 'height': '170px', 'margin-left': '50px', 'margin-bottom': '30px' });
+            },
+            error: function(message) {
+                console.log(message);
+            }
+        });
+    });
 });
-
-
-
-
-
-

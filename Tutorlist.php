@@ -21,7 +21,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
 <script type="text/javascript" src="./javascript/victutors.js"></script>
 <script src="./lib/Javascript/jquery.min.js"></script>
-<script type="text/javascript" src="./lib/Javascript/ajaxupload.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="./javascript/victutors.Tutorlist.js"></script>
 <script type="text/javascript" src="./javascript/victutors.list.js"></script>
@@ -50,7 +49,7 @@ html, body, h1, h2, h3, h4, h5 {
 						<i class="fa fa-search" aria-hidden="true"></i></button>
 			</li>
 			<li id="joinusModal"><a class = "w3-hover-red" onclick="document.getElementById('aboutusModal').style.display='block'"><font color="black">
-			<i><b>成为家教&nbsp;&nbsp;<i class="fa fa-users" aria-hidden="true"></i></b></i></font></a></li> 
+			<i><b>成为家教&nbsp;&nbsp;<i class="fa fa-users" aria-hidden="true"></i></b></i></font></a></li>
 			<li id="contactModal"><a class = "w3-hover-red" onclick="document.getElementById('ContactUsModal').style.display='block'"><font color="black">
 			<i><b>联系我们&nbsp;&nbsp;<i class="fa fa-phone" aria-hidden="true"></i></b></i></font></a></li>
 			<li id="feedbackModal"><a class = "w3-hover-red" onclick="document.getElementById('FeedbackModal').style.display='block'"><font color="black">
@@ -68,20 +67,20 @@ html, body, h1, h2, h3, h4, h5 {
 				class="w3-center w3-border w3-hover-grey w3-dark-grey w3-btn w3-large"><b>联<br>系<br>客<br>服</b>
 			</button>
 	</div>
-	
+
 	<!-- Contact staff slidng panel -->
 	<nav id = "services" class="w3-sidenav Server-PanelTutorList w3-dark-grey" style="border:solid;border-width:thin;bottom:100px !important">
 		<a onclick="victutors.Tutorlist.ShowHideServerPanel(0)" class="w3-right w3-closenav w3-text-white">Close &times;</a>
 		<p class = "w3-left w3-large w3-text-white" style = "margin:0"><b>寻找太麻烦？</b></p>
 		<img class = "w3-left" style="width: 80px;height: 80px;" src="./Images/WeChat.png" style="width: 50%">
-		<a onclick="document.getElementById('ContactUsModal').style.display='block'" 
+		<a onclick="document.getElementById('ContactUsModal').style.display='block'"
 		class = "w3-right w3-text-white" style = "padding-right:10px;padding-top:10px">点击联系我们<br>我们来帮您!<br>请联系客服</a>
 	</nav>
-	
+
 <body id = "mainbody" style = "zoom:90%" onresize="victutors.Tutorlist.ReSize()">
 	<!-- Content -->
     <div id = "mainContent" class="w3-content w3-container" style="max-width: 1080px; margin-top: 70px; margin-bottom: 100px">
-		<p class = "w3-text-black w3-xlarge" id="title" style = "margin-top:20px;margin-bottom:20px"></p>
+		<p class = "w3-text-white w3-xlarge" id="title" style = "margin-top:20px;margin-bottom:20px"></p>
         <div id = "searchTags">
 		</div>
 		<div id = "TutorListAll" style = "margin-top:0px;margin-bottom:50px">
@@ -96,7 +95,7 @@ html, body, h1, h2, h3, h4, h5 {
 			style="padding: 0; border: none; background: none; outline: none;color:black"
 			onclick="victutors.Tutorlist.gotoTop()">
 	</div>
-	
+
 
 	<!-- Footer -->
 	<footer id = "footerpanel" class="w3-container w3-padding-10 w3-center" style = "z-index:-1">
@@ -152,30 +151,25 @@ html, body, h1, h2, h3, h4, h5 {
 						</div>
 
 					</div>
-					<div class = "w3-half">
-						
+					<div id="imageUpload" class="w3-half">
 						<div class="w3-group">
-								<img id = "ImgUpLoad" class = "w3-center" src="./Images/Imgupload.png" alt="WeChat"
+								<img id="ImgUpLoad" class = "w3-center" src="./Images/Imgupload.png" alt="WeChat"
 								style="width: 200px;height:170px;margin-left: 50px;margin-bottom: 30px;">
-								<label style = "margin-left: 25px;display:block">
-								<i id = "imgSpinner" class="fa fa-spinner fa-spin" style="font-size:24px;display: none"></i>
-								请上传微信二维码：<input class = "w3-teal w3-btn"
-								style = "display:inline-block" type="button" value="选取图片" id="selector" /></label>
-								
+								<label style="margin-left: 25px;display:block">
+								<i id="imgSpinner" class="fa fa-spinner fa-spin" style="font-size:24px;display: none"></i>
+								请上传微信二维码：
+								<input id="fileInput" type="file" style="display:none;" />
+								<input class="w3-teal w3-btn" id="uploadPic" style="display:inline-block" type="button" value="选择图片" onclick="document.getElementById('fileInput').click();" /></label>
 								<br />
-								<label>选择的图片路径：</label><input style = "border-style:none;" type="text" readonly="readonly" value="" id="filepath" />
-								<input style = "display:none" type="button" value="上传" id="up" />
-								<br />
-								<label>上传状态和结果：</label><input style = "border-style:none;" type="text" readonly="readonly" value="" id="state" />
+								<p>上传状态和结果：<span class="w3-text-red" id="state"></span></p>
 						</div>
 					</div>
                 </div>
 
-				<div style = "margin-left:50%;margin-bottom:10px">
-					<button type="submit" onclick = "victutors.Tutorlist.sendTutorInfo()" class="w3-large w3-teal w3-btn w3-padding-10">Submit</button>
+					<div id="tutorInfoUpload" style="margin-left:50%;margin-bottom:10px">
+						<button type="submit" onclick = "victutors.functions.sendTutorInfo()" class="w3-large w3-teal w3-btn w3-padding-10">Submit</button>
+					</div>
 				</div>
-				</div>
-				
 			</div>
 			<footer class="w3-container w3-teal">
 				<p class="w3-center w3-lobster ">www.victutors.com</p>
@@ -311,7 +305,7 @@ html, body, h1, h2, h3, h4, h5 {
 		</div>
 	</div>
 
-	<!--feedback --> 
+	<!--feedback -->
 	<div id="FeedbackModal" class="w3-modal" style = "z-index:999">
 		<div class="w3-modal-content w3-animate-top w3-card-8">
 			<header class="w3-container w3-teal">

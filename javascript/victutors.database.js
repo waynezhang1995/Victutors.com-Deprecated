@@ -196,9 +196,6 @@ victutors.database.DBlogin = function () {
 
 $(document).ready(function () {
 
-    if(!sessionStorage.getItem('database')){
-        document.getElementById('databaseModal').style.display='block';
-    }
     //load document
     victutors.database.setUpSelectPicker();
     $.ajax({

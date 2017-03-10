@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html id = "mainPage" lang="zh-CN">
+<html id="mainPage" lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type"
@@ -22,7 +22,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
 <script type="text/javascript" src="./javascript/victutors.js"></script>
 <script src="./lib/Javascript/jquery.min.js"></script>
-<script type="text/javascript" src="./lib/Javascript/ajaxupload.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="./javascript/victutors.database.js"></script>
 <script type="text/javascript" src="./javascript/victutors.list.js"></script>
@@ -52,14 +51,15 @@ html, body, h1, h2, h3, h4, h5 {
 		</div>
 		</nav>
 	</div>
-	
-<body id = "mainbody" style = "zoom:90%">
+
+<body id="mainbody" style = "zoom:90%">
 	<!-- Content -->
-	<div id = "mainContent" class="w3-content w3-container" style="max-width: 1080px; margin-top: 70px; margin-bottom: 100px">
-        <div class = "container-fluid">
+	<div id="mainContent" class="w3-content w3-container" style="max-width: 1080px; margin-top: 70px; margin-bottom: 100px">
+        <div class="container-fluid">
             <div>
                 <div class="w3-card-8" style="background-color:red; border:none">
                     <h2 style="color:white"><b>免责声明:</b></h2>
+					<h3 style="color:white"><b>因为资源有限,目前只提供CSC课程相关资料.对您照成的不便我们深感歉意.</b></h3>
                     <p style="color:white">Victutors创建本题库只为内部学习交流使用，不得用于任何商业用途</p>
                     <p style="color:white">本题库试题作业资源由各位CSC战友提供。资源来之不易，望各位战友万加珍惜</p>
                     <p style="color:white">同时也恳请各位战友匿名分享习题资源，学CSC不易，多一份习题，多一些拿高分的可能性</p>
@@ -93,11 +93,11 @@ html, body, h1, h2, h3, h4, h5 {
 						<button onclick = "victutors.database.getDocAll()" style = "margin-top:30%" class="w3-hover-red w3-teal w3-btn w3-xlarge">显示全部</button>
 					</div>
 				</div>
-			</div>	
+			</div>
 		</div>
 
 		<div id = "docList" class = "container-fluid">
-			
+
 		</div>
 	</div>
 
@@ -109,7 +109,7 @@ html, body, h1, h2, h3, h4, h5 {
 			style="padding: 0; border: none; background: none; outline: none;color:black"
 			onclick="victutors.database.gotoTop()">
 	</div>
-	
+
 
 	<!-- Footer -->
 	<footer id = "footerpanel" class="w3-container w3-padding-10 w3-center" style = "z-index:-1">
@@ -140,7 +140,7 @@ html, body, h1, h2, h3, h4, h5 {
 		</div>
 	</div>
 
-	<!--feedback --> 
+	<!--feedback -->
 	<div id="FeedbackModal" class="w3-modal" style = "z-index:999">
 		<div class="w3-modal-content w3-animate-top w3-card-8">
 			<header class="w3-container w3-teal">
@@ -219,26 +219,23 @@ html, body, h1, h2, h3, h4, h5 {
 						class="w3-closebtn">&times;</span>
 					<h2 class="w3-center w3-lobster">联系我们</h2>
 				</header>
-				<div id="contact" class="w3-large container-fluid bg-grey" style = "margin-bottom:100px;margin-top:100px">
+				<div id="contact" class="w3-large container-fluid bg-grey" style="margin-bottom:100px;margin-top:100px">
 					<div class="row">
-						<div class="col-sm-5" style="left: 150px">
-							<p style="margin-bottom: 25px">
+						<div class="w3-half">
+							<p style="padding-left:80px;margin-bottom: 25px">
 								<span class="glyphicon glyphicon-map-marker"></span> 地址：University of
 								Victoria
 							</p>
-							<p style="margin-bottom: 25px">
+							<p style="padding-left:80px;margin-bottom: 25px">
 								<span class="glyphicon glyphicon-phone"></span> 电话：778 922 5080
 							</p>
-							<p style="margin-bottom: 25px">
+							<p style="padding-left:80px;margin-bottom: 25px">
 								<span class="glyphicon glyphicon-envelope"></span> 邮箱：info@victutors.com
 							</p>
-							<p style="margin-bottom: 25px">
-								<span class="glyphicon glyphicon-user"></span> 微信：wayne-zhangyuwei
-							</p>
 						</div>
-						<div class="col-sm-3 slideanim" style="left: 200px">
+						<div class="w3-half w3-center">
 							<img src="./Images/WeChat.png" alt="WeChat"
-								style="width: 90%">
+								style="width: 35%">
 						</div>
 					</div>
 				</div>

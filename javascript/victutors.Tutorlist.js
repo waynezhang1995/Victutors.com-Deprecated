@@ -5,67 +5,22 @@ victutors.Tutorlist.SelectedFaculty; //faculty user searching for
 victutors.Tutorlist.SelectedTutorList;
 victutors.Tutorlist.PageTitle;
 victutors.Tutorlist.InitialFooterPosition;
-$(function () {
-    // 创建一个上传参数
-    var uploadOption =
-        {
-            // 提交目标
-            action: "uploadimage.php",
-            // 服务端接收的名称
-            name: "file",
-            // 自动提交
-            autoSubmit: false,
-            // 选择文件之后…
-            onChange: function (file, extension) {
-                if (new RegExp(/(jpg)|(jpeg)|(bmp)|(gif)|(png)/i).test(extension)) {
-                    //file ok
 
-                    $("#filepath").val(file);
-                    $('#up').click();
-
-                } else {
-                    alert("只限上传图片文件，请重新选择！");
-                }
-            },
-
-            onSubmit: function (file, extension) {
-                $("#state").val("正在上传" + file + "..");
-                $('#imgSpinner').show();
-            },
-            // 上传完成之后
-            onComplete: function (file, response) {
-                $('#imgSpinner').hide();
-                $("#state").val("上传完成！");
-                console.log(response);
-                $('#ImgUpLoad').attr("src", response + file);
-                $('#ImgUpLoad').css({ 'width': '200px', 'height': '170px', 'margin-left': '50px', 'margin-bottom': '30px' });
-            }
-        }
-
-    // 初始化图片上传框
-    var oAjaxUpload = new AjaxUpload('#selector', uploadOption);
-
-    // 给上传按钮增加上传动作
-    $("#up").click(function () {
-        oAjaxUpload.submit();
-    });
-});
-
-victutors.Tutorlist.gotoTop = function () {
+victutors.Tutorlist.gotoTop = function() {
     $("html, body").animate({
         scrollTop: 0
     }, "slow");
     return false;
 }
 
-victutors.Tutorlist.GetRandom = function (tutoramount, randomArray) {
+victutors.Tutorlist.GetRandom = function(tutoramount, randomArray) {
     if (!randomArray.length) { //at very beginning, we need to fill in all the posible numbers. Here bewteen 0 and # of tutors
         for (var i = 0; i < tutoramount; i++) {
             randomArray.push(i);
         }
     }
     var index = Math.floor(Math.random() * randomArray.length); //get a random number between 0 and array length
-    var val = randomArray[index]; //get value at that position. At beginning: index = val; After: index != val 
+    var val = randomArray[index]; //get value at that position. At beginning: index = val; After: index != val
     randomArray.splice(index, 1); //remove that value
     return val;
 }
@@ -74,7 +29,7 @@ var order = 0;
 var tags = new Array(); //contains all the tags
 var currentlist;
 
-victutors.Tutorlist.GetTutorList = function (faculty) {
+victutors.Tutorlist.GetTutorList = function(faculty) {
     var s = '';
     order = 0;
     switch (faculty) {
@@ -192,26 +147,45 @@ victutors.Tutorlist.GetTutorList = function (faculty) {
             victutors.Tutorlist.SetUpTags(tags);
             $('#TutorListAll').html(s);
             break;
+        case 'HINF':
+            var HINFTutors = [];
+            var TutorCount = victutors.list.HINFlist.length;
+            for (i = 0; i < victutors.list.HINFlist.length; i++) {
+                var index = victutors.Tutorlist.GetRandom(TutorCount, HINFTutors);
+                var item = victutors.list.HINFlist[index];
+                //get tags
+                var itemtags = item.Subject.split(",");
+                for (j = 0; j < itemtags.length; j++) {
+                    if (tags.indexOf(itemtags[j]) == -1) {
+                        tags.push(itemtags[j]);
+                    }
+                }
+                s = victutors.Tutorlist.GetTutorDetail(index, s, item);
+            }
+            currentlist = victutors.list.HINFlist;
+            victutors.Tutorlist.SetUpTags(tags);
+            $('#TutorListAll').html(s);
+            break;
         default:
             break;
     }
 }
 
-victutors.Tutorlist.SetUpTags = function (tags) {
-    var buttonlist = ["btn-primary", "btn-success", "btn-info", "btn-warning", "btn-danger", "btn-link"];
+victutors.Tutorlist.SetUpTags = function(tags) {
+    var buttonlist = ["btn-primary", "btn-success", "btn-info", "btn-warning", "btn-danger", "btn-default"];
     var s = "";
     s += "<div class = \"w3-text-white w3-large\">";
-    s += "<p class = \"w3-text-black w3-xlarge\">分类选择:  ";
-    s += "<button style = \"margin-right:10px\" type=\"button\" id = \"tag0\" class = \"w3-large btn btn-default\" onclick = \"victutors.Tutorlist.ShowListByTags('all')\">完整名单</button>";
+    s += "<div class = \"w3-text-white w3-xlarge\"><p>分类选择:  </p>";
+    s += "<button style = \"margin-right:10px;margin-bottom:10px\" type=\"button\" id = \"tag0\" class = \"w3-large btn btn-default\" onclick = \"victutors.Tutorlist.ShowListByTags('all')\">完整名单</button>";
     for (i = 0; i < tags.length; i++) {
-        s += "<button style = \"margin-right:10px\" type=\"button\" id = \"tag" + i + "\" class = \"w3-large btn " + buttonlist[i] + "\" onclick = \"victutors.Tutorlist.ShowListByTags('" + tags[i] + "')\">" + tags[i] + "</button>";
+        s += "<button style = \"margin-right:10px;margin-bottom:10px\" type=\"button\" id = \"tag" + i + "\" class = \"w3-large btn " + buttonlist[i % buttonlist.length] + "\" onclick = \"victutors.Tutorlist.ShowListByTags('" + tags[i] + "')\">" + tags[i] + "</button>";
     }
-    s += "</p>";
+    s += "</div>";
     s += "</div>";
     $("#searchTags").html(s);
 }
 
-victutors.Tutorlist.tAnswer = function (question) {
+victutors.Tutorlist.tAnswer = function(question) {
     var str = question;
     str = str.substring(2);
     var no1 = Number(str);
@@ -243,7 +217,7 @@ victutors.Tutorlist.tAnswer = function (question) {
     }
 }
 
-victutors.Tutorlist.sendFeedBack = function () {
+victutors.Tutorlist.sendFeedBack = function() {
     var subject = $('#feedback_subject').val();
     var text = $('#feedback_text').val();
     var emailcontent = { 'subject': subject, 'text': text };
@@ -251,7 +225,7 @@ victutors.Tutorlist.sendFeedBack = function () {
         url: "feedback.php",
         type: 'POST',
         data: { "email": JSON.stringify(emailcontent) },
-        success: function (response) {
+        success: function(response) {
             //response = response.replace(/\r?\n|\r/g, "");
             //alert(response);
             $('#FeedbackModal').hide();
@@ -260,18 +234,26 @@ victutors.Tutorlist.sendFeedBack = function () {
     });
 }
 
-victutors.Tutorlist.sendTutorInfo = function () {
+victutors.Tutorlist.sendTutorInfo = function() {
+    if ($('#newTutorIntro').val() === '') {
+        $('#newTutorMoreInfoAlert').css({ 'z-index': 9999 });
+        $('#newTutorMoreInfoAlert').show();
+        return;
+    }
     var name = $('#uname').val();
     var phone = $('#uphone').val();
     var wechat = $('#uwechat').val();
     var subject = $('#usubject').val();
     var email = $('#uemail').val();
-    var emailcontent = { 'name': name, 'phone': phone, 'wechat': wechat, 'subject': subject, 'email': email };
+    var content = $('#newTutorIntro').val();
+    var emailcontent = { 'name': name, 'phone': phone, 'wechat': wechat, 'subject': subject, 'email': email, 'content': content };
     $.ajax({
         url: "uploadtxt.php",
         type: 'POST',
-        data: { "email": JSON.stringify(emailcontent) },
-        success: function (response) {
+        data: {
+            "info": JSON.stringify(emailcontent)
+        },
+        success: function(response) {
             //response = response.replace(/\r?\n|\r/g, "");
             //alert(response);
             $('#aboutusModal').hide();
@@ -280,7 +262,7 @@ victutors.Tutorlist.sendTutorInfo = function () {
     });
 }
 
-victutors.Tutorlist.sAnswer = function (question) {
+victutors.Tutorlist.sAnswer = function(question) {
     var str = question;
     str = str.substring(2);
     var no1 = Number(str);
@@ -294,11 +276,6 @@ victutors.Tutorlist.sAnswer = function (question) {
         $('#sq' + no1).html("<i class='fa fa-minus' aria-hidden='true'></i>");
         victutors.Tutorlist.sQuestionNo = no1;
         victutors.Tutorlist.sShowAnswer = 1;
-        /*
-        for (i = 1; i <= 3; i++) {
-            $('#ta' + str).hide();
-            $('#tq' + str).html("<i class='fa fa-plus' aria-hidden='true'></i>");
-        }*/
     } else {
         if (victutors.Tutorlist.sShowAnswer == 0) {
             $('#sa' + str).show();
@@ -312,7 +289,7 @@ victutors.Tutorlist.sAnswer = function (question) {
     }
 }
 
-victutors.Tutorlist.ShowListByTags = function (tag) {
+victutors.Tutorlist.ShowListByTags = function(tag) {
     var s = "";
     var Tutors = [];
     var TutorCount = currentlist.length;
@@ -331,16 +308,10 @@ victutors.Tutorlist.ShowListByTags = function (tag) {
     }
 
     $('#TutorListAll').html(s);
-    //  var bottom = window.innerHeight - $('#test').position().top;
-    // if(bottom > 0){
-    //     $('#mainContent').css({'height':$('#mainContent').height() + bottom});
-    // } 
-    //if(tag == 'all'){
     $('#mainContent').css({ 'height': victutors.Tutorlist.InitialFooterPosition });
-    //}
 }
 
-victutors.Tutorlist.GetTutorDetail = function (i, s, item) {
+victutors.Tutorlist.GetTutorDetail = function(i, s, item) {
     var color = '';
     if (order % 2 === 0) {
         color = '<div class="w3-card-12 w3-hover-shadow w3-white">';
@@ -368,7 +339,7 @@ victutors.Tutorlist.GetTutorDetail = function (i, s, item) {
 }
 
 //push content downward if navbar gets shrinked
-victutors.Tutorlist.ReSize = function () {
+victutors.Tutorlist.ReSize = function() {
     var w = $('#TopNavBar').height();
     var h = $('#TopNavBar').width();
     if (h <= 1060) { //hide title
@@ -385,7 +356,7 @@ victutors.Tutorlist.ReSize = function () {
     }
 }
 
-victutors.Tutorlist.ShowHideServerPanel = function (flag) {
+victutors.Tutorlist.ShowHideServerPanel = function(flag) {
     if (flag == 0) {
         $('#services').hide();
         $('#serviceButton').delay(1000).show();
@@ -395,7 +366,7 @@ victutors.Tutorlist.ShowHideServerPanel = function (flag) {
     }
 }
 
-victutors.Tutorlist.GetTutorByFaculty = function () {
+victutors.Tutorlist.GetTutorByFaculty = function() {
 
     if (typeof victutors.Tutorlist.selectedValue === 'undefined') {
         $('#searchAlert').show();
@@ -405,15 +376,7 @@ victutors.Tutorlist.GetTutorByFaculty = function () {
     window.open('Tutorlist.php', '_self');
 }
 
-
-$(function () {
-    $('#mainbody').mousemove(function (e) {
-        var amountMovedX = ((e.pageX - $("#mainbody").width() / 2) * -1 / 64);
-        $(this).css('background-position', amountMovedX + 'px ' + '0px');
-    });
-});
-
-victutors.Tutorlist.setPage = function () {
+victutors.Tutorlist.setPage = function() {
     var title = "";
     switch (victutors.Tutorlist.SelectedFaculty) {
         case 'CSC':
@@ -441,19 +404,24 @@ victutors.Tutorlist.setPage = function () {
             $('#title').html(title);
             victutors.Tutorlist.PageTitle = title;
             break;
+        case 'HINF':
+            title = "Health Information Science - 健康信息科学";
+            $('#title').html(title);
+            victutors.Tutorlist.PageTitle = title;
+            break;
     }
     victutors.Tutorlist.GetTutorList(victutors.Tutorlist.SelectedFaculty);
 }
 
-victutors.Tutorlist.SetUpSelectPicker = function () {
-    for (i = 0; i < victutors.list.FacultyList.length; i++) {
-        $('#Fselecter').append('<option>' + victutors.list.FacultyList[i] + '</option>');
+victutors.Tutorlist.SetUpSelectPicker = function() {
+        for (i = 0; i < victutors.list.FacultyList.length; i++) {
+            $('#Fselecter').append('<option>' + victutors.list.FacultyList[i] + '</option>');
+        }
     }
-}
-/****************************/
+    /****************************/
 
 //document ready start from here
-$(document).ready(function () {
+$(document).ready(function() {
 
     //Get faculty send by index.php
     victutors.Tutorlist.SelectedFaculty = sessionStorage.getItem("faculty");
@@ -470,19 +438,16 @@ $(document).ready(function () {
     victutors.Tutorlist.SetUpSelectPicker();
 
     //set background image height
-    //$('.wall').height($('#test').position().top);
     victutors.Tutorlist.InitialFooterPosition = $('#mainContent').height();
     // go to top tooltip
     $('[data-toggle="gotop"], [data-toggle="title"], [data-toggle="showlist"], [data-toggle="gonext"]').tooltip({
         trigger: 'hover'
     });
-    //footer current time
-    //document.getElementById("CurrentTime").innerHTML = Date();
 
     /**
      * Triggered when we scroll the page
      */
-    $(window).scroll(function () {
+    $(window).scroll(function() {
 
         //gotoTop button
         if ($(window).scrollTop() > 300) {
@@ -495,21 +460,68 @@ $(document).ready(function () {
 
     $('#Fselecter').selectpicker({ 'selectedText': '', style: 'btn-default' });
     //faculty selecter
-    $('#Fselecter').change(function () {
+    $('#Fselecter').change(function() {
         var selectedText = $(this).find("option:selected").text();
         var faculty = selectedText.split(" ");
         victutors.Tutorlist.selectedValue = faculty[0];
     });
 
     // device detection
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         console.log("Mobile device detected");
         $('#feedbackModal, #qandaModal').hide();
+
+        $(window).resize(function() {
+            if ($("#TopNavBar").width() <= 800) {
+                $('#contactModal').hide();
+            } else {
+                $('#contactModal').show();
+            }
+
+            if ($("#TopNavBar").width() <= 640) {
+                $('#joinusModal').hide();
+            } else {
+                $('#joinusModal').show();
+            }
+
+            if ($("#TopNavBar").width() <= 542) {
+                $('#victutors_icon').hide();
+            } else {
+                $('#victutors_icon').show();
+            }
+        });
     }
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        console.log("Mobile device detected");
+        $('#imageUpload').html('<p style="margin-top: 70%" class="w3-text-red">请使用电脑端上传微信二维码或联系我们.对您照成的不便我们深感歉意</p>');
+        $('#tutorInfoUpload').css({ 'margin-left': '35%', 'margin-top': 50 });
+    }
+
+    $('#fileInput').on('change', function() {
+        var file_data = $('#fileInput').prop('files')[0];
+        if (!new RegExp(/(jpg)|(jpeg)|(bmp)|(gif)|(png)/i).test(file_data.name.split('.')[1])) {
+            alert("只限上传图片文件，请重新选择！");
+            return;
+        }
+        $("#state").html("正在上传！如长时间没有结果,请用电脑端上传或联系我们！");
+        var form_data = new FormData();
+        form_data.append('file', file_data);
+        $.ajax({
+            url: 'uploadimage.php', // point to server-side PHP script
+            dataType: 'text', // what to expect back from the PHP script, if anything
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data,
+            type: 'post',
+            success: function(response) {
+                $('#imgSpinner').hide();
+                $("#state").html("上传完成！");
+                console.log(response);
+                $('#ImgUpLoad').attr("src", response + file_data.name);
+                $('#ImgUpLoad').css({ 'width': '200px', 'height': '170px', 'margin-left': '50px', 'margin-bottom': '30px' });
+            }
+        });
+    });
 });
-
-
-
-
-
-

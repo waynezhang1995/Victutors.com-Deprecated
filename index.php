@@ -53,7 +53,6 @@ THE SOFTWARE.
 
 <script type="text/javascript" src="./javascript/victutors.js"></script>
 <script src="./lib/Javascript/jquery.min.js"></script>
-<script type="text/javascript" src="./lib/Javascript/ajaxupload.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="./javascript/victutors.functions.js"></script>
 <script type="text/javascript" src="./javascript/victutors.list.js"></script>
@@ -86,7 +85,7 @@ html, body, h1, h2, h3, h4, h5 {
 				<button type="button" class="w3-grey navbar-toggle" data-toggle="collapse" data-target="#Navbar">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
-					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span>
 				</button>
 				<span><img id="Home_Icon" class="w3-left" src="./Images/victutors_Icon_White.png" alt="victutors_Icon" width="10%"></span>
 				<a class="w3-xlarge navbar-brand" href="index.php"><font class="navOp" size="6" color="white">victutors.com</font></a>
@@ -94,9 +93,9 @@ html, body, h1, h2, h3, h4, h5 {
 			<div class="collapse navbar-collapse" id="Navbar" style="border-top-width: 0px;">
 				<ul id="myTopnav" style="margin-right:0px; position:absolute;right: 0px" class="w3-right nav navbar-nav topnav">
 				<li><a class="w3-hover-red" onclick="document.getElementById('databaseModal').style.display='block'"><font class="navOp" color="white">
-				<i><b>题库分享&nbsp;&nbsp;<i class="fa fa-database" aria-hidden="true"></i></b></i></font></a></li> 
+				<i><b>题库分享&nbsp;&nbsp;<i class="fa fa-database" aria-hidden="true"></i></b></i></font></a></li>
 				<li><a class="w3-hover-red" onclick="document.getElementById('aboutusModal').style.display='block'"><font class="navOp" color="white">
-				<i><b>成为家教&nbsp;&nbsp;<i class="fa fa-users" aria-hidden="true"></i></b></i></font></a></li> 
+				<i><b>成为家教&nbsp;&nbsp;<i class="fa fa-users" aria-hidden="true"></i></b></i></font></a></li>
 				<li><a class="w3-hover-red" onclick="document.getElementById('ContactUsModal').style.display='block'"><font class="navOp" color="white">
 				<i><b>联系我们&nbsp;&nbsp;<i class="fa fa-phone" aria-hidden="true"></i></b></i></font></a></li>
 				<li id="feedbackModal"><a class = "w3-hover-red" onclick="document.getElementById('FeedbackModal').style.display='block'"><font class="navOp" color="white">
@@ -115,7 +114,7 @@ html, body, h1, h2, h3, h4, h5 {
 				class="w3-center w3-border w3-hover-grey w3-light-grey w3-btn w3-large"><b>联<br>系<br>客<br>服</b>
 			</button>
 	</div>
-    
+
 	<div id="mainBody">
 		<div class="w3-container wall" id="Home_Search_Panel">
 			<div id="searchToolPanel" class="w3-center">
@@ -124,7 +123,7 @@ html, body, h1, h2, h3, h4, h5 {
 				</h2>
 				<!--<button class="bgbutton w3-hover-red w3-teal w3-btn"><b class = "w3-large">查找家教</b></button>-->
 				<div style="margin-top:30px">
-				    <select id="Fselecter" class="selectpicker show-tick show-menu-arrow" data-width="400px" title="选择专业"
+				    <select id="Fselecter" class="selectpicker show-tick" data-width="400px" title="选择专业"
 				    data-live-search="true" ></select>
 				    <button class="w3-teal w3-xlarge w3-btn w3-hover-red" style="margin-left:20px"
 				    onclick="victutors.functions.GetTutorByFaculty()">搜索家教&nbsp;
@@ -134,13 +133,14 @@ html, body, h1, h2, h3, h4, h5 {
 			</div>
 		</div>
     </div>
-	
+
 	<!-- Footer -->
 	<footer id="footerpanel" class="w3-container w3-bottom w3-padding-10">
 		<!--<h4 id = "CurrentTime"></h4>-->
-		<p class="w3-center">
+		<p class="w3-center" style="margin-bottom:0px;padding-top:5px;padding-bottom:5px">
 			<span id="" class="w3-left w3-text-white">© Victutors.com - VICTUTORS ALL RIGHTS RESERVED</span>
 			<span id="adService">
+				<span class="w3-center w3-text-white" style="margin-right:200px">友情链接:</span>
 				<span class="w3-right"><a href="http://www.simplehitcounter.com" target="_blank"><img src="http://simplehitcounter.com/hit.php?uid=2164152&f=16777215&b=0" style="margin-bottom: 0px;padding-bottom: 2px;" border="0" height="18" width="83" alt="web counter"></a><br><a href="http://www.simplehitcounter.com" target="_blank" style="text-decoration:none;"></a>
 				</span>
 				<span style="margin-right:30px" class="w3-right"><b class="w3-text-white"> ｜ </b><a href="#" ><b class="w3-text-white">广告服务</b></a></span>
@@ -194,26 +194,23 @@ html, body, h1, h2, h3, h4, h5 {
 						</div>
 
 					</div>
-					<div class="w3-half">
+					<div id="imageUpload" class="w3-half">
 						<div class="w3-group">
-								<img id="ImgUpLoad" class="w3-center" src="./Images/Imgupload.png" alt="WeChat"
+								<img id="ImgUpLoad" class = "w3-center" src="./Images/Imgupload.png" alt="WeChat"
 								style="width: 200px;height:170px;margin-left: 50px;margin-bottom: 30px;">
 								<label style="margin-left: 25px;display:block">
-								<i id = "imgSpinner" class="fa fa-spinner fa-spin" style="font-size:24px;display: none"></i>
-								请上传微信二维码：<input class = "w3-teal w3-btn"
-								style = "display:inline-block" type="button" value="选取图片" id="selector" /></label>
-								
+								<i id="imgSpinner" class="fa fa-spinner fa-spin" style="font-size:24px;display: none"></i>
+								请上传微信二维码：
+								<input id="fileInput" type="file" style="display:none;" />
+								<input class="w3-teal w3-btn" id="uploadPic" style="display:inline-block" type="button" value="选择图片" onclick="document.getElementById('fileInput').click();" /></label>
 								<br />
-								<label>选择的图片路径：</label><input style="border-style:none;" type="text" readonly="readonly" value="" id="filepath" />
-								<input style="display:none" type="button" value="上传" id="up" />
-								<br />
-								<label>上传状态和结果：</label><input style="border-style:none;" type="text" readonly="readonly" value="" id="state" />
+								<p>上传状态和结果：<span class="w3-text-red" id="state"></span></p>
 						</div>
 					</div>
                 </div>
-				<div style="margin-left:50%;margin-bottom:10px">
-					<button type="submit" onclick = "victutors.functions.sendTutorInfo()" class="w3-large w3-teal w3-btn w3-padding-10">Submit</button>
-				</div>
+					<div id="tutorInfoUpload" style="margin-left:50%;margin-bottom:10px">
+						<button type="submit" onclick = "victutors.functions.sendTutorInfo()" class="w3-large w3-teal w3-btn w3-padding-10">Submit</button>
+					</div>
 				</div>
 			</div>
 			<footer class="w3-container w3-teal">
@@ -385,7 +382,7 @@ html, body, h1, h2, h3, h4, h5 {
 		</div>
 	</div>
 
-	<!--feedback --> 
+	<!--feedback -->
 	<div id="FeedbackModal" class="w3-modal" style = "z-index:999">
 		<div class="w3-modal-content w3-animate-top w3-card-8">
 			<header class="w3-container w3-teal">
@@ -445,7 +442,7 @@ html, body, h1, h2, h3, h4, h5 {
 			</footer>
 		</div>
 	</div>
-		
+
 
 	<!-- 2. CSC List modal -->
 		<div id="TutorList" class="w3-modal" style = "padding-top:55px">
@@ -458,7 +455,7 @@ html, body, h1, h2, h3, h4, h5 {
             </div>
         </div>
 
-	
+
 		<div id="searchAlert" class="w3-modal">
 			<div class="w3-modal-content w3-animate-top w3-card-8" style = "width:30%">
 				<header class="w3-container w3-red">
