@@ -198,7 +198,7 @@ victutors.functions.sendTutorInfo = function() {
     });
 }
 
-//user search for faculty 
+//user search for faculty
 victutors.functions.GetTutorByFaculty = function() {
     if (typeof victutors.functions.selectedValue === 'undefined') {
         $('#searchAlert').show();
@@ -219,7 +219,7 @@ victutors.functions.SetUpSelectPicker = function() {
 //document ready start from here
 $(document).ready(function() {
 
-    //set search and title 
+    //set search and title
     $('#searchToolPanel').css({ 'margin-top': (window.innerHeight / 2 - 125) + 20 });
     victutors.functions.length = window.outerWidth;
 
@@ -272,7 +272,7 @@ $(document).ready(function() {
         var form_data = new FormData();
         form_data.append('file', file_data);
         $.ajax({
-            url: 'uploadimage.php', // point to server-side PHP script 
+            url: 'uploadimage.php', // point to server-side PHP script
             dataType: 'text', // what to expect back from the PHP script, if anything
             cache: false,
             contentType: false,
