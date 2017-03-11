@@ -85,7 +85,7 @@ html, body, h1, h2, h3, h4, h5 {
 				<button type="button" class="w3-grey navbar-toggle" data-toggle="collapse" data-target="#Navbar">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
+					<span class="icon-bar"></span> 
 				</button>
 				<span><img id="Home_Icon" class="w3-left" src="./Images/victutors_Icon_White.png" alt="victutors_Icon" width="10%"></span>
 				<a class="w3-xlarge navbar-brand" href="index.php"><font class="navOp" size="6" color="white">victutors.com</font></a>
@@ -93,9 +93,9 @@ html, body, h1, h2, h3, h4, h5 {
 			<div class="collapse navbar-collapse" id="Navbar" style="border-top-width: 0px;">
 				<ul id="myTopnav" style="margin-right:0px; position:absolute;right: 0px" class="w3-right nav navbar-nav topnav">
 				<li><a class="w3-hover-red" onclick="document.getElementById('databaseModal').style.display='block'"><font class="navOp" color="white">
-				<i><b>题库分享&nbsp;&nbsp;<i class="fa fa-database" aria-hidden="true"></i></b></i></font></a></li>
+				<i><b>题库分享&nbsp;&nbsp;<i class="fa fa-database" aria-hidden="true"></i></b></i></font></a></li> 
 				<li><a class="w3-hover-red" onclick="document.getElementById('aboutusModal').style.display='block'"><font class="navOp" color="white">
-				<i><b>成为家教&nbsp;&nbsp;<i class="fa fa-users" aria-hidden="true"></i></b></i></font></a></li>
+				<i><b>成为家教&nbsp;&nbsp;<i class="fa fa-users" aria-hidden="true"></i></b></i></font></a></li> 
 				<li><a class="w3-hover-red" onclick="document.getElementById('ContactUsModal').style.display='block'"><font class="navOp" color="white">
 				<i><b>联系我们&nbsp;&nbsp;<i class="fa fa-phone" aria-hidden="true"></i></b></i></font></a></li>
 				<li id="feedbackModal"><a class = "w3-hover-red" onclick="document.getElementById('FeedbackModal').style.display='block'"><font class="navOp" color="white">
@@ -114,7 +114,7 @@ html, body, h1, h2, h3, h4, h5 {
 				class="w3-center w3-border w3-hover-grey w3-light-grey w3-btn w3-large"><b>联<br>系<br>客<br>服</b>
 			</button>
 	</div>
-
+    
 	<div id="mainBody">
 		<div class="w3-container wall" id="Home_Search_Panel">
 			<div id="searchToolPanel" class="w3-center">
@@ -133,14 +133,13 @@ html, body, h1, h2, h3, h4, h5 {
 			</div>
 		</div>
     </div>
-
+	
 	<!-- Footer -->
 	<footer id="footerpanel" class="w3-container w3-bottom w3-padding-10">
 		<!--<h4 id = "CurrentTime"></h4>-->
-		<p class="w3-center" style="margin-bottom:0px;padding-top:5px;padding-bottom:5px">
+		<p class="w3-center">
 			<span id="" class="w3-left w3-text-white">© Victutors.com - VICTUTORS ALL RIGHTS RESERVED</span>
 			<span id="adService">
-				<span class="w3-center w3-text-white" style="margin-right:200px">友情链接:</span>
 				<span class="w3-right"><a href="http://www.simplehitcounter.com" target="_blank"><img src="http://simplehitcounter.com/hit.php?uid=2164152&f=16777215&b=0" style="margin-bottom: 0px;padding-bottom: 2px;" border="0" height="18" width="83" alt="web counter"></a><br><a href="http://www.simplehitcounter.com" target="_blank" style="text-decoration:none;"></a>
 				</span>
 				<span style="margin-right:30px" class="w3-right"><b class="w3-text-white"> ｜ </b><a href="#" ><b class="w3-text-white">广告服务</b></a></span>
@@ -382,7 +381,7 @@ html, body, h1, h2, h3, h4, h5 {
 		</div>
 	</div>
 
-	<!--feedback -->
+	<!--feedback --> 
 	<div id="FeedbackModal" class="w3-modal" style = "z-index:999">
 		<div class="w3-modal-content w3-animate-top w3-card-8">
 			<header class="w3-container w3-teal">
@@ -442,7 +441,7 @@ html, body, h1, h2, h3, h4, h5 {
 			</footer>
 		</div>
 	</div>
-
+		
 
 	<!-- 2. CSC List modal -->
 		<div id="TutorList" class="w3-modal" style = "padding-top:55px">
@@ -455,7 +454,7 @@ html, body, h1, h2, h3, h4, h5 {
             </div>
         </div>
 
-
+	
 		<div id="searchAlert" class="w3-modal">
 			<div class="w3-modal-content w3-animate-top w3-card-8" style = "width:30%">
 				<header class="w3-container w3-red">

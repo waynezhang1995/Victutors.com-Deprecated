@@ -64,6 +64,15 @@ victutors.functions.sAnswer = function(question) {
     }
 }
 
+victutors.functions.responsive = function() {
+    var x = document.getElementById("navbarlist");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+
 victutors.functions.LoadRecommendTutorDetail = function(index) {
     var s = '';
     s += '<div class="w3-modal-content w3-animate-top w3-card-8"> ';
@@ -234,7 +243,6 @@ $(document).ready(function() {
     })
 
     $('#Fselecter').selectpicker({ 'selectedText': '', style: 'btn-default btn-lg' });
-
     //faculty selecter
     $('#Fselecter').change(function() {
         var selectedText = $(this).find("option:selected").text();

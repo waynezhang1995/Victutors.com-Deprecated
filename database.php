@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html id="mainPage" lang="zh-CN">
+<html id = "mainPage" lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type"
@@ -51,11 +51,11 @@ html, body, h1, h2, h3, h4, h5 {
 		</div>
 		</nav>
 	</div>
-
-<body id="mainbody" style = "zoom:90%">
+	
+<body id = "mainbody" style = "zoom:90%">
 	<!-- Content -->
-	<div id="mainContent" class="w3-content w3-container" style="max-width: 1080px; margin-top: 70px; margin-bottom: 100px">
-        <div class="container-fluid">
+	<div id = "mainContent" class="w3-content w3-container" style="max-width: 1080px; margin-top: 70px; margin-bottom: 100px">
+        <div class = "container-fluid">
             <div>
                 <div class="w3-card-8" style="background-color:red; border:none">
                     <h2 style="color:white"><b>免责声明:</b></h2>
@@ -93,11 +93,11 @@ html, body, h1, h2, h3, h4, h5 {
 						<button onclick = "victutors.database.getDocAll()" style = "margin-top:30%" class="w3-hover-red w3-teal w3-btn w3-xlarge">显示全部</button>
 					</div>
 				</div>
-			</div>
+			</div>	
 		</div>
 
 		<div id = "docList" class = "container-fluid">
-
+			
 		</div>
 	</div>
 
@@ -109,7 +109,7 @@ html, body, h1, h2, h3, h4, h5 {
 			style="padding: 0; border: none; background: none; outline: none;color:black"
 			onclick="victutors.database.gotoTop()">
 	</div>
-
+	
 
 	<!-- Footer -->
 	<footer id = "footerpanel" class="w3-container w3-padding-10 w3-center" style = "z-index:-1">
@@ -140,7 +140,7 @@ html, body, h1, h2, h3, h4, h5 {
 		</div>
 	</div>
 
-	<!--feedback -->
+	<!--feedback --> 
 	<div id="FeedbackModal" class="w3-modal" style = "z-index:999">
 		<div class="w3-modal-content w3-animate-top w3-card-8">
 			<header class="w3-container w3-teal">
