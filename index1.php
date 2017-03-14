@@ -36,7 +36,7 @@
     </div>
     <div id="MainBody">
         <div id="search_panel">
-            <h1>维多利亚家教网aqqa</h1>
+            <h1>维多利亚家教网</h1>
             <div>
                 <select id="Fselecter" class="selectpicker" data-live-search="true" data-width="auto" title="选择专业">
                 </select>
@@ -54,14 +54,14 @@
     </div>
     <div id="Footer" class="w3-bottom">
         <div class="row no-gutters">
-            <ul class="footer col-sm-4">
+            <ul class="footer col-sm-5">
                 <li><a href="#" >© Victutors.com - VICTUTORS ALL RIGHTS RESERVED</a></li>
             </ul>
-            <ul class="footer col-sm-4 text-center">
+            <ul class="footer col-sm-2 text-center">
                 <li><a href="#">免责声明</a></li>
                 <li><a href="#">广告服务</a></li>
             </ul>
-            <ul class="footer col-sm-4 text-center">
+            <ul class="footer col-sm-5 text-center">
                 <li><a href="#">合作伙伴</a></li>
                 <li><a href="#"><img src="/Images/vichelp_s.png" 
                     onmouseover="document.getElementById('partner').style.display = 'block'"
