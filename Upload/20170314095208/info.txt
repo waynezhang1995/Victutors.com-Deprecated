@@ -1,0 +1,6 @@
+name: Rob Thorndyke
+phone: 250-480-8970
+wechat: rthorndy
+subject: Computer Science
+email: rthorndy@gmail.com
+content: I am a Computer Science instructor at Camosun College. I specialize in Java, C, C++, python and PHP programming. Topics include Introduction To Programming, Data Structures, Algorithms, Graph Theory, Network Programming. Available most weekends, in the afternoon or evening; please inquire for specific times! I look forward to hearing from you! :)
