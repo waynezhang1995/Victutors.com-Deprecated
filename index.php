@@ -183,7 +183,7 @@ THE SOFTWARE.
         <div class="row no-gutters">
             <ul class="footer">
                 <li id="copyright"><a href="#" >© Victutors.com - VICTUTORS ALL RIGHTS RESERVED</a></li>
-                <li id="partner01" class="partner-pane"><a onmouseout="document.getElementById('partner').style.display = 'none'" onmouseover="document.getElementById('partner').style.display = 'block'" href="#">维多利亚生活馆</a></li>
+                <li id="partner01" class="partner-pane"><a onmouseout="document.getElementById('partner').style.display = 'none'" onmouseover="document.getElementById('partner').style.display = 'block'" href="#">维城生活信息馆</a></li>
                 <li class="partner-pane"><a href="#">合作伙伴 :</a></li>
             </ul>
         </div>
