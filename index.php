@@ -173,22 +173,21 @@ THE SOFTWARE.
 				    </button>
                 </div>
             </div>
+        </div
+    </div>
+    <div id="zoomzone">
+        <img id="partner" src="./Images/Partner/partner01.JPG" style="display:none;">
+    </div>
+    <!-- Footer -->
+    <div id="Footer" class="w3-bottom">
+        <div class="row no-gutters">
+            <ul class="footer">
+                <li id="copyright"><a href="#" >© Victutors.com - VICTUTORS ALL RIGHTS RESERVED</a></li>
+                <li id="partner01" class="partner-pane"><a onmouseout="document.getElementById('partner').style.display = 'none'" onmouseover="document.getElementById('partner').style.display = 'block'" href="#">维多利亚生活馆</a></li>
+                <li class="partner-pane"><a href="#">合作伙伴 :</a></li>
+            </ul>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer id="footerpanel" class="w3-container w3-bottom w3-padding-10">
-        <!--<h4 id = "CurrentTime"></h4>-->
-        <p class="w3-center">
-            <span id="" class="w3-left w3-text-white">© Victutors.com - VICTUTORS ALL RIGHTS RESERVED</span>
-            <span id="adService">
-				<span class="w3-right"><a href="http://www.simplehitcounter.com" target="_blank"><img src="http://simplehitcounter.com/hit.php?uid=2164152&f=16777215&b=0" style="margin-bottom: 0px;padding-bottom: 2px;" border="0" height="18" width="83" alt="web counter"></a><br><a href="http://www.simplehitcounter.com" target="_blank" style="text-decoration:none;"></a>
-				</span>
-            <span style="margin-right:30px" class="w3-right"><b class="w3-text-white"> ｜ </b><a href="#" ><b class="w3-text-white">广告服务</b></a></span>
-            <span class="w3-right"><a href="#" ><b class="w3-text-white">免责声明</b></a></span>
-            </span>
-        </p>
-    </footer>
 
     <div id="aboutusModal" class="w3-modal" style="z-index:999">
         <div class="w3-modal-content w3-animate-top w3-card-8">

@@ -1,79 +1,137 @@
 ﻿/*首页图片滚动*/
-#gla{
-	overflow:hidden;
-	margin:auto;
-	position:relative;
-	height:520px;
+
+#gla {
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+    height: 520px;
 }
-#gla_box{
-	width:500px;
-	height:480px;
-	margin:auto;
+
+#gla_box {
+    width: 500px;
+    height: 480px;
+    margin: auto;
 }
-.gla_inbox{
-	overflow:hidden;
-	position:relative;
+
+.gla_inbox {
+    overflow: hidden;
+    position: relative;
 }
+
 .roundabout-holder {
-	height: 400px;
-	width: 500px;
+    height: 400px;
+    width: 500px;
 }
+
 .roundabout-moveable-item {
-	display:block;
-	height: 300px;
-	width: 400px;;
-	cursor: pointer;
+    display: block;
+    height: 300px;
+    width: 400px;
+    ;
+    cursor: pointer;
 }
+
 .roundabout-in-focus {
-	cursor: auto;
+    cursor: auto;
 }
 
-#searchToolPanel{
-  background-color: rgba(0,0,0,0.7);
-  height: 250px;
+#searchToolPanel {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 250px;
 }
 
-#footerpanel{
-  background-color: rgba(0,0,0,0.7);
+#footerpanel {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
-#mainPage{
-  overflow: hidden;
-}
-#downArrow{
-  animation: jump 3s infinite forwards;
+#mainPage {
+    overflow: hidden;
 }
 
-@keyframes jump {
-	0%, 100% {
-        bottom: 0;
+#downArrow {
+    animation: jump 3s infinite forwards;
+}
+
+#Home_Icon {
+    margin-top: 8px;
+    margin-right: 6px
+}
+
+#Home_Search_Panel {
+    margin-left: -16px;
+    margin-right: -16px
+}
+
+#Footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    font-size: 1em;
+}
+
+#Footer img {
+    margin: 0;
+}
+
+ul.footer {
+    margin-bottom: 0px;
+    padding-right: 100px;
+}
+
+ul.footer li {
+    display: inline-block;
+}
+
+ul.footer li a {
+    padding: 0 8px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    color: #f2f2f2;
+}
+
+.row.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.row.no-gutters>[class^="col-"],
+.row.no-gutters>[class*=" col-"] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+#zoomzone {
+    position: absolute;
+    z-index: 11;
+    right: 0;
+    bottom: 2.5rem;
+}
+
+#partner_icon {
+    width: 50%;
+    float: left;
+}
+
+#partner {
+    width: 80%;
+}
+
+.partner-pane {
+    float: right;
+}
+
+@media screen and (max-width:680px) {
+    ul.footer {
+        padding-right: 0;
     }
-    25% {
-        bottom: 25px;
+    ul.footer li a {
+        font-size: 10.5px;
     }
-    50% {
-        bottom: 0;
+    #copyright {
+        padding-left: 11%;
     }
-    75% {
-        bottom: 25px;
+    #partner01 {
+        padding-right: 30%;
     }
-/*
-  0%, 
-  100% { top: 0%;     transform: scaleX(1.1) scaleY(0.9); animation-timing-function: ease-in }
-  40%  { top: 80%; transform: scaleX(1)  scaleY(1)}
-  55%  { top: 90%; transform: scaleX(1.8) scaleY(0.2); animation-timing-function: ease-in-out  }
-  65%  { top: 30%; transform: scaleX(.6)  scaleY(1.4); animation-timing-function: ease-out }
-  80%  {             transform: scaleX(1)   scaleY(1) }*/
 }
-
-#Home_Icon{
-    margin-top:8px;
-    margin-right:6px
-}
-
-#Home_Search_Panel{
-    margin-left:-16px; 
-    margin-right:-16px
-}
-
-

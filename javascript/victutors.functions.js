@@ -179,7 +179,7 @@ $(document).ready(function() {
         $('#myTopnav').css({ 'position': '' });
         $('#myTopnav').attr('data-toggle', 'collapse');
         $('#myTopnav').attr('data-target', '#Navbar');
-        $('#serviceButton').empty();
+        $('#serviceButton, #zoomzone').empty();
         $('#imageUpload').html('<p class="w3-text-red">请使用电脑端上传微信二维码或联系我们.对您照成的不便我们深感歉意</p>');
         $('#tutorInfoUpload').css({ 'margin-left': '35%', 'margin-top': 50 });
     }
