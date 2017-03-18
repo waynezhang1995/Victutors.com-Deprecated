@@ -4,25 +4,25 @@
     <title>victutors - 维多利亚家教网 !</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/lib/CSS/w3.css">
-  
+    <link rel="stylesheet" href="./lib/CSS/w3.css">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="/CSS/index1.css">
-    <link href="/Images/favicon.ico" rel="icon" type="Images/x-icon" />
+    <link rel="stylesheet" href="./CSS/index1.css">
+    <link href="./Images/favicon.ico" rel="icon" type="Images/x-icon" />
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="/javascript/bootstrap-select.js"></script>
-  
-    <script type="text/javascript" src="/javascript/victutors.js"></script>
-    <script type="text/javascript" src="/javascript/victutors.list.js"></script>
-    <script type="text/javascript" src="/javascript/victutors.functions.js"></script>
+    <script src="./javascript/bootstrap-select.js"></script>
+
+    <script type="text/javascript" src="./javascript/victutors.js"></script>
+    <script type="text/javascript" src="./javascript/victutors.list.js"></script>
+    <script type="text/javascript" src="./javascript/victutors.functions.js"></script>
 </head>
 <body>
 <div id="Navbar">
         <ul id="navbarlogo">
-            <li><a href="#home" class="w3-left"><img src="/Images/icon_white.png">victutors.com</a></li>
+            <li><a href="#home" class="w3-left"><img src="./Images/icon_white.png">victutors.com</a></li>
         </ul>
         <ul id="navbarlist" class="topnav">
             <li id="home_link"><a href="#home">Victutor</a></li>
@@ -50,7 +50,7 @@
         </div>
     </div>
     <div id="zoomzone">
-        <img id="partner" src="/Images/vichelp.jpg" style="display:none;">
+        <img id="partner" src="./Images/vichelp.jpg" style="display:none;">
     </div>
     <div id="Footer" class="w3-bottom">
         <div class="row no-gutters">
@@ -63,11 +63,11 @@
             </ul>
             <ul class="footer col-sm-5 text-center">
                 <li><a href="#">合作伙伴</a></li>
-                <li><a href="#"><img src="/Images/vichelp_s.png" 
+                <li><a href="#"><img src="./Images/vichelp_s.png"
                     onmouseover="document.getElementById('partner').style.display = 'block'"
                     onmouseout="document.getElementById('partner').style.display = 'none'"></a></li>
             </ul>
-            
+
         </div>
     </div>
 
@@ -124,7 +124,7 @@
                                 <label>微信:</label> <input class="w3-round w3-input w3-border w3-hover-border-black"
                                                          type="text" name="wechat" id="uwechat" />
                             </div>
-                            
+
                             <div class="middle-input">
                                 <label>邮箱:</label> <input class="w3-round w3-input w3-border w3-hover-border-black"
                                                           type="text" name="email" id="uemail" />
@@ -137,7 +137,7 @@
                         </div>
                         <div class="w3-half">
                             <div class="group">
-                                <div class="w3-center"><img id="ImgUpLoad" src="/Images/Imgupload.png" style="width:50%" alt="WeChat"></div>
+                                <div class="w3-center"><img id="ImgUpLoad" src="./Images/Imgupload.png" style="width:50%" alt="WeChat"></div>
                                 <div class="w3-center">
                                     <label>
                                         <i id="imgSpinner" class="fa fa-spinner fa-spin" style="font-size:24px;display: none"></i>
@@ -150,7 +150,7 @@
                                     <input style="display:none" type="button" value="上传" id="up" />
                                     <br />
                                     <label>上传状态和结果：</label><input style="border-style:none;" type="text" readonly="readonly" value="" id="state" />
-                                    <br />                                
+                                    <br />
                                 </div>
                             </div>
                         </div>
@@ -180,7 +180,7 @@
                     <p><i class="fa fa-envelope" aria-hidden="true"></i> 邮箱：info@victutors.com</p>
                 </div>
                 <div class="w3-half w3-center">
-                    <img src="/Images/WeChat.png" alt="WeChat">
+                    <img src="./Images/WeChat.png" alt="WeChat">
                 </div>
             </div>
             <footer class="w3-container">

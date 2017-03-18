@@ -3,8 +3,6 @@ victutors.createNS("victutors.functions")
 victutors.functions.length;
 victutors.functions.selectedValue;
 
-victutors.functions.PeopleList = [];
-victutors.functions.middle = 0;
 victutors.functions.tQuestionNo = 0;
 victutors.functions.tShowAnswer = 0;
 victutors.functions.sQuestionNo = 0;
@@ -73,82 +71,6 @@ victutors.functions.responsive = function() {
     }
 }
 
-victutors.functions.LoadRecommendTutorDetail = function(index) {
-    var s = '';
-    s += '<div class="w3-modal-content w3-animate-top w3-card-8"> ';
-    s += '<header class="w3-container w3-teal"> ';
-    s += '<span onclick="document.getElementById(\'RecommendTutorDetail\').style.display=\'none\' " class="w3-closebtn">&times;</span> ';
-    s += '<h2 class="w3-center w3-lobster">详细信息</h2>';
-    s += '</header>';
-    s += '<div  class="w3-large container-fluid bg-grey" style = "margin-bottom:50px;margin-top:50px">';
-    s += '<div class="row">' +
-        '<div class="col-sm-3 slideanim w3-third">' +
-        '<img src="' + PeopleList[index].imgsrc + '" style="width: 170px">' +
-        '</div>' +
-        '<div class="col-sm-5 w3-third w3-left">' +
-        '<p style="margin-bottom: 25px">' +
-        '<span class="glyphicon glyphicon-user"></span> 姓名：' + PeopleList[index].name +
-        '</p>' +
-        '<p style="margin-bottom: 25px">' +
-        '<span class="glyphicon glyphicon-phone"></span> 电话：' + PeopleList[index].phone +
-        '</p>' +
-        '<p style="margin-bottom: 25px">' +
-        '<span class="glyphicon glyphicon-envelope"></span> 邮箱：' + PeopleList[index].email +
-        '</p>' +
-        '<p style="margin-bottom: 25px">' +
-        '<span class="glyphicon glyphicon-qrcode"></span> 微信：' + PeopleList[index].WeChat +
-        '</p>' +
-        '</div>' +
-        '<div class="col-sm-3 slideanim w3-third">' +
-        '<img src="' + PeopleList[index].qrcode + '" style="width: 170px">' +
-        '</div>' +
-        '</div>';
-    s += '</div>';
-    s += '<footer class="w3-container w3-teal"> <p class="w3-center w3-lobster ">www.victutors.com</p></footer>';
-    s += '</div>';
-
-    $('#TutorDetailRecommend').html(s);
-    document.getElementById('RecommendTutorDetail').style.display = 'block';
-}
-
-victutors.functions.ShowList = function(pmn) {
-    for (n = 0; n < 5; n++) {
-        var i = pmn[n];
-        var s = '';
-        s += '<div class="w3-center w3-animate-opacity w3-blue-grey">';
-        s += '<img src="' + PeopleList[i].imgsrc + '"' +
-            'style="width: 50%">' +
-            '<div class="w3-container">' +
-            '<h3>' + PeopleList[i].name + '</h3>' +
-            '<p >辅导科目: ' + PeopleList[i].subject + '</p>' +
-            '<p>' +
-            '<button class="w3-btn w3-green" onclick = "victutors.functions.LoadRecommendTutorDetail(' +
-            i +
-            ')">详细信息</button>' +
-            '</p>' +
-            '</div>';
-        $('.T0' + n).html(s);
-    }
-}
-
-victutors.functions.GetTutorDetail = function(s, item) {
-    s += '<div class=" w3-half w3-margin-bottom T01">';
-    s += '<div class="w3-container w3-card-4" >';
-
-    s += '<div class="w3-container w3-half">' +
-        '<p>' + item.Name + '</p>' +
-        '<p class="w3-opacity">' + item.WeChat + '</p>' +
-        '<p>' + item.Phone + '</p>' +
-        '<p>' + item.Email + '</p>' +
-        '</div>';
-
-    s += '<div class="w3-container w3-third w3-right">' +
-        '<img src="' + item.Barcode + '"' + '" style="margin-top:4px; width: 100%">' +
-        '</div>';
-    s += '</div></div>';
-    return s;
-}
-
 victutors.functions.DBlogin = function() {
     window.open('database.php', '_self');
 }
@@ -198,7 +120,7 @@ victutors.functions.sendTutorInfo = function() {
     });
 }
 
-//user search for faculty 
+//user search for faculty
 victutors.functions.GetTutorByFaculty = function() {
     if (typeof victutors.functions.selectedValue === 'undefined') {
         $('#searchAlert').show();
@@ -219,7 +141,7 @@ victutors.functions.SetUpSelectPicker = function() {
 //document ready start from here
 $(document).ready(function() {
 
-    //set search and title 
+    //set search and title
     $('#searchToolPanel').css({ 'margin-top': (window.innerHeight / 2 - 125) + 20 });
     victutors.functions.length = window.outerWidth;
 
@@ -272,7 +194,7 @@ $(document).ready(function() {
         var form_data = new FormData();
         form_data.append('file', file_data);
         $.ajax({
-            url: 'uploadimage.php', // point to server-side PHP script 
+            url: 'uploadimage.php', // point to server-side PHP script
             dataType: 'text', // what to expect back from the PHP script, if anything
             cache: false,
             contentType: false,
