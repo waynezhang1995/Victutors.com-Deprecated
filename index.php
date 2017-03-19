@@ -22,7 +22,7 @@
 <body>
 <div id="Navbar">
         <ul id="navbarlogo">
-            <li><a href="#home" class="w3-left"><img id="topnav-logo" src="./Images/icon_white.png">Victutors.com</a></li>
+            <li><a class="w3-left"><img id="topnav-logo" src="./Images/icon_white.png">Victutors.com</a></li>
         </ul>
         <ul id="navbarlist" class="topnav">
             <li id="home_link"><a href="#home"><span class="w3-large">Victutors.com</span></a></li>
@@ -54,7 +54,7 @@
     <div id="Footer" class="w3-bottom">
         <div class="row no-gutters">
             <ul class="footer">
-                <li id="copyright"><a href="#" >© Victutors.com - VICTUTORS ALL RIGHTS RESERVED</a></li>
+                <li id="copyright"><a>© Victutors.com - VICTUTORS ALL RIGHTS RESERVED</a></li>
                 <li id="partner01" class="partner-pane"><a onmouseout="document.getElementById('partner').style.display = 'none'" onmouseover="document.getElementById('partner').style.display = 'block'" href="#">维城生活信息馆</a></li>
                 <li class="partner-pane"><a href="#">合作伙伴 :</a></li>
             </ul>
