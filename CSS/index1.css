@@ -24,12 +24,29 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+.dropdown-menu.open {
+    max-height: 300.462px;
+    overflow: hidden;
+    min-height: 127px;
+}
+
+.dropup .dropdown-menu {
+    top: 45px;
+    bottom: auto;
+}
+
+.dropup .btn-lg .caret {
+    border-width: 5px 5px 0;
+    border-top-style: solid;
 }
 
 
@@ -45,7 +62,7 @@ ul li {
 ul li a {
     display: inline-block;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 14px;
     text-decoration: none;
     font-size: 1em;
     color: #f2f2f2
@@ -66,15 +83,12 @@ ul li a:hover {
 /******************************************/
 
 #Navbar {
-    background-color: rgba(0, 0, 0, 1);
+    background-color: black;
     overflow: hidden;
     position: absolute;
     width: 100%;
     z-index: 10;
-}
-
-#Navbar img {
-    margin-bottom: 0
+    /*height: 50px;*/
 }
 
 #Navbar ul li a {
@@ -118,10 +132,16 @@ ul.topnav li.icon {
     z-index: 9;
 }
 
+#topnav-logo {
+    margin-bottom: 5px;
+}
+
 #search_panel h1 {
     color: white;
     font-size: 3.2em;
     font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 5px;
 }
 
 .bootstrap-select ul li {
@@ -129,10 +149,17 @@ ul.topnav li.icon {
 }
 
 #search_button {
+    font-size: 24px;
     background-color: teal;
-    width: 10%;
-    height: 40px;
-    padding: 3px 8px;
+    margin-left: 20px;
+}
+
+#searchPanelIcon img {
+    padding-bottom: 15px;
+}
+
+#partner {
+    width: 80%;
 }
 
 
@@ -155,12 +182,20 @@ ul.topnav li.icon {
 }
 
 ul.footer li {
-    float: none;
     display: inline-block;
+}
+
+ul.footer {
+    margin-bottom: 0px;
+    padding-right: 100px;
 }
 
 ul.footer li a {
     padding: 0 8px;
+}
+
+.partner-pane {
+    float: right;
 }
 
 .row.no-gutters {
@@ -260,7 +295,6 @@ ul.footer li a {
 
 .modal footer {
     margin-top: 10px;
-    text-align: center;
     color: white;
     background-color: teal;
 }
@@ -280,16 +314,22 @@ ul.footer li a {
     font-size: 1.5em;
 }
 
+#contact div.w3-half.info {
+    padding-top: 7.5%;
+}
+
 #FAQModal i {
     color: teal;
 }
-
-#FAQModal p {}
 
 #FAQModal button {
     background-color: white;
     border: none;
     font-size: 1.5em;
+}
+
+#joinUsModal {
+    padding-top: 50px;
 }
 
 
@@ -302,7 +342,7 @@ ul.footer li a {
 @media screen and (min-width:961px) {
     #Navbar ul li a {
         font-size: 1.5em;
-        padding: 10px 16px;
+        padding: 10px 14px;
     }
     #navbarlist {
         float: right;
@@ -314,8 +354,8 @@ ul.footer li a {
 
 @media screen and (min-width:681px) and (max-width:960px) {
     #Navbar ul li a {
-        font-size: 1em;
-        padding: 10px 16px;
+        font-size: 1.5em;
+        padding: 10px 14px;
     }
     #navbarlogo img {
         width: 25%;
@@ -333,11 +373,17 @@ ul.footer li a {
         width: 20%;
     }
     #contact p {
-        font-size: 1.2em;
+        font-size: 1.3em;
+    }
+    #contact div.w3-half.info {
+        padding-top: 13.5%;
     }
     #Footer {
-        font-size: 0.5em;
-        text-align: center;
+        font-size: 1.0em;
+    }
+    ul.footer {
+        margin-bottom: 0px;
+        padding-right: 10px;
     }
     #FAQModal button {
         font-size: 1em;
@@ -345,12 +391,18 @@ ul.footer li a {
     .modal-content {
         width: 620px;
     }
+    #Navbar {
+        height: 45px;
+    }
+    #search_panel h1 {
+        margin-bottom: 30px;
+    }
 }
 
 @media screen and (max-width:680px) {
     #Navbar ul li a {
         font-size: 1em;
-        padding: 10px 16px;
+        padding: 10px 14px;
     }
     #navbarlogo {
         display: none
@@ -388,11 +440,18 @@ ul.footer li a {
         text-align: center;
     }
     #Footer {
-        font-size: 0.5em;
-        text-align: center;
+        font-size: 0.9em;
+    }
+    ul.footer {
+        margin-bottom: 0px;
+        padding-right: 10px;
     }
     #contact p {
-        font-size: 1em;
+        font-size: 1.2em;
+    }
+    #contact div.w3-half.info {
+        padding-top: 13.5%;
+        padding-left: 18%;
     }
     #FAQModal button {
         font-size: 0.9em;
@@ -404,6 +463,9 @@ ul.footer li a {
     .modal {
         padding-top: 10vh
     }
+    #search_panel h1 {
+        margin-bottom: 30px;
+    }
 }
 
 
@@ -411,9 +473,28 @@ ul.footer li a {
 
 @media screen and (max-width:480px) {
     #search_panel h1 {
-        font-size: 2.4em;
+        font-size: 3.0em;
+        margin-bottom: 30px;
+    }
+    #search_button {
+        font-size: 22px;
+        width: 36%;
+        margin-left: 0;
+    }
+    ul.footer {
+        padding-right: 0;
     }
     ul.footer li a {
-        padding: 0;
+        font-size: 10.5px;
+    }
+    #copyright {
+        padding-left: 11%;
+    }
+    #partner01 {
+        padding-right: 30%;
+    }
+    .dropdown-menu.open {
+        width: 162%;
+        float: left;
     }
 }
