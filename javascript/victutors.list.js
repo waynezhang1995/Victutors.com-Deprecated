@@ -6,7 +6,8 @@ victutors.list.FacultyList = [
     'ENGL : English - 英文写作',
     'MUSC : Music - 音乐',
     'HINF : Health Information Science - 健康信息科学',
-    'ENGR : Engineering - 工程学'
+    'ENGR : Engineering - 工程学',
+    'PSYC : Psychology - 心理学'
 ];
 
 victutors.list.CSClist = [];
@@ -15,6 +16,7 @@ victutors.list.ENGLlist = [];
 victutors.list.MUSClist = [];
 victutors.list.ENGRlist = [];
 victutors.list.HINFlist = [];
+victutors.list.PSYClist = [];
 
 victutors.list.SetUplist = function(faculty) {
     switch (faculty) {
@@ -30,7 +32,6 @@ victutors.list.SetUplist = function(faculty) {
                 victutors.list.CreateNewTutorEntry("CSC 110/115,Python,C,C++", "Simon", "请通过其他方式联系", "superpenshine@gmail.com", "superpenshing", "./Images/img_avatar1.png", "./Images/CSC/simon.jpg", "UVic在校CSC大四学生，辅导不同课程语言包括Java，C，C++， Python。爱好用简单易懂的图形帮你理解算法及数据结构，可以帮忙解析作业。CSC110，CSC115及同级课程$20/h。CSC230，CSC205 微信/email联系"),
                 victutors.list.CreateNewTutorEntry("Comp 132/139,Python,C,C++", "Rob Thorndyke", "250 480 8970", "rthorndy@gmail.com", "rthorndy", "./Images/img_avatar1.png", "./Images/CSC/rthorndy.JPG", "I am a Computer Science instructor at Camosun College. I specialize in Java, C, C++, python and PHP programming. Topics include Introduction To Programming, Data Structures, Algorithms, Graph Theory, Network Programming. Available most weekends, in the afternoon or evening; please inquire for specific times!")
             ];
-            return victutors.list.CSClist;
         case 'MATH':
             victutors.list.MATHlist = [
                 victutors.list.CreateNewTutorEntry("大学数学", "Simon Zhu", "778 557 7965", "zhus@uvic.ca", "shuqiangzhu3", "./Images/img_avatar1.png", "../Images/Math/SimonZhu.JPG", "UVIC的PHD学生. 2016年秋季UVIC Math109的Instructor. 长期担任学校助教以及私人家教. 可以辅导 MATH 100 - 300 Level 的课(combinatory除外) 价格: 100 level, 200 level $35/小时, 300 level $40/小时. 时间地点微信联系"),
@@ -39,7 +40,6 @@ victutors.list.SetUplist = function(faculty) {
                 victutors.list.CreateNewTutorEntry("高中数学,大学数学", "Lily Chen", "N/A", "mathtutoruvic@gmail.com", "N/A", "./Images/img_avatar1.png", "./Images/NoQRCode.png", "目前是UVic机械学院的在读博士，有多年国内外数学家教经验，擅长微积分（uvic math100，101），线性代数（math211），逻辑学（math122）等多种高等数学，平时在培训机构带小学双语数学，也辅导高中11，12年纪的pre-calculus， 价格在25-35刀左右（根据课程和授课地点变化），欢迎需要的同学联系 mathtutoruvic@gmail.com，谢谢!"),
                 victutors.list.CreateNewTutorEntry("大学数学", "Emliy", "N/A", "emily99vic@gmail.com", "emilyS627112", "./Images/img_avatar1.png", "./Images/ENGL/Emily.jpg", "本人UVic学生，数学成绩优秀，多次考试接近满分，经济课总成绩考过满分，曾从事补习班数学老师，辅导过多名一对一学生，成绩都有明显提高。善于换位思考，提高学习兴趣，帮助学生培养高效学习方法。欢迎有兴趣的家长，同学联系咨询，价格20-30刀，谢谢！")
             ];
-            return victutors.list.MATHlist;
         case 'ENGL':
             victutors.list.ENGLlist = [
                 victutors.list.CreateNewTutorEntry("论文辅导", "Isabel", "778 922 8686", "N/A", "leixiaoyun3344", "./Images/img_avatar1.png", "./Images/ENGL/Isabel.jpg", "需要辅导论文作业的同学，这里有专业的老师帮助您！各位亲爱的同学，如有需要辅导论文作业之类的，请联系我哦！我会帮您推荐最专业最优秀的老师！我们的老师毕业于温哥华知名大学，文学类专业，擅长写作，出过多部文学作品。希望可以帮助到您！"),
@@ -47,7 +47,6 @@ victutors.list.SetUplist = function(faculty) {
                 victutors.list.CreateNewTutorEntry("雅思辅导", "Susan Kang", "604 338 7544", "writingabc123@gmail.com", "susankankan", "./Images/img_avatar6.png", "./Images/ENGL/Susan.jpg", "毕业于美国俄亥俄州大学国际商学硕士 及 北卡罗莱纳州英语教学硕士，专业辅导雅思及托福考试25年。2015年取得加拿大TESL(英语教学证照)，成为加拿大合格英语老师，辅导学生大多在半年至一年内取得理想成绩(雅思6-8分，托福85-108分)，并申请入学名牌大学(UBC,SFU,UT及美国名牌大学等)。老师认真负责，经验丰富，题库完整教授考试答题技巧，能让学生在短时间内考到理想成绩"),
                 victutors.list.CreateNewTutorEntry("雅思辅导", "Emliy", "N/A", "emily99vic@gmail.com", "emilyS627112", "./Images/img_avatar1.png", "./Images/ENGL/Emily.jpg", "本人UVic学生一名，曾在北京雅思担任雅思老师，负责听力，阅读，口语。在UVic期间，曾获得经济学学期总成绩满分，数学考试多次接近满分，熟知雅思、初高中数学教学内容，善于提高学生考试成绩。现利用暑期时间愿意帮助同学们提高雅思，数学等科目的成绩，提高孩子的学习兴趣，欢迎感兴趣的家长和同学联系我")
             ];
-            return victutors.list.ENGLlist;
         case 'MUSC':
             victutors.list.MUSClist = [
                 victutors.list.CreateNewTutorEntry("钢琴", "Jasmine Huang", "250 884 3368", "N/A", "yaping415", "./Images/img_avatar1.png", "./Images/Music/jasminehuang.jpg", "本人現在開始當鋼琴家教陪練 或是任何程度的伴奏需求 有17 年的學琴經歷 從8歲開始到現在都唸音樂班 專攻鋼琴主修 价格 30分钟:20$ 45分钟:30$ 60分钟:45$ 有需要的請聯繫電話250 884 3368 微信 yaping415"),
@@ -55,7 +54,6 @@ victutors.list.SetUplist = function(faculty) {
                 victutors.list.CreateNewTutorEntry("吉他", "黄蒜蒜", "N/A", "N/A", "louis57", "./Images/img_avatar6.png", "./Images/Music/suansuanhuang.jpg", "本人练习吉他12年之久，参加过国内外多次演出，有多年的吉他教学经验。在维多利亚已经教琴两年。吉他教学主要针对吉他初学者，中级吉他学习者。教授内容包括木吉他和弦，指法，弹唱，演奏技巧，基础乐理知识等等。内容丰富欢迎大家咨询加入。具体学习时间及费用请大家加微信louis57咨询。感谢大家一如既往地支持！欢迎加入!愿我们共同学习，共同进步！"),
                 victutors.list.CreateNewTutorEntry("小提琴", "Kevin Chen", "306 202 7789", "N/A", "wxid_z6n661xhc18y22", "./Images/img_avatar1.png", "./Images/NoQRCode.png", "老师是拥有超过10年小提琴经验的CBC,目前在VCM进修小提琴课程。多次参与演出，比赛以及独奏会。曾经超多3次获得VCM颁发的奖学金，并被推选代表BC省参加加拿大国内小提琴比赛。只限英语教学，价格时间请微信或则电话联系（老师只能听懂简单的中文）")
             ];
-            return victutors.list.MUSClist;
         case 'ENGR':
             victutors.list.ENGRlist = [
                 victutors.list.CreateNewTutorEntry("机械工程", "Alfred Luo", "778 350 1436", "sddxldq@gmail.com", "sddxldq", "./Images/img_avatar1.png", "./Images/ENGR/alfredluo.JPG", "Uvic 机械工程大四学生 可以辅导大二前所有工程类课程。 精通热力学和固体力学。 价格请微信联系，一般4点后都有时间"),
@@ -66,7 +64,10 @@ victutors.list.SetUplist = function(faculty) {
                 victutors.list.CreateNewTutorEntry("HINF 130/140, HINF 200/201", "Yi Chu", "778 400 3868", "Chuyiada@gmail.com", "请扫描二维码", "./Images/img_avatar1.png", "./Images/HINF/chuyi.jpg", "HINF CSC combined大四学生，拥有4个月Co-op经验. 可以辅导HINF 130, 140, 200, 201. 除周一、周四外，其他时间全天有空. 价格 $20 / 小时"),
                 victutors.list.CreateNewTutorEntry("HINF 130/140, HINF 200/201", "Neil", "604 537 6630", "neil89757@gmail.com", "Sandmam", "./Images/img_avatar1.png", "./Images/HINF/neil.JPG", "HINF大三学生，有在VIHA实习的经验。可辅导HINF130，140，200，201，320，381。具体时间请微信咨询.")
             ];
-            return victutors.list.MUSClist;
+        case 'PSYC':
+            victutors.list.PSYClist = [
+                victutors.list.CreateNewTutorEntry("PSYC 11&12, Social Studies", "Vincent Liu", "604 773 1878", "N/A", "请扫描二维码", "./Images/img_avatar1.png", "./Images/PSYC/vincentliu.JPG", "目前Camosun College 大一BA.Psychology&Criminal Justice双专业在读 可以辅导高中Psychology11&12、AP Psychology、IB Psychology & Social Studies 10-12 联系方式为本微信或电话6047731878")
+            ];
     }
 }
 

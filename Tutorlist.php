@@ -105,7 +105,7 @@
 
 <body id="mainbody" style="zoom:90%" onresize="victutors.Tutorlist.ReSize()">
     <!-- Content -->
-    <div id="mainContent" class="w3-content w3-container" style="max-width: 1080px; margin-top: 70px; margin-bottom: 100px">
+    <div id="mainContent" class="w3-content w3-container">
         <p class="w3-text-white w3-xlarge" id="title" style="margin-top:20px;margin-bottom:20px"></p>
         <div id="searchTags">
         </div>

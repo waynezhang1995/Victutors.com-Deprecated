@@ -175,24 +175,9 @@ body {
     right: 0;
 }
 
-
-/*
-			div#background{
-				background: skyblue;
-				background-size: cover;
-                z-index: -1 !important;
-			}
-			div#midground{
-				background:url('../Images/midground.png');
-				background-repeat: repeat-x;
-				animation: STAR-MOVE  80s linear infinite;
-
-			}
-			div#foreground{
-				background:url('../Images/foreground.png')repeat 35% 0%;
-				z-index: 0 !important;
-				-webkit-animation: STAR-MOVE  50s linear infinite;
-				-moz-animation: STAR-MOVE  50s linear infinite;
-				-ms-animation: STAR-MOVE  50s linear infinite;
-				animation: STAR-MOVE  50s linear infinite;
-			}*/
+#mainContent {
+    max-width: 1080px;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    min-height: 646.664px;
+}

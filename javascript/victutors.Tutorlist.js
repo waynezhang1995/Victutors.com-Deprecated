@@ -166,6 +166,25 @@ victutors.Tutorlist.GetTutorList = function(faculty) {
             victutors.Tutorlist.SetUpTags(tags);
             $('#TutorListAll').html(s);
             break;
+        case 'PSYC':
+            var PSYCTutors = [];
+            var TutorCount = victutors.list.PSYClist.length;
+            for (i = 0; i < victutors.list.PSYClist.length; i++) {
+                var index = victutors.Tutorlist.GetRandom(TutorCount, PSYCTutors);
+                var item = victutors.list.PSYClist[index];
+                //get tags
+                var itemtags = item.Subject.split(",");
+                for (j = 0; j < itemtags.length; j++) {
+                    if (tags.indexOf(itemtags[j]) == -1) {
+                        tags.push(itemtags[j]);
+                    }
+                }
+                s = victutors.Tutorlist.GetTutorDetail(index, s, item);
+            }
+            currentlist = victutors.list.PSYClist;
+            victutors.Tutorlist.SetUpTags(tags);
+            $('#TutorListAll').html(s);
+            break;
         default:
             break;
     }
@@ -308,7 +327,7 @@ victutors.Tutorlist.ShowListByTags = function(tag) {
     }
 
     $('#TutorListAll').html(s);
-    $('#mainContent').css({ 'height': victutors.Tutorlist.InitialFooterPosition });
+    // $('#mainContent').css({ 'min-height': victutors.Tutorlist.InitialFooterPosition });
 }
 
 victutors.Tutorlist.GetTutorDetail = function(i, s, item) {
@@ -406,6 +425,10 @@ victutors.Tutorlist.setPage = function() {
             break;
         case 'HINF':
             title = "Health Information Science - 健康信息科学";
+            $('#title').html(title);
+            victutors.Tutorlist.PageTitle = title;
+        case 'PSYC':
+            title = "Psychology - 心理学";
             $('#title').html(title);
             victutors.Tutorlist.PageTitle = title;
             break;
