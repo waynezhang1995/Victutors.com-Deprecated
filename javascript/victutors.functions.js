@@ -114,7 +114,7 @@ victutors.functions.sendTutorInfo = function() {
         success: function(response) {
             //response = response.replace(/\r?\n|\r/g, "");
             //alert(response);
-            $('#aboutusModal').hide();
+            $('#joinUsModal').hide();
             $('#newTutorAlert').show();
         }
     });
