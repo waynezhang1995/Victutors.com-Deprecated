@@ -26,11 +26,11 @@
         </ul>
         <ul id="navbarlist" class="topnav">
             <li id="home_link"><a href="#home">Victutor</a></li>
-            <li><a href="#database" class="w3-btn" onclick="document.getElementById('databaseModal').style.display = 'block'">题库分享</a></li>
-            <li><a href="#joinus" class="w3-btn" onclick="document.getElementById('joinUsModal').style.display = 'block'">成为家教</a></li>
-            <li><a href="#about" class="w3-btn" onclick="document.getElementById('ContactUsModal').style.display = 'block'">联系我们</a></li>
-            <li><a href="#feedback" class="w3-btn" onclick="document.getElementById('FeedbackModal').style.display = 'block'">问题反馈</a></li>
-            <li><a href="#q&a" class="w3-btn" onclick="document.getElementById('FAQModal').style.display = 'block'">疑难解答</a></li>
+            <li><a href="#database" class="w3-btn" onclick="document.getElementById('databaseModal').style.display = 'block'"><i class="fa fa-database" aria-hidden="true"></i>&nbsp;题库分享</a></li>
+            <li><a href="#joinus" class="w3-btn" onclick="document.getElementById('joinUsModal').style.display = 'block'"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;成为家教</a></li>
+            <li><a href="#about" class="w3-btn" onclick="document.getElementById('ContactUsModal').style.display = 'block'"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;联系我们</a></li>
+            <li><a href="#feedback" class="w3-btn" onclick="document.getElementById('FeedbackModal').style.display = 'block'"><i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;问题反馈</a></li>
+            <li><a href="#q&a" class="w3-btn" onclick="document.getElementById('FAQModal').style.display = 'block'"><i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp;疑难解答</a></li>
             <li class="icon"><a href="javascript:void(0);" onclick="victutors.functions.responsive()">&#9776;</a></li>
         </ul>
     </div>
@@ -345,6 +345,39 @@
             </footer>
         </div>
     </div>
+    <div id="searchAlert" class="modal">
+        <div class="modal-content w3-animate-top w3-card-1">
+            <header class="w3-container w3-red">
+                <span onclick="document.getElementById('searchAlert').style.display='none'" class="w3-closebtn">&times;</span>
+                <h2 class="w3-red">错误！<br/>搜索科目不能为空，请重新输入</h2>
+            </header>
+        </div>
+    </div>
 
+    <div id="feedbackAlert" class="modal">
+        <div class="modal-content w3-animate-top w3-card-1">
+            <header class="w3-container w3-red">
+                <span onclick="document.getElementById('feedbackAlert').style.display='none'" class="w3-closebtn">&times;</span>
+                <h2 class="w3-red">谢谢您的反馈😊<br/>感谢您长期以来的支持！</h2>
+            </header>
+        </div>
+    </div>
+
+    <div id="newTutorAlert" class="modal">
+        <div class="modal-content w3-animate-top w3-card-1"">
+            <header class="w3-container w3-red">
+                <span onclick="document.getElementById('newTutorAlert').style.display='none'" class="w3-closebtn">&times;</span>
+                <h2 class="w3-red">谢谢您的加入😊<br/>我们将在第一时间审核更新您的信息!<br/>您的支持是我们前进的动力！</h2>
+            </header>
+        </div>
+    </div>
+    <div id="newTutorMoreInfoAlert" class="modal">
+        <div class="modal-content w3-animate-top w3-card-1">
+            <header class="w3-container w3-red">
+                <span onclick="document.getElementById('newTutorMoreInfoAlert').style.display='none'" class="w3-closebtn">&times;</span>
+                <h2 class="w3-red">请填写完整信息😓<br/>更多的信息有助于学生联系您!<br/>您的支持是我们前进的动力！</h2>
+            </header>
+        </div>
+    </div>
 </body>
 </html>

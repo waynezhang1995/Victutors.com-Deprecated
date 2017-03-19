@@ -45,7 +45,7 @@ ul li {
 ul li a {
     display: inline-block;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 14px;
     text-decoration: none;
     font-size: 1em;
     color: #f2f2f2
@@ -302,7 +302,7 @@ ul.footer li a {
 @media screen and (min-width:961px) {
     #Navbar ul li a {
         font-size: 1.5em;
-        padding: 10px 16px;
+        padding: 10px 14px;
     }
     #navbarlist {
         float: right;
@@ -315,7 +315,7 @@ ul.footer li a {
 @media screen and (min-width:681px) and (max-width:960px) {
     #Navbar ul li a {
         font-size: 1em;
-        padding: 10px 16px;
+        padding: 10px 14px;
     }
     #navbarlogo img {
         width: 25%;
@@ -350,7 +350,7 @@ ul.footer li a {
 @media screen and (max-width:680px) {
     #Navbar ul li a {
         font-size: 1em;
-        padding: 10px 16px;
+        padding: 10px 14px;
     }
     #navbarlogo {
         display: none

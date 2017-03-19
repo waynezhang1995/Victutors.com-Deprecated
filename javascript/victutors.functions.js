@@ -132,7 +132,7 @@ victutors.functions.GetTutorByFaculty = function() {
 
 victutors.functions.SetUpSelectPicker = function() {
     for (i = 0; i < victutors.list.FacultyList.length; i++) {
-        $('#Fselecter').append('<option class = "w3-large">' + victutors.list.FacultyList[i] + '</option>');
+        $('#Fselecter').append('<option class = "w3-large w3-left">' + victutors.list.FacultyList[i] + '</option>');
     }
 }
 
