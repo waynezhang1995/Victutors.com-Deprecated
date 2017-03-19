@@ -38,9 +38,9 @@
         <div id="search_panel">
             <h1>维多利亚家教网<span id="searchPanelIcon"><img src="./Images/victutors_Icon_White.png" alt="victutors_Icon" width="10%"></span></h1>
             <div>
-                <select id="Fselecter" class="selectpicker" data-width="400px" title="选择专业" data-live-search="true" data-width="auto" title="选择专业">
+                <select id="Fselecter" class="selectpicker" data-width="400px" data-size="6" title="选择专业" data-live-search="true" data-width="auto" title="选择专业">
                 </select>
-                <button id="search_button" class="w3-xlarge w3-btn w3-hover-red" onclick="victutors.functions.GetTutorByFaculty()">
+                <button id="search_button" class="w3-btn w3-hover-red" onclick="victutors.functions.GetTutorByFaculty()">
                     搜索家教
                     <i class="fa fa-search"></i>
                 </button>
@@ -48,24 +48,16 @@
         </div>
     </div>
     <div id="zoomzone">
-        <img id="partner" src="./Images/vichelp.jpg" style="display:none;">
+        <img id="partner" src="./Images/Partner/partner01.JPG" style="display:none;">
     </div>
+    <!-- Footer -->
     <div id="Footer" class="w3-bottom">
         <div class="row no-gutters">
-            <ul class="footer col-sm-5">
-                <li><a href="#" >© Victutors.com - VICTUTORS ALL RIGHTS RESERVED</a></li>
+            <ul class="footer">
+                <li id="copyright"><a href="#" >© Victutors.com - VICTUTORS ALL RIGHTS RESERVED</a></li>
+                <li id="partner01" class="partner-pane"><a onmouseout="document.getElementById('partner').style.display = 'none'" onmouseover="document.getElementById('partner').style.display = 'block'" href="#">维城生活信息馆</a></li>
+                <li class="partner-pane"><a href="#">合作伙伴 :</a></li>
             </ul>
-            <ul class="footer col-sm-2 text-center">
-                <li><a href="#">免责声明</a></li>
-                <li><a href="#">广告服务</a></li>
-            </ul>
-            <ul class="footer col-sm-5 text-center">
-                <li><a href="#">合作伙伴</a></li>
-                <li><a href="#"><img src="./Images/vichelp_s.png"
-                    onmouseover="document.getElementById('partner').style.display = 'block'"
-                    onmouseout="document.getElementById('partner').style.display = 'none'"></a></li>
-            </ul>
-
         </div>
     </div>
 
@@ -95,70 +87,57 @@
         </div>
     </div>
 
-    <!--Join us Modal, become a tutor-->>
-    <div id="joinUsModal" class="modal">
-        <div class="modal-content w3-animate-top w3-card-8">
-            <header class="w3-container">
-                <span onclick="document.getElementById('joinUsModal').style.display = 'none'"
-                      class="w3-closebtn">&times;</span>
-                <h3 class="w3-center w3-lobster">成为家教</h3>
+    <div id="joinUsModal" class="w3-modal" style="z-index:999">
+        <div class="w3-modal-content w3-animate-top w3-card-8">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('joinUsModal').style.display='none'" class="w3-closebtn">&times;</span>
+                <h2 class="w3-center w3-lobster">成为家教</h2>
             </header>
             <div class="w3-container">
-                    <div class="w3-row-padding" >
+                <div>
+                    <div class="w3-row-padding" style="height:380px">
                         <div class="w3-half">
-                            <div class="left-row-input w3-half" >
-                                <label>姓名:</label> <input class="w3-round w3-input w3-border w3-hover-border-black"
-                                                           type="text" name="name" id="uname" />
+                            <div class="w3-group w3-half">
+                                <label>姓名:</label> <input class="w3-round w3-input w3-border w3-hover-border-black" style="width: 80%;" type="text" name="name" id="uname" />
                             </div>
-                            <div class="right-row-input w3-half">
-                                <label>学科:</label> <input class="w3-round w3-input w3-border w3-hover-border-black"
-                                                          type="text" name="subject" id="usubject" />
+                            <div class="w3-group w3-half">
+                                <label>电话:</label> <input class="w3-round w3-input w3-border w3-hover-border-black" style="width: 80%;" type="text" name="phone" id="uphone" />
                             </div>
-                            <div class="left-row-input w3-half">
-                                <label>电话:</label> <input class="w3-round w3-input w3-border w3-hover-border-black"
-                                                          type="text" name="phone" id="uphone" />
+                            <div class="w3-group w3-half">
+                                <label>微信:</label> <input class="w3-round w3-input w3-border w3-hover-border-black" style="width: 80%;" type="text" name="wechat" id="uwechat" />
                             </div>
-                            <div class="right-row-input w3-half">
-                                <label>微信:</label> <input class="w3-round w3-input w3-border w3-hover-border-black"
-                                                         type="text" name="wechat" id="uwechat" />
+                            <div class="w3-group w3-half">
+                                <label>学科:</label> <input class="w3-round w3-input w3-border w3-hover-border-black" style="width: 80%;" type="text" name="subject" id="usubject" />
                             </div>
-
-                            <div class="middle-input">
-                                <label>邮箱:</label> <input class="w3-round w3-input w3-border w3-hover-border-black"
-                                                          type="text" name="email" id="uemail" />
+                            <div class="w3-group">
+                                <label>邮箱:</label> <input class="w3-round w3-input w3-border w3-hover-border-black" style="width: 90%;" type="text" name="email" id="uemail" />
                             </div>
-                            <div class="middle-input">
-                                <label>自我介绍(辅导科目,授课时间,授课价格等等):</label>
-                                <textarea id="newTutorIntro" class="w3-round w3-input w3-border w3-hover-border-black" style="vertical-align: top;" rows="4" cols="70" name="introduction"></textarea>
+                            <div class="w3-group">
+                                <label style="display:block;float:left" for="introduction">自我介绍(辅导科目,授课时间,授课价格等等):</label>
+                                <textarea id="newTutorIntro" class="w3-round w3-input w3-border w3-hover-border-black" style="vertical-align: top;width: 90%;" rows="4" cols="70" name="introduction"></textarea>
                             </div>
 
                         </div>
-                        <div class="w3-half">
-                            <div class="group">
-                                <div class="w3-center"><img id="ImgUpLoad" src="./Images/Imgupload.png" style="width:50%" alt="WeChat"></div>
-                                <div class="w3-center">
-                                    <label>
-                                        <i id="imgSpinner" class="fa fa-spinner fa-spin" style="font-size:24px;display: none"></i>
-                                        请上传微信二维码：<input class="w3-teal w3-btn"
-                                                        type="button" value="选取图片" id="selector" />
-                                    </label>
-                                    <br />
-                                    <br />
-                                    <label>选择的图片路径：</label><input style="border-style:none;" type="text" readonly="readonly" value="" id="filepath" />
-                                    <input style="display:none" type="button" value="上传" id="up" />
-                                    <br />
-                                    <label>上传状态和结果：</label><input style="border-style:none;" type="text" readonly="readonly" value="" id="state" />
-                                    <br />
-                                </div>
+                        <div id="imageUpload" class="w3-half">
+                            <div class="w3-group">
+                                <img id="ImgUpLoad" class="w3-center" src="./Images/Imgupload.png" alt="WeChat" style="width: 200px;height:170px;margin-left: 50px;margin-bottom: 30px;">
+                                <label style="margin-left: 25px;display:block">
+								<i id="imgSpinner" class="fa fa-spinner fa-spin" style="font-size:24px;display: none"></i>
+								请上传微信二维码：
+								<input id="fileInput" type="file" style="display:none;" />
+								<input class="w3-teal w3-btn" id="uploadPic" style="display:inline-block" type="button" value="选择图片" onclick="document.getElementById('fileInput').click();" /></label>
+                                <br />
+                                <p>上传状态和结果：<span class="w3-text-red" id="state"></span></p>
                             </div>
                         </div>
                     </div>
-                    <div class="w3-center" >
+                    <div id="tutorInfoUpload" style="margin-left:50%;margin-bottom:10px">
                         <button type="submit" onclick="victutors.functions.sendTutorInfo()" class="w3-large w3-teal w3-btn w3-padding-10">Submit</button>
                     </div>
+                </div>
             </div>
-            <footer class="w3-container">
-                <p>www.victutors.com</p>
+            <footer class="w3-container w3-teal">
+                <p class="w3-center w3-lobster ">www.victutors.com</p>
             </footer>
         </div>
     </div>
@@ -172,7 +151,7 @@
                 <h3>联系我们</h3>
             </header>
             <div id="contact" class="w3-container">
-                <div class="w3-half">
+                <div class="w3-half info">
                     <p><i class="fa fa-map-marker" aria-hidden="true"></i> 地址：University of Victoria</p>
                     <p><i class="fa fa-phone" aria-hidden="true"></i> 电话：778 922 5080</p>
                     <p><i class="fa fa-envelope" aria-hidden="true"></i> 邮箱：info@victutors.com</p>
@@ -362,7 +341,7 @@
     </div>
 
     <div id="newTutorAlert" class="modal">
-        <div class="modal-content w3-animate-top w3-card-1"">
+        <div class="modal-content w3-animate-top w3-card-1">
             <header class="w3-container w3-red">
                 <span onclick="document.getElementById('newTutorAlert').style.display='none'" class="w3-closebtn">&times;</span>
                 <h2 class="w3-red">谢谢您的加入😊<br/>我们将在第一时间审核更新您的信息!<br/>您的支持是我们前进的动力！</h2>
