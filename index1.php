@@ -22,27 +22,25 @@
 <body>
 <div id="Navbar">
         <ul id="navbarlogo">
-            <li><a href="#home" class="w3-left"><img src="./Images/icon_white.png">victutors.com</a></li>
+            <li><a href="#home" class="w3-left"><img id="topnav-logo" src="./Images/icon_white.png">Victutors.com</a></li>
         </ul>
         <ul id="navbarlist" class="topnav">
-            <li id="home_link"><a href="#home">Victutor</a></li>
+            <li id="home_link"><a href="#home"><span class="w3-large">Victutors.com</span></a></li>
             <li><a href="#database" class="w3-btn" onclick="document.getElementById('databaseModal').style.display = 'block'"><i class="fa fa-database" aria-hidden="true"></i>&nbsp;题库分享</a></li>
             <li><a href="#joinus" class="w3-btn" onclick="document.getElementById('joinUsModal').style.display = 'block'"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;成为家教</a></li>
             <li><a href="#about" class="w3-btn" onclick="document.getElementById('ContactUsModal').style.display = 'block'"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;联系我们</a></li>
             <li><a href="#feedback" class="w3-btn" onclick="document.getElementById('FeedbackModal').style.display = 'block'"><i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;问题反馈</a></li>
             <li><a href="#q&a" class="w3-btn" onclick="document.getElementById('FAQModal').style.display = 'block'"><i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp;疑难解答</a></li>
-            <li class="icon"><a href="javascript:void(0);" onclick="victutors.functions.responsive()">&#9776;</a></li>
+            <li class="w3-large icon"><a href="javascript:void(0);" onclick="victutors.functions.responsive()">&#9776;</a></li>
         </ul>
     </div>
     <div id="MainBody">
         <div id="search_panel">
-            <h1>维多利亚家教网</h1>
+            <h1>维多利亚家教网<span id="searchPanelIcon"><img src="./Images/victutors_Icon_White.png" alt="victutors_Icon" width="10%"></span></h1>
             <div>
-                <select id="Fselecter" class="selectpicker" data-live-search="true" data-width="auto" title="选择专业">
+                <select id="Fselecter" class="selectpicker" data-width="400px" title="选择专业" data-live-search="true" data-width="auto" title="选择专业">
                 </select>
-
-                <button id="search_button" class="w3-btn w3-hover-red"
-                        onclick="victutors.functions.GetTutorByFaculty()">
+                <button id="search_button" class="w3-xlarge w3-btn w3-hover-red" onclick="victutors.functions.GetTutorByFaculty()">
                     搜索家教
                     <i class="fa fa-search"></i>
                 </button>

@@ -118,14 +118,6 @@
     opacity: 1;
 }
 
-#landing-content {
-    overflow: hidden;
-    background-image: url(../Images/island.png);
-    background-size: cover;
-    height: 666px;
-    background-repeat: no-repeat;
-}
-
 .w3-card-12 {
     margin-bottom: 30px;
     height: 200px;

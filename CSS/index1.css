@@ -71,10 +71,7 @@ ul li a:hover {
     position: absolute;
     width: 100%;
     z-index: 10;
-}
-
-#Navbar img {
-    margin-bottom: 0
+    height: 50px;
 }
 
 #Navbar ul li a {
@@ -118,10 +115,16 @@ ul.topnav li.icon {
     z-index: 9;
 }
 
+#topnav-logo {
+    margin-bottom: 5px;
+}
+
 #search_panel h1 {
     color: white;
     font-size: 3.2em;
     font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .bootstrap-select ul li {
@@ -130,9 +133,11 @@ ul.topnav li.icon {
 
 #search_button {
     background-color: teal;
-    width: 10%;
-    height: 40px;
-    padding: 3px 8px;
+    margin-left: 20px;
+}
+
+#searchPanelIcon img {
+    padding-bottom: 15px;
 }
 
 
@@ -314,7 +319,7 @@ ul.footer li a {
 
 @media screen and (min-width:681px) and (max-width:960px) {
     #Navbar ul li a {
-        font-size: 1em;
+        font-size: 1.5em;
         padding: 10px 14px;
     }
     #navbarlogo img {
@@ -344,6 +349,9 @@ ul.footer li a {
     }
     .modal-content {
         width: 620px;
+    }
+    #Navbar {
+        height: 45px;
     }
 }
 
@@ -403,6 +411,9 @@ ul.footer li a {
     }
     .modal {
         padding-top: 10vh
+    }
+    #Navbar {
+        height: 45px;
     }
 }
 
