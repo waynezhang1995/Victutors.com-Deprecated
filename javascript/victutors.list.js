@@ -66,7 +66,7 @@ victutors.list.SetUplist = function(faculty) {
             ];
         case 'PSYC':
             victutors.list.PSYClist = [
-                victutors.list.CreateNewTutorEntry("PSYC 11&12, Social Studies", "Vincent Liu", "604 773 1878", "N/A", "请扫描二维码", "./Images/img_avatar1.png", "./Images/PSYC/vincentliu.JPG", "目前Camosun College 大一BA.Psychology&Criminal Justice双专业在读 可以辅导高中Psychology11&12、AP Psychology、IB Psychology & Social Studies 10-12 联系方式为本微信或电话6047731878")
+                victutors.list.CreateNewTutorEntry("PSYC 11&12, Social Studies", "Vincent Liu", "604 773 1878", "N/A", "请扫描二维码", "./Images/img_avatar1.png", "./Images/PSYC/vincentliu.JPG", "目前Camosun College 大一 BA.Psychology&Criminal Justice双专业在读 可以辅导高中Psychology11&12, AP Pyschology, IB Psychology & Social Studies 10-12")
             ];
     }
 }
