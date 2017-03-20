@@ -1,9 +1,42 @@
 <!DOCTYPE html>
-<html>
+
+<!--
+
+The MIT License (MIT)
+
+Copyright (c) 2016 - Wayne Zhang, Zihan Ye.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+-->
+<html lang="zh-CN">
 <head>
-    <title>victutors - 维多利亚家教网 !</title>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Victutors.com - 维多利亚家教网">
+    <meta name="author" content="Wayne Zhang, Zihan Ye">
+    <meta name="keywords" content="Victutors,Victoria Tutor,Tutor,Uvic, Chinese, University of Victoria,Camosun College,家教,维多利亚,补习,维多利亚家教网" />
+
+    <title>victutors - 维多利亚家教网 !</title>
+
     <link rel="stylesheet" href="./lib/CSS/w3.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -18,6 +51,23 @@
     <script type="text/javascript" src="./javascript/victutors.js"></script>
     <script type="text/javascript" src="./javascript/victutors.list.js"></script>
     <script type="text/javascript" src="./javascript/victutors.functions.js"></script>
+    <!-- Google tracking -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-81667903-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 </head>
 <body>
 <div id="Navbar">
