@@ -1,6 +1,0 @@
-name: Alfred
-phone: 7783501436
-email: sddxldq@gmail.com
-wechat: sddxldq
-subject: Mechanical Engineering
-introduction: 机械工程，大二之前的课程。精通热力学和固体力学。		

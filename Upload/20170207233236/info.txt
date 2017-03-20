@@ -1,5 +1,0 @@
-name: Vincent Liu
-phone: 6047731878
-wechat: srventure
-subject: BA Psychology
-email: ttsregion1005@gmail.com

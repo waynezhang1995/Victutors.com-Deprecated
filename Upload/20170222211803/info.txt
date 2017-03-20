@@ -1,6 +1,0 @@
-name: Neil
-phone: (604)537-6630
-wechat: Sandmam
-subject: HINF
-email: neil89757@gmail.com
-content: Health Information Science
