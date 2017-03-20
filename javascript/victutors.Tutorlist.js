@@ -427,6 +427,7 @@ victutors.Tutorlist.setPage = function() {
             title = "Health Information Science - 健康信息科学";
             $('#title').html(title);
             victutors.Tutorlist.PageTitle = title;
+            break;
         case 'PSYC':
             title = "Psychology - 心理学";
             $('#title').html(title);
