@@ -98,14 +98,15 @@ THE SOFTWARE.
         </div>
     </div>
     <div id="zoomzone">
-        <img id="partner" src="./Images/Partner/partner01.JPG" style="display:none;">
+        <img id="partner" src="./Images/Partner/partner02.png" style="display:block;">
     </div>
     <!-- Footer -->
     <div id="Footer" class="w3-bottom">
         <div class="row no-gutters">
             <ul class="footer">
                 <li id="copyright"><a>© Victutors.com - VICTUTORS ALL RIGHTS RESERVED</a></li>
-                <li id="partner01" class="partner-pane"><a onmouseout="document.getElementById('partner').style.display = 'none'" onmouseover="document.getElementById('partner').style.display = 'block'" href="#">维城生活信息馆</a></li>
+                <li id="partner02" class="partner-pane"><a id="partner02.png" class="partner_tag" href="#">小戴续签</a></li>
+                <li id="partner01" class="partner-pane"><a id="partner01.JPG" class="partner_tag" href="#">维城生活信息馆</a></li>
                 <li class="partner-pane"><a href="#">合作伙伴 :</a></li>
             </ul>
         </div>

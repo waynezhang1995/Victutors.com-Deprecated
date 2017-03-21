@@ -173,6 +173,17 @@ $(document).ready(function() {
         victutors.functions.selectedValue = faculty[0];
     });
 
+    $('.partner_tag').mouseover(function() {
+        $('#partner').attr('src', './Images/Partner/' + this['id']);
+        $('#partner').attr('class', this['id']);
+        document.getElementById('partner').style.display = 'block';
+    });
+
+    $('.partner_tag').mouseout(function() {
+        document.getElementById('partner').style.display = 'none';
+    });
+
+
     // device detection
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         console.log("Mobile device detected");

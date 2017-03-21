@@ -159,7 +159,8 @@ ul.topnav li.icon {
 }
 
 #partner {
-    width: 80%;
+    height: 600px;
+    width: 600px;
 }
 
 
@@ -490,7 +491,8 @@ ul.footer li a {
     #copyright {
         padding-left: 11%;
     }
-    #partner01 {
+    #partner01,
+    #partner02 {
         padding-right: 30%;
     }
     .dropdown-menu.open {
