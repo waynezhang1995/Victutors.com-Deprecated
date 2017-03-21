@@ -492,10 +492,21 @@ ul.footer li a {
         padding-left: 11%;
     }
     #partner02 {
-        padding-right: 30%;
+        padding-right: 22.5%;
     }
     .dropdown-menu.open {
         width: 162%;
         float: left;
+    }
+}
+
+@media screen and (max-width:320px) {
+    #search_button {
+        width: 32%;
+        padding-left: 8px;
+        padding-right: 24px;
+    }
+    #partner02 {
+        padding-right: 18%;
     }
 }
