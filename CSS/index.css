@@ -133,7 +133,7 @@ ul.topnav li.icon {
 }
 
 #topnav-logo {
-    margin-bottom: 5px;
+    margin-bottom: 0;
 }
 
 #search_panel h1 {
@@ -355,8 +355,8 @@ ul.footer li a {
 
 @media screen and (min-width:681px) and (max-width:960px) {
     #Navbar ul li a {
-        font-size: 1.5em;
-        padding: 10px 14px;
+        font-size: 1.5rem;
+        padding: 10px 10px;
     }
     #navbarlogo img {
         width: 25%;
@@ -392,9 +392,7 @@ ul.footer li a {
     .modal-content {
         width: 620px;
     }
-    #Navbar {
-        height: 45px;
-    }
+    
     #search_panel h1 {
         margin-bottom: 4%;
     }
