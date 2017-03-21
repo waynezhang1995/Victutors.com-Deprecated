@@ -98,7 +98,7 @@ THE SOFTWARE.
         </div>
     </div>
     <div id="zoomzone">
-        <img id="partner" src="./Images/Partner/partner01.png" style="display:none;">
+        <img id="partner" src="./Images/Partner/partner01.JPG" style="display:none;">
     </div>
     <!-- Footer -->
     <div id="Footer" class="w3-bottom">
