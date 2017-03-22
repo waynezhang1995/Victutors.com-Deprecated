@@ -6,7 +6,7 @@ Build and Operated by:
 
     Zihan Ye
 
-    Nelson Dai
+    Hongyu (Nelson) Dai
 
 # ©Victutors ALL RIGHTS RESERVED
 
