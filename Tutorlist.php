@@ -120,12 +120,12 @@
 
 
 	<!-- Footer -->
-	<footer id = "footerpanel" class="w3-container w3-padding-10 w3-center" style = "z-index:-1">
-		<p style = "margin-top:10px">
-		<span><a href = "#" ><b class = "w3-text-white">免责声明</b></a></span>
-		<span><b class = "w3-text-white"> ｜ </b><a href = "#" ><b class = "w3-text-white">广告服务</b></a></span>
+	<footer id="footerpanel" class="w3-container w3-padding-10 w3-center" style="z-index:-1">
+		<p style="margin-top:10px">
+		<span><a href="#" ><b class = "w3-text-white">免责声明</b></a></span>
+		<span><b class="w3-text-white"> ｜ </b><a href="#" ><b class="w3-text-white">广告服务</b></a></span>
 		</p>
-		<p class = "w3-text-white">© Victutor.com - VICTUTORS ALL RIGHTS RESERVED</p>
+		<p class="w3-text-white">© Victutor.com - VICTUTORS ALL RIGHTS RESERVED</p>
 	</footer>
 
     <div id="aboutusModal" class="w3-modal" style="z-index:999">

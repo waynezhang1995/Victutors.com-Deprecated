@@ -493,7 +493,7 @@ $(document).ready(function() {
     // device detection
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         console.log("Mobile device detected");
-        $('#feedbackModal, #qandaModal').hide();
+        $('#feedbackModal, #contactModal, #qandaModal').hide();
 
         $(window).resize(function() {
             if ($("#TopNavBar").width() <= 800) {
@@ -520,6 +520,7 @@ $(document).ready(function() {
         console.log("Mobile device detected");
         $('#imageUpload').html('<p style="margin-top: 70%" class="w3-text-red">请使用电脑端上传微信二维码或联系我们.对您照成的不便我们深感歉意</p>');
         $('#tutorInfoUpload').css({ 'margin-left': '35%', 'margin-top': 50 });
+        $('#mainContent').css({ 'min-height': 1508 });
     }
 
     $('#fileInput').on('change', function() {
