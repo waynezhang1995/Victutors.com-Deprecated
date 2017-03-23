@@ -173,9 +173,12 @@ $(document).ready(function() {
         victutors.functions.selectedValue = faculty[0];
     });
 
-
-
-
+    $('.partner_tag').click(function() {
+        $('#partnerModal div.w3-modal-content img').attr('src', './Images/Partner/' + this['id']);
+        $('#partnerModal div.w3-modal-content img').attr('class', this['id']);
+        $('#partnerModal').show();
+        $('#partnerModal span').show();
+    });
     // device detection
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         console.log("Mobile device detected");
@@ -186,16 +189,6 @@ $(document).ready(function() {
         $('#serviceButton').empty();
         $('#imageUpload').html('<p class="w3-text-red">请使用电脑端上传微信二维码或联系我们.对您照成的不便我们深感歉意</p>');
         $('#tutorInfoUpload').css({ 'margin-left': '35%', 'margin-top': 50 });
-    } else {
-        $('.partner_tag').mouseover(function() {
-            $('#partner').attr('src', './Images/Partner/' + this['id']);
-            $('#partner').attr('class', this['id']);
-            document.getElementById('partner').style.display = 'block';
-        });
-
-        $('.partner_tag').mouseout(function() {
-            document.getElementById('partner').style.display = 'none';
-        });
     }
 
     $('#fileInput').on('change', function() {
