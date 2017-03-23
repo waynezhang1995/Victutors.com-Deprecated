@@ -137,6 +137,10 @@ victutors.functions.SetUpSelectPicker = function() {
     }
 }
 
+victutors.functions.loadPartner = function (id) {
+    $('#partnerModal img').attr('src', './Images/Partner/' + id + '.jpg');
+    $('#partnerModal').show();
+}
 /****************************/
 
 //document ready start from here
@@ -171,13 +175,6 @@ $(document).ready(function() {
         var selectedText = $(this).find("option:selected").text();
         var faculty = selectedText.split(" ");
         victutors.functions.selectedValue = faculty[0];
-    });
-
-    $('.partner_tag').click(function() {
-        $('#partnerModal div.w3-modal-content img').attr('src', './Images/Partner/' + this['id']);
-        $('#partnerModal div.w3-modal-content img').attr('class', this['id']);
-        $('#partnerModal').show();
-        $('#partnerModal span').show();
     });
     // device detection
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {

@@ -88,16 +88,12 @@ ul li a:hover {
     position: absolute;
     width: 100%;
     z-index: 10;
-    /*height: 50px;*/
 }
 
 #Navbar ul li a {
     font-size: 1em;
     padding: 7px 12px;
 }
-
-
-/* Change font background color of links on hover */
 
 .w3-btn {
     background-color: rgba(0, 0, 0, 0);
@@ -337,14 +333,18 @@ ul.footer li a {
     padding-top: 50px;
 }
 
-#partnerModal {
-    z-index: 99;
+#partnerModal{
+    display:none;
+}
+#partnerModal .modal-content{
+    position:absolute;
+    left:35%;
+    width:30%;
+    z-index: 11;
 }
 
-#partnerModal div.w3-modal-content img {
-    width: 50%;
-    position: absolute;
-    left: 25%;
+#partnerImg{
+    width:100%;
 }
 
 .w3-display-topright {
@@ -418,6 +418,10 @@ ul.footer li a {
     #search_panel h1 {
         margin-bottom: 4%;
     }
+    #partnerModal .modal-content{
+        left:32%;
+        width:36%;
+    }
 }
 
 @media screen and (max-width:680px) {
@@ -480,13 +484,17 @@ ul.footer li a {
     }
     .modal-content {
         margin: 0 10px;
-        width: auto!important
+        width: auto
     }
     .modal {
         padding-top: 10vh
     }
     #search_panel h1 {
         margin-bottom: 7%;
+    }
+    #partnerModal .modal-content{
+        left:25%;
+        width:50%;
     }
 }
 
@@ -528,6 +536,10 @@ ul.footer li a {
     .w3-display-topright {
         top: 21%;
         right: 17%;
+    }
+    #partnerModal .modal-content{
+        left:10%;
+        width:80%;
     }
 }
 

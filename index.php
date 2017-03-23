@@ -102,9 +102,15 @@ THE SOFTWARE.
         <div class="row no-gutters">
             <ul class="footer">
                 <li id="copyright"><a>© Victutors.com - VICTUTORS ALL RIGHTS RESERVED</a></li>
-                <li id="partner03" class="partner-pane"><a href="#" id="partner03.jpg" class="partner_tag">维城便民生活</a></li>
-                <li id="partner02" class="partner-pane"><a href="#" id="partner02.JPG" class="partner_tag">维城续签服务</a></li>
-                <li id="partner01" class="partner-pane"><a href="#" id="partner01.JPG" class="partner_tag">维城生活信息馆</a></li>
+                <li id="partner03" class="partner-pane partner_tag"
+                    onmouseover="victutors.functions.loadPartner(id)"
+                    onmouseout="document.getElementById('partnerModal').style.display='none'"><a href="#" id="partner03.jpg">维城便民生活</a></li>
+                <li id="partner02" class="partner-pane partner_tag"
+                    onmouseover="victutors.functions.loadPartner(id)"
+                    onmouseout="document.getElementById('partnerModal').style.display='none'"><a href="#">维城续签服务</a></li>
+                <li id="partner01" class="partner-pane partner_tag"
+                    onmouseover="victutors.functions.loadPartner(id)"
+                    onmouseout="document.getElementById('partnerModal').style.display='none'"><a href="#">维城生活信息馆</a></li>
                 <li class="partner-pane"><a>合作伙伴 :</a></li>
             </ul>
         </div>
@@ -372,10 +378,20 @@ THE SOFTWARE.
         </div>
     </div>
 
-    <div id="partnerModal" class="w3-modal" onclick="this.style.display='none'">
-        <a href="#"><span class="w3-animate-zoom w3-button w3-display-topright">&times;</span></a>
-        <div class="w3-modal-content w3-animate-zoom">
-        <img src="./Images/Partner/partner03.jpg">
+    <div id="partnerModal">
+        <div class="modal-content w3-animate-top w3-card-1">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('ContactUsModal').style.display = 'none'"
+                      class="w3-closebtn">&times;</span>
+                <h3>合作伙伴</h3>
+            </header>
+            <div>
+                <img id="partnerImg">
+            </div>
+            <!--
+            <footer class="w3-center w3-container">
+                <p>www.victutors.com</p>
+            </footer>-->
         </div>
     </div>
 
