@@ -173,15 +173,7 @@ $(document).ready(function() {
         victutors.functions.selectedValue = faculty[0];
     });
 
-    $('.partner_tag').mouseover(function() {
-        $('#partner').attr('src', './Images/Partner/' + this['id']);
-        $('#partner').attr('class', this['id']);
-        document.getElementById('partner').style.display = 'block';
-    });
 
-    $('.partner_tag').mouseout(function() {
-        document.getElementById('partner').style.display = 'none';
-    });
 
 
     // device detection
@@ -191,9 +183,19 @@ $(document).ready(function() {
         $('#myTopnav').css({ 'position': '' });
         $('#myTopnav').attr('data-toggle', 'collapse');
         $('#myTopnav').attr('data-target', '#Navbar');
-        $('#serviceButton, #zoomzone').empty();
+        $('#serviceButton').empty();
         $('#imageUpload').html('<p class="w3-text-red">请使用电脑端上传微信二维码或联系我们.对您照成的不便我们深感歉意</p>');
         $('#tutorInfoUpload').css({ 'margin-left': '35%', 'margin-top': 50 });
+    } else {
+        $('.partner_tag').mouseover(function() {
+            $('#partner').attr('src', './Images/Partner/' + this['id']);
+            $('#partner').attr('class', this['id']);
+            document.getElementById('partner').style.display = 'block';
+        });
+
+        $('.partner_tag').mouseout(function() {
+            document.getElementById('partner').style.display = 'none';
+        });
     }
 
     $('#fileInput').on('change', function() {

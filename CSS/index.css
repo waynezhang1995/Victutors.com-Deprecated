@@ -83,7 +83,7 @@ ul li a:hover {
 /******************************************/
 
 #Navbar {
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     overflow: hidden;
     position: absolute;
     width: 100%;
@@ -98,9 +98,11 @@ ul li a:hover {
 
 
 /* Change font background color of links on hover */
-.w3-btn{
-    background-color: rgba(0,0,0,0);
+
+.w3-btn {
+    background-color: rgba(0, 0, 0, 0);
 }
+
 .w3-btn:hover {
     background-color: red;
 }
@@ -394,7 +396,6 @@ ul.footer li a {
     .modal-content {
         width: 620px;
     }
-    
     #search_panel h1 {
         margin-bottom: 4%;
     }
@@ -417,6 +418,7 @@ ul.footer li a {
     }
     ul.topnav.responsive {
         position: relative;
+        background: #1f1f1f;
     }
     ul.topnav.responsive li.icon {
         position: absolute;
@@ -492,7 +494,7 @@ ul.footer li a {
         padding-left: 11%;
     }
     #partner03 {
-        padding-right: 22.5%;
+        padding-right: 8.5%;
     }
     .dropdown-menu.open {
         width: 162%;
@@ -507,6 +509,6 @@ ul.footer li a {
         padding-right: 24px;
     }
     #partner03 {
-        padding-right: 18%;
+        padding-right: 1%;
     }
 }
