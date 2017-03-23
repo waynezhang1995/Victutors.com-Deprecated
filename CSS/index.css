@@ -83,7 +83,7 @@ ul li a:hover {
 /******************************************/
 
 #Navbar {
-    background-color: black;
+    background-color: rgba(0,0,0,0.7);
     overflow: hidden;
     position: absolute;
     width: 100%;
@@ -98,7 +98,9 @@ ul li a:hover {
 
 
 /* Change font background color of links on hover */
-
+.w3-btn{
+    background-color: rgba(0,0,0,0);
+}
 .w3-btn:hover {
     background-color: red;
 }
@@ -489,7 +491,7 @@ ul.footer li a {
     #copyright {
         padding-left: 11%;
     }
-    #partner02 {
+    #partner03 {
         padding-right: 22.5%;
     }
     .dropdown-menu.open {
@@ -504,7 +506,7 @@ ul.footer li a {
         padding-left: 8px;
         padding-right: 24px;
     }
-    #partner02 {
+    #partner03 {
         padding-right: 18%;
     }
 }
