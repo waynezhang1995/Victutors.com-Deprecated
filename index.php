@@ -76,11 +76,11 @@ THE SOFTWARE.
         </ul>
         <ul id="navbarlist" class="topnav">
             <li id="home_link"><a href="#home"><span class="w3-large">Victutors.com</span></a></li>
-            <li><a href="#database" class="w3-btn" onclick="document.getElementById('databaseModal').style.display = 'block'"><i class="fa fa-database" aria-hidden="true"></i>&nbsp;题库分享</a></li>
-            <li><a href="#joinus" class="w3-btn" onclick="document.getElementById('joinUsModal').style.display = 'block'"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;成为家教</a></li>
-            <li><a href="#about" class="w3-btn" onclick="document.getElementById('ContactUsModal').style.display = 'block'"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;联系我们</a></li>
-            <li><a href="#feedback" class="w3-btn" onclick="document.getElementById('FeedbackModal').style.display = 'block'"><i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;问题反馈</a></li>
-            <li><a href="#q&a" class="w3-btn" onclick="document.getElementById('FAQModal').style.display = 'block'"><i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp;疑难解答</a></li>
+            <li><a class="w3-btn" onclick="document.getElementById('databaseModal').style.display = 'block'"><i class="fa fa-database" aria-hidden="true"></i>&nbsp;题库分享</a></li>
+            <li><a class="w3-btn" onclick="document.getElementById('joinUsModal').style.display = 'block'"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;成为家教</a></li>
+            <li><a class="w3-btn" onclick="document.getElementById('ContactUsModal').style.display = 'block'"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;联系我们</a></li>
+            <li><a class="w3-btn" onclick="document.getElementById('FeedbackModal').style.display = 'block'"><i class="fa fa-comments-o" aria-hidden="true"></i>&nbsp;问题反馈</a></li>
+            <li><a class="w3-btn" onclick="document.getElementById('FAQModal').style.display = 'block'"><i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp;疑难解答</a></li>
             <li class="w3-large icon"><a href="javascript:void(0);" onclick="victutors.functions.responsive()">&#9776;</a></li>
         </ul>
     </div>
@@ -105,7 +105,7 @@ THE SOFTWARE.
         <div class="row no-gutters">
             <ul class="footer">
                 <li id="copyright"><a>© Victutors.com - VICTUTORS ALL RIGHTS RESERVED</a></li>
-                <li id="partner03" class="partner-pane"><a id="partner03.JPG" class="partner_tag" href="#">维城便民生活</a></li>
+                <li id="partner03" class="partner-pane"><a id="partner03.jpg" class="partner_tag" href="#">维城便民生活</a></li>
                 <li id="partner02" class="partner-pane"><a id="partner02.JPG" class="partner_tag" href="#">维城续签服务</a></li>
                 <li id="partner01" class="partner-pane"><a id="partner01.JPG" class="partner_tag" href="#">维城生活信息馆</a></li>
                 <li class="partner-pane"><a href="#">合作伙伴 :</a></li>
