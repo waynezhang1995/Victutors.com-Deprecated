@@ -138,7 +138,8 @@ victutors.functions.SetUpSelectPicker = function() {
 }
 
 victutors.functions.loadPartner = function (id) {
-    $('#partnerModal img').attr('src', './Images/Partner/' + id + '.jpg');
+    //alert('./Images/Partner/' + id + '.jpg')
+    $('#partnerModal .imageFrame').css({'background-image': 'url("/Images/Partner/' + id + '.jpg")'});
     $('#partnerModal').show();
 }
 /****************************/

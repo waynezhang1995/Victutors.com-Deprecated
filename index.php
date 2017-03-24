@@ -379,19 +379,10 @@ THE SOFTWARE.
     </div>
 
     <div id="partnerModal">
-        <div class="modal-content w3-animate-top w3-card-1">
-            <header class="w3-container w3-teal">
-                <span onclick="document.getElementById('ContactUsModal').style.display = 'none'"
-                      class="w3-closebtn">&times;</span>
-                <h3>合作伙伴</h3>
-            </header>
-            <div>
-                <img id="partnerImg">
-            </div>
+        <div class="imageFrame w3-animate-top w3-card-1">
             <!--
-            <footer class="w3-center w3-container">
-                <p>www.victutors.com</p>
-            </footer>-->
+            <span onclick="document.getElementById('ContactUsModal').style.display = 'none'"
+                      class="w3-closebtn" style="position:relative;">&times;</span>-->
         </div>
     </div>
 
