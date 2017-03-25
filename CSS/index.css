@@ -88,12 +88,16 @@ ul li a:hover {
     position: absolute;
     width: 100%;
     z-index: 10;
+    /*height: 50px;*/
 }
 
 #Navbar ul li a {
     font-size: 1em;
     padding: 7px 12px;
 }
+
+
+/* Change font background color of links on hover */
 
 .w3-btn {
     background-color: rgba(0, 0, 0, 0);
@@ -334,30 +338,13 @@ ul.footer li a {
 }
 
 #partnerModal {
+    z-index: 99;
+}
+
+#partnerModal div.w3-modal-content img {
+    width: 50%;
     position: absolute;
-    z-index: 11;
-    width: 32%;
-    left: 34%;
-    top: 10%;
-    height: 80%;
-    display: none;
-}
-
-#partnerModal .imageFrame {
-    /*background-image:url("/Images/Partner/partner01.JPG");*/
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    height: 100%;
-}
-
-.w3-display-topright {
-    display: none;
-    z-index: 100;
-    right: 39%;
-    top: 9%;
-    font-size: 50px;
-    color: black;
+    left: 25%;
 }
 
 
@@ -378,12 +365,22 @@ ul.footer li a {
     #home_link {
         display: none
     }
+    /*#search_panel {
+        height: 25vh;
+    }
+    #search_panel h1 {
+        color: white;
+        font-size: 4.2em;
+        font-weight: bold;
+        margin-bottom: 7.5%;
+        margin-top: 8px;
+    }*/
 }
 
 @media screen and (min-width:681px) and (max-width:960px) {
     #Navbar ul li a {
-        font-size: 1.5rem;
-        padding: 10px 10px;
+        font-size: 2.0rem;
+        padding: 10px 5px;
     }
     #navbarlogo img {
         width: 25%;
@@ -420,13 +417,13 @@ ul.footer li a {
         width: 620px;
     }
     #search_panel h1 {
-        margin-bottom: 4%;
+        margin-bottom: 9%;
     }
-    #partnerModal {
-        width: 50%;
-        left: 25%;
-        top: 10%;
-        height: 80%;
+    #search_panel {
+        height: 27vh;
+    }
+    ul.footer li a {
+        padding: 0 7px;
     }
 }
 
@@ -490,19 +487,13 @@ ul.footer li a {
     }
     .modal-content {
         margin: 0 10px;
-        width: auto
+        width: auto;
     }
     .modal {
         padding-top: 10vh
     }
     #search_panel h1 {
         margin-bottom: 7%;
-    }
-    #partnerModal {
-        width: 70%;
-        left: 15%;
-        top: 10%;
-        height: 80%;
     }
 }
 
@@ -526,7 +517,7 @@ ul.footer li a {
         font-size: 10.5px;
     }
     #copyright {
-        padding-left: 11%;
+        padding-left: 14%;
     }
     #partner03 {
         padding-right: 8.5%;
@@ -541,16 +532,6 @@ ul.footer li a {
         bottom: 0;
         left: 12%;
     }
-    .w3-display-topright {
-        top: 21%;
-        right: 17%;
-    }
-    #partnerModal {
-        width: 80%;
-        left: 10%;
-        top: 10%;
-        height: 80%;
-    }
 }
 
 @media screen and (max-width:320px) {
@@ -561,5 +542,47 @@ ul.footer li a {
     }
     #partner03 {
         padding-right: 1%;
+    }
+    #copyright {
+        padding-left: 7%;
+    }
+    #search_panel h1 {
+        font-size: 2em;
+        margin-bottom: 10%;
+    }
+}
+
+
+/* Responsive Height */
+
+@media screen and (max-height: 860px) and (min-width: 1024px) {
+    #search_panel {
+        height: 40vh;
+    }
+    #partnerModal div.w3-modal-content img {
+        width: 40%;
+        left: 30%;
+    }
+}
+
+@media screen and (max-height: 726px) and (min-width: 1024px) {
+    #search_panel {
+        margin-top: 27vh;
+        height: 45vh;
+    }
+    #partnerModal div.w3-modal-content img {
+        width: 40%;
+        left: 30%;
+    }
+}
+
+@media screen and (max-height: 580px) and (min-width: 1024px) {
+    #search_panel {
+        margin-top: 23vh;
+        height: 56vh;
+    }
+    #partnerModal div.w3-modal-content img {
+        width: 30%;
+        left: 39%;
     }
 }
