@@ -88,16 +88,12 @@ ul li a:hover {
     position: absolute;
     width: 100%;
     z-index: 10;
-    /*height: 50px;*/
 }
 
 #Navbar ul li a {
     font-size: 1em;
     padding: 7px 12px;
 }
-
-
-/* Change font background color of links on hover */
 
 .w3-btn {
     background-color: rgba(0, 0, 0, 0);
@@ -337,14 +333,21 @@ ul.footer li a {
     padding-top: 50px;
 }
 
-#partnerModal {
-    z-index: 99;
+#partnerModal{
+    position:absolute;
+    z-index:11;
+    width:32%;
+    left:34%;
+    top:10%;
+    height:80%;
+    display:none;
 }
-
-#partnerModal div.w3-modal-content img {
-    width: 50%;
-    position: absolute;
-    left: 25%;
+#partnerModal .imageFrame{
+    /*background-image:url("/Images/Partner/partner01.JPG");*/
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;
+    height:100%;
 }
 
 .w3-display-topright {
@@ -418,6 +421,12 @@ ul.footer li a {
     #search_panel h1 {
         margin-bottom: 4%;
     }
+    #partnerModal{
+        width:50%;
+        left:25%;
+        top:10%;
+        height:80%;
+    }
 }
 
 @media screen and (max-width:680px) {
@@ -480,13 +489,19 @@ ul.footer li a {
     }
     .modal-content {
         margin: 0 10px;
-        width: auto!important
+        width: auto
     }
     .modal {
         padding-top: 10vh
     }
     #search_panel h1 {
         margin-bottom: 7%;
+    }
+    #partnerModal{
+        width:70%;
+        left:15%;
+        top:10%;
+        height:80%;
     }
 }
 
@@ -528,6 +543,12 @@ ul.footer li a {
     .w3-display-topright {
         top: 21%;
         right: 17%;
+    }
+    #partnerModal{
+        width:80%;
+        left:10%;
+        top:10%;
+        height:80%;
     }
 }
 
