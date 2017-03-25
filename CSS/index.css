@@ -365,12 +365,22 @@ ul.footer li a {
     #home_link {
         display: none
     }
+    /*#search_panel {
+        height: 25vh;
+    }
+    #search_panel h1 {
+        color: white;
+        font-size: 4.2em;
+        font-weight: bold;
+        margin-bottom: 7.5%;
+        margin-top: 8px;
+    }*/
 }
 
 @media screen and (min-width:681px) and (max-width:960px) {
     #Navbar ul li a {
-        font-size: 1.5rem;
-        padding: 10px 10px;
+        font-size: 2.0rem;
+        padding: 10px 5px;
     }
     #navbarlogo img {
         width: 25%;
@@ -407,7 +417,13 @@ ul.footer li a {
         width: 620px;
     }
     #search_panel h1 {
-        margin-bottom: 4%;
+        margin-bottom: 9%;
+    }
+    #search_panel {
+        height: 27vh;
+    }
+    ul.footer li a {
+        padding: 0 7px;
     }
 }
 
@@ -471,7 +487,7 @@ ul.footer li a {
     }
     .modal-content {
         margin: 0 10px;
-        width: auto!important
+        width: auto;
     }
     .modal {
         padding-top: 10vh
@@ -501,7 +517,7 @@ ul.footer li a {
         font-size: 10.5px;
     }
     #copyright {
-        padding-left: 11%;
+        padding-left: 14%;
     }
     #partner03 {
         padding-right: 8.5%;
@@ -526,5 +542,47 @@ ul.footer li a {
     }
     #partner03 {
         padding-right: 1%;
+    }
+    #copyright {
+        padding-left: 7%;
+    }
+    #search_panel h1 {
+        font-size: 2em;
+        margin-bottom: 10%;
+    }
+}
+
+
+/* Responsive Height */
+
+@media screen and (max-height: 860px) and (min-width: 1024px) {
+    #search_panel {
+        height: 40vh;
+    }
+    #partnerModal div.w3-modal-content img {
+        width: 40%;
+        left: 30%;
+    }
+}
+
+@media screen and (max-height: 726px) and (min-width: 1024px) {
+    #search_panel {
+        margin-top: 27vh;
+        height: 45vh;
+    }
+    #partnerModal div.w3-modal-content img {
+        width: 40%;
+        left: 30%;
+    }
+}
+
+@media screen and (max-height: 580px) and (min-width: 1024px) {
+    #search_panel {
+        margin-top: 23vh;
+        height: 56vh;
+    }
+    #partnerModal div.w3-modal-content img {
+        width: 30%;
+        left: 39%;
     }
 }
