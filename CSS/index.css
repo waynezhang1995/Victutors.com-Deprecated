@@ -347,15 +347,6 @@ ul.footer li a {
     left: 25%;
 }
 
-.w3-display-topright {
-    display: none;
-    z-index: 100;
-    right: 39%;
-    top: 9%;
-    font-size: 50px;
-    color: black;
-}
-
 
 /* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon)
 @media screen and (orientation : landscape) and (max-width:768px) {
@@ -524,10 +515,6 @@ ul.footer li a {
         top: 90px;
         bottom: 0;
         left: 12%;
-    }
-    .w3-display-topright {
-        top: 21%;
-        right: 17%;
     }
 }
 

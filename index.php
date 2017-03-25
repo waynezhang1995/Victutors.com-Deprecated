@@ -373,7 +373,6 @@ THE SOFTWARE.
     </div>
 
     <div id="partnerModal" class="w3-modal" onclick="this.style.display='none'">
-        <a href="#"><span class="w3-animate-zoom w3-button w3-display-topright">&times;</span></a>
         <div class="w3-modal-content w3-animate-zoom">
         <img src="./Images/Partner/partner03.jpg">
         </div>
