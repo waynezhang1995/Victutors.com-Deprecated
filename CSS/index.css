@@ -563,12 +563,15 @@ ul.footer li a {
         width: 40%;
         left: 30%;
     }
+    #search_panel h1 {
+        margin-bottom: 2.5%;
+    }
 }
 
 @media screen and (max-height: 726px) and (min-width: 1024px) {
     #search_panel {
         margin-top: 27vh;
-        height: 45vh;
+        height: 38vh;
     }
     #partnerModal div.w3-modal-content img {
         width: 40%;
@@ -579,7 +582,7 @@ ul.footer li a {
 @media screen and (max-height: 580px) and (min-width: 1024px) {
     #search_panel {
         margin-top: 23vh;
-        height: 56vh;
+        height: 49vh;
     }
     #partnerModal div.w3-modal-content img {
         width: 30%;
