@@ -1,6 +1,6 @@
 # www.victutors.com
 
-Build and Operated by:
+Built and Operated by:
 
     Yuwei (Wayne) Zhang
 
