@@ -557,14 +557,14 @@ ul.footer li a {
 
 @media screen and (max-height: 860px) and (min-width: 1024px) {
     #search_panel {
-        height: 40vh;
+        height: 35vh;
     }
     #partnerModal div.w3-modal-content img {
         width: 40%;
         left: 30%;
     }
     #search_panel h1 {
-        margin-bottom: 1.7%;
+        margin-bottom: 1.8%;
     }
 }
 
