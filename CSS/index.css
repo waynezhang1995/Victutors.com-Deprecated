@@ -520,10 +520,10 @@ ul.footer li a {
         font-size: 10.5px;
     }
     #copyright {
-        padding-left: 12%;
+        padding-left: 18%;
     }
     #partner03 {
-        padding-right: 11.5%;
+        padding-right: 12.5%;
     }
     .dropdown-menu.open {
         width: 162%;
@@ -534,6 +534,15 @@ ul.footer li a {
         top: 90px;
         bottom: 0;
         left: 12%;
+    }
+}
+
+@media screen and (max-width:375px) {
+    #copyright {
+        padding-left: 13%;
+    }
+    #partner03 {
+        padding-right: 10.5%;
     }
 }
 
