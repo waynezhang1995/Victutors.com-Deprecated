@@ -16,11 +16,11 @@ if [ -z "$1" ]; then
     echo " ====> No option detected ! Default to Directories AND Files\n\n"
     copyDirectoryandFiles
 elif [ "$1" = "js" ]; then
-    echo " ====> Javascript option detected\n\n"
+    echo " ====> Javascript option detected"
     echo "\n\n******* Copying Javascript files *******\n\n"
     scp -r ../javascript/ victutors@victutors.com:public_html/
 elif [ "$1" = "css" ]; then
-    echo " ====> CSS option detected\n\n"
+    echo " ====> CSS option detected"
     echo "\n\n******* Copying CSS files *******\n\n"
     scp -r ../CSS/ victutors@victutors.com:public_html/
 elif [ "$1" = "php" ]; then
