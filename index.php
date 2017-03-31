@@ -77,7 +77,7 @@
         <div class="row no-gutters">
             <ul class="footer">
                 <li id="copyright"><a>© Victutors.com - VICTUTORS ALL RIGHTS RESERVED</a></li>
-                <!--<li id="partner03" class="partner-pane"><a href="#" id="partner03.jpg" class="partner_tag">维城便民生活</a></li>-->
+                <li id="partner03" class="partner-pane"><a href="#" id="partner03.JPG" class="partner_tag">维城酒家</a></li>
                 <li id="partner02" class="partner-pane"><a href="#" id="partner02.JPG" class="partner_tag">维城续签服务</a></li>
                 <li id="partner01" class="partner-pane"><a href="#" id="partner01.JPG" class="partner_tag">维城生活信息馆</a></li>
                 <li class="partner-pane"><a>合作伙伴 :</a></li>
@@ -349,7 +349,7 @@
 
     <div id="partnerModal" class="w3-modal" onclick="this.style.display='none'">
         <div class="w3-modal-content w3-animate-zoom">
-        <img src="./Images/Partner/partner03.jpg">
+        <img src="./Images/Partner/partner01.jpg">
         </div>
     </div>
 

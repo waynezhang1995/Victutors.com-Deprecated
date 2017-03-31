@@ -502,7 +502,7 @@ ul.footer li a {
 
 @media screen and (max-width:480px) {
     #search_panel {
-        margin-top: 26vh;
+        margin-top: 29vh;
     }
     #search_panel h1 {
         font-size: 3.0em;
@@ -522,8 +522,8 @@ ul.footer li a {
     #copyright {
         padding-left: 12%;
     }
-    #partner02 {
-        padding-right: 17.5%;
+    #partner03 {
+        padding-right: 11.5%;
     }
     .dropdown-menu.open {
         width: 162%;
