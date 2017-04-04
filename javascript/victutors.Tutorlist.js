@@ -185,6 +185,25 @@ victutors.Tutorlist.GetTutorList = function(faculty) {
             victutors.Tutorlist.SetUpTags(tags);
             $('#TutorListAll').html(s);
             break;
+        case 'STAT':
+            var STATTutors = [];
+            var TutorCount = victutors.list.STATlist.length;
+            for (i = 0; i < victutors.list.STATlist.length; i++) {
+                var index = victutors.Tutorlist.GetRandom(TutorCount, STATTutors);
+                var item = victutors.list.STATlist[index];
+                //get tags
+                var itemtags = item.Subject.split(",");
+                for (j = 0; j < itemtags.length; j++) {
+                    if (tags.indexOf(itemtags[j]) == -1) {
+                        tags.push(itemtags[j]);
+                    }
+                }
+                s = victutors.Tutorlist.GetTutorDetail(index, s, item);
+            }
+            currentlist = victutors.list.STATlist;
+            victutors.Tutorlist.SetUpTags(tags);
+            $('#TutorListAll').html(s);
+            break;
         default:
             break;
     }
@@ -311,6 +330,11 @@ victutors.Tutorlist.setPage = function() {
             break;
         case 'ENGL':
             title = "English - 英文家教名单";
+            $('#title').html(title);
+            victutors.Tutorlist.PageTitle = title;
+            break;
+        case 'STAT':
+            title = "Statistics - 统计学家教名单";
             $('#title').html(title);
             victutors.Tutorlist.PageTitle = title;
             break;
