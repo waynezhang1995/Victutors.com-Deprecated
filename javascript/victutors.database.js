@@ -5,7 +5,7 @@ victutors.database.courseList = ['CSC225', 'CSC305', 'CSC320', 'CSC355', 'CSC360
 victutors.database.selectedValue = '';
 victutors.database.InitialFooterPosition;
 
-victutors.database.sendFeedBack = function () {
+victutors.database.sendFeedBack = function() {
     var subject = $('#feedback_subject').val();
     var text = $('#feedback_text').val();
     var emailcontent = { 'subject': subject, 'text': text };
@@ -13,7 +13,7 @@ victutors.database.sendFeedBack = function () {
         url: "feedback.php",
         type: 'POST',
         data: { "email": JSON.stringify(emailcontent) },
-        success: function (response) {
+        success: function(response) {
             //response = response.replace(/\r?\n|\r/g, "");
             //alert(response);
             $('#FeedbackModal').hide();
@@ -22,14 +22,14 @@ victutors.database.sendFeedBack = function () {
     });
 }
 
-victutors.database.gotoTop = function () {
+victutors.database.gotoTop = function() {
     $("html, body").animate({
         scrollTop: 0
     }, "slow");
     return false;
 }
 
-victutors.database.getDoc = function () {
+victutors.database.getDoc = function() {
     if (victutors.database.selectedValue === '') {
         $('#searchAlert').show();
         return;
@@ -48,7 +48,7 @@ victutors.database.getDoc = function () {
 
 }
 
-victutors.database.populateDocALL = function () {
+victutors.database.populateDocALL = function() {
     var docCount = 0;
     var s = '';
     for (var i = 0; i < victutors.database.document.length; i++) {
@@ -88,7 +88,7 @@ victutors.database.populateDocALL = function () {
     $('#mainContent').css({ 'height': victutors.database.InitialFooterPosition });
 }
 
-victutors.database.setLanding = function () {
+victutors.database.setLanding = function() {
     var count = 0;
     var s = '';
     for (var i = 0; i < victutors.database.document.length; i++) {
@@ -117,7 +117,7 @@ victutors.database.setLanding = function () {
     $('#docList').html(s);
 }
 
-victutors.database.populateDoc = function (type) {
+victutors.database.populateDoc = function(type) {
     var docCount = 0;
     var s = '';
     for (var i = 0; i < victutors.database.document.length; i++) {
@@ -158,25 +158,25 @@ victutors.database.populateDoc = function (type) {
     $('#mainContent').css({ 'height': victutors.database.InitialFooterPosition });
 }
 
-victutors.database.getDocAll = function () {
+victutors.database.getDocAll = function() {
     victutors.database.setLanding();
     victutors.database.selectedValue = '';
     $('.selectpicker').selectpicker('deselectAll');
     $('#filter_all,#filter_exam,#filter_assignment').bootstrapToggle('off'); // Unchecks it
 }
 
-victutors.database.download = function (path) {
+victutors.database.download = function(path) {
     window.location = path;
 }
 
-victutors.database.setUpSelectPicker = function () {
+victutors.database.setUpSelectPicker = function() {
     for (i = 0; i < victutors.database.courseList.length; i++) {
         $('#selecter').append('<option class = "w3-large">' + victutors.database.courseList[i] + '</option>');
     }
     $('#selecter').selectpicker({ 'selectedText': '', style: 'btn-default btn-lg' });
 }
 
-$(window).scroll(function () {
+$(window).scroll(function() {
     //gotoTop button
     if ($(window).scrollTop() > 300) {
         $('#GoToTopButton').show();
@@ -185,28 +185,28 @@ $(window).scroll(function () {
     }
 })
 
-victutors.database.DBlogin = function () {
-    if($('#databasePassword').val() === victutors.list.databasePassword){
+victutors.database.DBlogin = function() {
+    if ($('#databasePassword').val() === victutors.list.databasePassword) {
         sessionStorage.setItem('database', true);
-        document.getElementById('databaseModal').style.display='none';
-    }else{
+        document.getElementById('databaseModal').style.display = 'none';
+    } else {
         $('#databaseErrorAlert').show();
     }
 }
 
-$(document).ready(function () {
+$(document).ready(function() {
 
     //load document
     victutors.database.setUpSelectPicker();
     $.ajax({
         url: "getDocument.php",
         type: 'GET',
-        success: function (response) {
+        success: function(response) {
             var result = JSON.parse(response);
-            var array = $.map(result, function (value, index) {
+            var array = $.map(result, function(value, index) {
                 return [value];
             });
-            array.forEach(function (element) {
+            array.forEach(function(element) {
                 var tmp = element.split('.');
                 var data = tmp[0].split('-');
                 var format = tmp[1];
@@ -225,20 +225,12 @@ $(document).ready(function () {
             victutors.database.setLanding();
             victutors.database.InitialFooterPosition = $('#mainContent').height();
         },
-        error: function () {
+        error: function() {
             alert("error");
         }
     });
 
-    $('#selecter').change(function () {
+    $('#selecter').change(function() {
         victutors.database.selectedValue = $(this).find("option:selected").text();
     });
 });
-
-
-
-
-
-
-
-

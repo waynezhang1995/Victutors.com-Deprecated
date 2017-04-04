@@ -3,65 +3,6 @@ victutors.createNS("victutors.functions")
 victutors.functions.length;
 victutors.functions.selectedValue;
 
-victutors.functions.tQuestionNo = 0;
-victutors.functions.tShowAnswer = 0;
-victutors.functions.sQuestionNo = 0;
-victutors.functions.sShowAnswer = 0;
-
-victutors.functions.tAnswer = function(question) {
-    var str = question;
-    str = str.substring(2);
-    var no1 = Number(str);
-    var no2 = victutors.functions.tQuestionNo;
-    if (no1 != no2) {
-        if (no2 != 0) {
-            $('#ta' + no2).hide();
-            $('#tq' + no2).html("<i class='fa fa-plus' aria-hidden='true'></i>");
-        }
-        $('#ta' + no1).show();
-        $('#tq' + no1).html("<i class='fa fa-minus' aria-hidden='true'></i>");
-        victutors.functions.tQuestionNo = no1;
-        victutors.functions.tShowAnswer = 1;
-    } else {
-        if (victutors.functions.tShowAnswer == 0) {
-            $('#ta' + str).show();
-            victutors.functions.tShowAnswer = 1;
-            $('#tq' + str).html("<i class='fa fa-minus' aria-hidden='true'></i>");
-        } else {
-            $('#ta' + str).hide();
-            victutors.functions.tShowAnswer = 0;
-            $('#tq' + str).html("<i class='fa fa-plus' aria-hidden='true'></i>");
-        }
-    }
-}
-
-victutors.functions.sAnswer = function(question) {
-    var str = question;
-    str = str.substring(2);
-    var no1 = Number(str);
-    var no2 = victutors.functions.sQuestionNo;
-    if (no1 != no2) {
-        if (no2 != 0) {
-            $('#sa' + no2).hide();
-            $('#sq' + no2).html("<i class='fa fa-plus' aria-hidden='true'></i>");
-        }
-        $('#sa' + no1).show();
-        $('#sq' + no1).html("<i class='fa fa-minus' aria-hidden='true'></i>");
-        victutors.functions.sQuestionNo = no1;
-        victutors.functions.sShowAnswer = 1;
-    } else {
-        if (victutors.functions.sShowAnswer == 0) {
-            $('#sa' + str).show();
-            victutors.functions.sShowAnswer = 1;
-            $('#sq' + str).html("<i class='fa fa-minus' aria-hidden='true'></i>");
-        } else {
-            $('#sa' + str).hide();
-            victutors.functions.sShowAnswer = 0;
-            $('#sq' + str).html("<i class='fa fa-plus' aria-hidden='true'></i>");
-        }
-    }
-}
-
 victutors.functions.responsive = function() {
     var x = document.getElementById("navbarlist");
     if (x.className === "topnav") {
@@ -73,51 +14,6 @@ victutors.functions.responsive = function() {
 
 victutors.functions.DBlogin = function() {
     window.open('database.php', '_self');
-}
-
-victutors.functions.sendFeedBack = function() {
-    var subject = $('#feedback_subject').val();
-    var text = $('#feedback_text').val();
-    var emailcontent = { 'subject': subject, 'text': text };
-    $.ajax({
-        url: "feedback.php",
-        type: 'POST',
-        data: { "email": JSON.stringify(emailcontent) },
-        success: function(response) {
-            //response = response.replace(/\r?\n|\r/g, "");
-            //alert(response);
-            $('#FeedbackModal').hide();
-            $('#feedbackAlert').show();
-        }
-    });
-}
-
-victutors.functions.sendTutorInfo = function() {
-    if ($('#newTutorIntro').val() === '') {
-        $('#newTutorMoreInfoAlert').css({ 'z-index': 9999 });
-        $('#newTutorMoreInfoAlert').show();
-        return;
-    }
-    var name = $('#uname').val();
-    var phone = $('#uphone').val();
-    var wechat = $('#uwechat').val();
-    var subject = $('#usubject').val();
-    var email = $('#uemail').val();
-    var content = $('#newTutorIntro').val();
-    var emailcontent = { 'name': name, 'phone': phone, 'wechat': wechat, 'subject': subject, 'email': email, 'content': content };
-    $.ajax({
-        url: "uploadtxt.php",
-        type: 'POST',
-        data: {
-            "info": JSON.stringify(emailcontent)
-        },
-        success: function(response) {
-            //response = response.replace(/\r?\n|\r/g, "");
-            //alert(response);
-            $('#joinUsModal').hide();
-            $('#newTutorAlert').show();
-        }
-    });
 }
 
 //user search for faculty
