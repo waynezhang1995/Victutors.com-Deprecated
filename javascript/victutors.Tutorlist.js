@@ -254,19 +254,17 @@ victutors.Tutorlist.GetTutorDetail = function(i, s, item) {
     }
     order++;
     s += color;
-    s += '<div class="w3-row" >';
-    s += '<div class="w3-col s4 w3-center">';
-    s += '<div class="col-sm-5 w3-left" style = "top:8px;width:100% !important">';
-    s += '<table class = "w3-large" style="cursor:default;width:100%">';
-    s += '<tr><td><p style = "cursor:default;margin-top:10px" class = "w3-left"><span class="glyphicon glyphicon-user"></span> 姓名: ' + item.Name + '</p></td></tr>';
-    s += '<tr><td><p style = "cursor:default;margin-top:10px" class = "w3-left"><span class="glyphicon glyphicon-phone"></span> 电话: ' + item.Phone + '</p></td></tr>';
-    s += '<tr><td><p style = "cursor:default;margin-top:10px" class = "w3-left"><span class="glyphicon glyphicon-envelope"></span> 邮箱: ' + item.Email + '</p></td></tr>';
-    s += '<tr><td><p style = "cursor:default;margin-top:10px" class = "w3-left"><span class="glyphicon glyphicon-qrcode"></span> 微信: ' + item.WeChat + '</p></td></tr>';
+    s += '<div class="w3-row" style="padding-left:2px">';
+    s += '<div class="tutorInfo-contact w3-col" style="top:8px;width:33%">';
+    s += '<table class="w3-large" style="cursor:default;width:100%">';
+    s += '<tr><td><p style="cursor:default;margin-top:10px" class="w3-left"><span class="glyphicon glyphicon-user"></span> 姓名: ' + item.Name + '</p></td></tr>';
+    s += '<tr><td><p style="cursor:default;margin-top:10px" class="w3-left"><span class="glyphicon glyphicon-phone"></span> 电话: ' + item.Phone + '</p></td></tr>';
+    s += '<tr><td><p style="cursor:default;margin-top:10px" class="w3-left"><span class="glyphicon glyphicon-envelope"></span> 邮箱: ' + item.Email + '</p></td></tr>';
+    s += '<tr><td><p style="cursor:default;margin-top:10px" class="w3-left"><span class="glyphicon glyphicon-qrcode"></span> 微信: ' + item.WeChat + '</p></td></tr>';
     s += '</table>';
     s += '</div>';
-    s += '</div>';
-    s += '<div class="w3-center w3-col s4 "><p style = "text-align: justify;text-justify: inter-word;font-size:15px;margin-top:10px">' + item.Introduction + '</p></div>';
-    s += '<div style="cursor:default" class="w3-right w3-col s4"><img src=\'' + item.Barcode + '\' alt="WeChat" style="float:right;width: 190px;height:190px"></div>';
+    s += '<div class="tutorInfo-detail w3-center w3-col" style="width:47%;"><p style="text-align:justify;text-justify:inter-word;font-size:15px;margin-top:10px">' + item.Introduction + '</p></div>';
+    s += '<div class="tutorInfo-QRcode w3-right w3-col" style="width:20%;cursor:default"><img src=\'' + item.Barcode + '\' alt="WeChat" style="float:right;width: 190px;height:190px"></div>';
     s += '</div>';
     s += '</div>';
     return s;
