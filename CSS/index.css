@@ -265,7 +265,7 @@ ul.footer li a {
     z-index: 11;
     display: none;
     padding-top: 100px;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
