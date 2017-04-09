@@ -1,6 +1,5 @@
 victutors.createNS("victutors.utils");
 
-
 victutors.utils.tQuestionNo = 0;
 victutors.utils.tShowAnswer = 0;
 victutors.utils.sQuestionNo = 0;

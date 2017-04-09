@@ -124,7 +124,7 @@
 		<span><a href="#" ><b class = "w3-text-white">免责声明</b></a></span>
 		<span><b class="w3-text-white"> ｜ </b><a href="#" ><b class="w3-text-white">广告服务</b></a></span>
 		</p>
-		<p class="w3-text-white">© Victutor.com - VICTUTORS ALL RIGHTS RESERVED</p>
+		<p class="w3-text-white">© Victutors.com - VICTUTORS ALL RIGHTS RESERVED</p>
 	</footer>
     <?php include 'Include/modals.php'; ?>
     <?php include 'Include/alerts.php'; ?>
