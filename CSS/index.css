@@ -323,6 +323,11 @@ ul.footer li a {
     padding-top: 7.5%;
 }
 
+#contact.w3-container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
 #FAQModal i {
     color: teal;
 }
@@ -345,6 +350,12 @@ ul.footer li a {
     width: 50%;
     position: absolute;
     left: 25%;
+}
+
+#joinUsModal footer,
+#joinUsModal header {
+    color: white;
+    background-color: teal;
 }
 
 
@@ -494,6 +505,15 @@ ul.footer li a {
     }
     #search_panel h1 {
         margin-bottom: 7%;
+    }
+    #contact.w3-container {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    #contact img {
+        width: 60%;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 }
 

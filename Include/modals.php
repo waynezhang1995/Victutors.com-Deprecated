@@ -155,7 +155,7 @@
 
     <div id="joinUsModal" class="w3-modal" style="z-index:999">
         <div class="w3-modal-content w3-animate-top w3-card-8">
-            <header class="w3-container w3-teal">
+            <header class="w3-container">
                 <span onclick="document.getElementById('joinUsModal').style.display='none'" class="w3-closebtn">&times;</span>
                 <h2 class="w3-center w3-lobster">成为家教</h2>
             </header>
@@ -202,8 +202,8 @@
                     </div>
                 </div>
             </div>
-            <footer class="w3-container w3-teal">
-                <p class="w3-center w3-lobster ">www.victutors.com</p>
+            <footer class="w3-container">
+                <p class="w3-center">www.victutors.com</p>
             </footer>
         </div>
     </div>

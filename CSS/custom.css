@@ -276,6 +276,11 @@ body {
     padding-top: 7.5%;
 }
 
+#contact.w3-container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
 #FAQModal i {
     color: teal;
 }
@@ -320,4 +325,10 @@ body {
     width: 50%;
     position: absolute;
     left: 25%;
+}
+
+#joinUsModal footer,
+#joinUsModal header {
+    color: white;
+    background-color: teal;
 }
