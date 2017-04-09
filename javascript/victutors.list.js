@@ -5,6 +5,7 @@ victutors.list.FacultyList = [
     'MATH : Mathematics - 数学',
     'ENGL : English - 英文写作',
     'MUSC : Music - 音乐',
+    'STAT : Statistics - 统计学',
     'HINF : Health Information Science - 健康信息科学',
     'ENGR : Engineering - 工程学',
     'PSYC : Psychology - 心理学'
@@ -17,6 +18,7 @@ victutors.list.MUSClist = [];
 victutors.list.ENGRlist = [];
 victutors.list.HINFlist = [];
 victutors.list.PSYClist = [];
+victutors.list.STATlist = [];
 
 victutors.list.SetUplist = function(faculty) {
     switch (faculty) {
@@ -39,7 +41,8 @@ victutors.list.SetUplist = function(faculty) {
                 victutors.list.CreateNewTutorEntry("大学数学", "沈升益", "250 882 6939", "g.spiritblue@gmail.com", "541520752", "./Images/img_avatar3.png", "../Images/Math/shengshengyi.PNG", "UVIC的数学PHD学生, 可以辅导数学100到300level的课(combinatory除外), 400 level 的 ODE PDE. 授课时间 最好是周2周3周末, 价格一般是100level 30刀/小时, 200level 35, 300 level 40. "),
                 victutors.list.CreateNewTutorEntry("统计学,高中数学,大学数学", "Wayne Lu", "250 507 2503", "funfunlu@fhotmail.com", "mogua001", "./Images/img_avatar6.png", "./Images/Math/waynelu.jpg", "UVIC的PHD学生. 本科:统计 ＋ 经济, 硕士:统计, 博士:地理. 超过7年家教经验,基本以大学为主,高中和研究生课程为辅, 可以辅导Uvic和Camosun 数学统计课程, 价格根据课程难度而定, 具体请微信联系"),
                 victutors.list.CreateNewTutorEntry("高中数学,大学数学", "Lily Chen", "N/A", "mathtutoruvic@gmail.com", "N/A", "./Images/img_avatar1.png", "./Images/NoQRCode.png", "目前是UVic机械学院的在读博士，有多年国内外数学家教经验，擅长微积分（uvic math100，101），线性代数（math211），逻辑学（math122）等多种高等数学，平时在培训机构带小学双语数学，也辅导高中11，12年纪的pre-calculus， 价格在25-35刀左右（根据课程和授课地点变化），欢迎需要的同学联系 mathtutoruvic@gmail.com，谢谢!"),
-                victutors.list.CreateNewTutorEntry("大学数学", "Emliy", "N/A", "emily99vic@gmail.com", "emilyS627112", "./Images/img_avatar1.png", "./Images/ENGL/Emily.jpg", "本人UVic学生，数学成绩优秀，多次考试接近满分，经济课总成绩考过满分，曾从事补习班数学老师，辅导过多名一对一学生，成绩都有明显提高。善于换位思考，提高学习兴趣，帮助学生培养高效学习方法。欢迎有兴趣的家长，同学联系咨询，价格20-30刀，谢谢！")
+                victutors.list.CreateNewTutorEntry("大学数学", "Emliy", "N/A", "emily99vic@gmail.com", "emilyS627112", "./Images/img_avatar1.png", "./Images/ENGL/Emily.jpg", "本人UVic学生，数学成绩优秀，多次考试接近满分，经济课总成绩考过满分，曾从事补习班数学老师，辅导过多名一对一学生，成绩都有明显提高。善于换位思考，提高学习兴趣，帮助学生培养高效学习方法。欢迎有兴趣的家长，同学联系咨询，价格20-30刀，谢谢！"),
+                victutors.list.CreateNewTutorEntry("大学数学,Calculus,Linear algebra", "唐鹏", "778 922 5595", "pengtang268@gmail.com", "tangpeng268", "./Images/img_avatar1.png", "./Images/Math/tangpeng.jpg", "本科统计+经济，现UVic stat master在读,。可补Calculus（MATH100/101/200/204）、Linear algebra(MATH110/208/211)以及所有的STAT及相关课程。100/200 level 30一小时，300以上level 35/40一小时。")
             ];
         case 'ENGL':
             victutors.list.ENGLlist = [
@@ -68,6 +71,11 @@ victutors.list.SetUplist = function(faculty) {
         case 'PSYC':
             victutors.list.PSYClist = [
                 victutors.list.CreateNewTutorEntry("PSYC 11&12, Social Studies", "Vincent Liu", "604 773 1878", "N/A", "请扫描二维码", "./Images/img_avatar1.png", "./Images/PSYC/vincentliu.JPG", "目前Camosun College 大一 BA.Psychology&Criminal Justice双专业在读 可以辅导高中Psychology11&12, AP Pyschology, IB Psychology & Social Studies 10-12")
+            ];
+        case 'STAT':
+            victutors.list.STATlist = [
+                victutors.list.CreateNewTutorEntry("STAT100/200", "唐鹏", "778 922 5595", "pengtang268@gmail.com", "tangpeng268", "./Images/img_avatar1.png", "./Images/Math/tangpeng.jpg", "本科统计+经济，现UVic stat master在读,。可补Calculus（MATH100/101/200/204）、Linear algebra(MATH110/208/211)以及所有的STAT及相关课程。100/200 level 30一小时，300以上level 35/40一小时。"),
+                victutors.list.CreateNewTutorEntry("STAT100/200", "Wayne Lu", "250 507 2503", "funfunlu@fhotmail.com", "mogua001", "./Images/img_avatar6.png", "./Images/Math/waynelu.jpg", "UVIC的PHD学生. 本科:统计 ＋ 经济, 硕士:统计, 博士:地理. 超过7年家教经验,基本以大学为主,高中和研究生课程为辅, 可以辅导Uvic和Camosun 数学统计课程, 价格根据课程难度而定, 具体请微信联系")
             ];
     }
 }

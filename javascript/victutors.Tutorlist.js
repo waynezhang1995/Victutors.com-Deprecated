@@ -185,6 +185,25 @@ victutors.Tutorlist.GetTutorList = function(faculty) {
             victutors.Tutorlist.SetUpTags(tags);
             $('#TutorListAll').html(s);
             break;
+        case 'STAT':
+            var STATTutors = [];
+            var TutorCount = victutors.list.STATlist.length;
+            for (i = 0; i < victutors.list.STATlist.length; i++) {
+                var index = victutors.Tutorlist.GetRandom(TutorCount, STATTutors);
+                var item = victutors.list.STATlist[index];
+                //get tags
+                var itemtags = item.Subject.split(",");
+                for (j = 0; j < itemtags.length; j++) {
+                    if (tags.indexOf(itemtags[j]) == -1) {
+                        tags.push(itemtags[j]);
+                    }
+                }
+                s = victutors.Tutorlist.GetTutorDetail(index, s, item);
+            }
+            currentlist = victutors.list.STATlist;
+            victutors.Tutorlist.SetUpTags(tags);
+            $('#TutorListAll').html(s);
+            break;
         default:
             break;
     }
@@ -202,110 +221,6 @@ victutors.Tutorlist.SetUpTags = function(tags) {
     s += "</div>";
     s += "</div>";
     $("#searchTags").html(s);
-}
-
-victutors.Tutorlist.tAnswer = function(question) {
-    var str = question;
-    str = str.substring(2);
-    var no1 = Number(str);
-    var no2 = victutors.Tutorlist.tQuestionNo;
-    if (no1 != no2) {
-        if (no2 != 0) {
-            $('#ta' + no2).hide();
-            $('#tq' + no2).html("<i class='fa fa-plus' aria-hidden='true'></i>");
-        }
-        $('#ta' + no1).show();
-        $('#tq' + no1).html("<i class='fa fa-minus' aria-hidden='true'></i>");
-        victutors.Tutorlist.tQuestionNo = no1;
-        victutors.Tutorlist.tShowAnswer = 1;
-        /*
-        for (i = 1; i <= 3; i++) {
-            $('#ta' + str).hide();
-            $('#tq' + str).html("<i class='fa fa-plus' aria-hidden='true'></i>");
-        }*/
-    } else {
-        if (victutors.Tutorlist.tShowAnswer == 0) {
-            $('#ta' + str).show();
-            victutors.Tutorlist.tShowAnswer = 1;
-            $('#tq' + str).html("<i class='fa fa-minus' aria-hidden='true'></i>");
-        } else {
-            $('#ta' + str).hide();
-            victutors.Tutorlist.tShowAnswer = 0;
-            $('#tq' + str).html("<i class='fa fa-plus' aria-hidden='true'></i>");
-        }
-    }
-}
-
-victutors.Tutorlist.sendFeedBack = function() {
-    var subject = $('#feedback_subject').val();
-    var text = $('#feedback_text').val();
-    var emailcontent = { 'subject': subject, 'text': text };
-    $.ajax({
-        url: "feedback.php",
-        type: 'POST',
-        data: { "email": JSON.stringify(emailcontent) },
-        success: function(response) {
-            //response = response.replace(/\r?\n|\r/g, "");
-            //alert(response);
-            $('#FeedbackModal').hide();
-            $('#feedbackAlert').show();
-        }
-    });
-}
-
-victutors.Tutorlist.sendTutorInfo = function() {
-    if ($('#newTutorIntro').val() === '') {
-        $('#newTutorMoreInfoAlert').css({ 'z-index': 9999 });
-        $('#newTutorMoreInfoAlert').show();
-        return;
-    }
-    var name = $('#uname').val();
-    var phone = $('#uphone').val();
-    var wechat = $('#uwechat').val();
-    var subject = $('#usubject').val();
-    var email = $('#uemail').val();
-    var content = $('#newTutorIntro').val();
-    var emailcontent = { 'name': name, 'phone': phone, 'wechat': wechat, 'subject': subject, 'email': email, 'content': content };
-    $.ajax({
-        url: "uploadtxt.php",
-        type: 'POST',
-        data: {
-            "info": JSON.stringify(emailcontent)
-        },
-        success: function(response) {
-            //response = response.replace(/\r?\n|\r/g, "");
-            //alert(response);
-            $('#aboutusModal').hide();
-            $('#newTutorAlert').show();
-        }
-    });
-}
-
-victutors.Tutorlist.sAnswer = function(question) {
-    var str = question;
-    str = str.substring(2);
-    var no1 = Number(str);
-    var no2 = victutors.Tutorlist.sQuestionNo;
-    if (no1 != no2) {
-        if (no2 != 0) {
-            $('#sa' + no2).hide();
-            $('#sq' + no2).html("<i class='fa fa-plus' aria-hidden='true'></i>");
-        }
-        $('#sa' + no1).show();
-        $('#sq' + no1).html("<i class='fa fa-minus' aria-hidden='true'></i>");
-        victutors.Tutorlist.sQuestionNo = no1;
-        victutors.Tutorlist.sShowAnswer = 1;
-    } else {
-        if (victutors.Tutorlist.sShowAnswer == 0) {
-            $('#sa' + str).show();
-            victutors.Tutorlist.sShowAnswer = 1;
-            $('#sq' + str).html("<i class='fa fa-minus' aria-hidden='true'></i>");
-        } else {
-            $('#sa' + str).hide();
-            victutors.Tutorlist.sShowAnswer = 0;
-            $('#sq' + str).html("<i class='fa fa-plus' aria-hidden='true'></i>");
-        }
-    }
 }
 
 victutors.Tutorlist.ShowListByTags = function(tag) {
@@ -339,19 +254,17 @@ victutors.Tutorlist.GetTutorDetail = function(i, s, item) {
     }
     order++;
     s += color;
-    s += '<div class="w3-row" >';
-    s += '<div class="w3-col s4 w3-center">';
-    s += '<div class="col-sm-5 w3-left" style = "top:8px;width:100% !important">';
-    s += '<table class = "w3-large" style="cursor:default;width:100%">';
-    s += '<tr><td><p style = "cursor:default;margin-top:10px" class = "w3-left"><span class="glyphicon glyphicon-user"></span> 姓名: ' + item.Name + '</p></td></tr>';
-    s += '<tr><td><p style = "cursor:default;margin-top:10px" class = "w3-left"><span class="glyphicon glyphicon-phone"></span> 电话: ' + item.Phone + '</p></td></tr>';
-    s += '<tr><td><p style = "cursor:default;margin-top:10px" class = "w3-left"><span class="glyphicon glyphicon-envelope"></span> 邮箱: ' + item.Email + '</p></td></tr>';
-    s += '<tr><td><p style = "cursor:default;margin-top:10px" class = "w3-left"><span class="glyphicon glyphicon-qrcode"></span> 微信: ' + item.WeChat + '</p></td></tr>';
+    s += '<div class="w3-row" style="padding-left:2px">';
+    s += '<div class="tutorInfo-contact w3-col" style="top:8px;width:33%">';
+    s += '<table class="w3-large" style="cursor:default;width:100%">';
+    s += '<tr><td><p style="cursor:default;margin-top:10px" class="w3-left"><span class="glyphicon glyphicon-user"></span> 姓名: ' + item.Name + '</p></td></tr>';
+    s += '<tr><td><p style="cursor:default;margin-top:10px" class="w3-left"><span class="glyphicon glyphicon-phone"></span> 电话: ' + item.Phone + '</p></td></tr>';
+    s += '<tr><td><p style="cursor:default;margin-top:10px" class="w3-left"><span class="glyphicon glyphicon-envelope"></span> 邮箱: ' + item.Email + '</p></td></tr>';
+    s += '<tr><td><p style="cursor:default;margin-top:10px" class="w3-left"><span class="glyphicon glyphicon-qrcode"></span> 微信: ' + item.WeChat + '</p></td></tr>';
     s += '</table>';
     s += '</div>';
-    s += '</div>';
-    s += '<div class="w3-center w3-col s4 "><p style = "text-align: justify;text-justify: inter-word;font-size:15px;margin-top:10px">' + item.Introduction + '</p></div>';
-    s += '<div style="cursor:default" class="w3-right w3-col s4"><img src=\'' + item.Barcode + '\' alt="WeChat" style="float:right;width: 190px;height:190px"></div>';
+    s += '<div class="tutorInfo-detail w3-center w3-col" style="width:47%;"><p style="text-align:justify;text-justify:inter-word;font-size:15px;margin-top:10px">' + item.Introduction + '</p></div>';
+    s += '<div class="tutorInfo-QRcode w3-right w3-col" style="width:20%;cursor:default"><img src=\'' + item.Barcode + '\' alt="WeChat" style="float:right;width: 190px;height:190px"></div>';
     s += '</div>';
     s += '</div>';
     return s;
@@ -415,6 +328,11 @@ victutors.Tutorlist.setPage = function() {
             break;
         case 'ENGL':
             title = "English - 英文家教名单";
+            $('#title').html(title);
+            victutors.Tutorlist.PageTitle = title;
+            break;
+        case 'STAT':
+            title = "Statistics - 统计学家教名单";
             $('#title').html(title);
             victutors.Tutorlist.PageTitle = title;
             break;

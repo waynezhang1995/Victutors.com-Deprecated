@@ -26,6 +26,7 @@ elif [ "$1" = "css" ]; then
 elif [ "$1" = "php" ]; then
     echo "******* Copying php files *******\n\n"
     scp ../*.* victutors@victutors.com:public_html/
+    scp -r ../Include/ victutors@victutors.com:public_html/
 else
     echo " No such option ! Please try again\n  js ===> javascript\n css ===> CSS\n php ===> php files\n"
     exit 1

@@ -113,10 +113,7 @@
                 </div>
             </div>
         </div>
-
-        <div id="docList" class="container-fluid">
-
-        </div>
+        <div id="docList" class="container-fluid"></div>
     </div>
 
     <!-- Fixed Button -->
@@ -124,115 +121,17 @@
         <button class="w3-text-white w3-hover-text-teal w3-xxxlarge w3-animate-right glyphicon glyphicon-chevron-up" data-toggle="gotop" title="Go to Top" style="padding: 0; border: none; background: none; outline: none;color:black" onclick="victutors.database.gotoTop()">
 	</div>
 
-
 	<!-- Footer -->
 	<footer id="footerpanel" class="w3-container w3-padding-10 w3-center" style="z-index:-1">
 		<p style="margin-top:10px">
 		<span><a href="#" ><b class="w3-text-white">免责声明</b></a></span>
 		<span><b class="w3-text-white"> ｜ </b><a href="#" ><b class="w3-text-white">广告服务</b></a></span>
 		</p>
-		<p class="w3-text-white">© Victutor.com - VICTUTORS ALL RIGHTS RESERVED</p>
+		<p class="w3-text-white">© Victutors.com - VICTUTORS ALL RIGHTS RESERVED</p>
 	</footer>
 
-	<div id="searchAlert" class="w3-modal">
-		<div class="w3-modal-content w3-animate-top w3-card-8" style="width:30%">
-			<header class="w3-container w3-red">
-			<span onclick="document.getElementById('searchAlert').style.display='none'"
-			class="w3-closebtn">&times;</span>
-			<h2 class="w3-red">错误！<br/>搜索科目不能为空，请重新输入</h2>
-			</header>
-		</div>
-	</div>
-
-	<div id="emptyAlert" class="w3-modal">
-		<div class="w3-modal-content w3-animate-top w3-card-8" style = "width:30%">
-			<header class="w3-container w3-red">
-			<span onclick="document.getElementById('emptyAlert').style.display='none'"
-			class="w3-closebtn">&times;</span>
-			<h2 class = "w3-red">对不起！<br/>我们暂时还没有资料，请联系我们</h2>
-			</header>
-		</div>
-	</div>
-
-	<!--feedback -->
-	<div id="FeedbackModal" class="w3-modal" style="z-index:999">
-		<div class="w3-modal-content w3-animate-top w3-card-8">
-			<header class="w3-container w3-teal">
-				<span
-					onclick="document.getElementById('FeedbackModal').style.display='none'"
-					class="w3-closebtn">&times;</span>
-				<h2 class="w3-center w3-lobster">意见反馈</h2>
-			</header>
-			<div class="w3-container">
-				<div class="w3-row-padding" style="height:380px">
-						<div class="w3-group">
-							<label class="w3-large">您想搜索的学科?</label> <input id="feedback_subject"
-								class="w3-round w3-input w3-border w3-hover-border-black"
-								style="width: 100%;" type="text" name="subject_help" />
-							</div>
-						<div class="w3-center w3-group">
-							<label class="w3-large" style="display:block;float:left" for="introduction_help">您宝贵的意见:</label>
-							<textarea id="feedback_text" class="w3-round w3-input w3-border w3-hover-border-black" style="vertical-align: left;width: 100%;" rows = "4" cols="70" name="introduction_help" ></textarea>
-						</div>
-				<div class="w3-center" style="margin-bottom:10px">
-					<button onclick="victutors.database.sendFeedBack()" type="submit" class="w3-large w3-teal w3-btn w3-padding-10">Submit</button>
-    </div>
-    </div>
-    </div>
-    <footer class="w3-container w3-teal">
-        <p class="w3-center w3-lobster ">www.victutors.com</p>
-    </footer>
-    </div>
-    </div>
-
-    <!-- Contact -->
-    <div id="ContactUsModal" class="w3-modal" style="z-index:999">
-        <div class="w3-modal-content w3-animate-top w3-card-8">
-            <header class="w3-container w3-teal">
-                <span onclick="document.getElementById('ContactUsModal').style.display='none'" class="w3-closebtn">&times;</span>
-                <h2 class="w3-center w3-lobster">联系我们</h2>
-            </header>
-            <div id="contact" class="w3-large container-fluid bg-grey" style="margin-bottom:100px;margin-top:100px">
-                <div class="row">
-                    <div class="w3-half">
-                        <p style="padding-left:80px;margin-bottom: 25px">
-                            <span class="glyphicon glyphicon-map-marker"></span> 地址：University of Victoria
-                        </p>
-                        <p style="padding-left:80px;margin-bottom: 25px">
-                            <span class="glyphicon glyphicon-phone"></span> 电话：778 922 5080
-                        </p>
-                        <p style="padding-left:80px;margin-bottom: 25px">
-                            <span class="glyphicon glyphicon-envelope"></span> 邮箱：info@victutors.com
-                        </p>
-                    </div>
-                    <div class="w3-half w3-center">
-                        <img src="./Images/WeChat.png" alt="WeChat" style="width: 35%">
-                    </div>
-                </div>
-            </div>
-            <footer class="w3-container w3-teal">
-                <p class="w3-center w3-lobster ">www.victutors.com</p>
-            </footer>
-        </div>
-    </div>
-
-    <div id="feedbackAlert" class="w3-modal">
-        <div class="w3-modal-content w3-animate-top w3-card-8" style="width:30%">
-            <header class="w3-container w3-red">
-                <span onclick="document.getElementById('feedbackAlert').style.display='none'" class="w3-closebtn">&times;</span>
-                <h2 class="w3-red">谢谢您的反馈😊<br/>感谢您长期以来的支持！</h2>
-            </header>
-        </div>
-    </div>
-
-    <div id="databaseErrorAlert" class="w3-modal" style="z-index:99999">
-        <div class="w3-modal-content w3-animate-top w3-card-8" style="width:30%">
-            <header class="w3-container w3-red">
-                <span onclick="document.getElementById('databaseErrorAlert').style.display='none'" class="w3-closebtn">&times;</span>
-                <h2 class="w3-red">您输入的密码有误<br/>请重新输入</h2>
-            </header>
-        </div>
-    </div>
+	<?php include 'Include/modals.php'; ?>
+    <?php include 'Include/alerts.php'; ?>
 
 </body>
 
