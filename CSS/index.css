@@ -339,7 +339,7 @@ ul.footer li a {
 }
 
 #joinUsModal {
-    padding-top: 100px;
+    padding-top: 5%;
 }
 
 #partnerModal {
@@ -376,16 +376,6 @@ ul.footer li a {
     #home_link {
         display: none
     }
-    /*#search_panel {
-        height: 25vh;
-    }
-    #search_panel h1 {
-        color: white;
-        font-size: 4.2em;
-        font-weight: bold;
-        margin-bottom: 7.5%;
-        margin-top: 8px;
-    }*/
 }
 
 @media screen and (min-width:681px) and (max-width:960px) {
@@ -514,6 +504,9 @@ ul.footer li a {
         width: 60%;
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+    #joinUsModal {
+        padding-top: 0;
     }
 }
 
