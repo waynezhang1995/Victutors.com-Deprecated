@@ -559,7 +559,7 @@ ul.footer li a {
         font-size: 0.8em
     }
     .partner-list {
-        max-width: 258px;
+        max-width: 365px;
         margin: 0 auto;
         display: block;
         float: none;
@@ -609,6 +609,9 @@ ul.footer li a {
     #search_panel h1 {
         font-size: 2em;
         margin-bottom: 10%;
+    }
+    .partner-list {
+        max-width: 187px;
     }
 }
 

@@ -85,6 +85,7 @@
                 <div class="partner" id="partner03"><a href="#" id="partner03.JPG" class="partner_tag">维城酒家</a></div>
                 <div class="partner" id="partner01"><a href="#" id="partner01.JPG" class="partner_tag">维城生活信息馆</a></div>
                 <div class="partner" id="partner02"><a href="#" id="partner02.JPG" class="partner_tag">维城续签服务</a></div>
+                <div class="partner" id="partner04"><a href="#" id="partner04.JPG" class="partner_tag">John's Noodle Village</a></div>
             </div>
         </div>
     </div>
