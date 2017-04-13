@@ -458,6 +458,15 @@ ul.footer li a {
     #navbarlogo {
         display: none
     }
+    #topnav-logo {
+        position: absolute;
+        height: 25px;
+        padding-bottom: 0px;
+        left: 8px;
+    }
+    #home_link a span {
+        margin-left: 42px;
+    }
     ul.topnav li:not(:first-child) {
         display: none;
     }
@@ -585,7 +594,7 @@ ul.footer li a {
     }
     #partnerModal div.w3-modal-content img {
         width: 75%;
-        top: 90px;
+        top: 80px;
         bottom: 0;
         left: 12%;
     }

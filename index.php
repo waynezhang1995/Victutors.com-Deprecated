@@ -54,7 +54,7 @@
             </li>
         </ul>
         <ul id="navbarlist" class="topnav">
-            <li id="home_link"><a href="#home"><span class="w3-large">Victutors.com</span></a></li>
+            <li id="home_link"><a href="#home"><img id="topnav-logo" src="./Images/icon_white.png"><span class="w3-large">Victutors.com</span></a></li>
             <li><a class="w3-btn" onclick="document.getElementById('databaseModal').style.display = 'block'"><i class="fa fa-database" aria-hidden="true"></i>&nbsp;题库分享</a></li>
             <li><a class="w3-btn" onclick="document.getElementById('joinUsModal').style.display = 'block'"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;成为家教</a></li>
             <li><a class="w3-btn" onclick="document.getElementById('ContactUsModal').style.display = 'block'"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;联系我们</a></li>
