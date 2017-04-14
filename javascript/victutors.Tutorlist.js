@@ -255,7 +255,7 @@ victutors.Tutorlist.GetTutorDetail = function(i, s, item) {
     s += '<tr><td><p style="cursor:default;margin-top:10px" class="w3-left"><span class="glyphicon glyphicon-qrcode"></span> 微信: ' + item.WeChat + '</p></td></tr>';
     s += '</table>';
     s += '</div>';
-    s += '<div class="tutorInfo-detail w3-center w3-col" style="width:47%;"><p style="text-align:justify;text-justify:inter-word;font-size:15px;margin-top:10px">' + item.Introduction + '</p></div>';
+    s += '<div class="tutorInfo-detail w3-center w3-col" style="width:45%;"><p style="text-align:justify;text-justify:inter-word;font-size:15px;margin-top:10px">' + item.Introduction + '</p></div>';
     s += '<div class="tutorInfo-QRcode w3-right w3-col" style="width:20%;cursor:default"><img src=\'' + item.Barcode + '\' alt="WeChat" style="float:right;width: 190px;height:190px"></div>';
     s += '</div>';
     s += '</div>';
