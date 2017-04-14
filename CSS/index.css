@@ -387,7 +387,7 @@ ul.footer li a {
     #search_panel h1{font-size:1.8em;}
 } */
 
-@media screen and (min-width:1024px) {
+@media screen and (min-width:1024px) and (max-width:1024px) {
     #search_panel h1 {
         color: white;
         font-size: 5.2em;
