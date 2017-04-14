@@ -23,6 +23,16 @@
     margin-top: 180px
 }
 
+#GoToTopButton {
+    display: none;
+    position: fixed;
+    padding: 5px;
+    bottom: 60px;
+    right: 35px;
+    height: 50px;
+    z-index: 999
+}
+
 .navbar-nav>li>a {
     padding-bottom: 12px;
 }

@@ -1,5 +1,5 @@
  <!-- Fixed Button -->
-<div class="w3-theme-border" id="GoToTopButton" style="display:none;position: fixed; padding: 5px; bottom: 60px; right: 35px; height: 50px; z-index: 999">
+<div class="w3-theme-border" id="GoToTopButton">
     <button class="w3-text-white w3-hover-text-teal w3-xxxlarge w3-animate-right glyphicon glyphicon-chevron-up" data-toggle="gotop" title="Go to Top" style="padding: 0; border: none; background: none; outline: none;color:black" onclick="victutors.utils.gotoTop()">
 </div>
 
