@@ -81,7 +81,7 @@
         <div class="row no-gutters">
             <div id="copyright"><a>© Victutors.com - VICTUTORS ALL RIGHTS RESERVED</a></div>
             <div class="partner-list">
-                <div class="partner"><a>合作伙伴 :</a></div>
+                <div class="partner"><a>推广伙伴 :</a></div>
                 <div class="partner" id="partner03"><a href="#" id="partner03.JPG" class="partner_tag">维城酒家</a></div>
                 <div class="partner" id="partner01"><a href="#" id="partner01.JPG" class="partner_tag">维城生活信息馆</a></div>
                 <div class="partner" id="partner02"><a href="#" id="partner02.JPG" class="partner_tag">维城续签服务</a></div>
