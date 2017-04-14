@@ -41,7 +41,7 @@
     </style>
 </head>
 <?php include 'Include/header.php' ;?>
-<body id="mainbody" style="zoom:90%">
+<body id="mainbody">
     <!-- Content -->
     <div id="mainContent" class="w3-content w3-container" style="max-width: 1080px; margin-top: 70px; margin-bottom: 100px">
         <div class="container-fluid">

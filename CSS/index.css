@@ -387,6 +387,16 @@ ul.footer li a {
     #search_panel h1{font-size:1.8em;}
 } */
 
+@media screen and (min-width:1024px) {
+    #search_panel h1 {
+        color: white;
+        font-size: 5.2em;
+        font-weight: bold;
+        margin-bottom: 11.5%;
+        margin-top: 26px;
+    }
+}
+
 @media screen and (min-width:961px) {
     #Navbar ul li a {
         font-size: 1.5em;
@@ -447,6 +457,31 @@ ul.footer li a {
     }
     ul.footer li a {
         padding: 0 7px;
+    }
+    #copyright {
+        position: relative;
+        font-size: 0.8em;
+        padding-left: 0px;
+        max-width: 282px;
+        margin: 0 auto;
+    }
+    #copyright a {
+        color: white
+    }
+    .partner {
+        float: left;
+        padding: 0 5px;
+        margin-right: 0;
+    }
+    .partner a {
+        color: white;
+        font-size: 0.8em
+    }
+    .partner-list {
+        max-width: 400px;
+        margin: 0 auto;
+        display: block;
+        float: none;
     }
 }
 

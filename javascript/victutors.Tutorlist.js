@@ -346,20 +346,26 @@ $(document).ready(function() {
         trigger: 'hover'
     });
 
+    $('#mainContent').css({ 'min-height': $(window).height() - 169 });
+
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         console.log("Mobile device detected");
+        console.log($(window).height()); // returns height of browser viewport
+        console.log($(document).height());
+        console.log(screen.height);
         $('#feedbackModal, #contactModal, #qandaModal, #databaseModal_').hide();
         $('#imageUpload').html('<p style="margin-top: 60%" class="w3-text-red">请使用电脑端上传微信二维码或联系我们.对您照成的不便我们深感歉意</p>');
         $('#tutorInfoUpload').css({ 'margin-left': '35%', 'margin-top': 50 });
-        $('#mainContent').css({ 'min-height': 1479 });
+        $('#mainContent').css({ 'min-height': $(window).height() - 267 });
         $('#partnerModal div.w3-modal-content img').css({
             'width': '81%',
             'position': 'absolute',
             'left': '10%',
-            'top': '300px'
+            'top': '100px'
         });
 
         $('#joinUsModal').css({ 'padding-top': '30%' });
         $('#joinUsModal div.w3-modal-content').css({ 'width': '800px' });
+        $('#mainbody').css({ 'zoom': '100%' });
     }
 });

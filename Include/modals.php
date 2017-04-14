@@ -234,7 +234,7 @@
 
     <div id="partnerModal" class="w3-modal" onclick="this.style.display='none'">
         <div class="w3-modal-content w3-animate-zoom">
-            <img src="./Images/Partner/partner01.jpg">
+            <img src="./Images/Partner/partner01.JPG">
         </div>
     </div>
 

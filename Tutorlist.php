@@ -53,7 +53,7 @@
     <a onclick="document.getElementById('ContactUsModal').style.display='block'" class="w3-right w3-text-white help">点击联系我们<br>我们来帮您!<br>请联系客服</a>
 </nav>
 
-<body id="mainbody" onresize="victutors.Tutorlist.ReSize()">
+<body id="mainbody">
     <!-- Content -->
     <div id="mainContent" class="w3-content w3-container">
         <p class="w3-text-white w3-xlarge" id="title"></p>
