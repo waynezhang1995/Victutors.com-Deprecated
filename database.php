@@ -23,6 +23,7 @@
     <script src="./lib/Javascript/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./javascript/victutors.database.js"></script>
+    <script type="text/javascript" src="./javascript/victutors.utils.js"></script>
     <script type="text/javascript" src="./javascript/victutors.list.js"></script>
     <script type="text/javascript" src="./javascript/bootstrap-select.js"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
@@ -39,39 +40,8 @@
         }
     </style>
 </head>
-
-<div class="w3-container">
-    <nav id="TopNavBar" class="w3-xlarge navbar-inverse navbar navbar-fixed-top w3-white">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a href="index.php"><img id="victutors_icon" style="float:left;margin-top:9px;margin-right:6px" class="w3-left" src="./Images/victutors_icon.png" alt="victutors_Icon" width="10%">
-                    <a class="w3-xlarge navbar-brand" href="index.php">
-                        <font color="black">victutors.com</font>
-                    </a>
-            </div>
-            <ul class="w3-right nav navbar-nav " style="right:0px;position:absolute">
-                <li>
-                    <a class="w3-hover-red" onclick="document.getElementById('ContactUsModal').style.display='block'">
-                        <font color="black">
-                            <i><b>联系我们&nbsp;&nbsp;<i class="fa fa-phone" aria-hidden="true"></i></b>
-                            </i>
-                        </font>
-                    </a>
-                </li>
-                <li>
-                    <a class="w3-hover-red" onclick="document.getElementById('FeedbackModal').style.display='block'">
-                        <font color="black">
-                            <i><b>问题反馈&nbsp;&nbsp;<i class="fa fa-comment-o" aria-hidden="true"></i></b>
-                            </i>
-                        </font>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</div>
-
-<body id="mainbody" style="zoom:90%">
+<?php include 'Include/header.php' ;?>
+<body id="mainbody">
     <!-- Content -->
     <div id="mainContent" class="w3-content w3-container" style="max-width: 1080px; margin-top: 70px; margin-bottom: 100px">
         <div class="container-fluid">
@@ -116,23 +86,8 @@
         <div id="docList" class="container-fluid"></div>
     </div>
 
-    <!-- Fixed Button -->
-    <div class="w3-theme-border" id="GoToTopButton" style="display:none;position: fixed; padding: 5px; bottom: 60px; right: 35px; height: 50px; z-index: 999">
-        <button class="w3-text-white w3-hover-text-teal w3-xxxlarge w3-animate-right glyphicon glyphicon-chevron-up" data-toggle="gotop" title="Go to Top" style="padding: 0; border: none; background: none; outline: none;color:black" onclick="victutors.database.gotoTop()">
-	</div>
-
-	<!-- Footer -->
-	<footer id="footerpanel" class="w3-container w3-padding-10 w3-center" style="z-index:-1">
-		<p style="margin-top:10px">
-		<span><a href="#" ><b class="w3-text-white">免责声明</b></a></span>
-		<span><b class="w3-text-white"> ｜ </b><a href="#" ><b class="w3-text-white">广告服务</b></a></span>
-		</p>
-		<p class="w3-text-white">© Victutors.com - VICTUTORS ALL RIGHTS RESERVED</p>
-	</footer>
-
+    <?php include 'Include/footer.php'; ?>
 	<?php include 'Include/modals.php'; ?>
     <?php include 'Include/alerts.php'; ?>
-
 </body>
-
 </html>

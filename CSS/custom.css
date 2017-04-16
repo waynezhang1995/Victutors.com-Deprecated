@@ -23,7 +23,22 @@
     margin-top: 180px
 }
 
+#GoToTopButton {
+    display: none;
+    position: fixed;
+    padding: 5px;
+    bottom: 60px;
+    right: 35px;
+    height: 50px;
+    z-index: 999
+}
+
+.navbar-nav>li>a {
+    padding-bottom: 12px;
+}
+
 #mainbody {
+    zoom: 90%;
     background: url(../Images/MainBG.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -45,6 +60,49 @@
     position: relative;
     -webkit-animation: animateleft 1.0s !important;
     animation: animateleft 1.0s !important
+}
+
+#serviceButton {
+    position: fixed;
+    left: 0px;
+    bottom: 100px;
+    z-index: 999;
+    display: none;
+}
+
+#serviceButton button {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#TutorListAll {
+    margin-top: 0px;
+    margin-bottom: 50px
+}
+
+#title {
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+
+#services {
+    border: solid;
+    border-width: thin;
+    bottom: 100px !important;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#services img {
+    width: 80px;
+    height: 80px;
+}
+
+#services .help {
+    padding-right: 10px;
+    padding-top: 10px
+}
+
+.w3-sidenav a {
+    transition: none !important;
 }
 
 .Server-Panel {
@@ -171,11 +229,37 @@ body {
     max-width: 1080px;
     margin-top: 70px;
     margin-bottom: 100px;
-    min-height: 741.664px;
+    min-height: 712.664px;
 }
 
 
+/*************  Footer   ***************/
+
+
+/******************************************/
+
+
+/******************************************/
+
+
 /*************  Modal   ***************/
+
+#footerpanel {
+    z-index: -1
+}
+
+#footerpanel p.top-margin {
+    margin-top: 10px
+}
+
+#footerpanel p span {
+    color: white;
+}
+
+#footerpanel p a {
+    color: white;
+    text-decoration: none;
+}
 
 
 /******************************************/

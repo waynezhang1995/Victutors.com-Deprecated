@@ -54,7 +54,7 @@
             </li>
         </ul>
         <ul id="navbarlist" class="topnav">
-            <li id="home_link"><a href="#home"><span class="w3-large">Victutors.com</span></a></li>
+            <li id="home_link"><a href="#home"><img id="topnav-logo" src="./Images/icon_white.png"><span class="w3-large">Victutors.com</span></a></li>
             <li><a class="w3-btn" onclick="document.getElementById('databaseModal').style.display = 'block'"><i class="fa fa-database" aria-hidden="true"></i>&nbsp;题库分享</a></li>
             <li><a class="w3-btn" onclick="document.getElementById('joinUsModal').style.display = 'block'"><i class="fa fa-users" aria-hidden="true"></i>&nbsp;成为家教</a></li>
             <li><a class="w3-btn" onclick="document.getElementById('ContactUsModal').style.display = 'block'"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;联系我们</a></li>
@@ -79,45 +79,17 @@
     <!-- Footer -->
     <div id="Footer" class="w3-bottom">
         <div class="row no-gutters">
-            <ul class="footer">
-                <li id="copyright"><a>© Victutors.com - VICTUTORS ALL RIGHTS RESERVED</a></li>
-                <li id="partner03" class="partner-pane"><a href="#" id="partner03.JPG" class="partner_tag">维城酒家</a></li>
-                <li id="partner02" class="partner-pane"><a href="#" id="partner02.JPG" class="partner_tag">维城续签服务</a></li>
-                <li id="partner01" class="partner-pane"><a href="#" id="partner01.JPG" class="partner_tag">维城生活信息馆</a></li>
-                <li class="partner-pane"><a>合作伙伴 :</a></li>
-            </ul>
+            <div id="copyright"><a>© Victutors.com - VICTUTORS ALL RIGHTS RESERVED</a></div>
+            <div class="partner-list">
+                <div class="partner"><a>推广伙伴 :</a></div>
+                <div class="partner" id="partner03"><a href="#" id="partner03.JPG" class="partner_tag">维城酒家</a></div>
+                <div class="partner" id="partner01"><a href="#" id="partner01.JPG" class="partner_tag">维城生活信息馆</a></div>
+                <div class="partner" id="partner02"><a href="#" id="partner02.JPG" class="partner_tag">维城续签服务</a></div>
+                <div class="partner" id="partner04"><a href="#" id="partner04.JPG" class="partner_tag">John's Noodle Village</a></div>
+            </div>
         </div>
     </div>
 
-    <!--Assignments database modal-->
-    <div id="databaseModal" class="modal">
-        <div class="modal-content w3-animate-top w3-card-1">
-            <header class="w3-container">
-                <span onclick="document.getElementById('databaseModal').style.display='none'" class="w3-closebtn">&times;</span>
-                <h3>题库分享</h3>
-            </header>
-            <div class="w3-container">
-                <div id="warning" class="w3-card-8">
-                    <h3><b>免责声明</b></h3>
-                    <p>Victutors创建本题库只为内部学习交流使用 不得用于任何商业用途</p>
-                    <p>本题库试题作业资源由各位UVic战友提供 资源来之不易 望各位战友万加珍惜</p>
-                    <p>同时恳请各位战友匿名分享习题资源 学习不易 多一份习题 多一些拿高分的可能</p>
-                    <p>部分题库资源可在UVic官网(www.uvic.ca)搜索找到</p>
-                </div>
-                <div class="w3-center">
-                    <button onclick="victutors.functions.DBlogin()" type="submit" class="w3-teal w3-btn">登录题库</button>
-                </div>
-            </div>
-            <footer class="w3-center w3-container">
-                <p>www.victutors.com</p>
-            </footer>
-        </div>
-    </div>
-    <div id="partnerModal" class="w3-modal" onclick="this.style.display='none'">
-        <div class="w3-modal-content w3-animate-zoom">
-            <img src="./Images/Partner/partner01.jpg">
-        </div>
-    </div>
     <?php include 'Include/modals.php'; ?>
     <?php include 'Include/alerts.php'; ?>
 </body>

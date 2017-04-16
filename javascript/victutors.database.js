@@ -5,30 +5,6 @@ victutors.database.courseList = ['CSC225', 'CSC305', 'CSC320', 'CSC355', 'CSC360
 victutors.database.selectedValue = '';
 victutors.database.InitialFooterPosition;
 
-victutors.database.sendFeedBack = function() {
-    var subject = $('#feedback_subject').val();
-    var text = $('#feedback_text').val();
-    var emailcontent = { 'subject': subject, 'text': text };
-    $.ajax({
-        url: "feedback.php",
-        type: 'POST',
-        data: { "email": JSON.stringify(emailcontent) },
-        success: function(response) {
-            //response = response.replace(/\r?\n|\r/g, "");
-            //alert(response);
-            $('#FeedbackModal').hide();
-            $('#feedbackAlert').show();
-        }
-    });
-}
-
-victutors.database.gotoTop = function() {
-    $("html, body").animate({
-        scrollTop: 0
-    }, "slow");
-    return false;
-}
-
 victutors.database.getDoc = function() {
     if (victutors.database.selectedValue === '') {
         $('#searchAlert').show();
@@ -176,21 +152,9 @@ victutors.database.setUpSelectPicker = function() {
     $('#selecter').selectpicker({ 'selectedText': '', style: 'btn-default btn-lg' });
 }
 
-$(window).scroll(function() {
-    //gotoTop button
-    if ($(window).scrollTop() > 300) {
-        $('#GoToTopButton').show();
-    } else {
-        $('#GoToTopButton').fadeOut();
-    }
-})
-
-victutors.database.DBlogin = function() {
-    if ($('#databasePassword').val() === victutors.list.databasePassword) {
-        sessionStorage.setItem('database', true);
-        document.getElementById('databaseModal').style.display = 'none';
-    } else {
-        $('#databaseErrorAlert').show();
+victutors.database.SetUpTopSelectPicker = function() {
+    for (i = 0; i < victutors.list.FacultyList.length; i++) {
+        $('#Fselecter').append('<option>' + victutors.list.FacultyList[i] + '</option>');
     }
 }
 
@@ -230,7 +194,26 @@ $(document).ready(function() {
         }
     });
 
+    //setup Select Picker
+    victutors.database.SetUpTopSelectPicker();
+
     $('#selecter').change(function() {
         victutors.database.selectedValue = $(this).find("option:selected").text();
     });
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        console.log("Mobile device detected");
+        $('#feedbackModal, #contactModal, #qandaModal, #databaseModal_').hide();
+        $('#imageUpload').html('<p style="margin-top: 60%" class="w3-text-red">请使用电脑端上传微信二维码或联系我们.对您照成的不便我们深感歉意</p>');
+        $('#tutorInfoUpload').css({ 'margin-left': '35%', 'margin-top': 50 });
+        $('#partnerModal div.w3-modal-content img').css({
+            'width': '81%',
+            'position': 'absolute',
+            'left': '10%',
+            'top': '100px'
+        });
+        $('#joinUsModal').css({ 'padding-top': '30%' });
+        $('#joinUsModal div.w3-modal-content').css({ 'width': '800px' });
+        $('#mainbody').css({ 'zoom': '100%' });
+    }
 });

@@ -199,10 +199,6 @@ ul.footer li a {
     padding: 0 8px;
 }
 
-.partner-pane {
-    float: right;
-}
-
 .row.no-gutters {
     margin-right: 0;
     margin-left: 0;
@@ -219,6 +215,32 @@ ul.footer li a {
     z-index: 11;
     right: 0;
     bottom: 2.5rem;
+}
+
+#copyright {
+    position: absolute;
+    padding-left: 20px;
+}
+
+#copyright a {
+    color: white;
+    text-decoration: none;
+}
+
+.partner-list {
+    display: inline-flex;
+    float: right;
+    margin-right: 15px;
+}
+
+.partner {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.partner a {
+    color: white;
+    text-decoration: none;
 }
 
 
@@ -365,6 +387,16 @@ ul.footer li a {
     #search_panel h1{font-size:1.8em;}
 } */
 
+@media screen and (min-width:1024px) and (max-width:1024px) {
+    #search_panel h1 {
+        color: white;
+        font-size: 5.2em;
+        font-weight: bold;
+        margin-bottom: 11.5%;
+        margin-top: 26px;
+    }
+}
+
 @media screen and (min-width:961px) {
     #Navbar ul li a {
         font-size: 1.5em;
@@ -426,6 +458,31 @@ ul.footer li a {
     ul.footer li a {
         padding: 0 7px;
     }
+    #copyright {
+        position: relative;
+        font-size: 0.8em;
+        padding-left: 0px;
+        max-width: 282px;
+        margin: 0 auto;
+    }
+    #copyright a {
+        color: white
+    }
+    .partner {
+        float: left;
+        padding: 0 5px;
+        margin-right: 0;
+    }
+    .partner a {
+        color: white;
+        font-size: 0.8em
+    }
+    .partner-list {
+        max-width: 400px;
+        margin: 0 auto;
+        display: block;
+        float: none;
+    }
 }
 
 @media screen and (max-width:680px) {
@@ -435,6 +492,15 @@ ul.footer li a {
     }
     #navbarlogo {
         display: none
+    }
+    #topnav-logo {
+        position: absolute;
+        height: 25px;
+        padding-bottom: 0px;
+        left: 8px;
+    }
+    #home_link a span {
+        margin-left: 42px;
     }
     ul.topnav li:not(:first-child) {
         display: none;
@@ -508,6 +574,31 @@ ul.footer li a {
     #joinUsModal {
         padding-top: 0;
     }
+    #copyright {
+        position: relative;
+        font-size: 0.8em;
+        padding-left: 0px;
+        max-width: 254px;
+        margin: 0 auto;
+    }
+    #copyright a {
+        color: white
+    }
+    .partner {
+        float: left;
+        padding: 0 5px;
+        margin-right: 0;
+    }
+    .partner a {
+        color: white;
+        font-size: 0.8em
+    }
+    .partner-list {
+        max-width: 365px;
+        margin: 0 auto;
+        display: block;
+        float: none;
+    }
 }
 
 
@@ -532,30 +623,15 @@ ul.footer li a {
     ul.footer li a {
         font-size: 10.5px;
     }
-    #copyright {
-        padding-left: 18%;
-    }
-    #partner03 {
-        padding-right: 12.5%;
-    }
     .dropdown-menu.open {
         width: 162%;
         float: left;
     }
     #partnerModal div.w3-modal-content img {
         width: 75%;
-        top: 90px;
+        top: 80px;
         bottom: 0;
         left: 12%;
-    }
-}
-
-@media screen and (max-width:375px) {
-    #copyright {
-        padding-left: 13%;
-    }
-    #partner03 {
-        padding-right: 10.5%;
     }
 }
 
@@ -565,15 +641,12 @@ ul.footer li a {
         padding-left: 8px;
         padding-right: 24px;
     }
-    #partner03 {
-        padding-right: 1%;
-    }
-    #copyright {
-        padding-left: 7%;
-    }
     #search_panel h1 {
         font-size: 2em;
         margin-bottom: 10%;
+    }
+    .partner-list {
+        max-width: 187px;
     }
 }
 

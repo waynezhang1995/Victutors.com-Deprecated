@@ -1,17 +1,9 @@
 victutors.createNS("victutors.Tutorlist")
 
-victutors.Tutorlist.selectedValue; //selectpicker value
 victutors.Tutorlist.SelectedFaculty; //faculty user searching for
 victutors.Tutorlist.SelectedTutorList;
 victutors.Tutorlist.PageTitle;
 victutors.Tutorlist.InitialFooterPosition;
-
-victutors.Tutorlist.gotoTop = function() {
-    $("html, body").animate({
-        scrollTop: 0
-    }, "slow");
-    return false;
-}
 
 victutors.Tutorlist.GetRandom = function(tutoramount, randomArray) {
     if (!randomArray.length) { //at very beginning, we need to fill in all the posible numbers. Here bewteen 0 and # of tutors
@@ -263,29 +255,11 @@ victutors.Tutorlist.GetTutorDetail = function(i, s, item) {
     s += '<tr><td><p style="cursor:default;margin-top:10px" class="w3-left"><span class="glyphicon glyphicon-qrcode"></span> 微信: ' + item.WeChat + '</p></td></tr>';
     s += '</table>';
     s += '</div>';
-    s += '<div class="tutorInfo-detail w3-center w3-col" style="width:47%;"><p style="text-align:justify;text-justify:inter-word;font-size:15px;margin-top:10px">' + item.Introduction + '</p></div>';
+    s += '<div class="tutorInfo-detail w3-center w3-col" style="width:45%;"><p style="text-align:justify;text-justify:inter-word;font-size:15px;margin-top:10px">' + item.Introduction + '</p></div>';
     s += '<div class="tutorInfo-QRcode w3-right w3-col" style="width:20%;cursor:default"><img src=\'' + item.Barcode + '\' alt="WeChat" style="float:right;width: 190px;height:190px"></div>';
     s += '</div>';
     s += '</div>';
     return s;
-}
-
-//push content downward if navbar gets shrinked
-victutors.Tutorlist.ReSize = function() {
-    var w = $('#TopNavBar').height();
-    var h = $('#TopNavBar').width();
-    if (h <= 1060) { //hide title
-        $('.navbar-brand').hide();
-        $('#victutors_icon').css({ 'height': 40, 'width': 55, 'margin-top': 5 });
-    } else {
-        $('.navbar-brand').show();
-        $('#victutors_icon').css({ 'height': 28, 'width': 53, 'margin-top': 9 });
-    }
-    if ($('#TopNavBar').height() > 100) {
-        $('#mainContent').css({ 'margin-top': w + 50 });
-    } else {
-        $('#mainContent').css({ 'margin-top': 70 });
-    }
 }
 
 victutors.Tutorlist.ShowHideServerPanel = function(flag) {
@@ -296,16 +270,6 @@ victutors.Tutorlist.ShowHideServerPanel = function(flag) {
         $('#serviceButton').hide();
         $('#services').show();
     }
-}
-
-victutors.Tutorlist.GetTutorByFaculty = function() {
-
-    if (typeof victutors.Tutorlist.selectedValue === 'undefined') {
-        $('#searchAlert').show();
-        return;
-    }
-    sessionStorage.setItem('faculty', victutors.Tutorlist.selectedValue); //set session storage (faculty that user searching for)
-    window.open('Tutorlist.php', '_self');
 }
 
 victutors.Tutorlist.setPage = function() {
@@ -356,11 +320,10 @@ victutors.Tutorlist.setPage = function() {
 }
 
 victutors.Tutorlist.SetUpSelectPicker = function() {
-        for (i = 0; i < victutors.list.FacultyList.length; i++) {
-            $('#Fselecter').append('<option>' + victutors.list.FacultyList[i] + '</option>');
-        }
+    for (i = 0; i < victutors.list.FacultyList.length; i++) {
+        $('#Fselecter').append('<option>' + victutors.list.FacultyList[i] + '</option>');
     }
-    /****************************/
+}
 
 //document ready start from here
 $(document).ready(function() {
@@ -373,9 +336,6 @@ $(document).ready(function() {
 
     victutors.Tutorlist.setPage();
 
-    //check page size and make adjustment
-    victutors.Tutorlist.ReSize();
-
     //setup Select Picker
     victutors.Tutorlist.SetUpSelectPicker();
 
@@ -386,85 +346,26 @@ $(document).ready(function() {
         trigger: 'hover'
     });
 
-    /**
-     * Triggered when we scroll the page
-     */
-    $(window).scroll(function() {
-
-        //gotoTop button
-        if ($(window).scrollTop() > 300) {
-            $('#GoToTopButton').show();
-        } else {
-            $('#GoToTopButton').fadeOut();
-        }
-
-    })
-
-    $('#Fselecter').selectpicker({ 'selectedText': '', style: 'btn-default' });
-    //faculty selecter
-    $('#Fselecter').change(function() {
-        var selectedText = $(this).find("option:selected").text();
-        var faculty = selectedText.split(" ");
-        victutors.Tutorlist.selectedValue = faculty[0];
-    });
-
-    // device detection
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        console.log("Mobile device detected");
-        $('#feedbackModal, #contactModal, #qandaModal').hide();
-
-        $(window).resize(function() {
-            if ($("#TopNavBar").width() <= 800) {
-                $('#contactModal').hide();
-            } else {
-                $('#contactModal').show();
-            }
-
-            if ($("#TopNavBar").width() <= 640) {
-                $('#joinusModal').hide();
-            } else {
-                $('#joinusModal').show();
-            }
-
-            if ($("#TopNavBar").width() <= 542) {
-                $('#victutors_icon').hide();
-            } else {
-                $('#victutors_icon').show();
-            }
-        });
-    }
+    $('#mainContent').css({ 'min-height': $(window).height() - 169 });
 
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         console.log("Mobile device detected");
-        $('#imageUpload').html('<p style="margin-top: 70%" class="w3-text-red">请使用电脑端上传微信二维码或联系我们.对您照成的不便我们深感歉意</p>');
+        console.log($(window).height()); // returns height of browser viewport
+        console.log($(document).height());
+        console.log(screen.height);
+        $('#feedbackModal, #contactModal, #qandaModal, #databaseModal_').hide();
+        $('#imageUpload').html('<p style="margin-top: 60%" class="w3-text-red">请使用电脑端上传微信二维码或联系我们.对您照成的不便我们深感歉意</p>');
         $('#tutorInfoUpload').css({ 'margin-left': '35%', 'margin-top': 50 });
-        $('#mainContent').css({ 'min-height': 1508 });
-    }
-
-    $('#fileInput').on('change', function() {
-        var file_data = $('#fileInput').prop('files')[0];
-        if (!new RegExp(/(jpg)|(jpeg)|(bmp)|(gif)|(png)/i).test(file_data.name.split('.')[1])) {
-            alert("只限上传图片文件，请重新选择！");
-            return;
-        }
-        $("#state").html("正在上传！如长时间没有结果,请用电脑端上传或联系我们！");
-        var form_data = new FormData();
-        form_data.append('file', file_data);
-        $.ajax({
-            url: 'uploadimage.php', // point to server-side PHP script
-            dataType: 'text', // what to expect back from the PHP script, if anything
-            cache: false,
-            contentType: false,
-            processData: false,
-            data: form_data,
-            type: 'post',
-            success: function(response) {
-                $('#imgSpinner').hide();
-                $("#state").html("上传完成！");
-                console.log(response);
-                $('#ImgUpLoad').attr("src", response + file_data.name);
-                $('#ImgUpLoad').css({ 'width': '200px', 'height': '170px', 'margin-left': '50px', 'margin-bottom': '30px' });
-            }
+        $('#mainContent').css({ 'min-height': $(window).height() - 267 });
+        $('#partnerModal div.w3-modal-content img').css({
+            'width': '81%',
+            'position': 'absolute',
+            'left': '10%',
+            'top': '100px'
         });
-    });
+
+        $('#joinUsModal').css({ 'padding-top': '30%' });
+        $('#joinUsModal div.w3-modal-content').css({ 'width': '800px' });
+        $('#mainbody').css({ 'zoom': '100%' });
+    }
 });
