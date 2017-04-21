@@ -1,27 +1,27 @@
-victutors.createNS("victutors.Tutorlist")
+victutors.createNS('victutors.Tutorlist');
 
-victutors.Tutorlist.SelectedFaculty; //faculty user searching for
+victutors.Tutorlist.SelectedFaculty; // faculty user searching for
 victutors.Tutorlist.SelectedTutorList;
 victutors.Tutorlist.PageTitle;
 victutors.Tutorlist.InitialFooterPosition;
 
-victutors.Tutorlist.GetRandom = function(tutoramount, randomArray) {
-    if (!randomArray.length) { //at very beginning, we need to fill in all the posible numbers. Here bewteen 0 and # of tutors
+victutors.Tutorlist.GetRandom = function(tutoramount, randomArray) { // eslint-disable-line space-before-function-paren
+    if (!randomArray.length) { // at very beginning, we need to fill in all the posible numbers. Here bewteen 0 and # of tutors
         for (var i = 0; i < tutoramount; i++) {
             randomArray.push(i);
         }
     }
-    var index = Math.floor(Math.random() * randomArray.length); //get a random number between 0 and array length
-    var val = randomArray[index]; //get value at that position. At beginning: index = val; After: index != val
-    randomArray.splice(index, 1); //remove that value
+    var index = Math.floor(Math.random() * randomArray.length); // get a random number between 0 and array length
+    var val = randomArray[index]; // get value at that position. At beginning: index = val; After: index !== val
+    randomArray.splice(index, 1); // remove that value
     return val;
-}
+};
 
 var order = 0;
-var tags = new Array(); //contains all the tags
+var tags = []; // contains all the tags
 var currentlist;
 
-victutors.Tutorlist.GetTutorList = function(faculty) {
+victutors.Tutorlist.GetTutorList = function(faculty) { // eslint-disable-line space-before-function-paren
     var s = '';
     order = 0;
     switch (faculty) {
@@ -31,10 +31,10 @@ victutors.Tutorlist.GetTutorList = function(faculty) {
             for (i = 0; i < victutors.list.CSClist.length; i++) {
                 var index = victutors.Tutorlist.GetRandom(TutorCount, CSCTutors);
                 var item = victutors.list.CSClist[index];
-                //get tags
-                var itemtags = item.Subject.split(",");
+                // get tags
+                var itemtags = item.Subject.split(',');
                 for (j = 0; j < itemtags.length; j++) {
-                    if (tags.indexOf(itemtags[j]) == -1) {
+                    if (tags.indexOf(itemtags[j]) === -1) {
                         tags.push(itemtags[j]);
                     }
                 }
@@ -46,14 +46,14 @@ victutors.Tutorlist.GetTutorList = function(faculty) {
             break;
         case 'MATH':
             var MATHTutors = [];
-            var TutorCount = victutors.list.MATHlist.length;
-            for (i = 0; i < TutorCount; i++) {
-                var index = victutors.Tutorlist.GetRandom(TutorCount, MATHTutors);
-                var item = victutors.list.MATHlist[index];
-                //get tags
-                var itemtags = item.Subject.split(",");
+            TutorCount = victutors.list.MATHlist.length;
+            for (i = 0; i < TutorCount; i++) { // eslint-disable-line no-unmodified-loop-condition
+                index = victutors.Tutorlist.GetRandom(TutorCount, MATHTutors);
+                item = victutors.list.MATHlist[index];
+                // get tags
+                itemtags = item.Subject.split(',');
                 for (j = 0; j < itemtags.length; j++) {
-                    if (tags.indexOf(itemtags[j]) == -1) {
+                    if (tags.indexOf(itemtags[j]) === -1) {
                         tags.push(itemtags[j]);
                     }
                 }
@@ -65,14 +65,14 @@ victutors.Tutorlist.GetTutorList = function(faculty) {
             break;
         case 'ECON':
             var ECONTutors = [];
-            var TutorCount = victutors.list.ECONlist.length;
-            for (i = 0; i < TutorCount; i++) {
-                var index = victutors.Tutorlist.GetRandom(TutorCount, ECONTutors);
-                var item = victutors.list.ECONlist[index];
-                //get tags
-                var itemtags = item.Subject.split(",");
+            TutorCount = victutors.list.ECONlist.length;
+            for (i = 0; i < TutorCount; i++) { // eslint-disable-line no-unmodified-loop-condition
+                index = victutors.Tutorlist.GetRandom(TutorCount, ECONTutors);
+                item = victutors.list.ECONlist[index];
+                // get tags
+                itemtags = item.Subject.split(',');
                 for (j = 0; j < itemtags.length; j++) {
-                    if (tags.indexOf(itemtags[j]) == -1) {
+                    if (tags.indexOf(itemtags[j]) === -1) {
                         tags.push(itemtags[j]);
                     }
                 }
@@ -84,14 +84,14 @@ victutors.Tutorlist.GetTutorList = function(faculty) {
             break;
         case 'ENGL':
             var ENGLTutors = [];
-            var TutorCount = victutors.list.ENGLlist.length;
+            TutorCount = victutors.list.ENGLlist.length;
             for (i = 0; i < victutors.list.ENGLlist.length; i++) {
-                var index = victutors.Tutorlist.GetRandom(TutorCount, ENGLTutors);
-                var item = victutors.list.ENGLlist[index];
-                //get tags
-                var itemtags = item.Subject.split(",");
+                index = victutors.Tutorlist.GetRandom(TutorCount, ENGLTutors);
+                item = victutors.list.ENGLlist[index];
+                // get tags
+                itemtags = item.Subject.split(',');
                 for (j = 0; j < itemtags.length; j++) {
-                    if (tags.indexOf(itemtags[j]) == -1) {
+                    if (tags.indexOf(itemtags[j]) === -1) {
                         tags.push(itemtags[j]);
                     }
                 }
@@ -103,14 +103,14 @@ victutors.Tutorlist.GetTutorList = function(faculty) {
             break;
         case 'MUSC':
             var MUSCTutors = [];
-            var TutorCount = victutors.list.MUSClist.length;
+            TutorCount = victutors.list.MUSClist.length;
             for (i = 0; i < victutors.list.MUSClist.length; i++) {
-                var index = victutors.Tutorlist.GetRandom(TutorCount, MUSCTutors);
-                var item = victutors.list.MUSClist[index];
-                //get tags
-                var itemtags = item.Subject.split(",");
+                index = victutors.Tutorlist.GetRandom(TutorCount, MUSCTutors);
+                item = victutors.list.MUSClist[index];
+                // get tags
+                itemtags = item.Subject.split(',');
                 for (j = 0; j < itemtags.length; j++) {
-                    if (tags.indexOf(itemtags[j]) == -1) {
+                    if (tags.indexOf(itemtags[j]) === -1) {
                         tags.push(itemtags[j]);
                     }
                 }
@@ -122,14 +122,14 @@ victutors.Tutorlist.GetTutorList = function(faculty) {
             break;
         case 'ENGR':
             var ENGRTutors = [];
-            var TutorCount = victutors.list.ENGRlist.length;
+            TutorCount = victutors.list.ENGRlist.length;
             for (i = 0; i < victutors.list.ENGRlist.length; i++) {
-                var index = victutors.Tutorlist.GetRandom(TutorCount, ENGRTutors);
-                var item = victutors.list.ENGRlist[index];
-                //get tags
-                var itemtags = item.Subject.split(",");
+                index = victutors.Tutorlist.GetRandom(TutorCount, ENGRTutors);
+                item = victutors.list.ENGRlist[index];
+                // get tags
+                itemtags = item.Subject.split(',');
                 for (j = 0; j < itemtags.length; j++) {
-                    if (tags.indexOf(itemtags[j]) == -1) {
+                    if (tags.indexOf(itemtags[j]) === -1) {
                         tags.push(itemtags[j]);
                     }
                 }
@@ -141,14 +141,14 @@ victutors.Tutorlist.GetTutorList = function(faculty) {
             break;
         case 'HINF':
             var HINFTutors = [];
-            var TutorCount = victutors.list.HINFlist.length;
+            TutorCount = victutors.list.HINFlist.length;
             for (i = 0; i < victutors.list.HINFlist.length; i++) {
-                var index = victutors.Tutorlist.GetRandom(TutorCount, HINFTutors);
-                var item = victutors.list.HINFlist[index];
-                //get tags
-                var itemtags = item.Subject.split(",");
+                index = victutors.Tutorlist.GetRandom(TutorCount, HINFTutors);
+                item = victutors.list.HINFlist[index];
+                // get tags
+                itemtags = item.Subject.split(',');
                 for (j = 0; j < itemtags.length; j++) {
-                    if (tags.indexOf(itemtags[j]) == -1) {
+                    if (tags.indexOf(itemtags[j]) === -1) {
                         tags.push(itemtags[j]);
                     }
                 }
@@ -160,14 +160,14 @@ victutors.Tutorlist.GetTutorList = function(faculty) {
             break;
         case 'PSYC':
             var PSYCTutors = [];
-            var TutorCount = victutors.list.PSYClist.length;
+            TutorCount = victutors.list.PSYClist.length;
             for (i = 0; i < victutors.list.PSYClist.length; i++) {
-                var index = victutors.Tutorlist.GetRandom(TutorCount, PSYCTutors);
-                var item = victutors.list.PSYClist[index];
-                //get tags
-                var itemtags = item.Subject.split(",");
+                index = victutors.Tutorlist.GetRandom(TutorCount, PSYCTutors);
+                item = victutors.list.PSYClist[index];
+                // get tags
+                itemtags = item.Subject.split(',');
                 for (j = 0; j < itemtags.length; j++) {
-                    if (tags.indexOf(itemtags[j]) == -1) {
+                    if (tags.indexOf(itemtags[j]) === -1) {
                         tags.push(itemtags[j]);
                     }
                 }
@@ -179,14 +179,14 @@ victutors.Tutorlist.GetTutorList = function(faculty) {
             break;
         case 'STAT':
             var STATTutors = [];
-            var TutorCount = victutors.list.STATlist.length;
+            TutorCount = victutors.list.STATlist.length;
             for (i = 0; i < victutors.list.STATlist.length; i++) {
-                var index = victutors.Tutorlist.GetRandom(TutorCount, STATTutors);
-                var item = victutors.list.STATlist[index];
-                //get tags
-                var itemtags = item.Subject.split(",");
+                index = victutors.Tutorlist.GetRandom(TutorCount, STATTutors);
+                item = victutors.list.STATlist[index];
+                // get tags
+                itemtags = item.Subject.split(',');
                 for (j = 0; j < itemtags.length; j++) {
-                    if (tags.indexOf(itemtags[j]) == -1) {
+                    if (tags.indexOf(itemtags[j]) === -1) {
                         tags.push(itemtags[j]);
                     }
                 }
@@ -199,43 +199,42 @@ victutors.Tutorlist.GetTutorList = function(faculty) {
         default:
             break;
     }
-}
+};
 
 victutors.Tutorlist.SetUpTags = function(tags) {
-    var buttonlist = ["btn-primary", "btn-success", "btn-info", "btn-warning", "btn-danger", "btn-default"];
-    var s = "";
-    s += "<div class = \"w3-text-white w3-large\">";
-    s += "<div class = \"w3-text-white w3-xlarge\"><p>分类选择:  </p>";
-    s += "<button style = \"margin-right:10px;margin-bottom:10px\" type=\"button\" id = \"tag0\" class = \"w3-large btn btn-default\" onclick = \"victutors.Tutorlist.ShowListByTags('all')\">完整名单</button>";
+    var buttonlist = ['btn-primary', 'btn-success', 'btn-info', 'btn-warning', 'btn-danger', 'btn-default'];
+    var s = '';
+    s += '<div class = \'w3-text-white w3-large\'>';
+    s += '<div class = \'w3-text-white w3-xlarge\'><p>分类选择:  </p>';
+    s += '<button style = \'margin-right:10px;margin-bottom:10px\' type=\'button\' id = \'tag0\' class = \'w3-large btn btn-default\' onclick = \'victutors.Tutorlist.ShowListByTags("all")\'>完整名单</button>';
     for (i = 0; i < tags.length; i++) {
-        s += "<button style = \"margin-right:10px;margin-bottom:10px\" type=\"button\" id = \"tag" + i + "\" class = \"w3-large btn " + buttonlist[i % buttonlist.length] + "\" onclick = \"victutors.Tutorlist.ShowListByTags('" + tags[i] + "')\">" + tags[i] + "</button>";
+        s += '<button style = \'margin-right:10px;margin-bottom:10px\' type=\'button\' id = \'tag' + i + '\' class = \'w3-large btn ' + buttonlist[i % buttonlist.length] + '\' onclick = \'victutors.Tutorlist.ShowListByTags("' + tags[i] + '")\'>' + tags[i] + '</button>';
     }
-    s += "</div>";
-    s += "</div>";
-    $("#searchTags").html(s);
-}
+    s += '</div>';
+    s += '</div>';
+    $('#searchTags').html(s);
+};
 
 victutors.Tutorlist.ShowListByTags = function(tag) {
-    var s = "";
+    var s = '';
     var Tutors = [];
     var TutorCount = currentlist.length;
     for (i = 0; i < currentlist.length; i++) {
         var index = victutors.Tutorlist.GetRandom(TutorCount, Tutors);
         var item = currentlist[index];
-        var itemtags = item.Subject.split(",");
-        if (itemtags.indexOf(tag) != -1 || tag == 'all') {
+        var itemtags = item.Subject.split(',');
+        if (itemtags.indexOf(tag) !== -1 || tag === 'all') {
             s = victutors.Tutorlist.GetTutorDetail(index, s, item);
         }
     }
-    if (tag != 'all') {
-        $('#title').html(victutors.Tutorlist.PageTitle + " - " + tag);
+    if (tag !== 'all') {
+        $('#title').html(victutors.Tutorlist.PageTitle + ' - ' + tag);
     } else {
         $('#title').html(victutors.Tutorlist.PageTitle);
     }
 
     $('#TutorListAll').html(s);
-    // $('#mainContent').css({ 'min-height': victutors.Tutorlist.InitialFooterPosition });
-}
+};
 
 victutors.Tutorlist.GetTutorDetail = function(i, s, item) {
     var color = '';
@@ -256,90 +255,89 @@ victutors.Tutorlist.GetTutorDetail = function(i, s, item) {
     s += '</table>';
     s += '</div>';
     s += '<div class="tutorInfo-detail w3-center w3-col" style="width:45%;"><p style="text-align:justify;text-justify:inter-word;font-size:15px;margin-top:10px">' + item.Introduction + '</p></div>';
-    s += '<div class="tutorInfo-QRcode w3-right w3-col" style="width:20%;cursor:default"><img src=\'' + item.Barcode + '\' alt="WeChat" style="float:right;width: 190px;height:190px"></div>';
+    s += '<div class="tutorInfo-QRcode w3-right w3-col" style="width:20%;cursor:default"><img src="' + item.Barcode + '" alt="WeChat" style="float:right;width: 190px;height:190px"></div>';
     s += '</div>';
     s += '</div>';
     return s;
-}
+};
 
 victutors.Tutorlist.ShowHideServerPanel = function(flag) {
-    if (flag == 0) {
+    if (flag === 0) {
         $('#services').hide();
         $('#serviceButton').delay(1000).show();
     } else {
         $('#serviceButton').hide();
         $('#services').show();
     }
-}
+};
 
 victutors.Tutorlist.setPage = function() {
-    var title = "";
+    var title = '';
     switch (victutors.Tutorlist.SelectedFaculty) {
         case 'CSC':
-            title = "Computer Science - 计算机科学家教名单";
+            title = 'Computer Science - 计算机科学家教名单';
             victutors.Tutorlist.PageTitle = title;
             $('#title').html(title);
             break;
         case 'MATH':
-            title = "Mathematics - 数学家教名单";
+            title = 'Mathematics - 数学家教名单';
             $('#title').html(title);
             victutors.Tutorlist.PageTitle = title;
             break;
         case 'MUSC':
-            title = "Music - 音乐家教名单";
+            title = 'Music - 音乐家教名单';
             $('#title').html(title);
             victutors.Tutorlist.PageTitle = title;
             break;
         case 'ENGL':
-            title = "English - 英文家教名单";
+            title = 'English - 英文家教名单';
             $('#title').html(title);
             victutors.Tutorlist.PageTitle = title;
             break;
         case 'STAT':
-            title = "Statistics - 统计学家教名单";
+            title = 'Statistics - 统计学家教名单';
             $('#title').html(title);
             victutors.Tutorlist.PageTitle = title;
             break;
         case 'ENGR':
-            title = "Engineering - 工程学家教名单";
+            title = 'Engineering - 工程学家教名单';
             $('#title').html(title);
             victutors.Tutorlist.PageTitle = title;
             break;
         case 'HINF':
-            title = "Health Information Science - 健康信息科学";
+            title = 'Health Information Science - 健康信息科学';
             $('#title').html(title);
             victutors.Tutorlist.PageTitle = title;
             break;
         case 'PSYC':
-            title = "Psychology - 心理学";
+            title = 'Psychology - 心理学';
             $('#title').html(title);
             victutors.Tutorlist.PageTitle = title;
             break;
     }
     victutors.Tutorlist.GetTutorList(victutors.Tutorlist.SelectedFaculty);
-}
+};
 
 victutors.Tutorlist.SetUpSelectPicker = function() {
     for (i = 0; i < victutors.list.FacultyList.length; i++) {
         $('#Fselecter').append('<option>' + victutors.list.FacultyList[i] + '</option>');
     }
-}
+};
 
-//document ready start from here
+// document ready start from here
 $(document).ready(function() {
+    // Get faculty send by index.php
+    victutors.Tutorlist.SelectedFaculty = sessionStorage.getItem('faculty');
 
-    //Get faculty send by index.php
-    victutors.Tutorlist.SelectedFaculty = sessionStorage.getItem("faculty");
-
-    //initialize Tutor list
+    // initialize Tutor list
     victutors.Tutorlist.SelectedTutorList = victutors.list.SetUplist(victutors.Tutorlist.SelectedFaculty);
 
     victutors.Tutorlist.setPage();
 
-    //setup Select Picker
+    // setup Select Picker
     victutors.Tutorlist.SetUpSelectPicker();
 
-    //set background image height
+    // set background image height
     victutors.Tutorlist.InitialFooterPosition = $('#mainContent').height();
     // go to top tooltip
     $('[data-toggle="gotop"], [data-toggle="title"], [data-toggle="showlist"], [data-toggle="gonext"]').tooltip({
@@ -349,7 +347,7 @@ $(document).ready(function() {
     $('#mainContent').css({ 'min-height': $(window).height() - 169 });
 
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        console.log("Mobile device detected");
+        console.log('Mobile device detected');
         console.log($(window).height()); // returns height of browser viewport
         console.log($(document).height());
         console.log(screen.height);
