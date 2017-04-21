@@ -41,6 +41,8 @@ Thumbs.db
 Images/
 Upload/
 Database/
+.vscode/
+node_modules/
 googleAPIkey.txt
 googlee9254855cd089996.html
 sitemap.xml
