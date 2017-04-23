@@ -16,17 +16,6 @@
 
 /******************************************/
 
-body {
-    /*for general body loading*/
-    background-image: url("../Images/bg.jpg");
-    background-size: cover;
-    background-color: #464646;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    overflow: hidden;
-}
-
 ul {
     list-style-type: none;
     margin: 0;
@@ -121,8 +110,18 @@ ul.topnav li.icon {
 /******************************************/
 
 #MainBody {
-    width: 40%;
-    height: auto;
+    background: url('../Images/bg.jpg') no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
 }
 
 #search_panel {
