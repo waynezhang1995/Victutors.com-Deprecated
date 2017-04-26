@@ -43,7 +43,8 @@ victutors.list.SetUplist = function(faculty) {
                 victutors.list.CreateNewTutorEntry('统计学,高中数学,大学数学', 'Wayne Lu', '250 507 2503', 'funfunlu@fhotmail.com', 'mogua001', './Images/img_avatar6.png', './Images/Math/waynelu.jpg', 'UVIC的PHD学生. 本科:统计 ＋ 经济, 硕士:统计, 博士:地理. 超过7年家教经验,基本以大学为主,高中和研究生课程为辅, 可以辅导Uvic和Camosun 数学统计课程, 价格根据课程难度而定, 具体请微信联系'),
                 victutors.list.CreateNewTutorEntry('高中数学,大学数学', 'Lily Chen', 'N/A', 'mathtutoruvic@gmail.com', 'N/A', './Images/img_avatar1.png', './Images/NoQRCode.png', '目前是UVic机械学院的在读博士，有多年国内外数学家教经验，擅长微积分（uvic math100，101），线性代数（math211），逻辑学（math122）等多种高等数学，平时在培训机构带小学双语数学，也辅导高中11，12年纪的pre-calculus， 价格在25-35刀左右（根据课程和授课地点变化），欢迎需要的同学联系 mathtutoruvic@gmail.com，谢谢!'),
                 victutors.list.CreateNewTutorEntry('大学数学', 'Emliy', 'N/A', 'emily99vic@gmail.com', 'emilyS627112', './Images/img_avatar1.png', './Images/ENGL/Emily.jpg', '本人UVic学生，数学成绩优秀，多次考试接近满分，经济课总成绩考过满分，曾从事补习班数学老师，辅导过多名一对一学生，成绩都有明显提高。善于换位思考，提高学习兴趣，帮助学生培养高效学习方法。欢迎有兴趣的家长，同学联系咨询，价格20-30刀，谢谢！'),
-                victutors.list.CreateNewTutorEntry('大学数学,Calculus,Linear algebra', '唐鹏', '778 922 5595', 'pengtang268@gmail.com', 'tangpeng268', './Images/img_avatar1.png', './Images/Math/tangpeng.jpg', '本科统计+经济，现UVic stat master在读,。可补Calculus（MATH100/101/200/204）、Linear algebra(MATH110/208/211)以及所有的STAT及相关课程。100/200 level 30一小时，300以上level 35/40一小时。')
+                victutors.list.CreateNewTutorEntry('大学数学,Calculus,Linear algebra', '唐鹏', '778 922 5595', 'pengtang268@gmail.com', 'tangpeng268', './Images/img_avatar1.png', './Images/Math/tangpeng.jpg', '本科统计+经济，现UVic stat master在读,。可补Calculus（MATH100/101/200/204）、Linear algebra(MATH110/208/211)以及所有的STAT及相关课程。100/200 level 30一小时，300以上level 35/40一小时。'),
+                victutors.list.CreateNewTutorEntry('大学数学,Camosun Math,Linear algebra', 'Ryan Willoughby', '250 686 0198', 'ryan947@gmail.com', 'N/A', './Images/img_avatar1.png', './Images/NoQRCode.png', 'Availability: Mondays to Saturdays from the first week of October until the last week of April. Mondays to Fridays from the week of May until the last week of September.  Subjects Tutored (可辅导): Mathematics 100, 101, 102, 109, 110, 120, 122, 151, 161, 162, 199, 200, 202, 204, 208, 211, 212, 222, 236, 242, 300, 301, 311, 312, 315, 342, 346, 352, 360, 362, 366, 367, 377.  Price: $40.00 per hour')
             ];
             break;
         case 'ENGL':
@@ -65,7 +66,8 @@ victutors.list.SetUplist = function(faculty) {
         case 'ENGR':
             victutors.list.ENGRlist = [
                 victutors.list.CreateNewTutorEntry('机械工程', 'Alfred Luo', '778 350 1436', 'sddxldq@gmail.com', 'sddxldq', './Images/img_avatar1.png', './Images/ENGR/alfredluo.JPG', 'Uvic 机械工程大四学生 可以辅导大二前所有工程类课程。 精通热力学和固体力学。 价格请微信联系，一般4点后都有时间'),
-                victutors.list.CreateNewTutorEntry('软件工程', 'Zheng Li', '250 857 9020', 'lizheng808@gmail.com', 'li775274833', './Images/img_avatar1.png', './Images/CSC/zhengli.jpg', 'UVIC大三软件工程的学生，有8个月coop经验， 在工作中用的最多的是Java。可以辅导CSC和Math 100和200level的所有课程。价格20/hour.周末随时有空，平常5点以后有空')
+                victutors.list.CreateNewTutorEntry('软件工程', 'Zheng Li', '250 857 9020', 'lizheng808@gmail.com', 'li775274833', './Images/img_avatar1.png', './Images/CSC/zhengli.jpg', 'UVIC大三软件工程的学生，有8个月coop经验， 在工作中用的最多的是Java。可以辅导CSC和Math 100和200level的所有课程。价格20/hour.周末随时有空，平常5点以后有空'),
+                victutors.list.CreateNewTutorEntry('Electrical Engineering', 'Ryan Willoughby', '250 686 0198', 'ryan947@gmail.com', 'N/A', './Images/img_avatar1.png', './Images/NoQRCode.png', 'Electrical Engineering 216, 220, 250, 260, 310.  Availability: Mondays to Saturdays from the first week of October until the last week of April. Mondays to Fridays from the week of May until the last week of September.  Price: $40.00 per hour')
             ];
             break;
         case 'HINF':
@@ -76,13 +78,15 @@ victutors.list.SetUplist = function(faculty) {
             break;
         case 'PSYC':
             victutors.list.PSYClist = [
-                victutors.list.CreateNewTutorEntry('PSYC 11&12, Social Studies', 'Vincent Liu', '604 773 1878', 'N/A', '请扫描二维码', './Images/img_avatar1.png', './Images/PSYC/vincentliu.JPG', '目前Camosun College 大一 BA.Psychology&Criminal Justice双专业在读 可以辅导高中Psychology11&12, AP Pyschology, IB Psychology & Social Studies 10-12')
+                victutors.list.CreateNewTutorEntry('PSYC 11&12, Social Studies', 'Vincent Liu', '604 773 1878', 'N/A', '请扫描二维码', './Images/img_avatar1.png', './Images/PSYC/vincentliu.JPG', '目前Camosun College 大一 BA.Psychology&Criminal Justice双专业在读 可以辅导高中Psychology11&12, AP Pyschology, IB Psychology & Social Studies 10-12'),
+                victutors.list.CreateNewTutorEntry('Psychology300A/300B', 'Ryan Willoughby', '250 686 0198', 'ryan947@gmail.com', 'N/A', './Images/img_avatar1.png', './Images/NoQRCode.png', 'Psychology 300A, 300B.  Availability: Mondays to Saturdays from the first week of October until the last week of April. Mondays to Fridays from the week of May until the last week of September.  Price: $40.00 per hour')
             ];
             break;
         case 'STAT':
             victutors.list.STATlist = [
                 victutors.list.CreateNewTutorEntry('STAT100/200', '唐鹏', '778 922 5595', 'pengtang268@gmail.com', 'tangpeng268', './Images/img_avatar1.png', './Images/Math/tangpeng.jpg', '本科统计+经济，现UVic stat master在读,。可补Calculus（MATH100/101/200/204）、Linear algebra(MATH110/208/211)以及所有的STAT及相关课程。100/200 level 30一小时，300以上level 35/40一小时。'),
-                victutors.list.CreateNewTutorEntry('STAT100/200', 'Wayne Lu', '250 507 2503', 'funfunlu@fhotmail.com', 'mogua001', './Images/img_avatar6.png', './Images/Math/waynelu.jpg', 'UVIC的PHD学生. 本科:统计 ＋ 经济, 硕士:统计, 博士:地理. 超过7年家教经验,基本以大学为主,高中和研究生课程为辅, 可以辅导Uvic和Camosun 数学统计课程, 价格根据课程难度而定, 具体请微信联系')
+                victutors.list.CreateNewTutorEntry('STAT100/200', 'Wayne Lu', '250 507 2503', 'funfunlu@fhotmail.com', 'mogua001', './Images/img_avatar6.png', './Images/Math/waynelu.jpg', 'UVIC的PHD学生. 本科:统计 ＋ 经济, 硕士:统计, 博士:地理. 超过7年家教经验,基本以大学为主,高中和研究生课程为辅, 可以辅导Uvic和Camosun 数学统计课程, 价格根据课程难度而定, 具体请微信联系'),
+                victutors.list.CreateNewTutorEntry('STAT252/254', 'Ryan Willoughby', '250 686 0198', 'ryan947@gmail.com', 'N/A', './Images/img_avatar1.png', './Images/NoQRCode.png', 'Statistics 252, 254, 255, 256, 260, 261, 350, 353, 354, 450.  Availability: Mondays to Saturdays from the first week of October until the last week of April. Mondays to Fridays from the week of May until the last week of September.  Price: $40.00 per hour')
             ];
             break;
     }
