@@ -25,17 +25,6 @@
     <script type="text/javascript" src="./javascript/victutors.list.js"></script>
     <script type="text/javascript" src="./javascript/bootstrap-select.js"></script>
     <script type="text/javascript" src="./javascript/victutors.utils.js"></script>
-    <style>
-        html,
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5 {
-            font-family: "Lato", sans-serif
-        }
-    </style>
 </head>
 
 <?php include 'Include/header.php' ;?>

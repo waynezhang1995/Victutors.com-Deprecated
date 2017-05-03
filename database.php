@@ -27,18 +27,6 @@
     <script type="text/javascript" src="./javascript/victutors.list.js"></script>
     <script type="text/javascript" src="./javascript/bootstrap-select.js"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-
-    <style>
-        html,
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5 {
-            font-family: "Lato", sans-serif
-        }
-    </style>
 </head>
 <?php include 'Include/header.php' ;?>
 <body id="mainbody">
