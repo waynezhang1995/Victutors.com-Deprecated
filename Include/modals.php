@@ -15,7 +15,7 @@
                                     <span id="sq21"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                     <button onclick="victutors.utils.sAnswer('ta21')">如何使用Victutors</button>
                                 </div>
-                                <div id="sa21" style="display:none">
+                                <div id="sa21" style="display:none;margin-top:9px;font-size: 15px">
                                     <p>我们提倡尽可能的简化搜索步骤，您只需要在搜索栏中选择专业并点击搜索。</p>
                                 </div>
                             </div>
@@ -24,7 +24,7 @@
                                     <span id="sq22"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                     <button onclick="victutors.utils.sAnswer('ta22')">我要如何联系家教</button>
                                 </div>
-                                <div id="sa22" style="display:none">
+                                <div id="sa22" style="display:none;margin-top:9px;font-size: 15px">
                                     <p >在您选择好合适的家教后，您可以通过家教名片中的电话，微信，邮箱以及扫描微信二维码等上述方式联系家教。</p>
                                 </div>
                             </div>
@@ -33,7 +33,7 @@
                                     <span id="sq23"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                     <button onclick="victutors.utils.sAnswer('ta23')">Victutors上家教值得信赖吗</button>
                                 </div>
-                                <div id="sa23" style="display:none">
+                                <div id="sa23" style="display:none;margin-top:9px;font-size: 15px">
                                     <p >Victutors上的家教都是通过验证审核的，他们提供最好的服务</p>
                                 </div>
                             </div>
@@ -42,7 +42,7 @@
                                     <span id="sq24"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                     <button onclick="victutors.utils.sAnswer('ta24')">我需要交任何的费用吗</button>
                                 </div>
-                                <div id="sa24" style="display:none">
+                                <div id="sa24" style="display:none;margin-top:9px;font-size: 15px">
                                     <p >我们是完全免费的一个服务性平台，无论对于家教还是用户我们至始至终不会收取任何费用</p>
                                 </div>
                             </div>
@@ -51,7 +51,7 @@
                                     <span id="sq25"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                     <button onclick="victutors.utils.sAnswer('ta25')">搜索栏中没有我想找学科</button>
                                 </div>
-                                <div id="sa25" style="display:none">
+                                <div id="sa25" style="display:none;margin-top:9px;font-size: 15px">
                                     <p >您可以通过<a style="cursor:pointer" onclick="document.getElementById('ContactUsModal').style.display='block'"><b class="w3-text-teal">联系我们</b></a>，我们来帮您寻找</p>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                                     <span id="tq1"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                     <button onclick="victutors.utils.tAnswer('ta1')">我在这里发布信息收费吗</button>
                                 </div>
-                                <div id="ta1" style="display:none">
+                                <div id="ta1" style="display:none;margin-top:9px;font-size: 15px">
                                     <p >我们为家教提供一个完全免费的平台。所以家教在这里发布信息至始至终都不用支付任何费用。</p>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                                     <span id="tq2"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                     <button onclick="victutors.utils.tAnswer('ta2')">家教名单里家教的位置是如何排列的</button>
                                 </div>
-                                <div id="ta2" style="display:none">
+                                <div id="ta2" style="display:none;margin-top:9px;font-size: 15px">
                                     <p >在列表里家教的排列顺序是完全随机的。每次登录或刷新界面家教的排列顺序都会改变。我们保证每一位家教都有公平的机会被学生联系。</p>
                                 </div>
                             </div>
@@ -83,7 +83,7 @@
                                     <span id="tq3"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                     <button onclick="victutors.utils.tAnswer('ta3')">我想发布家教信息</button>
                                 </div>
-                                <div id="ta3" style="display:none">
+                                <div id="ta3" style="display:none;margin-top:9px;font-size: 15px">
                                     <p >我们欢迎个人以及团队入驻Victutors.com。您只需要点击右上角的‘家教入驻’并填写相关资料，我们将在24小时内审核发布您的信息！</p>
                                 </div>
                             </div>
@@ -92,7 +92,7 @@
                                     <span id="tq4"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                     <button onclick="victutors.utils.tAnswer('ta4')">学生如何联系家教</button>
                                 </div>
-                                <div id="ta4" style="display:none">
+                                <div id="ta4" style="display:none;margin-top:9px;font-size: 15px">
                                     <p >学生可以通过以下方式联系家教：电话，微信，邮箱。我们建议您填写尽可能多的信息方便学生联系。</p>
                                 </div>
                             </div>
@@ -101,7 +101,7 @@
                                     <span id="tq5"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                     <button onclick="victutors.utils.tAnswer('ta5')">如何保证信息隐私</button>
                                 </div>
-                                <div id="ta5" style="display:none">
+                                <div id="ta5" style="display:none;margin-top:9px;font-size: 15px">
                                     <p >您输入的信息都是基于完全自愿的原则。我们不会向外发布提供任何您的信息。详情您参考<a href="#"><b class="w3-text-teal">免责声明</b></a></p>
                                 </div>
                             </div>
@@ -110,7 +110,7 @@
                                     <span id="tq6"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                     <button onclick="victutors.utils.tAnswer('ta6')">我的家教团队想集体入驻</button>
                                 </div>
-                                <div id="ta6" style="display:none">
+                                <div id="ta6" style="display:none;margin-top:9px;font-size: 15px">
                                     <p >我们欢迎任何的家教团队。当然团队发布任何信息都是完全免费的。我们会依据您的团队打造一个独特的团队窗口。详情请<a style="cursor:pointer" onclick="document.getElementById('ContactUsModal').style.display='block'"><b class="w3-text-teal">联系我们</b></a></p>
                                 </div>
                             </div>
