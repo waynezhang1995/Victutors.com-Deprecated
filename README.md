@@ -15,5 +15,3 @@ We are a tutor finding website who has been proudly serving chinese community of
 
  #### Thinking about joining us ?
  We appreciate any kinds of help. For collborating please contact: waynezhangyuwei@Gmail.com
-
-# ©Victutors ALL RIGHTS RESERVED
