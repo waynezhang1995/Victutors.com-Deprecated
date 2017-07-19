@@ -6,10 +6,6 @@
 <!-- Footer -->
 <footer id="footerpanel" class="w3-container w3-padding-10 w3-center">
     <p class="top-margin">
-    <span><a href="#" ><b class = "w3-text-white">免责声明</b></a></span>
-    <span><b class="w3-text-white"> ｜ </b><a href="#" ><b class="w3-text-white">广告服务</b></a></span>
-    </p>
-    <p>
     <span>推广伙伴: </span>
     <a href="#" id="partner03.JPG" class="partner_tag">维城酒家</a>
     <a href="#" id="partner01.JPG" class="partner_tag">维城生活信息馆</a>
