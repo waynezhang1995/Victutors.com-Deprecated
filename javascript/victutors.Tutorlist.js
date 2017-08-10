@@ -344,14 +344,14 @@ $(document).ready(function() {
         trigger: 'hover'
     });
 
-    $('#mainContent').css({ 'min-height': $(window).height() - 169 });
+    $('#mainContent').css({ 'min-height': $(window).height() - 141 });
 
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         console.log('Mobile device detected');
         $('#feedbackModal, #contactModal, #qandaModal, #databaseModal_').hide();
         $('#imageUpload').html('<p style="margin-top: 60%" class="w3-text-red">请使用电脑端上传微信二维码或联系我们.对您照成的不便我们深感歉意</p>');
         $('#tutorInfoUpload').css({ 'margin-left': '35%', 'margin-top': 50 });
-        $('#mainContent').css({ 'min-height': $(window).height() - 267 });
+        $('#mainContent').css({ 'min-height': $(window).height() - 239 });
         $('#partnerModal div.w3-modal-content img').css({
             'width': '81%',
             'position': 'absolute',
