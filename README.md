@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/waynezhang1995/Victutors.com.svg?branch=master)](https://travis-ci.org/waynezhang1995/Victutors.com)
+[![Build Status](https://travis-ci.org/waynezhang1995/Victutors.com.svg?branch=master)](https://travis-ci.org/waynezhang1995/Victutors.com) (Site language in Chinese)
 
 # For demo purposes: http://web.uvic.ca/~waynez/Victutors.com/
 
