@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/waynezhang1995/Victutors.com.svg?branch=master)](https://travis-ci.org/waynezhang1995/Victutors.com) 
 
-# For demo purposes: http://web.uvic.ca/~waynez/Victutors.com/ (Site language in Chinese)
+# For demo purposes: https://victutors.000webhostapp.com/index.php (Site language in Chinese)
 
 ### Temporarily deprecated
 
